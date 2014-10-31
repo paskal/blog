@@ -1,0 +1,23 @@
+---
+layout: page
+navbar: Point
+title: {{ feed_aggregator.title }}
+footer: false
+---
+{% assign feed_aggregator = page.feed_aggregator %}
+<div id="blog-index" itemscope itemtype="http://schema.org/Blog">
+<meta itemprop="name" content="{{site.title}}" />
+{% if site.description %}<meta itemprop="description" content="{{site.description}}" />{% endif %}
+<meta itemprop="url" content="http://paskal.point.im/" />
+{% for post in feed_aggregator.posts %}
+  <article class="page-header" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="page-header">
+      <h2  class="entry-title" itemprop="name headline"><a href="{{ post.url }}" itemprop="url">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a></h2>
+      <p class="meta text-muted text-uppercase">
+        <span class="glyphicon glyphicon-calendar"></span><time datetime="{{ post.date | datetime | date_to_xmlschema }}" data-updated="true" itemprop="datePublished dateCreated">{{ post.date_formatted }}</time>
+      </p>
+    </header>
+    <div class="entry-content clearfix" itemprop="articleBody description">{{ post.content }}</div>
+  </article>
+{% endfor %}
+</div>

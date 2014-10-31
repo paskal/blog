@@ -1,0 +1,16 @@
+---
+layout: null
+---
+User-agent: *
+Host: terrty.net
+
+Disallow: /harming/humans
+Disallow: /ignoring/human/orders
+Disallow: /harm/to/self
+
+Disallow:/page/
+Disallow:/images/
+
+Allow: /
+
+Sitemap: {{ site.url }}/sitemap.xml
