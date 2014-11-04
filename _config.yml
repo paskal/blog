@@ -125,6 +125,7 @@ prose:
       - name: "comments"
         field:
           element: "checkbox"
+          label: "Allow comments"
           value: true
       - name: "keywords"
         field:
@@ -136,8 +137,38 @@ prose:
           placeholder: "Short description of what's post about"
       - name: "categories"
         field:
-          element: "text"
+          element: "select"
+          label: "Add Categories"
+          placeholder: "Choose Tags"
+          options:
+            - name: "amazon-ec2"
+              value: "amazon-ec2"
+            - name: "army"
+              value: "army"
+            - name: "conference"
+              value: "conference"
+            - name: "games"
+              value: "games"
+            - name: "hardware"
+              value: "hardware"
+            - name: "hobby"
+              value: "hobby"
+            - name: "nginx"
+              value: "nginx"
+            - name: "podcasts"
+              value: "podcasts"
+            - name: "programming"
+              value: "programming"
+            - name: "security"
+              value: "security"
+            - name: "soft"
+              value: "soft"
+            - name: "ubuntu"
+              value: "ubuntu"
+            - name: "yandex"
+              value: "yandex"
       - name: "published"
         field:
           element: "checkbox"
+          label: "Published"
           value: true
