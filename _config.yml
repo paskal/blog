@@ -109,3 +109,68 @@ quack_search: false
 
 # Yandex Metrika
 yandex_metrika_tracking_id: 1411749
+
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+
+	
+
+#prose.io settings 
+prose:
+  rooturl: "source"
+  metadata:
+    "source/_posts":
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "post"
+      - name: "title"
+        field:
+          element: "text"
+          value: "Title"
+      - name: "comments"
+        field:
+          label: "Allow comments"
+          element: "checkbox"
+          value: true
+      - name: "keywords"
+        field:
+          element: "text"
+          value: "misc"
+      - name: "description"
+        field:
+          element: "text"
+          value: "misc"
+      - name: "categories"
+        field:
+          element: "text"
+          value: "misc"
+      - name: "published"
+        field:
+          label: "Published"
+          element: "checkbox"
+          value: true
