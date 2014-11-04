@@ -135,10 +135,6 @@ prose:
         field:
           element: "text"
           placeholder: "Short description of what's post about"
-      - name: "categories"
-        field:
-          element: "textarea"
-          placeholder: "categories"
       - name: "published"
         field:
           element: "checkbox"
