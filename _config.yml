@@ -122,21 +122,24 @@ prose:
       - name: "title"
         field:
           element: "text"
+          label: "title"
       - name: "comments"
         field:
           element: "checkbox"
-          label: "Allow comments"
+          label: "allow comments"
           value: true
       - name: "keywords"
         field:
           element: "text"
+          label: "keywords"
           placeholder: "some, keywords, there"
       - name: "description"
         field:
           element: "text"
-          placeholder: "Short description of what's post about"
+          label: "description"
+          placeholder: "short description of what's post about"
       - name: "published"
         field:
           element: "checkbox"
-          label: "Published"
+          label: "published"
           value: true
