@@ -137,7 +137,7 @@ prose:
           placeholder: "Short description of what's post about"
       - name: "categories"
         field:
-          element: "select"
+          element: "multiselect"
           label: "Add Categories"
           placeholder: "Choose Tags"
           options:
