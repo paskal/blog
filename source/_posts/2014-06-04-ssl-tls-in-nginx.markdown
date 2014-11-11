@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Правильное использование SSL (TLS) в Nginx"
+title: "Лучшие настройки HTTPS (TLS) Nginx"
 date: 2014-06-04 07:51:19
 updated: 2014-07-09 07:51:19
 comments: true
@@ -10,41 +10,11 @@ categories:
 - Security
 ---
 
-Для начала приведу [правильную](https://www.ssllabs.com/projects/best-practices/index.html "Qualys SSL Labs - Projects / SSL/TLS Deployment Best Practices") конфигурацию, которую вы можете утащить к себе. И, да, под SSL я [имею в виду](https://www.howsmyssl.com/s/about.html#tls-vs-ssl "About · How's My SSL?") [TLS](http://en.wikipedia.org/wiki/Transport_Layer_Security "Transport Layer Security — Wikipedia").
+Для начала приведу [правильную](https://www.ssllabs.com/projects/best-practices/index.html "Qualys SSL Labs - Projects / SSL/TLS Deployment Best Practices") конфигурацию, которую вы можете утащить к себе. И, да, под HTTPS я [имею в виду](https://www.howsmyssl.com/s/about.html#tls-vs-ssl "About · How's My SSL?") [TLS](http://en.wikipedia.org/wiki/Transport_Layer_Security "Transport Layer Security — Wikipedia").
 
 ---
 
-	server {
-		ssl_certificate /etc/nginx/ssl/domain.net.pem;	## shared key
-		ssl_certificate_key /etc/nginx/ssl/domain.key;	## private key
-		ssl_session_cache shared:SSL:10m;				## session cache
-		ssl_protocols TLSv1 TLSv1.1 TLSv1.2;			## no valurable SSLv3
-		add_header Strict-Transport-Security max-age=31536000;
-		## always use https, don't allow http
-		add_header X-Frame-Options DENY;
-		## don't allow to render site in frame
-		ssl_prefer_server_ciphers on;
-		## let server decide which protocol fits best
-		ssl_ciphers ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS;
-		## secure ciphers
-
-		listen 443 deferred spdy ssl;
-		listen [::]:443 deferred ssl spdy ipv6only=on;
-		server_name domain.net;
-		root /usr/var/local/www/domain.net/public/;
-		index index.html;
-		autoindex off;								
-		location / {
-			try_files $uri $uri/ =404;
-		}
-	}
-	# redirect from all subdomains (*.domain.net) to domain.net, right way
-	server {
-		listen 80 default_server;
-		listen [::]:80 default_server ipv6only=on;
-		server_name .domain.net;
-		return 301 https://domain.net;
-	}
+{% gist 628882bee1948ef126dd %}
 
 ---
 
