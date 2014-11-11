@@ -11,6 +11,7 @@ figcaption + .highlight {
 }
 
 .highlight .line-numbers, .gist-file .line-numbers {
+  display: none; /* uncomment this line if you want to hide line numbers in code highlight */
   text-align: right;
   font-size: 13px;
   line-height: 1.45em;
