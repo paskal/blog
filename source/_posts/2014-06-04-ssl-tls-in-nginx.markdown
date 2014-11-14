@@ -70,4 +70,8 @@ categories:
 
 [Результат теста безопасности](https://www.ssllabs.com/ssltest/analyze.html?d=terrty.net "Qualys SSL Labs — Projects / SSL Server Test / terrty.net") сервера с такими настройками.
 
+Результат таких настроек: в свежую версию Firefox главная страница этого сайта была получена за 180мс:
+
+![wireshark https dump](https://dump.bitcheese.net/images/yhisedu/terrty.net_https.png)
+
 **Huge thanks to [Hynek Schlawack](https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/ "Hardening Your Web Server’s SSL Ciphers") and [Diego Plentz](http://tautt.com/best-nginx-configuration-for-security/ "Tautt | Best nginx configuration for security")**.
