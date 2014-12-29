@@ -25,7 +25,8 @@ posts_dir       = "_posts"    # directory for blog files
 themes_dir      = ".themes"   # directory for blog files
 new_post_ext    = "markdown"  # default new post file extension when using the new_post task
 new_page_ext    = "markdown"  # default new page file extension when using the new_page task
-server_port     = "4000"      # port for preview server eg. localhost:4000
+server_host     = "localhost" # host for preview server eg. localhost
+server_port     = "4000"      # port for preview server eg. 4000
 
 if (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
   puts '## Set the codepage to 65001 for Windows machines'
@@ -85,7 +86,7 @@ task :preview do
   puts "Starting to watch source with Jekyll and Compass. Starting Rack on port #{server_port}"
   jekyllPid = Process.spawn({"OCTOPRESS_ENV"=>"preview"}, "jekyll build --watch")
   compassPid = Process.spawn("compass watch")
-  rackupPid = Process.spawn("rackup --port #{server_port}")
+  rackupPid = Process.spawn("rackup --host #{server_host} --port #{server_port}")
 
   trap("INT") {
     [jekyllPid, compassPid, rackupPid].each { |pid| Process.kill(9, pid) rescue Errno::ESRCH }
@@ -276,6 +277,98 @@ multitask :push do
   end
 end
 
+desc "Deploy website to OpenShift"
+task :openshift do
+  puts "## Deploying branch to OpenShift"
+  puts "## Pulling any updates from OpenShift"
+  cd "#{deploy_dir}" do 
+    Bundler.with_clean_env {
+      system "git pull origin master"
+      system "bundle install"
+    }
+  end
+  if Dir.exists? "#{public_dir}"
+    (Dir["#{deploy_dir}/public/*"]).each { |f| rm_rf(f) }
+    Rake::Task[:copydot].invoke(public_dir, deploy_dir)
+    puts "\n## Copying #{public_dir} to #{deploy_dir}/public"
+    cp_r "#{public_dir}/.", "#{deploy_dir}/public"
+  end
+  cd "#{deploy_dir}" do
+    system "git add -A"
+    message = "Site updated at #{Time.now.utc}"
+    puts "\n## Committing: #{message}"
+    system "git commit -m \"#{message}\""
+    puts "\n## Pushing generated #{deploy_dir} website"
+    Bundler.with_clean_env { system "git push -f origin master" }
+    puts "\n## OpenShift deploy complete"
+  end
+end
+
+desc "Set up _deploy folder and deploy branch for Openshift deployment"
+task :setup_openshift, [:repo, :force_ssl] do |t, args|
+  if args.repo
+    repo_url = args.repo
+  else
+    puts "Enter the read/write url for your repository"
+    puts "(For example, 'ssh://546bcc30e0b8cd7bdc000025@example-username.rhcloud.com/~/git/example.git/')"
+    repo_url = get_stdin("Repository url: ")
+  end
+
+  url = /ssh:\/\/\w+@(?<url>\w+-\w+\.rhcloud\.com)/.match(repo_url)[:url]
+  jekyll_config = IO.read('_config.yml')
+  jekyll_config.sub!(/^url:.*$/, "url: #{url}")
+  File.open('_config.yml', 'w') do |f|
+    f.write jekyll_config
+  end
+  rm_rf deploy_dir
+  mkdir_p "#{deploy_dir}/public"
+
+  cd "#{deploy_dir}" do
+    system "git init"
+    system "git remote add origin #{repo_url}"
+    system "git pull origin master"
+  end
+
+  cp "config.ru", "#{deploy_dir}/"
+  
+  cd "#{deploy_dir}" do
+    system 'echo "My Octopress Page is coming soon &hellip;" > public/index.html'
+
+    # Create Gemfile
+    File.open("Gemfile", "w") do |f|     
+      f.puts "source 'https://rubygems.org'"
+      f.puts
+      f.puts "gem 'sinatra'"
+      unless args.force_ssl.nil?
+        f.puts "gem 'rack-ssl'"
+      end
+    end
+
+    unless args.force_ssl.nil?
+      puts "\n## Updating Static Server to force SSL in production"
+      file = File.readlines("config.ru")
+      index = file.index { |line| line =~ /class SinatraStaticServer/ }
+      file.insert(index+1, "  configure :production do")
+      file.insert(index+2, "    use Rack::SSL")
+      file.insert(index+3, "  end\n\n")
+      file.insert(index, "require 'rack/ssl'\n\n")
+      File.open("config.ru", "w") do |f|
+        f.puts file
+      end
+    end
+
+    system "git add ."
+    system "git commit -m \"Octopress init\""
+    rakefile = IO.read(__FILE__)
+    rakefile.sub!(/deploy_branch(\s*)=(\s*)(["'])[\w-]*["']/, "deploy_branch\\1=\\2\\3master\\3")
+    rakefile.sub!(/deploy_default(\s*)=(\s*)(["'])[\w-]*["']/, "deploy_default\\1=\\2\\3openshift\\3")
+    File.open(__FILE__, 'w') do |f|
+      f.write rakefile
+    end
+  end
+  puts "\n---\n## Now you can deploy to #{repo_url} with `rake deploy` or `rake openshift` ##"
+end
+
 desc "Update configurations to support publishing to root or sub directory"
 task :set_root_dir, :dir do |t, args|
   puts ">>> !! Please provide a directory, eg. rake config_dir[publishing/subdirectory]" unless args.dir
@@ -347,7 +440,7 @@ task :setup_github_pages, :repo do |t, args|
       end
     end
   end
-  url = blog_url(user, project)
+  url = blog_url(user, project, source_dir)
   jekyll_config = IO.read('_config.yml')
   jekyll_config.sub!(/^url:.*$/, "url: #{url}")
   File.open('_config.yml', 'w') do |f|
@@ -357,7 +450,7 @@ task :setup_github_pages, :repo do |t, args|
   mkdir deploy_dir
   cd "#{deploy_dir}" do
     system "git init"
-    system "echo 'My Octopress Page is coming soon &hellip;' > index.html"
+    system 'echo "My Octopress Page is coming soon &hellip;" > index.html'
     system "git add ."
     system "git commit -m \"Octopress init\""
     system "git branch -m gh-pages" unless branch == 'master'
@@ -394,9 +487,10 @@ def ask(message, valid_options)
   answer
 end
 
-def blog_url(user, project)
-  url = if File.exists?('source/CNAME')
-    "http://#{IO.read('source/CNAME').strip}"
+def blog_url(user, project, source_dir)
+  cname = "#{source_dir}/CNAME"
+  url = if File.exists?(cname)
+    "http://#{IO.read(cname).strip}"
   else
     "http://#{user.downcase}.github.io"
   end
