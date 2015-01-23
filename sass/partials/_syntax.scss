@@ -11,8 +11,7 @@ figcaption + .highlight {
   @include border-top-radius(0);
 }
 
-.highlight .line-numbers, .gist-file .line-numbers {
-  display: none; /* uncomment this line if you want to hide line numbers in code highlight */
+.highlight .line-numbers {
   text-align: right;
   font-size: 13px;
   line-height: 1.45em;
@@ -30,6 +29,10 @@ figcaption + .highlight {
   span { color: $base01 !important; }
   padding: 1em .8em .8em .8em;
   @include border-radius(0);
+}
+.gist-file .highlight .line-numbers {
+  font-size: inherit;
+  padding-top: .5em !important;
 }
 
 figure.code, .gist, pre {
