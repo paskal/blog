@@ -1,19 +1,5 @@
----
-branches:
-  only:
-  - gh-pages-source
 language: ruby
 rvm:
   - 2.0.0
   - 1.9.3
-- export REPO_URL="https://$GH_TOKEN@github.com/$GH_REPO.git"
-- rake setup_github_pages[$REPO_URL]
-script:
-- rake generate
-after_script:
-- rake deploy
-env:
-  global:
-  - GH_REPO="octopress/paskal.github.com"
-  - secure: "V+j9SSuxyhwN5fB3b6Xj7WZ6kuuaSgCTHaiHHfGtPfwSCBZtxmaLrUdbuOEG\nKKpk0UX5nJoqEM0nmgAT1I5KKI2vkx4TX+mHnNQ0rUInipXTf7C9z/42OxKM\nrY5wgcD0G8ChccFAzJNYqFEXXkmiaYDWxjwlslA8pOZKSmHH8z4="
-
+script: bundle exec rake install; bundle exec rake generate
