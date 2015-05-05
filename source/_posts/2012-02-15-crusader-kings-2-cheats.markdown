@@ -25,8 +25,6 @@ Thread under source link contains lots of useful information. For example, cheat
 
 For using it make file cheats.txt with text from [source](http://forum.paradoxplaza.com/forum/showthread.php?585658-Cheats) and put it into C:\Program Files (x86)\Steam\steamapps\common\crusader kings ii\events - then in-game type in console "event 800060" and you'll find a cheat menu.
 
-Another CheatMod, with installation instructions inside: [download](http://forum.paradoxplaza.com/forum/attachment.php?s=15d7a6a58b4cc220232344775099f2e9&attachmentid=87237&d=1376019390).
-
 Cheating isn't fun. But if you wan't to do something crazy (like me capturing whole map with Holy Roman Empire) - better edit savefile (you can use notepad or better [notepad++](http://download.tuxfamily.org/notepadplus/6.6.9/npp.6.6.9.Installer.exe)) in C:\Users\Username\Documents\Paradox Interactive\Crusader Kings II\save games - it allows you to do anything you can imagine.
 
 For char id find his section in savefile, easiest way to do that is to look up for combination of birthdate and name. Any character section starts with it's id, like 1723= {}. Editing char skills like martial or stewardship is easier there and you can try to find your consultants and wife and make them much more usefull by increasing their skills.
