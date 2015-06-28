@@ -108,7 +108,7 @@ facebook_like: false
 quack_search: false
 
 # Yandex Metrika
-yandex_metrika_tracking_id: 1411749
+yandex_metrika_tracking_id:
 
 #prose.io settings 
 prose:
