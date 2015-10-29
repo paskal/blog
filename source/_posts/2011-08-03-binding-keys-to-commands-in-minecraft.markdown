@@ -4,10 +4,8 @@ date: 2011-08-03 22:21:16
 layout: post
 title: 'Minecraft: связывание команд и клавиш'
 categories:
-- Games
-- Programming
-tags:
-- howto
+- games
+- programming
 ---
 
 В данном посте я расскажу, как подвесить команды чата или последовательность действий [Minecraft](https://minecraft.net/) на клавиши. Для этих целей я буду использовать [AutoHotkey](http://www.autohotkey.com/).

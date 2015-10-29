@@ -4,7 +4,7 @@ date: 2012-02-15 18:48:48
 layout: post
 title: Crusader Kings 2 cheats
 categories:
-- Games
+- games
 ---
 
 [Source](http://forum.paradoxplaza.com/forum/showthread.php?585658-Cheats).

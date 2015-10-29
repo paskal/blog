@@ -5,10 +5,8 @@ updated: 2014-03-06 13:52:05
 layout: post
 title: Роутеры, поддерживающие Yota WiMax
 categories:
-- Hardware
-- Soft
-tags:
-- howto
+- hardware
+- soft
 ---
 
 В этом посте я рассмотрю существующие решения для раздачи Yota-интернета, их стоимость, и их настройку.

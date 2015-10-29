@@ -4,8 +4,8 @@ title: "Установка SoftEther VPN в Ubuntu"
 date: 2014-01-15 13:20
 comments: true
 categories: 
-- Soft
-- Ubuntu
+- soft
+- ubuntu
 ---
 
 ### Вступление:

@@ -4,7 +4,7 @@ title: "Mount Yandex.Disk in Ubuntu or Other Linux"
 date: 2012-04-24 06:03:50
 comments: true
 categories: 
-- Soft
+- soft
 ---
 
 [Яндекс.Диск](https://disk.yandex.ru/invite/?hash=9GMQ37ZU "Яндекс.Диск") is free 10Gb [WebDav](http://help.yandex.ru/disk/webdav.xml "Доступ к Диску через WebDAV — Яндекс.Помощь. Диск") storage.

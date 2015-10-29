@@ -5,7 +5,7 @@ date: 2014-02-26 12:34
 updated: 2014-04-28 12:34
 comments: true
 categories:
-- Army
+- army
 ---
 
 Подготовка, три месяца до армии:

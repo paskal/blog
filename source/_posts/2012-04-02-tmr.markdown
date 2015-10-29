@@ -4,7 +4,7 @@ date: 2012-04-02 11:58:31
 layout: post
 title: Тоже Мне Радио
 categories:
-- Podcasts
+- podcasts
 ---
 
 [TMRadio](http://www.tmradio.net/) [.mp3](http://stream.tmradio.net:8180/live.mp3)

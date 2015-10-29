@@ -4,10 +4,7 @@ date: 2012-07-19 17:07:07
 layout: post
 title: Hobby
 categories:
-- Hobby
-tags:
-- ropejumping
-- личное
+- hobby
 ---
 
 Есть у меня хобби — ropejumping. Ещё я тренируюсь в тренажёрном зале (тяжёлая атлетика), и умею кое-как собирать кубик Рубика.

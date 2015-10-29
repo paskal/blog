@@ -6,8 +6,7 @@ comments: true
 keywords: Яндекс, Yandex, YAC, Yet another Conference
 description: Предполагаемая программа моей предстоящей поездке на Yet another Conference 2014.
 categories: 
-- Yandex
-- Conference
+- yandex
 ---
 
 30 октября пройдёт очередная [Yet another Conference](https://yandex.ru/yac2014/ "Yet another Conference - YaC 2014"), мне выслали приглашение, и я жду-жду-жду. Ниже предполагаемая моя карта перемещения; безумно круто будет увидеть Игоря Сысоева, да и много других интересных докладчиков и тем. Если кто-либо захочет пересечься — мой телефон +79166127441.

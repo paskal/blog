@@ -5,9 +5,9 @@ date: 2014-06-04 07:51:19
 updated: 2014-07-09 07:51:19
 comments: true
 categories: 
-- Soft
-- Nginx
-- Security
+- soft
+- nginx
+- security
 ---
 
 Для начала приведу [правильную](https://www.ssllabs.com/projects/best-practices/index.html "Qualys SSL Labs - Projects / SSL/TLS Deployment Best Practices") конфигурацию, которую вы можете утащить к себе. И, да, под HTTPS я [имею в виду](https://www.howsmyssl.com/s/about.html#tls-vs-ssl "About · How's My SSL?") [TLS](http://en.wikipedia.org/wiki/Transport_Layer_Security "Transport Layer Security — Wikipedia").
