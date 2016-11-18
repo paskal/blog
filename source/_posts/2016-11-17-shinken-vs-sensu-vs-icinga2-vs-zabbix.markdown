@@ -2,6 +2,7 @@
 layout: post
 title: "Monitoring system comparison: Shinken vs Sensu vs Icinga 2 vs Zabbix"
 date: 2016-11-17 09:09:55
+updated: 2016-11-19 00:50:40
 comments: true
 keywords: shiknen, sensu, icinga, icinga 2, zabbix, monitoring comparison
 description: 4 monitoring systems comparison from 4k servers point of view.
@@ -139,7 +140,7 @@ Zabbix has a server that communicates with a single DB, and no matter what you d
 
 ### Configuration systems integration
 
-Zabbix is poorly prepared for a diversified environment, managed by a configuration management system. It has some [auto-discovery capabilities](https://www.zabbix.com/documentation/3.0/manual/discovery/low_level_discovery), but they have their limits and are not tied to a configuration system . The only option for those who seek such integration is to make something themselves using API.
+Zabbix is poorly prepared for a diversified environment, managed by a configuration management system. It has some [low-level discovery capabilities](https://www.zabbix.com/documentation/3.0/manual/discovery/low_level_discovery) for hosts and services, but they have their limits and are not tied to a configuration system. The only option for those who seek such integration is to make something themselves using API.
 
 ### Audit log
 
