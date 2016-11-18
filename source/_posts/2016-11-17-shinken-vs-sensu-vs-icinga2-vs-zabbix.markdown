@@ -84,6 +84,8 @@ Built-in (Puppet, Chef, EC2!) but only in [paid](https://sensuapp.org/docs/lates
 
 ### UI
 
+![Uchiwa screenshot](https://raw.githubusercontent.com/sensu/uchiwa/master/docs/uchiwa-ui.png)
+
 Sensu default UI called [Uchiwa](https://uchiwa.io/), seems to have many limitations. It seems too simple for a diversified environment with thousands of servers. The enterprise edition comes with its own dashboard; however, it doesn’t seem to be doing much, except adding a few disabled out-of-the-box features over the opensource part (like audit).
 
 ### Drawbacks
