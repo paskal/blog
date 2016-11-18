@@ -90,7 +90,7 @@ Sensu default UI called [Uchiwa](https://uchiwa.io/), seems to have many limitat
 * Lack of historical data and very limited ability to check on it;
 * Create your own monitoring system; there are no working presets waiting for you;
 * Aggregation of events is tricky;
-* Message sending is very tricky, which is scary (because this part must be the simplest and most reliable part of monitoring);
+* ~Message sending is very tricky, which is scary (because this part must be the simplest and most reliable part of monitoring)~ — not true, I had wrong impression by [documentation](https://sensuapp.org/docs/latest/reference/handlers.html), thanks x70b1 from #sensu for explanation;
 * The “We don’t want to reinvent the wheel” way has its own limitations of which you could be aware of if you have used any such software before (in my case, it was * Prometheus monitoring system, which left whole sets of features up to the user to implement, like authentication).
 
 ### Links
