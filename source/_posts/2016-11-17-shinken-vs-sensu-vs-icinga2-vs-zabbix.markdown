@@ -21,15 +21,15 @@ In their own words, Shinken is a monitoring framework, a Python Nagios Core tota
 
 ### Scalability
 
-According to the [documentation](http://shinken.readthedocs.io/en/latest/07_advanced/distributed.html), every type of process can be run even on different hosts. That's interesting, because you might want DB in the cheapest place, data receivers in every datacenter, and alerter processes closer to your physical location. Shinken user on the scheme is happy; that's a positive sign:
+According to the [documentation](https://shinken.readthedocs.io/en/latest/07_advanced/distributed.html), every type of process can be run even on different hosts. That's interesting, because you might want DB in the cheapest place, data receivers in every datacenter, and alerter processes closer to your physical location. Shinken user on the scheme is happy; that's a positive sign:
 
-![Shinken simple distributed architecture](http://shinken.readthedocs.io/en/latest/_images/shinken-architecture.png)
+![Shinken simple distributed architecture](https://shinken.readthedocs.io/en/latest/_images/shinken-architecture.png)
 
-For multi-regional monitoring, there is also an answer, **[Realms](http://shinken.readthedocs.io/en/latest/_images/shinken-architecture-isolated-realms.png)**.
+For multi-regional monitoring, there is also an answer, **[Realms](https://shinken.readthedocs.io/en/latest/_images/shinken-architecture-isolated-realms.png)**.
 
 Here, you notice something awesome: Data is collected into regional DB, not into a global one. There are also sub-realms setup for smaller big setups, which requires fewer machines to setup and just one DB:
 
-![Shinken simple multi-regional distributed architecture](http://shinken.readthedocs.io/en/latest/_images/shinken-architecture-global-realm.png)
+![Shinken simple multi-regional distributed architecture](https://shinken.readthedocs.io/en/latest/_images/shinken-architecture-global-realm.png)
 
 Another point to consider when you’re talking about scalability is fault tolerance. I’ll quote documentation here:
 
@@ -37,7 +37,7 @@ Another point to consider when you’re talking about scalability is fault toler
 
 ### Configuration systems integration
 
-Automatic hosts and services discovery seems [well-covered](http://shinken.readthedocs.io/en/latest/07_advanced/discovery-with-shinken-advanced.html), and because configuration is kept in files, you could easily generate them yourself with Chef\Puppet, based on information on hosts you have.
+Automatic hosts and services discovery seems [well-covered](https://shinken.readthedocs.io/en/latest/07_advanced/discovery-with-shinken-advanced.html), and because configuration is kept in files, you could easily generate them yourself with Chef\Puppet, based on information on hosts you have.
 
 ### Audit log
 
@@ -148,7 +148,7 @@ Zabbix logs everything well, except one huge blind spot: Changes [via API are no
 
 ### UI
 
-[![Dashboard is a main screen of Zabbix](http://www.zabbix.com/img/screenshots/3.0/screenshots/mon_dashboard.png)](http://www.zabbix.com/screenshots)
+[![Dashboard is a main screen of Zabbix](https://www.zabbix.com/img/screenshots/3.0/screenshots/mon_dashboard.png)](http://www.zabbix.com/screenshots)
 
 Zabbix has UI with all possible features built-in. The only bad thing you could say about it is it’s not extendable at all — you have either to stick with what UI gives you or do something on your own. You have no option to improve UI because of its general complexity.
 
