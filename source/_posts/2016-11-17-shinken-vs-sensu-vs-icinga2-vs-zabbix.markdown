@@ -2,7 +2,7 @@
 layout: post
 title: "Monitoring system comparison: Shinken vs Sensu vs Icinga 2 vs Zabbix"
 date: 2016-11-17 09:09:55
-updated: 2016-11-19 00:50:40
+updated: 2016-11-19 12:38:00
 comments: true
 keywords: shiknen, sensu, icinga, icinga 2, zabbix, monitoring comparison
 description: 4 monitoring systems comparison from 4k servers point of view.
@@ -45,13 +45,15 @@ Because configuration is stored in files, you could use generic things, like ver
 
 ### UI
 
-[UI](https://github.com/shinken-monitoring/mod-webui/wiki) is present; however, it’s hard to estimate how well it presents data — I couldn’t find an online demo and need someone’s hands-on experience to highlight it.
+[UI](https://github.com/shinken-monitoring/mod-webui/wiki) is proven itself to work well with thousands of hosts and tens of groups.
 
 [![Shinken UI](https://github.com/shinken-monitoring/mod-webui/raw/master/doc/animation.gif)](http://www.shinken-solutions.com/showcase-enterprise.php)
 
 ### Drawbacks
 
 I found no visible drawbacks, based on the documentation. The only thing that concerns me is its rapid development in the past and [very slow pace of commits](https://github.com/naparuba/shinken/commits/master) in the present: around 40 commits this year; most are pull requests merged, so no new development is going on, and only community-written bugfixes are being included. It’s either too good to move on (which is never the case; even old-timers like vim and emacs get their code updated) or it’s another opensource project that not enough people care about — you should know such things before using such a complex thing as a monitoring system.
+
+[Frédéric Mohier](https://github.com/mohierf) was very kind to give me an insight on reasons of current situation: more than one year ago, some of the main developers of Shinken left the project and made a fork named [Alignak](https://alignak-monitoring.github.io/), which is being activly developed and plan to deliver 1.0 release in December, 2016.
 
 ### Links
 
