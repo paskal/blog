@@ -110,6 +110,10 @@ quack_search: false
 # Yandex Metrika
 yandex_metrika_tracking_id:
 
+# Piwik
+piwik_url: terrty.net/piwik
+piwik_siteid: 1
+
 #prose.io settings 
 prose:
   rooturl: "source"
