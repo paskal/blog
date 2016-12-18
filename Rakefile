@@ -63,6 +63,7 @@ task :generate do
   puts "## Generating Site with Jekyll"
   system "compass compile"
   system "jekyll build" or abort "An error occurred generating the site."
+  system "cd cv; ./generate.sh" or abort "An error occured during generation of the resume"
 end
 
 desc "Watch the site and regenerate when it changes"
