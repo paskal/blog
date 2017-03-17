@@ -30,5 +30,4 @@ categories:
 
 ### Установка :
 
-	sudo apt-add-repository ppa:dajhorn/softether && sudo apt-get update && sudo apt-get upgrade && sudo apt-get install softether
-	sudo service softether start
+        sudo apt-add-repository ppa:paskal-07/softethervpn && sudo apt-get update sudo apt-get install softether-vpnserver
