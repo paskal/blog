@@ -3,7 +3,7 @@ layout: post
 title: "Mount Yandex.Disk in Ubuntu or Other Linux"
 date: 2012-04-24 06:03:50
 comments: true
-categories: 
+categories:
 - soft
 ---
 

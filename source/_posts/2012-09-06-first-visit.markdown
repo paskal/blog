@@ -3,7 +3,7 @@ layout: post
 title: "Первый визит в военкомат"
 date: 2012-09-06 14:29
 comments: false
-categories: 
+categories:
 - army
 ---
 

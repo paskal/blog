@@ -3,7 +3,7 @@ layout: post
 title: "Третий подход"
 date: 2012-10-03 09:48
 comments: false
-categories: 
+categories:
 - army
 ---
 

@@ -6,7 +6,7 @@ updated: 2016-11-19 12:38:00
 comments: true
 keywords: shiknen, sensu, icinga, icinga 2, zabbix, monitoring comparison
 description: 4 monitoring systems comparison from 4k servers point of view.
-categories: 
+categories:
 - soft
 - monitoring
 ---

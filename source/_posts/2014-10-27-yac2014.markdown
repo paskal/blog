@@ -5,7 +5,7 @@ date: 2014-10-27 18:12:55
 comments: true
 keywords: Яндекс, Yandex, YAC, Yet another Conference
 description: Предполагаемая программа моей предстоящей поездке на Yet another Conference 2014.
-categories: 
+categories:
 - yandex
 ---
 
@@ -15,16 +15,13 @@ categories:
 
 ### Маршрут ###
 
-
 #### [Секретный доклад](https://events.yandex.ru/lib/talks/2507/) <mark style="background: #666; color: #fff">General</mark>
 
 **10:00**, Зал 1
 
-
 #### [Секретный доклад](https://events.yandex.ru/lib/talks/2523/) <mark style="background: #666; color: #fff">General</mark>
 
 **11:25**, Подиум
-
 
 #### [Использование Python для интерактивного анализа данных](https://events.yandex.ru/lib/talks/2397/) <mark style="background: #ffb545; color: #fff">Backend</mark>####
 
@@ -38,7 +35,6 @@ categories:
 </footer>
 </blockquote>
 
-
 #### [State of the Standardized Web](https://events.yandex.ru/lib/talks/2457/) <mark style="background: #00b3e3; color: #fff">Frontend</mark>####
 
 **11:55...12:10**, Зал 4
@@ -49,7 +45,6 @@ categories:
 <footer><strong><a href="https://events.yandex.ru/lib/people/339/">Сергей Константинов</a></strong>, <cite>Яндекс</cite>
 <p>Руководитель группы разработки API Яндекс.Карт. Окончил Южно-Уральский государственный университет. Разработкой API Яндекс.Карт занимается с 2008 года. С 2013 — участник Технической архитектурной группы Консорциума [W3C](http://www.w3.org/2001/tag/).</p>
 </footer></blockquote>
-
 
 #### [Проектировка IPv6-оnly датацентра в Яндексе](https://events.yandex.ru/lib/talks/2391/) <mark style="background: #cb299a; color: #fff">Administration</mark>####
 
@@ -62,7 +57,6 @@ categories:
 <p>Более шести лет работает с компьютерными сетями — от систем в маленьких офисах до опорных сетей операторов связи. Последние три года — сетевой инженер в NOC Яндекса. Занимается как развитием опорной сети и датацентров, так и каждодневной эксплуатацией.</p>
 </footer></blockquote>
 
-
 #### [Масштабируемая конфигурация nginx](https://events.yandex.ru/lib/talks/2392/) <mark style="background: #ffb545; color: #fff">Backend</mark> <mark style="background: #cb299a; color: #fff">Administration</mark>####
 
 **12:50...13:40**, Зал 3
@@ -73,7 +67,6 @@ categories:
 <footer><strong><a href="https://events.yandex.ru/lib/people/641589/">Игорь Сысоев</a></strong>, <cite>Nginx Inc.</cite>
 <p>Технический директор Nginx Inc., наше всё.</p>
 </footer></blockquote>
-
 
 #### [Netflix CDN и открытый код](https://events.yandex.ru/lib/talks/2396/) <mark style="background: #cb299a; color: #fff">Administration</mark>####
 
@@ -86,7 +79,6 @@ categories:
 <p>Разработчик операционной системы FreeBSD с 2004 года, в настоящее время работает в Nginx Inc. Основная область интересов — сетевой стек.</p>
 </footer></blockquote>
 
-
 #### [Как мы делали TLS в Яндексе](https://events.yandex.ru/lib/talks/2434/) <mark style="background: #00a885; color: #fff">Information Security</mark>####
 
 **14:30...15:10**, Зал 4
@@ -98,12 +90,12 @@ categories:
 <p>Начал интересоваться информационной безопасностью ещё в школе. Долгое время занимался разработкой, затем проводил анализ защищённости в крупнейших российских компаниях. В Яндексе занимается безопасностью продуктов и сервисов.</p>
 </footer></blockquote>
 
-
 #### [Building a Modern Security Engineering Organization](https://events.yandex.ru/lib/talks/2402/) <mark style="background: #00a885; color: #fff">Information Security</mark>####
 
 **15:10...15:50**, Зал 4
 
 <blockquote>Continuous deployment and the DevOps philosophy have forever changed the ways in which businesses operate. This talk will discuss how security adapts effectively to these changes, specifically covering:
+
 * practical advice for building and scaling modern AppSec and NetSec programs;
 * lessons learned for organizations seeking to launch a bug bounty program;
 * how to run realistic attack simulations and learn the signals of compromise in your environment.
@@ -111,7 +103,6 @@ categories:
 <footer><strong><a href="https://events.yandex.ru/lib/people/641631/">Zane Lackey</a></strong>, <cite>Signal Sciences</cite>
 <p>Zane Lackey is the Founder/CSO at Signal Sciences and serves on the advisory boards of the Internet Bug Bounty Program and the US State Department-backed Open Technology Fund. Prior to Signal Sciences, Zane was the Director of Security Engineering at Etsy and a Senior Security Consultant at iSEC Partners.</p>
 </footer></blockquote>
-
 
 #### [Развёртывание отказоустойчивой инфраструктуры OpenStack](https://events.yandex.ru/lib/talks/2440/) <mark style="background: #cb299a; color: #fff">Administration</mark>####
 
@@ -124,7 +115,6 @@ categories:
 <p>Администрировал высоконагруженные проекты и автоматизацию в Баннерной системе Яндекса, сейчас занимается внедрением IaaS-решений и виртуализации.</p>
 </footer></blockquote>
 
-
 #### [Logbroker: сбор и поставка больших объёмов данных](https://events.yandex.ru/lib/talks/2400/) <mark style="background: #ffb545; color: #fff">Backend</mark>####
 
 **15:50...16:30**, Зал 1
@@ -136,7 +126,6 @@ categories:
 <p>Закончил МГУ, кандидат физико-математических наук. В Яндексе разрабатывает платформу публикации статистических данных, программирует для Unix на С++, С, Perl, Python и других языках.</p>
 </footer></blockquote>
 
-
 #### [Crash Test Your Application... And Your Team](https://events.yandex.ru/lib/talks/2446/) <mark style="background: #ffb545; color: #fff">Backend</mark> <mark style="background: #cb299a; color: #fff">Administration</mark>####
 
 **16:30...17:10**, Зал 1
@@ -147,7 +136,6 @@ categories:
 <footer><strong><a href="https://events.yandex.ru/lib/people/647808/">Carlos Conde</a></strong>, <cite>Amazon</cite>
 <p>Carlos Conde is Chief Technology Evangelist at Amazon Web Services in Europe, the Middle East and Africa, and works with businesses of all sizes to help them understand the technical aspects of AWS and move their IT into the cloud. He is a frequent speaker at public events and technical workshops.</p>
 </footer></blockquote>
-
 
 #### [Секретный доклад по безопасности](https://events.yandex.ru/lib/talks/2504/) <mark style="background: #00a885; color: #fff">Information Security</mark>
 

@@ -5,7 +5,7 @@ date: 2014-12-30 16:02:55
 comments: true
 keywords: хобби, парашюты, aff, обучение, парашют-крыло
 description: Итоги парашютного сезона-2014.
-categories: 
+categories:
 - hobby
 - people
 ---

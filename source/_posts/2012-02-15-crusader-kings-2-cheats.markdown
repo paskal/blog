@@ -9,17 +9,17 @@ categories:
 
 [Source](http://forum.paradoxplaza.com/forum/showthread.php?585658-Cheats).
 
-	> Press § (tilda) or Alt + 2 1 to open the console and then type the command.
+    > Press § (tilda) or Alt + 2 1 to open the console and then type the command.
 
-	cash = 5000 gold, add a number after to get a specific amount, for example "cash 500" gives you 500 gold.
-	piety = 5000 piety, add a number after to get a specific amount
-	prestige = 5000 prestige, add a number after to get a specific amount
-	allow_laws = allow to change all your laws freely ... enter again to go back to limited law changing.
-	discover_plots = plots are always discovered ... repeat to have to search again
-	plots_known = (default on) plots are visible, turns it off and on
-	marry_anyone = (default to you can't) You can marry anyone. (only seems to the remove the close relatives restriction) 
-	Change your religion = religion nameofreligion (for example, "religon catholic")
-	Change your characters culture = culture nameofculture (for example, "culture italian" or "culture danish")
+    cash = 5000 gold, add a number after to get a specific amount, for example "cash 500" gives you 500 gold.
+    piety = 5000 piety, add a number after to get a specific amount
+    prestige = 5000 prestige, add a number after to get a specific amount
+    allow_laws = allow to change all your laws freely ... enter again to go back to limited law changing.
+    discover_plots = plots are always discovered ... repeat to have to search again
+    plots_known = (default on) plots are visible, turns it off and on
+    marry_anyone = (default to you can't) You can marry anyone. (only seems to the remove the close relatives restriction)
+    Change your religion = religion nameofreligion (for example, "religon catholic")
+    Change your characters culture = culture nameofculture (for example, "culture italian" or "culture danish")
 
 Thread under source link contains lots of useful information. For example, cheat event allows you to do lots of things.
 

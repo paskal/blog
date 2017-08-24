@@ -4,7 +4,7 @@ title: "Культурная программа"
 date: 2012-09-15 11:33
 updated: 2012-10-31 11:33
 comments: false
-categories: 
+categories:
 - hobby
 ---
 

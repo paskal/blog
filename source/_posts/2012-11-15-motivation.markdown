@@ -3,7 +3,7 @@ layout: post
 title: "Коротко о мотивации"
 date: 2012-11-15 09:29
 comments: false
-categories: 
+categories:
 - army
 ---
 

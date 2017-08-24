@@ -3,7 +3,7 @@ layout: post
 title: "Второй заход"
 date: 2012-09-24 02:45
 comments: true
-categories: 
+categories:
  - army
 ---
 
