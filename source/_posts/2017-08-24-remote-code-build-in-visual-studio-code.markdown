@@ -17,9 +17,9 @@ In Sublime Text you could archieve remote code execution using following code:
 }
 ```
 
-In VSC same could be achieved using [Tasks](https://code.visualstudio.com/docs/editor/tasks) functionality. Difference is you couldn't create global settings, whatever you do will be saved in project you're working in. Another one difference is you could write something in console and it will be sent over to script's STDIN, which is unachiavable in Sublime Text.
+In VSC same could be achieved using [Tasks](https://code.visualstudio.com/docs/editor/tasks) functionality. Difference is you couldn't create global settings, whatever you do will be saved in project you're working in. Another difference is you could write something in console and it will be sent over to script's STDIN, which is unachiavable in Sublime Text.
 
-To start, open your project task configuration via **Ctrl**+**P**, **>Configure Task Runner**. Then paste following and customize it for yourself:
+To start, open your project task configuration file via **Ctrl**+**P**, **>Configure Task Runner**, **Others**. Then paste following json text and customize it for yourself:
 
 ``` json
 {

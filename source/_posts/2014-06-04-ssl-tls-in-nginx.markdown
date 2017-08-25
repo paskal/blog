@@ -36,7 +36,7 @@ categories:
 
     add_header Strict-Transport-Security max-age=31536000;
 
-Надолго (считайте, навечно), говорим клиенту, что общаться с этим сервером можно только и только по HTTPS ([explanation](http://opentodo.net/2012/10/enable-http-strict-transport-security-in-apache-nginx/ "Enable HTTP Strict Transport Security in Apache & Nginx | root@opentodo#")).
+Надолго (считайте, навечно), говорим клиенту, что общаться с этим сервером можно только и только по HTTPS.
 
     add_header X-Frame-Options DENY;
 
@@ -74,4 +74,4 @@ categories:
 
 ![wireshark https dump](https://dump.bitcheese.net/images/ezurono/terrty.net_https.png)
 
-**Huge thanks to [Hynek Schlawack](https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/ "Hardening Your Web Server’s SSL Ciphers") and [Diego Plentz](http://tautt.com/best-nginx-configuration-for-security/ "Tautt | Best nginx configuration for security")**.
+**Huge thanks to [Hynek Schlawack](https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/ "Hardening Your Web Server’s SSL Ciphers")**.

@@ -41,7 +41,7 @@ Because configuration is stored in files, you could use generic things, like ver
 
 ### UI
 
-[![Shinken UI](https://github.com/shinken-monitoring/mod-webui/raw/master/doc/animation.gif)](http://www.shinken-solutions.com/showcase-enterprise.php)
+[![Shinken UI](https://github.com/shinken-monitoring/mod-webui/raw/master/doc/animation.gif)](https://www.shinken-enterprise.com/en/product/)
 
 [Shinken WebUI](https://github.com/shinken-monitoring/mod-webui/wiki) is proven itself to work well with thousands of hosts and tens of groups.
 
