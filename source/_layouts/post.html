@@ -16,7 +16,6 @@ single: true
           {% include post/author.html %}
           {% include post/date.html %}{% if updated %}{{ updated }}{% else %}{{ time }}{% endif %}
           {% include post/categories.html %}
-         <span class="glyphicon glyphicon-edit"></span> <a href="http://prose.io/#paskal/terrty/edit/master/source/{{ page.path }}">edit</a>
         </p>
         {% unless page.sharing == false %}
           {% include post/sharing.html %}
