@@ -1,11 +1,5 @@
 .dockerignore
-.git*
-.vscode
 cv
 Dockerfile
 LICENSE
-Makefile
-nginx
 public
-README.md
-source
