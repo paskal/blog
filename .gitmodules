@@ -1,0 +1,4 @@
+[submodule "new-blog/themes/beg"]
+	path = new-blog/themes/beg
+	url = git@github.com:dim0627/hugo_theme_beg.git
+	branch = master
