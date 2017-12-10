@@ -24,3 +24,5 @@ Canonical запустило [Ubuntu App Showdown](https://www.reddit.com/r/ubun
 Будут силы — сначала разберусь с [дропбоксом](/2011/getting-16gb-in-dropbox-by-refferals/), потом переведу этот блог с опостылевшего wordpress на [nikola](http://getnikola.com/), .html во все поля, никакого php и заморочек с кешированием.
 
 Пишите письма.
+
+<!--more-->

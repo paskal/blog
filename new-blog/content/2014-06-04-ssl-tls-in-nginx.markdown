@@ -14,7 +14,7 @@ slug: ssl-tls-in-nginx
 
 ---
 
-{% gist 628882bee1948ef126dd %}
+{{< gist paskal 628882bee1948ef126dd >}}
 
 ---
 

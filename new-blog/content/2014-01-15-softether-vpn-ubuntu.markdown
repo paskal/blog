@@ -31,3 +31,5 @@ slug: softether-vpn-ubuntu
 ### Установка
 
         sudo apt-add-repository ppa:paskal-07/softethervpn && sudo apt-get update sudo apt-get install softether-vpnserver
+
+<!--more-->

@@ -164,3 +164,5 @@ Zabbix has UI with all possible features built-in. The only bad thing you could 
 That’s a long post with many images and even more text. There is no answer for simple questions like “which is best”, but a collection of information for decisions on these questions, based on your requirements. I’m looking for a system that works on Linux and monitors Linux well, so platform support is not considered. Also, I’m looking for a system that will help me monitor thousands of servers with tens of thousands of services.
 
 In my own opinion, only Zabbix and Icinga 2 are mature enough to be used in enterprise, and the main question one should ask himself is which monitoring philosophy he could relate to, because both do the same thing with very different approaches.
+
+<!--more-->

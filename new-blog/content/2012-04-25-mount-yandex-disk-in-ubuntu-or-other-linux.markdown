@@ -15,3 +15,5 @@ slug: mount-yandex-disk-in-ubuntu-or-other-linux
     cat "https://webdav.yandex.ru /home/user/yandex   davfs   user,rw,noauto   0   0" >> /etc/fstab
 
     cat "/home/user/yandex user@ya.ru "password"" >> ~/.davfs2/secrets
+
+<!--more-->

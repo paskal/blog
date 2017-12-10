@@ -41,3 +41,5 @@ To start, open your project task configuration file via **Ctrl**+**P**, **>Confi
 ```
 
 What will it do? Copy current open file to server's home (~) folder using rsync (non-verbose mode, add **-v** in case of trouble), then make it executable and run it via ssh.
+
+<!--more-->
