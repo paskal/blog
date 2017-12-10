@@ -4,7 +4,7 @@ tags:
 comments: true
 date: 2014-02-26T00:00:00Z
 title: Как подготовиться к армии
-updated: 2014-04-28 12:34
+lastmod: 2014-04-28T12:34Z
 slug: prepare-to-fight
 ---
 
