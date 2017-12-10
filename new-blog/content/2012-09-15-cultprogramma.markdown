@@ -5,7 +5,7 @@ comments: false
 date: 2012-09-15T00:00:00Z
 title: Культурная программа
 updated: 2012-10-31 11:33
-url: /2012/cultprogramma/
+slug: cultprogramma
 ---
 
 Под катом мои впечатления от хождения по театрам в этот театральный сезон.

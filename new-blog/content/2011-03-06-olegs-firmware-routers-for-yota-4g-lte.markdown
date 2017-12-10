@@ -6,7 +6,7 @@ comments: true
 date: 2011-03-06T13:52:05Z
 title: Роутеры, поддерживающие Yota WiMax
 updated: 2014-03-06 13:52:05
-url: /2011/olegs-firmware-routers-for-yota-4g-lte/
+slug: olegs-firmware-routers-for-yota-4g-lte
 ---
 
 В этом посте я рассмотрю существующие решения для раздачи Yota-интернета, их стоимость, и их настройку.

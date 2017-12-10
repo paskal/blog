@@ -5,7 +5,7 @@ comments: true
 date: 2017-08-24T19:24:03Z
 description: How to setup remote code execution using VSC
 title: How to build code remotely in Visual Studio Code
-url: /2017/remote-code-build-in-visual-studio-code/
+slug: remote-code-build-in-visual-studio-code
 ---
 
 In Sublime Text you could archieve remote code execution using following code:

@@ -4,7 +4,7 @@ tags:
 comments: false
 date: 2012-11-06T00:00:00Z
 title: Контрольная явка
-url: /2012/control-attendance/
+slug: control-attendance
 ---
 
 20-го октября 2012 года в 9:30 утра состоялась контрольная явка.

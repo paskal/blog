@@ -4,7 +4,7 @@ tags:
 comments: true
 date: 2012-02-15T18:48:48Z
 title: Crusader Kings 2 cheats
-url: /2012/crusader-kings-2-cheats/
+slug: crusader-kings-2-cheats
 ---
 
 [Source](http://forum.paradoxplaza.com/forum/showthread.php?585658-Cheats).

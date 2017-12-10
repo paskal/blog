@@ -5,7 +5,7 @@ comments: true
 date: 2014-02-26T00:00:00Z
 title: Как подготовиться к армии
 updated: 2014-04-28 12:34
-url: /2014/prepare-to-fight/
+slug: prepare-to-fight
 ---
 
 Подготовка, три месяца до армии:

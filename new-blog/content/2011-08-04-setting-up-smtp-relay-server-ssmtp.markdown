@@ -5,7 +5,7 @@ tags:
 comments: true
 date: 2011-08-04T14:45:45Z
 title: Настройка smtp relay server - ssmtp
-url: /2011/setting-up-smtp-relay-server-ssmtp/
+slug: setting-up-smtp-relay-server-ssmtp
 ---
 
 Если у вас есть свой сервер, вы наверняка не раз задумывались о том, чтобы иметь возможность отсылать с него логи себе на почту, или дать возможность веб-сайту на этом сервере рассылать письма.

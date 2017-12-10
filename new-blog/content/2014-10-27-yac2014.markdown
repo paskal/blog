@@ -7,7 +7,7 @@ description: Предполагаемая программа моей предс
   2014.
 keywords: Яндекс, Yandex, YAC, Yet another Conference
 title: Программа поездки на Yet another Conference 2014
-url: /2014/yac2014/
+slug: yac2014
 ---
 
 30 октября пройдёт очередная [Yet another Conference](https://yandex.ru/yac2014/ "Yet another Conference - YaC 2014"), мне выслали приглашение, и я жду-жду-жду. Ниже предполагаемая моя карта перемещения; безумно круто будет увидеть Игоря Сысоева, да и много других интересных докладчиков и тем.

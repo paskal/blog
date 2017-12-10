@@ -4,7 +4,7 @@ tags:
 comments: false
 date: 2012-05-12T13:14:23Z
 title: Перенос пользователей со старого linux сервера на новый
-url: /2012/migrating-users-from-old-linux-server-to-new-one/
+slug: migrating-users-from-old-linux-server-to-new-one
 ---
 
 Прекрасная [статья о переносе пользователей со старого linux сервера на новый](http://linax.wordpress.com/2010/07/20/move-user-accounts-from-old-linux-server-to-a-new-linux-server/).

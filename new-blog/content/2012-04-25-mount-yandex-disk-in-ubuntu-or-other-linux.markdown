@@ -4,7 +4,7 @@ tags:
 comments: true
 date: 2012-04-25T06:03:50Z
 title: Mount Yandex.Disk in Ubuntu or Other Linux
-url: /2012/mount-yandex-disk-in-ubuntu-or-other-linux/
+slug: mount-yandex-disk-in-ubuntu-or-other-linux
 ---
 
 [Яндекс.Диск](https://disk.yandex.ru/invite/?hash=9GMQ37ZU "Яндекс.Диск") is free 10Gb [WebDav](http://help.yandex.ru/disk/webdav.xml "Доступ к Диску через WebDAV — Яндекс.Помощь. Диск") storage.
