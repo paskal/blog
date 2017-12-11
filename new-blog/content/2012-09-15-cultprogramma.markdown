@@ -4,7 +4,7 @@ tags:
 comments: false
 date: 2012-09-15T00:00:00Z
 title: Культурная программа
-lastmod: 2012-10-31T11:33Z
+lastmod: 2012-10-31T11:33:00Z
 slug: cultprogramma
 ---
 
