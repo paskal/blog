@@ -17,7 +17,7 @@ slug: language
 
 К теме языка: есть один бывший программист, сейчас бизнес-ангел, [Paul Graham](https://ru.wikipedia.org/wiki/%D0%93%D1%80%D1%8D%D0%BC,_%D0%9F%D0%BE%D0%BB), известный своими [эссе](http://www.paulgraham.com/articles.html), большая часть которых в последнее время посвящена стартапам (скукотища), однако бывают и интересные темы, в их числе последняя — письмо.
 
-{% blockquote Paul Graham http://www.paulgraham.com/talk.html Write Like You Talk %}
+{{< blockquote author="Paul Graham" title="Write Like You Talk" link="http://www.paulgraham.com/talk.html" >}}
 Here's a simple trick for getting more people to read what you write: write in spoken language.
 
 Something comes over most people when they start writing. They write in a different language than they'd use if they were talking to a friend. The sentence structure and even the words are different. No one uses "pen" as a verb in spoken English. You'd feel like an idiot using "pen" instead of "write" in a conversation with a friend.
@@ -31,7 +31,7 @@ You don't need complex sentences to express complex ideas. When specialists in s
 People often tell me how much my essays sound like me talking. The fact that this seems worthy of comment shows how rarely people manage to write in spoken language. Otherwise everyone's writing would sound like them talking.
 
 If you simply manage to write in spoken language, you'll be ahead of 95% of writers. And it's so easy to do: just don't let a sentence through unless it's the way you'd say it to a friend.
-{% endblockquote %}
+{{< /blockquote >}}
 
 Пол пишет, что писать стоит так же, как ты говоришь, даже если ты описываешь какие-то сложные материи: тут штука в том, чтобы язык не мешал донести до читающего и так непростую идею. Как по-моему, это очень крутой и простой принцип, чтобы писать красивее и понятнее, я попробую впредь следовать ему.
 
@@ -41,7 +41,7 @@ If you simply manage to write in spoken language, you'll be ahead of 95% of writ
 
 Продолжая тему открытий, не могу умолчать о [REDRUMERS](http://redrumers.com/ "REDRUMERS | кино, книги и гики") — сайте с часто обновляющимися статьями о [кино](http://redrumers.com/category/%D0%BA%D0%B8%D0%BD%D0%BE/) и [книгах](http://redrumers.com/category/%D0%BA%D0%BD%D0%B8%D0%B3%D0%B8/), [комиксах](http://redrumers.com/category/%D0%BA%D0%BE%D0%BC%D0%B8%D0%BA%D1%81%D1%8B/) и [сериалах](http://redrumers.com/category/%D1%81%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D1%8B/). Сейчас на сайт пишут [12 ребят](http://redrumers.com/about/), отдельно хочу отметить [Minimus Textus](http://redrumers.com/author/minimustextus/) и [Not This Fucking Johnny](http://redrumers.com/author/notthisfuckingjohnny/), он же [Феликс Зилич](http://felix-zilich.livejournal.com/), с которым я познакомился через [GoodReads](https://www.goodreads.com/user/show/6092532-felix-zilich) и его замечательную запись о том, как много читать:
 
-{% blockquote Феликс Зилич https://felix-zilich.livejournal.com/832709.html как читать много книг, перестать волноваться и, быть может, полюбить атомную бомбу %}
+{{< blockquote author="Феликс Зилич" title="как читать много книг, перестать волноваться и, быть может, полюбить атомную бомбу" link="https://felix-zilich.livejournal.com/832709.html" >}}
 Поэтому, когда друзья или знакомые говорят мне, что больше не читают книги: мол, много работы, сильно устаю, придешь домой, упадешь перед телевизором и даже чая не можешь себе налить, то я почти всегда говорю, что это пиздёж и провокация. Или меняй работу, сам видишь – она тебя убивает, или перестань врать самому себе. Лень, комплексы, прокрастинация. Один старый приятель недавно жаловался. Говорит, пару лет назад я бросил читать книги и начал только смотреть фильмы. Потом бросил смотреть фильмы и начал смотреть только сериалы. Потом бросил смотреть сериалы начал смотреть только видосики по ютубу… Кто я после этого? Ну, отвечаю, два года назад ты был офисным планктоном, сегодня – ты просто еблан. Понимаешь, говорю, тут какбы все очень просто. В твоей голове две зоны комфорта – твоя собственная и твоего внутреннего эго. ТВОЯ зона комфорта – это когда ты сидишь на берегу океана, тепло, солнечно, вокруг толпа шикарных женщин, ты говоришь на 15 языках, программируешь на 30, умеешь телепатически общаться с пришельцами из космоса. Зона комфорта твоего ЭГО – ты лежишь в луже теплого и мягкого говна, тепло, мягко и ничего не надо делать, хочешь жрать – открой рот и оно заползет само, хочешь трахаться – зачем тебе трахаться, говно вокруг тебя теплое и мягкое, тебе вообще больше ничего не надо.
 
 <...>
@@ -51,7 +51,7 @@ If you simply manage to write in spoken language, you'll be ahead of 95% of writ
 Первый – найди свой magic place. Место, где тебе наиболее приятно и комфортно читать. Совет звучит, на первый взгляд, дурацки и наивно, но поверьте, не шутка. Проблема с чтением, с которой я начал этот пост, была именно из-за этого. Я сменил дом и не нашел на новой квартире подходящее “ритуальное” место. Целый год прожил сироткой. Просто забыл, что должен как кот пометить все углы, чтобы ощутить где и что. Кто-то читает книги в сортире, кто-то в ванной, кто-то на кухне под батареей. Не стремайтесь двигать мебель и громко шуметь. Вам позарез нужно место, в котором можно залипнуть с книгой на два или три часа. Если у вас нет такого места – плохо; если вы считаете, что оно вам не нужно – еще хуже.
 
 Второе – найди свой “forcefield of empathy” (или, на худой конец, forcefield of rivalry). Хотя бы пару человек, которые что-то читают и способны невольно мотивировать тебя на чтение. “Что-то читают” – это я плохо выразился. Если твой друг читает только Бегбедера и Пелевина, это может напрочь отбить желание брать книги в руки. Лучше всего, если они читают вещи, о которых ты раньше никогда не слышал, что-то интригующее и непривычное. Люди нужны. ЖИВЫЕ ЛЮДИ. Одному всегда сложно тянуть свой крест. Многие бросили читать книги и комиксы только потому что в реале их не с кем было обсудить. Пусть общение в виртуале – это выход, но выход не слишком универсальный. Иногда он только добавляет уныния и разочарования.
-{% endblockquote %}
+{{< /blockquote >}}
 
 Я отвлёкся, о [redrumers](http://redrumers.com/): читайте, там действительно много материала, что-нибудь по вкусу найдётся каждому. Авторы очень круты, для меня этот коллективный блог стал открытием года.
 

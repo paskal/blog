@@ -12,9 +12,9 @@ slug: softether-vpn-ubuntu
 
 Что такое SoftEther VPN подробно описано в посте на habr'е, советую ознакомится с ней, если вы её ещё не читали:
 
-{% blockquote ValdikSS http://habrahabr.ru/post/208782/ SoftEther VPN — продвинутый мультипротокольный VPN-сервер и клиент %}
+{{< blockquote author="ValdikSS" title="SoftEther VPN — продвинутый мультипротокольный VPN-сервер и клиент" link="http://habrahabr.ru/post/208782/" >}}
 в этой статье речь пойдет о VPN-сервере, который может поднимать L2TP/IPsec, OpenVPN, MS-SSTP, L2TPv3, EtherIP-серверы, а также имеет свой собственный протокол «SSL-VPN», который неотличим от обычного HTTPS-трафика (чего не скажешь про OpenVPN handshake, например), может работать не только через TCP/UDP, но и через ICMP (подобно pingtunnel, hanstunnel) и DNS (подобно iodine), работает быстрее (по заверению разработчиков) текущих имплементаций, строит L2 и L3 туннели, имеет встроенный DHCP-сервер, поддерживает как kernel-mode, так и user-mode NAT, IPv6, шейпинг, QoS, кластеризацию, load balancing и fault tolerance, может быть запущен под Windows, Linux, Mac OS, FreeBSD и Solaris и является Open-Source проектом под GPLv2
-{% endblockquote %}
+{{< /blockquote >}}
 
 ### Документация SoftEther VPN
 
