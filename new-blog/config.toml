@@ -1,0 +1,23 @@
+baseurl = "https://terrty.net/"
+languageCode = "en-us"
+title = "Paskal's notes"
+theme = "beg"
+copyright = "<a rel=\"license\" href=\"https://creativecommons.org/licenses/by/4.0/\" >Copyleft</a> &copy; 2017 Dmitry Verhoturov"
+disqusShortname = "realmfpa"
+rssLimit = 100
+
+[permalinks]
+  "" = "/:year/:slug/"
+
+[[menu.navbar]]
+ name = "Résumé"
+ url = "/cv/"
+
+[taxonomies]
+  tag = "tags"
+
+[params]
+  dateformat = "Jan 2, 2006"
+
+[author]
+  name = "Dmitry Verhoturov"
