@@ -1,0 +1,44 @@
+version: '3'
+services:
+
+    blog:
+        image: paskal/hugo
+
+        logging:
+          driver: json-file
+          options:
+            max-size: "10m"
+            max-file: "5"
+
+        volumes:
+            - ./public:/srv/hugo/public
+            - ./:/srv/hugo:ro
+
+    cv:
+        build: ./cv
+        image: paskal/jsonresume
+        command: export --theme kendall verhoturov.html
+
+        logging:
+          driver: json-file
+          options:
+            max-size: "10m"
+            max-file: "5"
+
+        volumes:
+            - ./public/cv/:/data/
+            - ./cv/resume.json:/data/resume.json:ro
+
+    pdf:
+        image: pink33n/html-to-pdf
+        command: --url https://terrty.net/cv/verhoturov.html --pdf verhoturov.pdf
+        privileged: true
+
+        logging:
+          driver: json-file
+          options:
+            max-size: "10m"
+            max-file: "5"
+
+        volumes:
+            - ./public/cv,target=/tmp/html-to-pdf
