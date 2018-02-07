@@ -2,6 +2,7 @@ version: '3'
 services:
 
     blog:
+        build: .
         image: paskal/hugo
 
         logging:
@@ -17,7 +18,7 @@ services:
     cv:
         build: ./cv
         image: paskal/jsonresume
-        command: export --theme kendall verhoturov.html
+        command: export --theme kendall /tmp/verhoturov.html
 
         logging:
           driver: json-file
@@ -26,7 +27,7 @@ services:
             max-file: "5"
 
         volumes:
-            - ./public/cv/:/data/
+            - ./public/cv/:/tmp/
             - ./cv/resume.json:/data/resume.json:ro
 
     pdf:
@@ -41,4 +42,4 @@ services:
             max-file: "5"
 
         volumes:
-            - ./public/cv,target=/tmp/html-to-pdf
+            - ./public/cv:/tmp/html-to-pdf
