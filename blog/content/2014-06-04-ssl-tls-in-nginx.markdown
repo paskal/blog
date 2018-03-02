@@ -12,6 +12,8 @@ slug: ssl-tls-in-nginx
 
 Для начала приведу [правильную](https://www.ssllabs.com/projects/best-practices/index.html "Qualys SSL Labs - Projects / SSL/TLS Deployment Best Practices") конфигурацию, которую вы можете утащить к себе. И, да, под HTTPS я [имею в виду](https://www.howsmyssl.com/s/about.html#tls-vs-ssl "About · How's My SSL?") [TLS](http://en.wikipedia.org/wiki/Transport_Layer_Security "Transport Layer Security — Wikipedia").
 
+<!--more-->
+
 ---
 
 {{< gist paskal 628882bee1948ef126dd >}}
@@ -19,8 +21,6 @@ slug: ssl-tls-in-nginx
 ---
 
 Ниже разъяснение значимых моментов.
-
-<!--more-->
 
     ssl_certificate /etc/nginx/ssl/domain.net.pem;
 
@@ -59,19 +59,17 @@ slug: ssl-tls-in-nginx
 
 Слушаем порт 443 IPv4 и IPv6 на всех интерфейсах, deferred ускоряет работу соединений linux-сервера ([info](http://www.techrepublic.com/article/take-advantage-of-tcp-ip-options-to-optimize-data-transmission/ "Take advantage of TCP/IP options to optimize data transmission — TechRepublic")), spdy включает использование [быстрого](http://blog.chromium.org/2013/11/making-web-faster-with-spdy-and-http2.html "Chromium Blog: Making the web faster with SPDY and HTTP/2") протокола [SPDY](https://en.wikipedia.org/wiki/SPDY "SPDY — Wikipedia"), если клиент поддерживает это ([docs](http://nginx.org/en/docs/http/ngx_http_core_module.html#listen "Module ngx_http_core_module"), [ru_docs](http://nginx.org/ru/docs/http/ngx_http_core_module.html#listen "Модуль ngx_http_core_module"), [результат внедрения SPDY Яндексом](http://habrahabr.ru/company/yandex/blog/222951/ "Совместный эксперимент команд Яндекс.Почты и Nginx: действительно ли SPDY ускорит интернет? / Блог компании Яндекс / Хабрахабр"))
 
-    server {
-        listen 80 default_server;
-        listen [::]:80 default_server ipv6only=on;
-        server_name .domain.net;
-        return 301 https://domain.net;
-    }
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server ipv6only=on;
+	server_name _;
+	return 301 https://$host$request_uri;
+}
 
 Здесь приведён правильный способ перенаправить домен с www на домен без www (или наоборот). default_server в [listen](http://nginx.org/ru/docs/http/ngx_http_core_module.html#listen "Модуль ngx_http_core_module") означает что, если не сработал иной блок, будет использован этот. В данном случае — мы перенаправим пользователя, откуда бы он не пришёл, на `https://domain.net`.
 
 [Результат теста безопасности](https://www.ssllabs.com/ssltest/analyze.html?d=terrty.net "Qualys SSL Labs — Projects / SSL Server Test / terrty.net") сервера с такими настройками.
 
-Результат таких настроек: в свежую версию Firefox главная страница этого сайта была получена за 180мс:
-
-![wireshark https dump](https://dump.bitcheese.net/images/ezurono/terrty.net_https.png)
+Результат таких настроек: в Firefox главная страница этого сайта была получена за 180мс.
 
 **Huge thanks to [Hynek Schlawack](https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/ "Hardening Your Web Server’s SSL Ciphers")**.
