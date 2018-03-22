@@ -8,6 +8,10 @@ title: Установка SoftEther VPN в Ubuntu
 slug: softether-vpn-ubuntu
 ---
 
+В этой статье рассказывается, как установить SoftEther VPN в Ubuntu\Debian.
+
+<!--more-->
+
 ### Вступление
 
 Что такое SoftEther VPN подробно описано в посте на habr'е, советую ознакомится с ней, если вы её ещё не читали:
@@ -31,5 +35,3 @@ slug: softether-vpn-ubuntu
 ### Установка
 
         sudo apt-add-repository ppa:paskal-07/softethervpn && sudo apt-get update sudo apt-get install softether-vpnserver
-
-<!--more-->

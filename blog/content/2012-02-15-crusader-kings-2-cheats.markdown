@@ -9,6 +9,8 @@ slug: crusader-kings-2-cheats
 
 [Source](http://forum.paradoxplaza.com/forum/showthread.php?585658-Cheats).
 
+<!--more-->
+
     > Press § (tilda) or Alt + 2 1 to open the console and then type the command.
 
     cash = 5000 gold, add a number after to get a specific amount, for example "cash 500" gives you 500 gold.
