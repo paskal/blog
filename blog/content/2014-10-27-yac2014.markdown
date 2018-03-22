@@ -14,6 +14,8 @@ slug: yac2014
 
 <small>Там точно будет [Искуариэ́ль](http://isqua.ru/), спешите познакомиться:)</small>
 
+<!--more-->
+
 ### Маршрут ###
 
 #### [Секретный доклад](https://events.yandex.ru/lib/talks/2507/) <mark style="background: #666; color: #fff">General</mark>
