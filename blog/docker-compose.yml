@@ -2,9 +2,24 @@ version: '3'
 services:
 
     blog:
-        # preview: docker-compose run --service-ports blog -D --bind "0.0.0.0" server
         build: .
         image: paskal/hugo
+
+        logging:
+          driver: json-file
+          options:
+            max-size: "10m"
+            max-file: "5"
+
+        volumes:
+            - ./public:/srv/hugo/public
+            - ./:/srv/hugo:ro
+
+    blog-preview:
+        image: paskal/hugo
+        command: -D --bind "0.0.0.0" server
+        hostname: blog-preview
+        container_name: blog-preview
 
         logging:
           driver: json-file
