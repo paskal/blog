@@ -297,7 +297,7 @@ Posts page looks exactly main page, tags have all needed information and sorted 
 
 [![Refined single post page](/images/hugo_themes/refined_single_post.png)](/images/hugo_themes/refined_single_post.png)
 
-Very unique design I've seen only once more in all 200+ themes, this theme almost directly quotes markdown code from which the content is created (e.g. `##` becomes `*`, `###` becomes `**`, but they also still represent `h2` and `h3` HTML tags). If you think there is something unusual on the right, you're right: that's table of content, one of two from all themes there, and done with finest quality.  No related articles, however next and previous pages links are present, and comments are in place, but they are [Isso](https://posativ.org/isso/) instead of disqus.
+Very unique design I've seen only once more in all 200+ themes, this theme almost directly quotes markdown code from which the content is created (e.g. `##` becomes `*`, `###` becomes `**`, but they also still represent `h2` and `h3` HTML tags). If you think there is something unusual on the right, you're right: that's table of content, one of two from all themes there, and done with finest quality.  No related articles, however next and previous pages links are present, and comments are in place, but they are [Isso](https://posativ.org/isso/) in addition to disqus.
 
 ---
 

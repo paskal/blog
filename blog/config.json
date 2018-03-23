@@ -1,33 +1,50 @@
 {
   "baseurl": "https://terrty.net/",
   "languageCode": "en-us",
-  "title": "Paskal's notes",
+  "title": "Notes on Blue Skies",
   "theme": "beg",
-  "copyright": "<a rel=\"license\" href=\"https://creativecommons.org/licenses/by/4.0/\" >Copyleft</a> &copy; 2017 Dmitry Verhoturov",
+  "copyright": "<a rel=\"license\" href=\"https://creativecommons.org/licenses/by/4.0/\" >Copyleft</a> &copy; Dmitry Verhoturov",
   "disqusShortname": "realmfpa",
   "rssLimit": 100,
   "permalinks": {
-    "": "/:year/:slug/"
+    "post": "/:year/:slug/"
   },
   "menu": {
-    "navbar": [
+    "main": [
+      {
+        "name": "Tags",
+        "url": "/tags/",
+        "weight": 30
+      },
       {
         "name": "Résumé",
-        "url": "/cv/"
+        "url": "/cv/",
+        "weight": 50
       },
       {
         "name": "Source code",
-        "url": "https://github.com/paskal/terrty"
+        "url": "https://github.com/paskal/terrty",
+        "weight": 100
       }
     ]
   },
   "taxonomies": {
     "tag": "tags"
   },
-  "params": {
-    "dateformat": "Jan 2, 2006"
-  },
   "author": {
     "name": "Dmitry Verhoturov"
+  },
+  "params": {
+    "social": {
+      "a-email": "mailto:paskal.07@gmail.com",
+      "b-weibo": "https://www.goodreads.com/user/show/23839983",
+      "c-github": "https://github.com/paskal",
+      "d-linkedin": "https://www.linkedin.com/in/verhoturov/"
+    },
+    "since": "2011",
+    "archive-paginate": "10",
+    "authorlocation": "Moscow, Russia",
+    "linkedinName": "",
+    "dateFormatToUse": "Jan 2, 2006"
   }
 }
