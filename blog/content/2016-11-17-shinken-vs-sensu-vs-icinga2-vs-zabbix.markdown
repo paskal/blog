@@ -49,7 +49,7 @@ Because configuration is stored in files, you could use generic things, like ver
 
 ### UI
 
-[![Shinken UI](https://github.com/shinken-monitoring/mod-webui/raw/master/doc/animation.gif)](https://www.shinken-enterprise.com/en/product/)
+[![Shinken UI](https://raw.githubusercontent.com/shinken-monitoring/mod-webui/develop/doc/animation.gif)](https://www.shinken-enterprise.com/en/product/)
 
 [Shinken WebUI](https://github.com/shinken-monitoring/mod-webui/wiki) is proven itself to work well with thousands of hosts and tens of groups.
 
@@ -76,7 +76,7 @@ Sensu pulls events from queue and executes handlers on them; that’s it. Handle
 
 Sensu architecture is flexible, because every component can be replicated and replaced in a few ways. A sample fault-tolerant setup is described in the [following presentation](https://vimeo.com/92770954); here is a generalized view:
 
-![Sensu architectural diagram](https://sensuapp.org/docs/0.25/img/sensu-diagram.gif)
+![Sensu architectural diagram](https://docs.sensu.io/images/sensu-diagram.gif)
 
 With HAProxy and Redis-sentinel, you can build a setup in which, if one node of a type is alive (Sensu API, Sensu Dashboard, RabbitMQ, Redis), your monitoring will continue to work without manual intervention.
 
@@ -86,7 +86,7 @@ Built-in (Puppet, Chef, EC2!) but only in [paid](https://sensuapp.org/docs/lates
 
 ### Audit log
 
-[Built-in](https://sensuapp.org/docs/0.23/enterprise/console/audit-logging.html), however, only in Enterprise edition.
+[Built-in](https://docs.sensu.io/sensu-enterprise-dashboard/latest/rbac/audit-logging/), however, only in Enterprise edition.
 
 ### UI
 
@@ -122,7 +122,7 @@ Icinga 2 has a well-designed [distributed monitoring scheme](https://www.icinga.
 
 ### Configuration systems integration
 
-Pretty good, here are two presentations: [The Road to Lazy Monitoring with Icinga 2 and Puppet](https://www.youtube.com/watch?v=j2kG8F7rixw) by Tom de Vylder and [Icinga 2 and Puppet: Automated Monitoring](https://www.youtube.com/watch?v=lLsPwI-6UII) by Walter Heck. The key Icinga feature is storing configuration in files, which makes them easy-to-generate on the Puppet side, which I achieved using [PuppetDB](https://docs.puppet.com/puppetdb/latest/) as a data source about all hosts and services.
+Pretty good, here are two presentations: [The Road to Lazy Monitoring with Icinga 2 and Puppet](https://www.youtube.com/watch?v=j2kG8F7rixw) by Tom de Vylder and [Icinga 2 and Puppet: Automated Monitoring](https://www.youtube.com/watch?v=lLsPwI-6UII) by Walter Heck. The key Icinga feature is storing configuration in files, which makes them easy-to-generate on the Puppet side, which I achieved using [PuppetDB](https://docs.puppet.com/puppetdb/) as a data source about all hosts and services.
 
 ### Audit log
 
@@ -156,7 +156,7 @@ Zabbix logs everything well, except one huge blind spot: Changes [via API are no
 
 ### UI
 
-[![Dashboard is a main screen of Zabbix](https://www.zabbix.com/img/screenshots/3.0/screenshots/mon_dashboard.png)](http://www.zabbix.com/screenshots)
+[![Dashboard is a main screen of Zabbix](https://assets.zabbix.com/img/tmp/screenshots/mon_dashboard2.png)](http://www.zabbix.com/screenshots)
 
 Zabbix has UI with all possible features built-in. The only bad thing you could say about it is it’s not extendable at all — you have either to stick with what UI gives you or do something on your own. You have no option to improve UI because of its general complexity.
 
