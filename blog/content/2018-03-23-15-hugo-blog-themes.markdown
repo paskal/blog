@@ -4,7 +4,7 @@ tags:
 comments: true
 date: 2018-03-23T00:00:03Z
 description: Best blog themes for Hugo framework in one place
-title: 13 Hugo Framework blog themes
+title: 15 Hugo Framework blog themes
 ---
 
 I've tested all 202 Hugo themes [from the catalogue](https://github.com/gohugoio/hugoThemes) plus 3 missing from it for basic functionality and picked the best blog-oriented ones. By that I mean all of them have blog posts shown on the main page and most of them support posts tags.
@@ -99,6 +99,30 @@ Text with fixed width, a sign of a good taste. However minimalism means there is
 
 ---
 
+## [coder](https://github.com/luizdepra/hugo-coder)
+
+### Main page
+
+[![coder main page](/images/hugo_themes/coder_main.png)](/images/hugo_themes/coder_main.png)
+
+Simplicity at maximum. Everything on it's place, right font - and here comes your first impression.
+
+### Navigation
+
+[![coder posts page](/images/hugo_themes/coder_posts.png)](/images/hugo_themes/coder_posts.png)
+
+[![coder tag page](/images/hugo_themes/coder_tags.png)](/images/hugo_themes/coder_tags.png)
+
+Posts page lacks both tags and summaries, either one of them is better to be present. Tags lack frequiency information, but instead have date of last post which is rare and cool.
+
+### Single page
+
+[![coder single post page](/images/hugo_themes/coder_single_post.png)](/images/hugo_themes/coder_single_post.png)
+
+Widest post content out there with deep spacing between the lines, there is a room for improvement for better readability and higher density but it's unique for sure and someone might find this style appealing. No disqus comments and no related articles list present yet.
+
+---
+
 ## [Fabric](https://github.com/wd/hugo-fabric)
 
 ### Main page
@@ -119,7 +143,7 @@ Fabric's posts page is the best navigation without summaries I've seen out there
 
 [![Fabric single post page](/images/hugo_themes/fabric_single_post.png)](/images/hugo_themes/fabric_single_post.png)
 
-Solid text render without anything out of order. I've included a bit bigger screenshot than usual to show you neat shadow around the image and caption under it, a nice feature which most themes lack. Disqus support is there, however no related articles list support.
+Solid text render without anything out of order. I've included a bit bigger screenshot than usual to show you neat shadow around the image and caption under it, which is present in no other theme. Disqus support is there, however no related articles list support.
 
 ---
 
@@ -273,7 +297,7 @@ Posts page looks exactly main page, tags have all needed information and sorted 
 
 [![Refined single post page](/images/hugo_themes/refined_single_post.png)](/images/hugo_themes/refined_single_post.png)
 
-Very unique design I've seen only once more in all 200+ themes, this theme almost directly quotes markdown code from which the content is created (e.g. `##` becomes `*`, `###` becomes `**`, but they also still represent `h2` and `h3` HTML tags). If you think there is something unusual on the right, you're right: that's table of content, one and only from all themes there.  No related articles, however next and previous pages links are present, and comments are in place, but they are [Isso](https://posativ.org/isso/) instead of disqus.
+Very unique design I've seen only once more in all 200+ themes, this theme almost directly quotes markdown code from which the content is created (e.g. `##` becomes `*`, `###` becomes `**`, but they also still represent `h2` and `h3` HTML tags). If you think there is something unusual on the right, you're right: that's table of content, one of two from all themes there.  No related articles, however next and previous pages links are present, and comments are in place, but they are [Isso](https://posativ.org/isso/) instead of disqus.
 
 ---
 
@@ -290,3 +314,27 @@ Very unique design I've seen only once more in all 200+ themes, this theme almos
 [![Retroful Hugo single post page](/images/hugo_themes/retroful_single_post.png)](/images/hugo_themes/retroful_single_post.png)
 
 It looks like I imaging 80's terminals, but in a way there were redefined in [Alien](https://www.youtube.com/watch?v=qb43-hn_-_c) (1979), and also it refers to Tokyo neon lights from [Bladerunner](https://www.youtube.com/watch?v=aFJF2CRASRM) (1982). No related articles (but previous\next post link present), but disqus comments are supported.
+
+---
+
+## [Whiteplain](https://github.com/taikii/whiteplain)
+
+### Main page
+
+[![whiteplain main page](/images/hugo_themes/whiteplain_main.png)](/images/hugo_themes/whiteplain_main.png)
+
+Black, white and blue palette, everything is very clear and assembled with great care. Also you could notice that's one of the themes with table of content enabled by default.
+
+### Navigation
+
+[![whiteplain posts page](/images/hugo_themes/whiteplain_posts.png)](/images/hugo_themes/whiteplain_posts.png)
+
+[![whiteplain tag page](/images/hugo_themes/whiteplain_tags.png)](/images/hugo_themes/whiteplain_tags.png)
+
+Posts page is the same as main page and tags page, only title changes. Posts are listed with summaries and all the metadata. Tags are the best out there, they have maximum metadata presence plus alphabetical sort - my heart is with these tags.
+
+### Single page
+
+[![whiteplain single post page](/images/hugo_themes/whiteplain_single_post.png)](/images/hugo_themes/whiteplain_single_post.png)
+
+Text is not fancy, but very solid and readable and have no distracting elements which some themes tend to use (like quotation boxes). Disqus support is in place, next\previous post navigation but no related articles (which could look alien there).
