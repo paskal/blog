@@ -1,8 +1,7 @@
 {
   "baseurl": "https://terrty.net/",
-  "languageCode": "en-us",
   "title": "Notes on Blue Skies",
-  "theme": "beg",
+  "theme": "hugo-theme-jane",
   "copyright": "<a rel=\"license\" href=\"https://creativecommons.org/licenses/by/4.0/\" >Copyleft</a> &copy; Dmitry Verhoturov",
   "disqusShortname": "realmfpa",
   "rssLimit": 100,
@@ -12,9 +11,19 @@
   "menu": {
     "main": [
       {
+        "name": "Home",
+        "url": "/",
+        "weight": 20
+      },
+      {
         "name": "Tags",
         "url": "/tags/",
         "weight": 30
+      },
+      {
+        "name": "Archive",
+        "url": "/post/",
+        "weight": 40
       },
       {
         "name": "Résumé",
@@ -42,7 +51,6 @@
       "d-linkedin": "https://www.linkedin.com/in/verhoturov/"
     },
     "since": "2011",
-    "archive-paginate": "10",
     "authorlocation": "Moscow, Russia",
     "linkedinName": "",
     "dateFormatToUse": "Jan 2, 2006"
