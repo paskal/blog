@@ -1,0 +1,12 @@
+{
+  "short_name": "terrty.net",
+  "name": "Notes on Blue Skies",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    }
+  ],
+  "start_url": "/"
+}
