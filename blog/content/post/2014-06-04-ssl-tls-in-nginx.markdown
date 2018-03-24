@@ -10,7 +10,7 @@ lastmod: 2014-07-09T07:51:19Z
 slug: ssl-tls-in-nginx
 ---
 
-Для начала приведу [правильную](https://www.ssllabs.com/projects/best-practices/index.html "Qualys SSL Labs - Projects / SSL/TLS Deployment Best Practices") конфигурацию, которую вы можете утащить к себе. И, да, под HTTPS я [имею в виду](https://www.howsmyssl.com/s/about.html#tls-vs-ssl "About · How's My SSL?") [TLS](http://en.wikipedia.org/wiki/Transport_Layer_Security "Transport Layer Security — Wikipedia").
+Для начала приведу [правильную](https://www.ssllabs.com/projects/best-practices/index.html "Qualys SSL Labs - Projects / SSL/TLS Deployment Best Practices") конфигурацию, которую вы можете утащить к себе. И, да, под HTTPS я [имею в виду](https://www.howsmyssl.com/s/about.html#tls-vs-ssl "About · How's My SSL?") [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security "Transport Layer Security — Wikipedia").
 
 <!--more-->
 
@@ -32,7 +32,7 @@ slug: ssl-tls-in-nginx
 
     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
 
-Протоколы общения клиента и сервера. SSLv3 небезопасен, на замену ему создан TLSv1, который мы и используем. Отказом от SSLv3 мы теряем поддержку IE6, по данным Cloudfare на май 2014 года это [0.000002%](http://blog.cloudflare.com/the-web-is-world-wide-or-who-still-needs-rc4/ "The Web is World-Wide, or who still needs RC4? | CloudFlare Blog") трафика (292 уникальных USER-AGENT). [RC4](http://blog.cloudflare.com/killing-rc4/ "Killing RC4 (softly) | CloudFlare Blog") [must](http://blog.cloudflare.com/tracking-our-ssl-configuration/ "Tracking our SSL configuration | CloudFlare Blog") [die](http://blog.cloudflare.com/killing-rc4-the-long-goodbye/ "Killing RC4: The Long Goodbye | CloudFlare Blog"), ваш браузер давно [поддерживает более безопасное шифрование](https://www.howsmyssl.com/ "How's My SSL?").
+Протоколы общения клиента и сервера. SSLv3 небезопасен, на замену ему создан TLSv1, который мы и используем. Отказом от SSLv3 мы теряем поддержку IE6, по данным Cloudfare на май 2014 года это [0.000002%](http://blog.cloudflare.com/the-web-is-world-wide-or-who-still-needs-rc4/ "The Web is World-Wide, or who still needs RC4? | CloudFlare Blog") трафика (292 уникальных USER-AGENT). [RC4](http://blog.cloudflare.com/killing-rc4/ "Killing RC4 softly | CloudFlare Blog") [must](http://blog.cloudflare.com/tracking-our-ssl-configuration/ "Tracking our SSL configuration | CloudFlare Blog") [die](http://blog.cloudflare.com/killing-rc4-the-long-goodbye/ "Killing RC4: The Long Goodbye | CloudFlare Blog"), ваш браузер давно [поддерживает более безопасное шифрование](https://www.howsmyssl.com/ "How's My SSL?").
 
     add_header Strict-Transport-Security max-age=31536000;
 

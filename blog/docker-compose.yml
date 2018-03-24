@@ -31,7 +31,6 @@ services:
             - "1313:1313"
 
         volumes:
-            - ./public:/srv/hugo/public
             - ./:/srv/hugo:ro
 
     cv:
