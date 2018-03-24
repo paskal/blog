@@ -15,7 +15,7 @@ slug: aff
 Фотографии в альбоме «<a href="https://fotki.yandex.ru/users/paskal-07/album/443455/">Парашюты</a>», автора <a target="_blank" href="https://fotki.yandex.ru/users/paskal-07/">Верхотуров Дмитрий</a> на Яндекс.Фотках
 
 <meta itemprop="thumbnailUrl" content="https://img-fotki.yandex.ru/get/6824/36529358.c/0_10a326_35c4b73d_XL.jpg" />
-<a href="https://fotki.yandex.ru/users/paskal-07/view/1090342/"><img src="https://img-fotki.yandex.ru/get/6824/36529358.c/0_10a326_35c4b73d_XL.jpg" title="AFF 5 уровень" alt="AFF 5 уровень"/></a>
+<a href="https://fotki.yandex.ru/next/users/paskal-07/album/443455/view/1090342"><img src="https://img-fotki.yandex.ru/get/6824/36529358.c/0_10a326_35c4b73d_XL.jpg" title="AFF 5 уровень" alt="AFF 5 уровень"/></a>
 
 <!--more-->
 
