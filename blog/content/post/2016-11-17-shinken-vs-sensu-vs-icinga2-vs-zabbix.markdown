@@ -19,7 +19,7 @@ In my own opinion, only Zabbix and Icinga 2 are mature enough to be used in ente
 
 <!--more-->
 
-## [Shinken](https://www.shinken-monitoring.org/)
+## [Shinken](http://www.shinken-monitoring.org/)
 
 In their own words, Shinken is a monitoring framework, a Python Nagios Core total rewrite, enhancing flexibility and large environment management.
 
