@@ -1,6 +1,3 @@
----
-layout: null
----
 User-agent: *
 Host: terrty.net
 
@@ -12,4 +9,4 @@ Disallow:/post/
 
 Allow: /
 
-Sitemap: {{ site.url }}/sitemap.xml
+Sitemap: https://terrty.net/sitemap.xml
