@@ -9,7 +9,7 @@ slug: summer
 
 Лень-матушка.
 
-Canonical запустило [Ubuntu App Showdown](https://www.reddit.com/r/ubuntuappshowdown/), из того, что там делают — советую пощупать [LightReader](http://www.omgubuntu.co.uk/2012/07/is-lightread-the-best-rss-reader-for-ubuntu-we-go-hands-on). Canonical стремиться стать новым Apple, и это не может не радовать. Эти ребята — именно то, что нужно линуксу, чтобы перешагнуть один процент. Если они будут выходить на IPO, я не поленюсь, и найду возможность купить их акции (это не так просто, как купить акции на ММВБ или РТС).
+Canonical запустило [Ubuntu App Showdown](https://www.reddit.com/r/ubuntuappshowdown/), из того, что там делают — советую пощупать [LightReader](https://www.omgubuntu.co.uk/2012/07/is-lightread-the-best-rss-reader-for-ubuntu-we-go-hands-on). Canonical стремиться стать новым Apple, и это не может не радовать. Эти ребята — именно то, что нужно линуксу, чтобы перешагнуть один процент. Если они будут выходить на IPO, я не поленюсь, и найду возможность купить их акции (это не так просто, как купить акции на ММВБ или РТС).
 
 <!--more-->
 
@@ -23,6 +23,6 @@ Canonical запустило [Ubuntu App Showdown](https://www.reddit.com/r/ubun
 
 Работаю руками, хожу в спортзал, не сижу за компьютером совсем, много читаю. Всегда бы так.
 
-Будут силы — сначала разберусь с [дропбоксом](/2011/getting-16gb-in-dropbox-by-refferals/), потом переведу этот блог с опостылевшего wordpress на [nikola](http://getnikola.com/), .html во все поля, никакого php и заморочек с кешированием.
+Будут силы — сначала разберусь с [дропбоксом](/2011/getting-16gb-in-dropbox-by-refferals/), потом переведу этот блог с опостылевшего wordpress на [nikola](https://getnikola.com/), .html во все поля, никакого php и заморочек с кешированием.
 
 Пишите письма.

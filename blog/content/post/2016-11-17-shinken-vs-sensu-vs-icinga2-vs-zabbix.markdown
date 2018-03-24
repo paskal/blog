@@ -19,7 +19,7 @@ In my own opinion, only Zabbix and Icinga 2 are mature enough to be used in ente
 
 <!--more-->
 
-## [Shinken](http://www.shinken-monitoring.org/)
+## [Shinken](https://www.shinken-monitoring.org/)
 
 In their own words, Shinken is a monitoring framework, a Python Nagios Core total rewrite, enhancing flexibility and large environment management.
 
@@ -61,7 +61,7 @@ I found no visible drawbacks, based on the documentation. The only thing that co
 
 ### Links
 
-* [Detection and Handling of State Flapping — Shinken Manual](http://shinken.readthedocs.io/en/latest/07_advanced/flapping.html)
+* [Detection and Handling of State Flapping — Shinken Manual](https://shinken.readthedocs.io/en/latest/07_advanced/flapping.html)
 
 ## [Sensu](https://sensuapp.org/)
 
@@ -104,7 +104,7 @@ Sensu default UI called [Uchiwa](https://uchiwa.io/), seems to have many limitat
 
 ### Links
 
-* [Sensu - What I've Learnt](http://roobert.github.io/2015/11/09/Sensu-What/)
+* [Sensu - What I've Learnt](https://roobert.github.io/2015/11/09/Sensu-What/)
 
 * [MOTD integration](https://github.com/solarkennedy/sensu-report)
 
@@ -138,13 +138,13 @@ IcingaWeb2 seems like a decent UI with a lot of extension modules for a lot of p
 
 The only drawback I’ve found so far is a complexity of initial setup. It’s not that easy to understand the Icinga point of view on monitoring if you’re used to having something different like Zabbix.
 
-## [Zabbix](http://www.zabbix.com/)
+## [Zabbix](https://www.zabbix.com/)
 
 Zabbix is a stable and reliable monitoring system with a steady development pace. It has a huge community and most questions you might think of already have an answer somewhere, so you don’t have to worry if something is possible with Zabbix.
 
 ### Scalability
 
-Zabbix has a server that communicates with a single DB, and no matter what you do, with every other resource on hand (memory, network, CPU), you will hit DB disk IO limits. With 6000 IOPS on [Amazon](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html), we could maintain around 2k new values per second, which is a lot, but still leaves much to be desired. Proxies and [partitioning](https://www.zabbix.org/wiki/Docs/howto/mysql_partition) could improve the situation with performance, but in terms of reliability, you always have a main DB, which is a single point of failure for everything.
+Zabbix has a server that communicates with a single DB, and no matter what you do, with every other resource on hand (memory, network, CPU), you will hit DB disk IO limits. With 6000 IOPS on [Amazon](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html), we could maintain around 2k new values per second, which is a lot, but still leaves much to be desired. Proxies and [partitioning](https://www.zabbix.org/wiki/Docs/howto/mysql_partition) could improve the situation with performance, but in terms of reliability, you always have a main DB, which is a single point of failure for everything.
 
 ### Configuration systems integration
 
@@ -156,7 +156,7 @@ Zabbix logs everything well, except one huge blind spot: Changes [via API are no
 
 ### UI
 
-[![Dashboard is a main screen of Zabbix](https://assets.zabbix.com/img/tmp/screenshots/mon_dashboard2.png)](http://www.zabbix.com/screenshots)
+[![Dashboard is a main screen of Zabbix](https://assets.zabbix.com/img/tmp/screenshots/mon_dashboard2.png)](https://www.zabbix.com/screenshots)
 
 Zabbix has UI with all possible features built-in. The only bad thing you could say about it is it’s not extendable at all — you have either to stick with what UI gives you or do something on your own. You have no option to improve UI because of its general complexity.
 

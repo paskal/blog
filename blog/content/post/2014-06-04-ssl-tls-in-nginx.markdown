@@ -28,11 +28,11 @@ slug: ssl-tls-in-nginx
 
     cat public_domain.net.pem sub.class1.server.ca.pem > domain.net.pem
 
-Корневой сертификат (ca.pem), эта цепочка содержать не должна, так как он в любом случае есть в списке доверенных сертификатов сервера. Советую подумать о [самоподписанном сертификате](http://vitus-wagner.livejournal.com/916596.html "vitus_wagner: Зачем вам подорожная, хамы? Вы же неграмотны!").
+Корневой сертификат (ca.pem), эта цепочка содержать не должна, так как он в любом случае есть в списке доверенных сертификатов сервера. Советую подумать о [самоподписанном сертификате](https://vitus-wagner.livejournal.com/916596.html "vitus_wagner: Зачем вам подорожная, хамы? Вы же неграмотны!").
 
     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
 
-Протоколы общения клиента и сервера. SSLv3 небезопасен, на замену ему создан TLSv1, который мы и используем. Отказом от SSLv3 мы теряем поддержку IE6, по данным Cloudfare на май 2014 года это [0.000002%](http://blog.cloudflare.com/the-web-is-world-wide-or-who-still-needs-rc4/ "The Web is World-Wide, or who still needs RC4? | CloudFlare Blog") трафика (292 уникальных USER-AGENT). [RC4](http://blog.cloudflare.com/killing-rc4/ "Killing RC4 softly | CloudFlare Blog") [must](http://blog.cloudflare.com/tracking-our-ssl-configuration/ "Tracking our SSL configuration | CloudFlare Blog") [die](http://blog.cloudflare.com/killing-rc4-the-long-goodbye/ "Killing RC4: The Long Goodbye | CloudFlare Blog"), ваш браузер давно [поддерживает более безопасное шифрование](https://www.howsmyssl.com/ "How's My SSL?").
+Протоколы общения клиента и сервера. SSLv3 небезопасен, на замену ему создан TLSv1, который мы и используем. Отказом от SSLv3 мы теряем поддержку IE6, по данным Cloudfare на май 2014 года это [0.000002%](https://blog.cloudflare.com/the-web-is-world-wide-or-who-still-needs-rc4/ "The Web is World-Wide, or who still needs RC4? | CloudFlare Blog") трафика (292 уникальных USER-AGENT). [RC4](https://blog.cloudflare.com/killing-rc4/ "Killing RC4 softly | CloudFlare Blog") [must](https://blog.cloudflare.com/tracking-our-ssl-configuration/ "Tracking our SSL configuration | CloudFlare Blog") [die](https://blog.cloudflare.com/killing-rc4-the-long-goodbye/ "Killing RC4: The Long Goodbye | CloudFlare Blog"), ваш браузер давно [поддерживает более безопасное шифрование](https://www.howsmyssl.com/ "How's My SSL?").
 
     add_header Strict-Transport-Security max-age=31536000;
 
@@ -44,7 +44,7 @@ slug: ssl-tls-in-nginx
 
     ssl_prefer_server_ciphers on;
 
-Предпочитаем выбор метода шифрования сервера, поскольку на нём мы можем выбрать, какие методы использовать предпочтительней ([docs](http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_prefer_server_ciphers "Module ngx_http_ssl_module"), [ru_docs](http://nginx.org/ru/docs/http/ngx_http_ssl_module.html#ssl_prefer_server_ciphers "Модуль ngx_http_ssl_module")).
+Предпочитаем выбор метода шифрования сервера, поскольку на нём мы можем выбрать, какие методы использовать предпочтительней ([docs](https://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_prefer_server_ciphers "Module ngx_http_ssl_module"), [ru_docs](https://nginx.org/ru/docs/http/ngx_http_ssl_module.html#ssl_prefer_server_ciphers "Модуль ngx_http_ssl_module")).
 
     ssl_ciphers ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS;
 
@@ -57,7 +57,7 @@ slug: ssl-tls-in-nginx
     listen 443 deferred spdy ssl;
     listen [::]:443 deferred ssl spdy ipv6only=on;
 
-Слушаем порт 443 IPv4 и IPv6 на всех интерфейсах, deferred ускоряет работу соединений linux-сервера ([info](http://www.techrepublic.com/article/take-advantage-of-tcp-ip-options-to-optimize-data-transmission/ "Take advantage of TCP/IP options to optimize data transmission — TechRepublic")), spdy включает использование [быстрого](http://blog.chromium.org/2013/11/making-web-faster-with-spdy-and-http2.html "Chromium Blog: Making the web faster with SPDY and HTTP/2") протокола [SPDY](https://en.wikipedia.org/wiki/SPDY "SPDY — Wikipedia"), если клиент поддерживает это ([docs](http://nginx.org/en/docs/http/ngx_http_core_module.html#listen "Module ngx_http_core_module"), [ru_docs](http://nginx.org/ru/docs/http/ngx_http_core_module.html#listen "Модуль ngx_http_core_module"), [результат внедрения SPDY Яндексом](http://habrahabr.ru/company/yandex/blog/222951/ "Совместный эксперимент команд Яндекс.Почты и Nginx: действительно ли SPDY ускорит интернет? / Блог компании Яндекс / Хабрахабр"))
+Слушаем порт 443 IPv4 и IPv6 на всех интерфейсах, deferred ускоряет работу соединений linux-сервера ([info](https://www.techrepublic.com/article/take-advantage-of-tcp-ip-options-to-optimize-data-transmission/ "Take advantage of TCP/IP options to optimize data transmission — TechRepublic")), spdy включает использование [быстрого](https://blog.chromium.org/2013/11/making-web-faster-with-spdy-and-http2.html "Chromium Blog: Making the web faster with SPDY and HTTP/2") протокола [SPDY](https://en.wikipedia.org/wiki/SPDY "SPDY — Wikipedia"), если клиент поддерживает это ([docs](https://nginx.org/en/docs/http/ngx_http_core_module.html#listen "Module ngx_http_core_module"), [ru_docs](https://nginx.org/ru/docs/http/ngx_http_core_module.html#listen "Модуль ngx_http_core_module"), [результат внедрения SPDY Яндексом](https://habrahabr.ru/company/yandex/blog/222951/ "Совместный эксперимент команд Яндекс.Почты и Nginx: действительно ли SPDY ускорит интернет? / Блог компании Яндекс / Хабрахабр"))
 
 server {
 	listen 80 default_server;
@@ -66,7 +66,7 @@ server {
 	return 301 https://$host$request_uri;
 }
 
-Здесь приведён правильный способ перенаправить домен с www на домен без www (или наоборот). default_server в [listen](http://nginx.org/ru/docs/http/ngx_http_core_module.html#listen "Модуль ngx_http_core_module") означает что, если не сработал иной блок, будет использован этот. В данном случае — мы перенаправим пользователя, откуда бы он не пришёл, на `https://domain.net`.
+Здесь приведён правильный способ перенаправить домен с www на домен без www (или наоборот). default_server в [listen](https://nginx.org/ru/docs/http/ngx_http_core_module.html#listen "Модуль ngx_http_core_module") означает что, если не сработал иной блок, будет использован этот. В данном случае — мы перенаправим пользователя, откуда бы он не пришёл, на `https://domain.net`.
 
 [Результат теста безопасности](https://www.ssllabs.com/ssltest/analyze.html?d=terrty.net "Qualys SSL Labs — Projects / SSL Server Test / terrty.net") сервера с такими настройками.
 

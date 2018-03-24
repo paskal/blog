@@ -16,7 +16,7 @@ C помощью скрипта возможно автоматическое п
 
 <!--more-->
 
-Скачайте [Ubuntu](http://www.ubuntu.com/download/ubuntu/download) версии 14.04 ([.torrent](http://releases.ubuntu.com/trusty/ubuntu-14.04.5-desktop-i386.iso.torrent) or [.iso](http://releases.ubuntu.com/trusty/ubuntu-14.04.5-desktop-i386.iso)). Запишите образ на CD или [USB](http://unetbootin.sourceforge.net/) и загрузитесь с него (или запустите его в [виртуальной машине](https://www.virtualbox.org/wiki/Downloads)).
+Скачайте [Ubuntu](https://www.ubuntu.com/download/desktop) версии 14.04 ([.torrent](http://releases.ubuntu.com/trusty/ubuntu-14.04.5-desktop-i386.iso.torrent) or [.iso](http://releases.ubuntu.com/trusty/ubuntu-14.04.5-desktop-i386.iso)). Запишите образ на CD или [USB](https://unetbootin.github.io/) и загрузитесь с него (или запустите его в [виртуальной машине](https://www.virtualbox.org/wiki/Downloads)).
 Запустите терминал (**Ctrl**+**Alt**+**T**).
 
     sudo nano /etc/apt/sources.list
