@@ -46,7 +46,7 @@
   "params": {
     "social": {
       "a-email": "mailto:paskal.07@gmail.com",
-      "b-weibo": "https://www.goodreads.com/user/show/23839983",
+      "b-goodreads": "https://www.goodreads.com/user/show/23839983",
       "c-github": "https://github.com/paskal",
       "d-linkedin": "https://www.linkedin.com/in/verhoturov/"
     },
