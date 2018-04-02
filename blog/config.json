@@ -43,6 +43,13 @@
   "author": {
     "name": "Dmitry Verhoturov"
   },
+  "frontmatter": {
+    "lastmod": [
+      "lastmod",
+      ":fileModTime",
+      ":default"
+    ]
+  },
   "params": {
     "social": {
       "a-email": "mailto:paskal.07@gmail.com",

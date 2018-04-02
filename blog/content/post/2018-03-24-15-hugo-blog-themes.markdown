@@ -2,6 +2,7 @@
 tags:
 - go
 comments: true
+toc: true
 date: 2018-03-24T07:00:03Z
 description: Best blog themes for Hugo framework in one place
 title: 15 Hugo Framework blog themes
