@@ -6,7 +6,6 @@ tags:
 comments: true
 date: 2014-06-04T07:51:19Z
 title: Лучшие настройки HTTPS (TLS) Nginx
-lastmod: 2014-07-09T07:51:19Z
 slug: ssl-tls-in-nginx
 ---
 

@@ -3,11 +3,11 @@ tags:
 - soft
 - monitoring
 comments: true
+toc: true
 date: 2016-11-17T09:09:55Z
 description: 4 monitoring systems comparison from 4k servers point of view.
 keywords: shiknen, sensu, icinga, icinga 2, zabbix, monitoring comparison
 title: 'Monitoring system comparison: Shinken vs Sensu vs Icinga 2 vs Zabbix'
-lastmod: 2016-11-19T12:38:00Z
 slug: shinken-vs-sensu-vs-icinga2-vs-zabbix
 ---
 
