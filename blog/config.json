@@ -41,7 +41,8 @@
     "tag": "tags"
   },
   "author": {
-    "name": "Dmitry Verhoturov"
+    "name": "Dmitry Verhoturov",
+    "email": "paskal.07@gmail.com"
   },
   "frontmatter": {
     "lastmod": [
