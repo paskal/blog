@@ -1,6 +1,6 @@
 ---
 tags:
-- soft
+- software
 comments: false
 date: 2011-02-16T05:47:09Z
 title: Как сделать скриншот в виртуальной машине VirtualBox?

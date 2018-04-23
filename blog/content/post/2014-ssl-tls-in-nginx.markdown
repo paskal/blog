@@ -1,7 +1,6 @@
 ---
 tags:
-- soft
-- nginx
+- software
 - security
 comments: true
 date: 2014-06-04T07:51:19Z

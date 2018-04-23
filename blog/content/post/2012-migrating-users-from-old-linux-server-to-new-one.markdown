@@ -1,6 +1,6 @@
 ---
 tags:
-- soft
+- software
 comments: false
 date: 2012-05-12T13:14:23Z
 title: Перенос пользователей со старого linux сервера на новый
