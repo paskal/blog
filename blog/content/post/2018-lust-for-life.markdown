@@ -6,6 +6,7 @@ comments: true
 date: 2018-04-02T17:26:45Z
 description: Nude & Rude Wisdom Hunger
 title: Lust for life
+slug: lust-for-life
 ---
 
 Я долгое время думал, что же написать, и недавно меня ударила молния: то же самое, о чём я *говорю*. В [прошлой записи](/2015/language/) я упоминал эссе [Write Like You Talk](http://www.paulgraham.com/talk.html), сегодня я доведу эту идею до абсурда, и расскажу вам ровно то, что жгло мне душу в последнее время и что я изливал на беззащитных собеседников.
