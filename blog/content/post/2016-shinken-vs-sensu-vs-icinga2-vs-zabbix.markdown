@@ -1,6 +1,6 @@
 ---
 tags:
-- soft
+- software
 - monitoring
 comments: true
 toc: true
