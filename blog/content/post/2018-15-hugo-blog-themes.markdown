@@ -7,6 +7,7 @@ toc: true
 date: 2018-03-24T07:00:03Z
 description: Best blog themes for Hugo framework in one place
 title: 15 Hugo Framework blog themes
+slug: 15-hugo-framework-blog-themes
 ---
 
 I've tested all 202 Hugo themes [from the catalogue](https://github.com/gohugoio/hugoThemes) plus 3 missing from it for basic functionality and picked the best blog-oriented ones. By that I mean all of them have blog posts shown on the main page and most of them support posts tags.
