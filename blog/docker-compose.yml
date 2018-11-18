@@ -13,7 +13,7 @@ services:
 
         volumes:
             - ./public:/srv/hugo/public
-            - ./:/srv/hugo:ro
+            - ./:/srv/hugo
 
     blog-preview:
         image: paskal/hugo
