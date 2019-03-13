@@ -1,4 +1,6 @@
 FROM alpine
+LABEL name=paskal/hugo
+LABEL maintainer="paskal.07@gmail.com"
 
 ADD https://github.com/gohugoio/hugo/releases/download/v0.54.0/hugo_0.54.0_Linux-64bit.tar.gz /tmp
 
