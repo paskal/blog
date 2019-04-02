@@ -15,7 +15,7 @@ slug: shinken-vs-sensu-vs-icinga2-vs-zabbix
 
 That’s a long post with many images and even more text. There is no answer for simple questions like “which is best”, but a collection of information for decisions on these questions, based on your requirements. I’m looking for a system that works on Linux and monitors Linux well, so platform support is not considered. Also, I’m looking for a system that will help me monitor thousands of servers with tens of thousands of services.
 
-In my own opinion, only Zabbix and Icinga 2 are mature enough to be used in enterprise, and the main question one should ask himself is which monitoring philosophy he could relate to, because all of them do the same thing with very different approaches.
+In my own opinion, only Zabbix and Icinga 2 are mature enough to be used in the enterprise, and the main question one should ask himself is which monitoring philosophy he could relate to because all of them do the same thing with very different approaches.
 
 <!--more-->
 
@@ -25,13 +25,13 @@ In their own words, Shinken is a monitoring framework, a Python Nagios Core tota
 
 ### Scalability
 
-According to the [documentation](https://shinken.readthedocs.io/en/latest/07_advanced/distributed.html), every type of process can be run even on different hosts. That's interesting, because you might want DB in the cheapest place, data receivers in every datacenter, and alerter processes closer to your physical location. Shinken user on the scheme is happy; that's a positive sign:
+According to the [documentation](https://shinken.readthedocs.io/en/latest/07_advanced/distributed.html), every type of process can be run even on different hosts. That's interesting, because you might want DB in the cheapest place, data receivers in every data center, and alerter processes closer to your physical location. The Shinken user on the scheme is happy; that's a positive sign:
 
 ![Shinken simple distributed architecture](https://shinken.readthedocs.io/en/latest/_images/shinken-architecture.png)
 
 For multi-regional monitoring, there is also an answer, **[Realms](https://shinken.readthedocs.io/en/latest/_images/shinken-architecture-isolated-realms.png)**.
 
-Here, you notice something awesome: Data is collected into regional DB, not into a global one. There are also sub-realms setup for smaller big setups, which requires fewer machines to setup and just one DB:
+Here, you notice something awesome: Data is collected into regional DB, not into a global one. There is also sub-realms setup for smaller big setups, which requires fewer machines to set up and just one DB:
 
 ![Shinken simple multi-regional distributed architecture](https://shinken.readthedocs.io/en/latest/_images/shinken-architecture-global-realm.png)
 
@@ -41,23 +41,23 @@ Another point to consider when you’re talking about scalability is fault toler
 
 ### Configuration systems integration
 
-Automatic hosts and services discovery seems [well-covered](https://shinken.readthedocs.io/en/latest/07_advanced/discovery-with-shinken-advanced.html), and because configuration is kept in files, you could easily generate them yourself with Chef\Puppet, based on information on hosts you have.
+Automatic hosts and services discovery seems [well-covered](https://shinken.readthedocs.io/en/latest/07_advanced/discovery-with-shinken-advanced.html), and because the configuration is kept in files, you could easily generate them yourself with Chef\Puppet, based on information on hosts you have.
 
 ### Audit log
 
-Because configuration is stored in files, you could use generic things, like version control system (Git, Mercurial), to track changes and their ownership. From documentation, I found no evidence of Shinken tracking web-interface actions.
+Because configuration is stored in files, you could use generic things, like version control system (Git, Mercurial), to track changes and their ownership. From the documentation, I found no evidence of Shinken tracking web-interface actions.
 
 ### UI
 
 [![Shinken UI](https://raw.githubusercontent.com/shinken-monitoring/mod-webui/develop/doc/animation.gif)](https://www.shinken-enterprise.com/en/product/)
 
-[Shinken WebUI](https://github.com/shinken-monitoring/mod-webui/wiki) is proven itself to work well with thousands of hosts and tens of groups.
+[Shinken WebUI](https://github.com/shinken-monitoring/mod-webui/wiki) is proven to work well with thousands of hosts and tens of groups.
 
 ### Drawbacks
 
 I found no visible drawbacks, based on the documentation. The only thing that concerns me is its rapid development in the past and [very slow pace of commits](https://github.com/naparuba/shinken/commits/master) in the present: around 40 commits this year; most are pull requests merged, so no new development is going on, and only community-written bugfixes are being included. It’s either too good to move on (which is never the case; even old-timers like vim and emacs get their code updated) or it’s another opensource project that not enough people care about — you should know such things before using such a complex thing as a monitoring system.
 
-[Frédéric Mohier](https://github.com/mohierf) was very kind to give me an insight on reasons of current situation: more than one year ago, some of the main developers of Shinken left the project and made a fork named [Alignak](https://alignak-monitoring.github.io/), which is being activly developed and plan to deliver 1.0 release in December, 2016.
+[Frédéric Mohier](https://github.com/mohierf) was very kind to give me an insight on reasons of current situation: more than one year ago, some of the main developers of Shinken left the project and made a fork named [Alignak](https://alignak-monitoring.github.io/), which is being actively developed and plan to deliver 1.0 release in December 2016.
 
 ### Links
 
@@ -70,11 +70,11 @@ Sensu is a monitoring framework (platform, as they call themselves) rather than 
 * Puppet \ Chef integration — define what to check and where to send messages in your configuration system
 * Reusing existing technical solutions where possible, instead of inventing their own (Redis, RabbitMQ)
 
-Sensu pulls events from queue and executes handlers on them; that’s it. Handlers can send messages, execute something on the server, or do something else you want.
+Sensu pulls events from the queue and executes handlers on them; that’s it. Handlers can send messages, execute something on the server, or do something else you want.
 
 ### Scalability
 
-Sensu architecture is flexible, because every component can be replicated and replaced in a few ways. A sample fault-tolerant setup is described in the [following presentation](https://vimeo.com/92770954); here is a generalized view:
+Sensu architecture is flexible because every component can be replicated and replaced in a few ways. A sample fault-tolerant setup is described in the [following presentation](https://vimeo.com/92770954); here is a generalized view:
 
 ![Sensu architectural diagram](https://docs.sensu.io/images/sensu-diagram.gif)
 
@@ -82,7 +82,7 @@ With HAProxy and Redis-sentinel, you can build a setup in which, if one node of 
 
 ### Configuration systems integration
 
-Built-in (Puppet, Chef, EC2!) but only in [paid](https://sensuapp.org/docs/latest/enterprise/integrations/) version, which sucks for sure, if you have thousands of servers and don’t want to pay for something with free analogues.
+Built-in (Puppet, Chef, EC2!) but only in [paid](https://sensuapp.org/docs/latest/enterprise/integrations/) version, which sucks for sure, if you have thousands of servers and don’t want to pay for something with free analogs.
 
 ### Audit log
 
@@ -99,7 +99,7 @@ Sensu default UI called [Uchiwa](https://uchiwa.io/), seems to have many limitat
 * Lack of historical data and very limited ability to check on it;
 * Create your own monitoring system; there are no working presets waiting for you;
 * Aggregation of events is tricky;
-* ~~Message sending is very tricky, which is scary (because this part must be the simplest and most reliable part of monitoring)~~ — not true, I had wrong impression by [documentation](https://sensuapp.org/docs/latest/reference/handlers.html), thanks [x70b1](https://github.com/x70b1) for explanation;
+* ~~Message sending is very tricky, which is scary (because this part must be the simplest and most reliable part of monitoring)~~ — not true, I had the wrong impression by [documentation](https://sensuapp.org/docs/latest/reference/handlers.html), thanks [x70b1](https://github.com/x70b1) for an explanation;
 * The “We don’t want to reinvent the wheel” way has its own limitations of which you could be aware of if you have used any such software before (in my case, it was *Prometheus* monitoring system, which left whole sets of features up to the user to implement, like authentication).
 
 ### Links
@@ -118,7 +118,7 @@ General architecture:
 
 ![Icinga 2 architecture](https://www.icinga.org/wp-content/uploads/2014/06/icinga2_cluster.png)
 
-Icinga 2 has a well-designed [distributed monitoring scheme](https://www.icinga.org/products/icinga-2/distributed-monitoring/). Only pitfall I found while setting up the test cluster is the amount of settings related to distribution: It could be overwhelming initially.
+Icinga 2 has a well-designed [distributed monitoring scheme](https://www.icinga.org/products/icinga-2/distributed-monitoring/). The only pitfall I found while setting up the test cluster is the number of settings related to distribution: It could be overwhelming initially.
 
 ### Configuration systems integration
 
@@ -126,7 +126,7 @@ Pretty good, here are two presentations: [The Road to Lazy Monitoring with Icing
 
 ### Audit log
 
-As I found, audit log is present with [director module](https://www.icinga.org/2016/03/24/icinga-director-released/). There is no build-in audit in IcingaWeb2 at the moment.
+As I found, the audit log is present with [director module](https://www.icinga.org/2016/03/24/icinga-director-released/). There is no built-in audit in IcingaWeb2 at the moment.
 
 ### UI
 
@@ -136,7 +136,7 @@ IcingaWeb2 seems like a decent UI with a lot of extension modules for a lot of p
 
 ### Drawbacks
 
-The only drawback I’ve found so far is a complexity of initial setup. It’s not that easy to understand the Icinga point of view on monitoring if you’re used to having something different like Zabbix.
+The only drawback I’ve found so far is a complexity of the initial setup. It’s not that easy to understand the Icinga point of view on monitoring if you’re used to having something different like Zabbix.
 
 ## [Zabbix](https://www.zabbix.com/)
 
@@ -144,7 +144,7 @@ Zabbix is a stable and reliable monitoring system with a steady development pace
 
 ### Scalability
 
-Zabbix has a server that communicates with a single DB, and no matter what you do, with every other resource on hand (memory, network, CPU), you will hit DB disk IO limits. With 6000 IOPS on [Amazon](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html), we could maintain around 2k new values per second, which is a lot, but still leaves much to be desired. Proxies and [partitioning](https://www.zabbix.org/wiki/Docs/howto/mysql_partition) could improve the situation with performance, but in terms of reliability, you always have a main DB, which is a single point of failure for everything.
+Zabbix has a server that communicates with a single DB, and no matter what you do, with every other resource on hand (memory, network, CPU), you will hit DB disk IO limits. With 6000 IOPS on [Amazon](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html), we could maintain around 2k new values per second, which is a lot, but still leaves much to be desired. Proxies and [partitioning](https://www.zabbix.org/wiki/Docs/howto/mysql_partition) could improve the situation with performance, but in terms of reliability, you always have the main DB, which is a single point of failure for everything.
 
 ### Configuration systems integration
 

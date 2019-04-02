@@ -10,7 +10,7 @@ title: 15 Hugo Framework blog themes
 slug: 15-hugo-framework-blog-themes
 ---
 
-I've tested all 202 Hugo themes [from the catalogue](https://github.com/gohugoio/hugoThemes) plus 3 missing from it for basic functionality and picked the best blog-oriented ones. By that I mean all of them have blog posts shown on the main page and most of them support posts tags.
+I've tested all 202 Hugo themes [from the catalog](https://github.com/gohugoio/hugoThemes) plus 3 missing from it for basic functionality and picked the best blog-oriented ones. By that I mean all of them have blog posts shown on the main page and most of them support posts tags.
 
 All themes below have active developers, I've didn't include 3-years-old themes without newer commits. I'll present them in alphabetical order, they're all fine quality and couldn't be compared or ranked in any unified way I can think of.
 
@@ -30,13 +30,13 @@ I love themes which cut straight to the content, and this is not one of them - w
 
 [![ananke posts page](/images/hugo_themes/ananke_posts.jpg)](/images/hugo_themes/ananke_posts.jpg)
 
-For posts it's the same as with main page, a lot of space eaten by banner. I couldn't get working tags navigation.
+For posts, it's the same as with the main page, a lot of space eaten by the banner. I couldn't get working tags navigation.
 
 ### Single page
 
 [![ananke single post page](/images/hugo_themes/ananke_single_post.png)](/images/hugo_themes/ananke_single_post.png)
 
-Nothing extra on the single post page, however a lot space unused, all posts list on the right in addition to related articles list on the end of the article, no disqus support.
+Nothing extra on the single post page, however a lot of space unused, all posts list on the right in addition to related articles list on the end of the article, no Disqus support.
 
 ---
 
@@ -46,13 +46,13 @@ Nothing extra on the single post page, however a lot space unused, all posts lis
 
 [![beg main page](/images/hugo_themes/beg_main.png)](/images/hugo_themes/beg_main.png)
 
-Cut anything what distracts your from reading, add a little navigation to your posts — and you'll get *beg* theme. Everything on it's place, nothing you don't want to be there is present. **Navigation** looks exactly the same as main page, only the title changes — you get what you expect, that's nice.
+Cut anything that distracts you from reading, add a little navigation to your posts — and you'll get *beg* theme. Everything in its place, nothing you don't want to be there is present. **Navigation** looks exactly the same as the main page, only the title changes — you get what you expect, that's nice.
 
 ### Single page
 
 [![beg single post page](/images/hugo_themes/beg_single_post.png)](/images/hugo_themes/beg_single_post.png)
 
-Beginning of the page looks exactly the same as main page, so that screenshot taken from the middle. The only reason you don't read this blog in the mentioned theme is [this](https://github.com/dim0627/hugo_theme_beg/issues/22): it renders **bold** text bold and highlighted, and *italic* as highlighted text but not italic. That's the only issue I found after using it for several months apart from no related articles list present at the moment. It supports disqus and nice from all points of view.
+Beginning of the page looks exactly the same as the main page, so that screenshot taken from the middle. The only reason you don't read this blog in the mentioned theme is [this](https://github.com/dim0627/hugo_theme_beg/issues/22): it renders **bold** text bold and highlighted, and *italic* as highlighted text but not italic. That's the only issue I found after using it for several months apart from no related articles list present at the moment. It supports Disqus and nice from all points of view.
 
 ---
 
@@ -62,19 +62,19 @@ Beginning of the page looks exactly the same as main page, so that screenshot ta
 
 [![Casper main page](/images/hugo_themes/casper_main.png)](/images/hugo_themes/casper_main.png)
 
-Hybrid between having nothing extra apart from text but navigation and huge banner in ananke. Black and white text, summaries of the posts are present and rendered nicely. Posts page is exactly the same, only title changes.
+A hybrid between having nothing extra apart from the text but navigation and huge banner in ananke. Black and white text, summaries of the posts are present and rendered nicely. Posts page is exactly the same, only title changes.
 
 ### Single page
 
 [![Casper single post page](/images/hugo_themes/casper_single_post.png)](/images/hugo_themes/casper_single_post.png)
 
-That's best text handling I've seen so far. Post title, description, tags and time, and then content - nothing special, but then comes magic: images have slightly bigger weight than the text. So simple and yet genial. Of course, theme supports disqus.
+That's best text handling I've seen so far. Post title, description, tags and time, and then content - nothing special, but then comes magic: images have a slightly bigger weight than the text. So simple and yet genial. Of course, the theme supports Disqus.
 
 ### Related articles
 
 [![Casper related articles](/images/hugo_themes/casper_related_articles.png)](/images/hugo_themes/casper_related_articles.png)
 
-Ladies and gentleman, I want to show to you the nicest approach to "next article" and "related articles" presentation on the market: one of both in a separate boxes, same information but present in so tasty way you couldn't stop the desire to click.
+Ladies and gentleman, I want to show to you the nicest approach to "next article" and "related articles" presentation on the market: one of both in separate boxes, same information but present in so tasty way you couldn't stop the desire to click.
 
 ---
 
@@ -84,7 +84,7 @@ Ladies and gentleman, I want to show to you the nicest approach to "next article
 
 [![Classic main page](/images/hugo_themes/classic_main.png)](/images/hugo_themes/classic_main.png)
 
-Main page is pretty neat, no preview for posts, just post names, custom text and navigation. I almost missed it but couldn't exclude it from this post when I saw how cool my blog looked like in it.
+The main page is pretty neat, no preview for posts, just post names, custom text, and navigation. I almost missed it but couldn't exclude it from this post when I saw how cool my blog looked like in it.
 
 ### Navigation
 
@@ -98,7 +98,7 @@ Just text - nothing extra. Hell with the posts' summaries, that's *classy*.
 
 [![Classic single post page](/images/hugo_themes/classic_single_post.png)](/images/hugo_themes/classic_single_post.png)
 
-Text with fixed width, a sign of a good taste. However minimalism means there is no disqus support out of the box. Formatting is what you could name "plain", nothing special, but everything on it's place - well-balanced and very solid.
+Text with fixed width, a sign of a good taste. However, minimalism means there is no Disqus support out of the box. Formatting is what you could name "plain", nothing special, but everything on its place - well-balanced and very solid.
 
 ---
 
@@ -108,7 +108,7 @@ Text with fixed width, a sign of a good taste. However minimalism means there is
 
 [![coder main page](/images/hugo_themes/coder_main.png)](/images/hugo_themes/coder_main.png)
 
-Simplicity at maximum. Everything on it's place, right font - and here comes your first impression.
+Simplicity at maximum. Everything on its place, right font - and here comes your first impression.
 
 ### Navigation
 
@@ -116,13 +116,13 @@ Simplicity at maximum. Everything on it's place, right font - and here comes you
 
 [![coder tag page](/images/hugo_themes/coder_tags.png)](/images/hugo_themes/coder_tags.png)
 
-Posts page lacks both tags and summaries, either one of them is better to be present. Tags lack frequiency information, but instead have date of last post which is rare and cool.
+Posts page lacks both tags and summaries, either one of them is better to be present. Tags lack frequency information but instead have a date of the last post which is rare and cool.
 
 ### Single page
 
 [![coder single post page](/images/hugo_themes/coder_single_post.png)](/images/hugo_themes/coder_single_post.png)
 
-Widest post content out there with deep spacing between the lines, there is a room for improvement for better readability and higher density but it's unique for sure and someone might find this style appealing. No disqus comments and no related articles list present yet.
+Widest post content out there with deep spacing between the lines, there is a room for improvement for better readability and higher density but it's unique for sure and someone might find this style appealing. No Disqus comments and no related articles list present yet.
 
 ---
 
@@ -140,13 +140,13 @@ Simple yet unique and functional, and also includes working search field. On the
 
 [![Fabric tags page](/images/hugo_themes/fabric_tags.png)](/images/hugo_themes/fabric_tags.png)
 
-Fabric's posts page is the best navigation without summaries I've seen out there, all possible information present and rendered nicely. Tags page is small and leave something to be desired (like sort by number of posts in tag), but functional.
+Fabric's posts page is the best navigation without summaries I've seen out there, all possible information present and rendered nicely. Tags page is small and leaves something to be desired (like sort by a number of posts in the tag), but functional.
 
 ### Single page
 
 [![Fabric single post page](/images/hugo_themes/fabric_single_post.png)](/images/hugo_themes/fabric_single_post.png)
 
-Solid text render without anything out of order. I've included a bit bigger screenshot than usual to show you neat shadow around the image and caption under it, which is present in no other theme. Disqus support is there, however no related articles list support.
+Solid text renders without anything out of order. I've included a bit bigger screenshot than usual to show you neat shadow around the image and caption under it, which is present in no other theme. Disqus support is there, however no related articles list support.
 
 ---
 
@@ -156,19 +156,19 @@ Solid text render without anything out of order. I've included a bit bigger scre
 
 [![Jane main page](/images/hugo_themes/jane_main.png)](/images/hugo_themes/jane_main.png)
 
-Classy simplicity, pure text of highest quality - that's what Jane theme is about.
+Classy simplicity, a pure text of highest quality - that's what Jane theme is about.
 
 ### Navigation
 
 [![Jane tags page](/images/hugo_themes/jane_tags.png)](/images/hugo_themes/jane_tags.png)
 
-Tags looks exactly like you expect them to look like, but a slightly better.
+Tags look exactly like you expect them to look like, but a slightly better.
 
 ### Single page
 
 [![Jane single post page](/images/hugo_themes/jane_single_post.png)](/images/hugo_themes/jane_single_post.png)
 
-I've chose another post to take screenshot from because that's something worth seeing: that colors choice is best you could find. Posts which use a lot of formatting, quotes, images and code blocks shine in this theme, author definitely have a good taste which we might benefit from. Disqus comments supported, but hidden by "Show Disqus Comments" button not to distract you from the content itself. No related articles block but it would be redundant on this text celebration.
+I've chosen another post to take the screenshot from because that's something worth seeing: that colors choice is best you could find. Posts which use a lot of formatting, quotes, images and code blocks shine in this theme, the author definitely has a good taste which we might benefit from. Disqus comments supported but hidden by "Show Disqus Comments" button not to distract you from the content itself. No related articles block but it would be redundant on this text celebration.
 
 ---
 
@@ -202,13 +202,13 @@ Pure minimalism, looks very solid.
 
 [![Liquorice tags page](/images/hugo_themes/liquorice_tags.png)](/images/hugo_themes/liquorice_tags.png)
 
-The same minimalism, but a little overhelming this time — what is enough for the main page, is not enough for tags page (e.g. information about how "big" the tag is is missing). Posts list missing tags, which is pretty important when you don't show post summary.
+The same minimalism, but a little overwhelming this time — what is enough for the main page, is not enough for tags page (e.g. information about how "big" the tag is missing). Posts list missing tags, which is pretty important when you don't show post summary.
 
 ### Single page
 
 [![Liquorice single post page](/images/hugo_themes/liquorice_single_post.png)](/images/hugo_themes/liquorice_single_post.png)
 
-Wide text block shows more text than any other theme in this list. Simple text render without anything special about it, black and white palette. No related articles and no disqus comments.
+Wide text block shows more text than any other theme in this list. Simple text renders without anything special about it, black and white palette. No related articles and no Disqus comments.
 
 ---
 
@@ -226,13 +226,13 @@ Another minimalism approach at it's best.
 
 [![Manis tags page](/images/hugo_themes/manis_tags.png)](/images/hugo_themes/manis_tags.png)
 
-Fixed width text even on navigation pages, which is sweeter than a candy. Tags won't tell which one is most used, and posts don't show tags which is important because lack of summary.
+Fixed width text even on navigation pages, which is sweeter than candy. Tags won't tell which one is most used, and posts don't show tags which is important because of lack of a summary.
 
 ### Single page
 
 [![Manis single post page](/images/hugo_themes/manis_single_post.png)](/images/hugo_themes/manis_single_post.png)
 
-In line with main and navigational pages, post content and nothing extra. Text is rendered in a very neat way, quotation and source code blocks adjusted to be in style with the theme and it's done really nice. Only next\previous posts shown below, no related posts. Disqus comments support is present.
+In line with main and navigational pages, post content and nothing extra. The text is rendered in a very neat way, quotation and source code blocks adjusted to be in style with the theme and it's done really nice. Only next\previous posts shown below, no related posts. Disqus comments support is present.
 
 ---
 
@@ -242,19 +242,19 @@ In line with main and navigational pages, post content and nothing extra. Text i
 
 [![NOW-UI main page](/images/hugo_themes/now-ui_main.png)](/images/hugo_themes/now-ui_main.png)
 
-By the main page you could say it's not only blog theme. Actual content is hidden somewhere where you should scroll and click, same with posts page. It have a lot of features which are not related to blog itself.
+By the main page, you could say it's not only a blog theme. The actual content is hidden somewhere where you should scroll and click, same with posts page. It has a lot of features which are not related to the blogging itself.
 
 ### Navigation
 
 [![NOW-UI tags page](/images/hugo_themes/now-ui_tags.png)](/images/hugo_themes/now-ui_tags.png)
 
-As all other pages, tags page have ridiqilous red banner on top, but under it is pretty tags list which is sorted by how many posts with each tag the blog have, which is the best possible sort in my humble opinion.
+Like all other pages, tags page have a ridiculous red banner on top, but under it is pretty tags list which is sorted by how many posts with each tag the blog have, which is the best possible sort in my humble opinion.
 
 ### Single page
 
 [![NOW-UI single post page](/images/hugo_themes/now-ui_single_post.png)](/images/hugo_themes/now-ui_single_post.png)
 
-It's better to see once for yourself. That big banner doesn't seem to be doing anything useful, but magically it adds importance to whatever written on it, and draws attention to the post title and description. Text is light and nice, and utilize black, white and red palette. No related articles list or links to previous article, however disqus comments are present.
+It's better to see once for yourself. That big banner doesn't seem to be doing anything useful, but magically it adds importance to whatever written on it and draws attention to the post title and description. The text is light and nice, and utilize black, white and red palette. No related articles list or links to the previous article, however, Disqus comments are present.
 
 ---
 
@@ -264,7 +264,7 @@ It's better to see once for yourself. That big banner doesn't seem to be doing a
 
 [![Nofancy main page](/images/hugo_themes/nofancy_main.png)](/images/hugo_themes/nofancy_main.png)
 
-That's only theme which choose to show single post instead of main page. Everything is... no fancy, in a good term.
+That's the only theme which chooses to show a single post instead of the main page. Everything is... no fancy, in a good term.
 
 ### Navigation
 
@@ -272,13 +272,13 @@ That's only theme which choose to show single post instead of main page. Everyth
 
 [![Nofancy tags page](/images/hugo_themes/nofancy_tags.png)](/images/hugo_themes/nofancy_tags.png)
 
-Navigation reminds me of reddit. I like it a lot, it's the best representation of the information you could get with staying that simple.
+Navigation reminds me of Reddit. I like it a lot, it's the best representation of the information you could get with staying that simple.
 
 ### Single page
 
 [![Nofancy single post page](/images/hugo_themes/nofancy_single_post.png)](/images/hugo_themes/nofancy_single_post.png)
 
-Nothing fancy there as well, black on gray with a little red. No related articles list, no disqus comments, bit with such desing it's a plus, not a minus.
+Nothing fancy there as well, black on gray with a little red. No related articles list, no Disqus comments, bit with such design it's a plus, not a minus.
 
 ---
 
@@ -288,7 +288,7 @@ Nothing fancy there as well, black on gray with a little red. No related article
 
 [![Refined main page](/images/hugo_themes/refined_main.png)](/images/hugo_themes/refined_main.png)
 
-Underdog, which is yet not included to catalogue. Nothing distracting, straight to the business, red on gray palette. Posts descriptions instead of summaries, in between between nothing and summaries, to me it seems one of the best possible variants.
+Underdog, which is yet not included to catalog. Nothing distracting, straight to the business, red on gray palette. Posts descriptions instead of summaries, in between nothing and summaries, to me it seems one of the best possible variants.
 
 ### Navigation
 
@@ -300,7 +300,7 @@ Posts page looks exactly main page, tags have all needed information and sorted 
 
 [![Refined single post page](/images/hugo_themes/refined_single_post.png)](/images/hugo_themes/refined_single_post.png)
 
-Very unique design I've seen only once more in all 200+ themes, this theme almost directly quotes markdown code from which the content is created (e.g. `##` becomes `*`, `###` becomes `**`, but they also still represent `h2` and `h3` HTML tags). If you think there is something unusual on the right, you're right: that's nicely crafted table of content, one of two enabled by default from all themes there, and done with finest quality.  No related articles, however next and previous pages links are present, and comments are in place, but they are [Isso](https://posativ.org/isso/) in addition to disqus.
+Very unique design I've seen only once more in all 200+ themes, this theme almost directly quotes markdown code from which the content is created (e.g. `##` becomes `*`, `###` becomes `**`, but they also still represent `h2` and `h3` HTML tags). If you think there is something unusual on the right, you're right: that's nicely crafted table of content, one of two enabled by default from all themes there, and done with the finest quality.  No related articles, however next and previous pages links are present, and comments are in place, but they are [Isso](https://posativ.org/isso/) in addition to Disqus.
 
 ---
 
@@ -310,13 +310,13 @@ Very unique design I've seen only once more in all 200+ themes, this theme almos
 
 [![Retroful Hugo main page](/images/hugo_themes/retroful_main.png)](/images/hugo_themes/retroful_main.png)
 
-"Cool" is the least thing you could say when you see this theme. I guess you could either love or hate it, but nothing in between. Sadly I wasn't able to set up navigation correctly.
+"Cool" is the last thing you could say when you see this theme. I guess you could either love or hate it, but nothing in between. Sadly I wasn't able to set up navigation correctly.
 
 ### Single page
 
 [![Retroful Hugo single post page](/images/hugo_themes/retroful_single_post.png)](/images/hugo_themes/retroful_single_post.png)
 
-It looks like I imaging 80's terminals, but in a way there were redefined in [Alien](https://www.youtube.com/watch?v=qb43-hn_-_c) (1979), and also it refers to Tokyo neon lights from [Bladerunner](https://www.youtube.com/watch?v=aFJF2CRASRM) (1982). No related articles (but previous\next post link present), but disqus comments are supported.
+It looks like I imagine 80's terminals, but in a way, there were redefined in [Alien](https://www.youtube.com/watch?v=qb43-hn_-_c) (1979), and also it refers to Tokyo neon lights from [Bladerunner](https://www.youtube.com/watch?v=aFJF2CRASRM) (1982). No related articles (but previous\next post link present), but Disqus comments are supported.
 
 ---
 
@@ -326,7 +326,7 @@ It looks like I imaging 80's terminals, but in a way there were redefined in [Al
 
 [![whiteplain main page](/images/hugo_themes/whiteplain_main.png)](/images/hugo_themes/whiteplain_main.png)
 
-Black, white and blue palette, everything is very clear and assembled with great care. Also you could notice that's one of the themes with table of content enabled by default.
+Black, white and blue palette, everything is very clear and assembled with great care. Also, you could notice that's one of the themes with the table of content enabled by default.
 
 ### Navigation
 
@@ -334,10 +334,10 @@ Black, white and blue palette, everything is very clear and assembled with great
 
 [![whiteplain tag page](/images/hugo_themes/whiteplain_tags.png)](/images/hugo_themes/whiteplain_tags.png)
 
-Posts page is the same as main page and tags page, only title changes. Posts are listed with summaries and all the metadata. Tags are the best out there, they have maximum metadata presence plus alphabetical sort - my heart is with these tags.
+Posts page is the same as the main page and tags page, only title changes. Posts are listed with summaries and all the metadata. Tags are the best out there, they have maximum metadata presence plus alphabetical sort - my heart is with these tags.
 
 ### Single page
 
 [![whiteplain single post page](/images/hugo_themes/whiteplain_single_post.png)](/images/hugo_themes/whiteplain_single_post.png)
 
-Text is not fancy, but very solid and readable and have no distracting elements which some themes tend to use (like quotation boxes). Disqus support is in place, next\previous post navigation but no related articles (which could look alien there).
+The text is not fancy, but very solid and readable and have no distracting elements which some themes tend to use (like quotation boxes). Disqus support is in place, next\previous post navigation but no related articles (which could look alien there).
