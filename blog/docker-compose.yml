@@ -17,9 +17,7 @@ services:
 
     blog-preview:
         image: paskal/hugo
-        command: -D --bind "0.0.0.0" server
-        hostname: blog-preview
-        container_name: blog-preview
+        command: -DF --bind "0.0.0.0" server
 
         logging:
           driver: json-file

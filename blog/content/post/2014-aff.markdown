@@ -1,7 +1,7 @@
 ---
 tags:
 - hobby
-- skydive
+- skydiving
 comments: true
 date: 2014-07-30T09:20:06Z
 description: Рассказ об обучении прыжкам с парашютам крылом, программа обучения AFF,  семь уровней с боссом на финальном.
