@@ -2,7 +2,7 @@
 tags:
 - hobby
 - people
-- skydive
+- skydiving
 comments: true
 date: 2014-12-30T16:02:55Z
 description: Итоги парашютного сезона-2014.

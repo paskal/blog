@@ -3,7 +3,7 @@ tags:
 - books
 - people
 - thoughts
-- skydive
+- skydiving
 comments: true
 date: 2018-05-03T20:39:00Z
 description: Skydive existential crisis
