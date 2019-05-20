@@ -31,5 +31,5 @@ services:
             - "1313:1313"
 
         volumes:
-            - ./:/srv/hugo:ro
+            - ./:/srv/hugo
 
