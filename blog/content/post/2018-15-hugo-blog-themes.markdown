@@ -252,7 +252,7 @@ Like all other pages, tags page have a ridiculous red banner on top, but under i
 
 ### Single page
 
-[![NOW-UI single post page](/images/hugo_themes/now-ui_single_post.png)](/images/hugo_themes/now-ui_single_post.png)
+[![NOW-UI single post page](/images/hugo_themes/now-ui_single_post.jpg)](/images/hugo_themes/now-ui_single_post.jpg)
 
 It's better to see once for yourself. That big banner doesn't seem to be doing anything useful, but magically it adds importance to whatever written on it and draws attention to the post title and description. The text is light and nice, and utilize black, white and red palette. No related articles list or links to the previous article, however, Disqus comments are present.
 
