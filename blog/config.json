@@ -3,7 +3,6 @@
   "title": "Notes on Blue Skies",
   "theme": "hugo-theme-jane",
   "copyright": "<a rel=\"license\" href=\"https://creativecommons.org/licenses/by/4.0/\" >Copyleft</a> &copy; Dmitry Verhoturov",
-  "disqusShortname": "realmfpa",
   "rssLimit": 100,
   "permalinks": {
     "post": "/:year/:slug/"
@@ -52,6 +51,7 @@
     ]
   },
   "params": {
+    "customCSS": ["center-img.css"],
     "social": {
       "a-email": "mailto:paskal.07@gmail.com",
       "b-goodreads": "https://www.goodreads.com/user/show/23839983",

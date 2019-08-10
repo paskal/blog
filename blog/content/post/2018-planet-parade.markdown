@@ -16,11 +16,10 @@ It was a long journey which I believe changed her life in some way and soon hope
 
 The last step of writing a program is publishing it for the public, and I am glad to announce the game named Planet Parade is finally out for iOS and Android devices!
 
-[![Planet Parade](https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/b2/f1/67/b2f167a7-896c-d4e9-c3c0-85cd8174ad36/AppIcon-0-1x_U007emarketing-0-85-220-7.png/400x400bb.jpg)](https://itunes.apple.com/app/planet-parade/id1438973148?mt=8")
+[![Planet Parade](images/posts/planet_parade.jpg#center)](https://itunes.apple.com/app/planet-parade/id1438973148?mt=8)
 
 It's a [Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game)) game with planets (*and Pluto*), it's source code in C# [available on GitHub](https://github.com/Ksinia/PlanetParade), and I encourage you to try it out:)
 
-<a href="https://itunes.apple.com/app/planet-parade/id1438973148?mt=8" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg) no-repeat;width:135px;height:40px;"></a>
-<br />
-<a href="https://play.google.com/store/apps/details?id=net.ksinia.planetparade"><img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" /></a>
+[![Get it on AppStore](images/posts/appstore-lrg.svg)](https://itunes.apple.com/app/planet-parade/id1438973148?mt=8)
+[![Get it on Google Play](images/posts/en_generic_rgb_wo_45.png)](https://play.google.com/store/apps/details?id=net.ksinia.planetparade)
 <!--more-->
