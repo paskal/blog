@@ -2,7 +2,7 @@
   "baseurl": "https://terrty.net/",
   "title": "Notes on Blue Skies",
   "theme": "hugo-theme-jane",
-  "copyright": "<a rel=\"license noopener\" target=\"_blank\" href=\"https://creativecommons.org/licenses/by/4.0/\" >Copyleft</a> &copy; Dmitry Verhoturov",
+  "copyright": "<a rel=\"license noopener\" target=\"_blank\" href=\"https://creativecommons.org/licenses/by/4.0/\" >Copyleft</a> &copy; Dmitry Verkhoturov",
   "rssLimit": 100,
   "permalinks": {
     "post": "/:year/:slug/"
@@ -40,7 +40,7 @@
     "tag": "tags"
   },
   "author": {
-    "name": "Dmitry Verhoturov",
+    "name": "Dmitry Verkhoturov",
     "email": "paskal.07@gmail.com"
   },
   "frontmatter": {
@@ -52,6 +52,7 @@
   },
   "params": {
     "customCSS": ["center-img.css"],
+    "description": "Skydiver's personal blog",
     "social": {
       "a-email": "mailto:paskal.07@gmail.com",
       "b-goodreads": "https://www.goodreads.com/user/show/23839983",
