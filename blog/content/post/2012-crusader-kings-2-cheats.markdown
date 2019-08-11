@@ -1,7 +1,6 @@
 ---
 tags:
 - games
-comments: true
 date: 2012-02-15T18:48:48Z
 title: Crusader Kings 2 cheats
 slug: crusader-kings-2-cheats

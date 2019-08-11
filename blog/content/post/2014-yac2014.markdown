@@ -1,10 +1,9 @@
 ---
 tags: null
-comments: true
 date: 2014-10-27T18:12:55Z
 description: Предполагаемая программа моей предстоящей поездке на Yet another Conference
   2014.
-keywords: Яндекс, Yandex, YAC, Yet another Conference
+keywords: ["Яндекс", "Yandex", "YAC", "Yet another Conference"]
 title: Программа поездки на Yet another Conference 2014
 slug: yac2014
 ---

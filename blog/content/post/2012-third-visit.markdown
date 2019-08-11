@@ -1,7 +1,7 @@
 ---
 tags:
 - army
-comments: false
+comment: false
 date: 2012-10-03T00:00:00Z
 title: Третий подход
 slug: third-visit

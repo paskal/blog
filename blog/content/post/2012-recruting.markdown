@@ -1,6 +1,5 @@
 ---
 tags: null
-comments: true
 date: 2012-11-08T00:00:00Z
 title: Рекрутинг
 slug: recruting

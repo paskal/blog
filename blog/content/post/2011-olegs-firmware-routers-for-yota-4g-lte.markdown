@@ -2,7 +2,6 @@
 tags:
 - hardware
 - software
-comments: true
 date: 2011-03-06T13:52:05Z
 title: Роутеры, поддерживающие Yota WiMax
 slug: olegs-firmware-routers-for-yota-4g-lte

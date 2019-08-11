@@ -2,7 +2,6 @@
 tags:
 - books
 - people
-comments: true
 date: 2018-04-02T17:26:45Z
 description: Nude & Rude Wisdom Hunger
 title: Lust for life

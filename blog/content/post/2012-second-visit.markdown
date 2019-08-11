@@ -1,7 +1,6 @@
 ---
 tags:
 - army
-comments: true
 date: 2012-09-24T00:00:00Z
 title: Второй заход
 slug: second-visit

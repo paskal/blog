@@ -1,7 +1,6 @@
 ---
 tags:
 - software
-comments: true
 date: 2017-08-24T19:24:03Z
 description: How to setup remote code execution using VSC
 title: How to build code remotely in Visual Studio Code

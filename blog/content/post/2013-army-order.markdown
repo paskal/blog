@@ -1,7 +1,7 @@
 ---
 tags:
 - army
-comments: false
+comment: false
 date: 2013-06-24T00:00:00Z
 title: Армейский уклад
 slug: army-order

@@ -1,7 +1,7 @@
 ---
 tags:
 - hobby
-comments: false
+comment: false
 date: 2012-07-19T17:07:07Z
 title: Hobby
 slug: hobby

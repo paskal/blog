@@ -1,7 +1,7 @@
 ---
 tags:
 - army
-comments: false
+comment: false
 date: 2012-11-06T00:00:00Z
 title: Контрольная явка
 slug: control-attendance
