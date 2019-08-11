@@ -1,7 +1,7 @@
 ---
 tags:
 - hobby
-comments: false
+comment: false
 date: 2012-07-13T00:56:13Z
 title: Лето '12
 slug: summer

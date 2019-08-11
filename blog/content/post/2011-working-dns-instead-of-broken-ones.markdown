@@ -1,7 +1,6 @@
 ---
 tags:
 - software
-comments: true
 date: 2011-03-04T17:34:29Z
 title: Работающие DNS на замену нерабочих
 slug: working-dns-instead-of-broken-ones

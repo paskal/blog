@@ -4,7 +4,6 @@ tags:
 - software
 - games
 - programming
-comments: true
 date: 2018-10-17T15:44:00Z
 description: Planet Parade iOS game
 title: Girlfriend experience

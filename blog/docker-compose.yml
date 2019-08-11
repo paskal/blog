@@ -16,7 +16,7 @@ services:
 
     server:
         image: klakegg/hugo
-        command: server
+        command: server -DF
 
         logging:
           driver: json-file

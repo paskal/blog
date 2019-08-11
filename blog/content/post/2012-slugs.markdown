@@ -1,7 +1,6 @@
 ---
 tags:
 - people
-comments: true
 date: 2012-04-12T12:54:10Z
 title: О попрошайках в метро
 slug: slugs

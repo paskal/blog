@@ -2,7 +2,6 @@
 tags:
 - software
 - security
-comments: true
 date: 2014-01-15T00:00:00Z
 title: Установка SoftEther VPN в Ubuntu
 slug: softether-vpn-ubuntu

@@ -1,7 +1,6 @@
 ---
 tags:
 - software
-comments: true
 date: 2012-04-25T06:03:50Z
 title: Mount Yandex.Disk in Ubuntu or Other Linux
 slug: mount-yandex-disk-in-ubuntu-or-other-linux

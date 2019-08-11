@@ -1,7 +1,6 @@
 ---
 tags:
 - army
-comments: true
 date: 2014-02-26T00:00:00Z
 title: Как подготовиться к армии
 slug: prepare-to-fight

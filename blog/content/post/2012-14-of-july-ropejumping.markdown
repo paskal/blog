@@ -1,7 +1,7 @@
 ---
 tags:
 - hobby
-comments: false
+comment: false
 date: 2012-07-15T00:16:39Z
 title: Прыжки 14 июля
 slug: 14-of-july-ropejumping

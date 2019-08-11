@@ -2,7 +2,6 @@
 tags:
 - games
 - programming
-comments: true
 date: 2011-08-03T22:21:16Z
 title: 'Minecraft: связывание команд и клавиш'
 slug: binding-keys-to-commands-in-minecraft

@@ -1,7 +1,7 @@
 ---
 tags:
 - software
-comments: false
+comment: false
 date: 2012-05-12T13:14:23Z
 title: Перенос пользователей со старого linux сервера на новый
 slug: migrating-users-from-old-linux-server-to-new-one

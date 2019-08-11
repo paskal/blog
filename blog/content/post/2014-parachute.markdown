@@ -3,10 +3,9 @@ tags:
 - hobby
 - people
 - skydiving
-comments: true
 date: 2014-12-30T16:02:55Z
 description: Итоги парашютного сезона-2014.
-keywords: хобби, парашюты, aff, обучение, парашют-крыло
+keywords: ["хобби", "парашюты", "aff", "обучение", "парашют-крыло"]
 title: Итоги первого парашютного сезона
 slug: parachute
 ---

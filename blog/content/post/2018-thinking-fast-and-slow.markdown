@@ -3,7 +3,6 @@ tags:
 - books
 - people
 - thoughts
-comments: true
 date: 2018-04-23T12:42:40Z
 description: Не думать о белом медведе
 title: Медленное и быстрое мышление

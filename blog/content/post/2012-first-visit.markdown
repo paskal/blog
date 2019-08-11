@@ -1,7 +1,7 @@
 ---
 tags:
 - army
-comments: false
+comment: false
 date: 2012-09-06T00:00:00Z
 title: Первый визит в военкомат
 slug: first-visit
