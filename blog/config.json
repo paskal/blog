@@ -2,7 +2,7 @@
   "baseurl": "https://terrty.net/",
   "title": "Notes on Blue Skies",
   "theme": "hugo-theme-jane",
-  "copyright": "<a rel=\"license\" href=\"https://creativecommons.org/licenses/by/4.0/\" >Copyleft</a> &copy; Dmitry Verhoturov",
+  "copyright": "<a rel=\"license noopener\" target=\"_blank\" href=\"https://creativecommons.org/licenses/by/4.0/\" >Copyleft</a> &copy; Dmitry Verhoturov",
   "rssLimit": 100,
   "permalinks": {
     "post": "/:year/:slug/"
@@ -31,7 +31,7 @@
       },
       {
         "name": "Source code",
-        "url": "https://github.com/paskal/terrty",
+        "url": "https://github.com/paskal/terrty/tree/master/blog",
         "weight": 100
       }
     ]
