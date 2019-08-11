@@ -23,7 +23,7 @@ slug: lust-for-life
 
 Дмитрий Гутов на видео ниже в минимально возможное время рассказывает, почему прекрасно одетые люди рассматривают на выставке кучи мусора [Ильи Кабакова](http://thewallmagazine.ru/who-is-ilya-kabakov/), готовы платить миллионы за [дерьмо художника](http://www.tate.org.uk/art/artworks/manzoni-artists-shit-t07667) Мандзони и полудетские каракули [Жан-Мишель Баския](http://basquiat.com/), и чем знамениты сделанные из стали [пластиковые надувные игрушки](http://www.jeffkoons.com/artwork/balloon-swan/balloon-swan) работы Джеффа Кунса.
 
-{{< figure src="/images/posts/youtube/SFIEA_sAPhc.png" link="//www.youtube.com/watch?v=SFIEA_sAPhc" target="_blank" alt="Все о современном искусстве за полтора часа. Лекция Дмитрия Гутова" >}}
+{{< figure src="/images/posts/youtube/SFIEA_sAPhc.png" link="https://www.youtube.com/watch?v=SFIEA_sAPhc" target="_blank" alt="Все о современном искусстве за полтора часа. Лекция Дмитрия Гутова" >}}
 
 Глянцевой обложке видео и блестящей лысине Дмитрий обязан журналу *Сноб*. Просто посмотрите видео, вы не пожалеете — здесь тот редкий случай, когда название абсолютно точно соответствует содержанию. Десятки интересных и забавных мыслей, из запомнившегося — рядом висящий оригинал и копия отличаются по тому, что подлинник написан хуже - где-то у автора дрогнула рука, где-то потекла краска, и это-то технически сымитировать очень сложно, если не невозможно.
 
@@ -33,7 +33,7 @@ slug: lust-for-life
 
 Ниже ещё одно видео Гутова, на этот раз о его творчестве, такое же интересное, как первое.
 
-{{< figure src="/images/posts/youtube/WD4HGn_TOA8.png" link="//www.youtube.com/watch?v=WD4HGn_TOA8" target="_blank" alt="DOCA-talk: Д. Гутов о современном искусстве в России" >}}
+{{< figure src="/images/posts/youtube/WD4HGn_TOA8.png" link="https://www.youtube.com/watch?v=WD4HGn_TOA8" target="_blank" alt="DOCA-talk: Д. Гутов о современном искусстве в России" >}}
 
 ---
 
