@@ -51,7 +51,7 @@
     ]
   },
   "params": {
-    "customCSS": ["center-img.css"],
+    "customCSS": ["center-img.css", "a-word-break.css"],
     "description": "Skydiver's personal blog",
     "social": {
       "a-email": "mailto:paskal.07@gmail.com",
