@@ -103,7 +103,7 @@ Sensu default UI called [Uchiwa](https://uchiwa.io/), seems to have many limitat
 
 ### Links
 
-* [Sensu - What I've Learnt](https://roobert.github.io/2015/11/09/Sensu-What/)
+* [Sensu – What I've Learnt](https://roobert.github.io/2015/11/09/Sensu-What/)
 
 * [MOTD integration](https://github.com/solarkennedy/sensu-report)
 

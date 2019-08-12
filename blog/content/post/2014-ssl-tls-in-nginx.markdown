@@ -7,7 +7,7 @@ title: Лучшие настройки HTTPS (TLS) Nginx
 slug: ssl-tls-in-nginx
 ---
 
-Для начала приведу [правильную](https://www.ssllabs.com/projects/best-practices/index.html "Qualys SSL Labs - Projects / SSL/TLS Deployment Best Practices") конфигурацию, которую вы можете утащить к себе. И, да, под HTTPS я [имею в виду](https://www.howsmyssl.com/s/about.html#tls-vs-ssl "About · How's My SSL?") [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security "Transport Layer Security — Wikipedia").
+Для начала приведу [правильную](https://www.ssllabs.com/projects/best-practices/index.html "Qualys SSL Labs – Projects / SSL/TLS Deployment Best Practices") конфигурацию, которую вы можете утащить к себе. И, да, под HTTPS я [имею в виду](https://www.howsmyssl.com/s/about.html#tls-vs-ssl "About · How's My SSL?") [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security "Transport Layer Security — Wikipedia").
 
 <!--more-->
 

@@ -23,7 +23,7 @@ All themes below have active developers, I've didn't include 3-years-old themes 
 
 [![ananke main page](/images/hugo_themes/ananke_main.png#center)](/images/hugo_themes/ananke_main.png)
 
-I love themes which cut straight to the content, and this is not one of them - when someone comes to your site by URL, they should scroll or click to see posts.
+I love themes which cut straight to the content, and this is not one of them – when someone comes to your site by URL, they should scroll or click to see posts.
 
 ### Navigation
 
@@ -67,7 +67,7 @@ A hybrid between having nothing extra apart from the text but navigation and hug
 
 [![Casper single post page](/images/hugo_themes/casper_single_post.png#center)](/images/hugo_themes/casper_single_post.png)
 
-That's best text handling I've seen so far. Post title, description, tags and time, and then content - nothing special, but then comes magic: images have a slightly bigger weight than the text. So simple and yet genial. Of course, the theme supports Disqus.
+That's best text handling I've seen so far. Post title, description, tags and time, and then content – nothing special, but then comes magic: images have a slightly bigger weight than the text. So simple and yet genial. Of course, the theme supports Disqus.
 
 ### Related articles
 
@@ -91,13 +91,13 @@ The main page is pretty neat, no preview for posts, just post names, custom text
 
 [![Classic tag page](/images/hugo_themes/classic_tag.png#center)](/images/hugo_themes/classic_tag.png)
 
-Just text - nothing extra. Hell with the posts' summaries, that's *classy*.
+Just text – nothing extra. Hell with the posts' summaries, that's *classy*.
 
 ### Single page
 
 [![Classic single post page](/images/hugo_themes/classic_single_post.png#center)](/images/hugo_themes/classic_single_post.png)
 
-Text with fixed width, a sign of a good taste. However, minimalism means there is no Disqus support out of the box. Formatting is what you could name "plain", nothing special, but everything on its place - well-balanced and very solid.
+Text with fixed width, a sign of a good taste. However, minimalism means there is no Disqus support out of the box. Formatting is what you could name "plain", nothing special, but everything on its place – well-balanced and very solid.
 
 ---
 
@@ -107,7 +107,7 @@ Text with fixed width, a sign of a good taste. However, minimalism means there i
 
 [![coder main page](/images/hugo_themes/coder_main.png#center)](/images/hugo_themes/coder_main.png)
 
-Simplicity at maximum. Everything on its place, right font - and here comes your first impression.
+Simplicity at maximum. Everything on its place, right font – and here comes your first impression.
 
 ### Navigation
 
@@ -131,7 +131,7 @@ Widest post content out there with deep spacing between the lines, there is a ro
 
 [![Fabric main page](/images/hugo_themes/fabric_main.png#center)](/images/hugo_themes/fabric_main.png)
 
-Simple yet unique and functional, and also includes working search field. On the cons side - posts are shown completely, not only summaries.
+Simple yet unique and functional, and also includes working search field. On the cons side – posts are shown completely, not only summaries.
 
 ### Navigation
 
@@ -155,7 +155,7 @@ Solid text renders without anything out of order. I've included a bit bigger scr
 
 [![Jane main page](/images/hugo_themes/jane_main.png#center)](/images/hugo_themes/jane_main.png)
 
-Classy simplicity, a pure text of highest quality - that's what Jane theme is about.
+Classy simplicity, a pure text of highest quality – that's what Jane theme is about.
 
 ### Navigation
 
@@ -333,7 +333,7 @@ Black, white and blue palette, everything is very clear and assembled with great
 
 [![whiteplain tag page](/images/hugo_themes/whiteplain_tags.png#center)](/images/hugo_themes/whiteplain_tags.png)
 
-Posts page is the same as the main page and tags page, only title changes. Posts are listed with summaries and all the metadata. Tags are the best out there, they have maximum metadata presence plus alphabetical sort - my heart is with these tags.
+Posts page is the same as the main page and tags page, only title changes. Posts are listed with summaries and all the metadata. Tags are the best out there, they have maximum metadata presence plus alphabetical sort – my heart is with these tags.
 
 ### Single page
 
