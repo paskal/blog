@@ -2,7 +2,7 @@ version: '2'
 services:
 
     build:
-        image: klakegg/hugo:latest-ext
+        image: klakegg/hugo
 
         logging:
           driver: json-file
@@ -15,7 +15,7 @@ services:
             - ./:/src
 
     server:
-        image: klakegg/hugo:latest-ext
+        image: klakegg/hugo
         command: server -DF
 
         logging:
