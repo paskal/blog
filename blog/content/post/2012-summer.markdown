@@ -1,5 +1,6 @@
 ---
 tags:
+- russian
 - hobby
 comment: false
 date: 2012-07-13T00:56:13Z

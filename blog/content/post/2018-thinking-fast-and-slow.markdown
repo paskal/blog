@@ -1,5 +1,6 @@
 ---
 tags:
+- russian
 - books
 - people
 - thoughts

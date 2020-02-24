@@ -1,5 +1,6 @@
 ---
 tags:
+- english
 - people
 - software
 - games
@@ -11,7 +12,7 @@ slug: planet-parade
 ---
 My girlfriend is working outside of IT, but had an interest in programming and started learning C# and Xamarin framework two years ago, and around that time she decided to create her own mobile game.
 
-It was a long journey which I believe changed her life in some way and soon hopefully will help her end up with the job of a programmer in another country.
+It was a long journey which changed her life in some way and soon will help her end up with the job of a programmer in another country.
 
 The last step of writing a program is publishing it for the public, and I am glad to announce the game named Planet Parade is finally out for iOS and Android devices!
 

@@ -1,5 +1,6 @@
 ---
 tags:
+- russian
 - books
 - people
 date: 2018-04-02T17:26:45Z

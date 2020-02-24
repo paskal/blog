@@ -1,5 +1,6 @@
 ---
 tags:
+- russian
 - skydiving
 - videos
 - films

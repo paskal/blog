@@ -1,5 +1,6 @@
 ---
 tags:
+- russian
 - games
 - programming
 date: 2011-08-03T22:21:16Z

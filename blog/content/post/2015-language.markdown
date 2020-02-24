@@ -1,5 +1,6 @@
 ---
 tags:
+- russian
 - language
 - people
 - books

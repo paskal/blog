@@ -1,5 +1,6 @@
 ---
 tags:
+- russian
 - software
 - security
 date: 2014-06-04T07:51:19Z

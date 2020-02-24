@@ -1,5 +1,6 @@
 ---
 tags:
+- russian
 - hobby
 - skydiving
 date: 2019-06-02T17:00:00Z
