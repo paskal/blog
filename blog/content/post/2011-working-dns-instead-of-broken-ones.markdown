@@ -1,5 +1,6 @@
 ---
 tags:
+- russian
 - software
 date: 2011-03-04T17:34:29Z
 title: Работающие DNS на замену нерабочих

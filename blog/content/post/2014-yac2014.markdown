@@ -1,5 +1,6 @@
 ---
-tags: null
+tags:
+- russian
 date: 2014-10-27T18:12:55Z
 description: Предполагаемая программа моей предстоящей поездке на Yet another Conference
   2014.

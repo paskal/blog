@@ -1,5 +1,6 @@
 ---
 tags:
+- russian
 - people
 - hobby
 date: 2019-08-11T23:44:00Z

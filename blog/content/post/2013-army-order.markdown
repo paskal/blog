@@ -1,5 +1,6 @@
 ---
 tags:
+- russian
 - army
 comment: false
 date: 2013-06-24T00:00:00Z

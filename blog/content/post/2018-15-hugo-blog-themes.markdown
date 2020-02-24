@@ -1,5 +1,6 @@
 ---
 tags:
+- english
 - go
 - programming
 toc: true
@@ -9,7 +10,7 @@ title: 15 Hugo Framework blog themes
 slug: 15-hugo-framework-blog-themes
 ---
 
-I've tested all 202 Hugo themes [from the catalog](https://github.com/gohugoio/hugoThemes) plus 3 missing from it for basic functionality and picked the best blog-oriented ones. By that I mean all of them have blog posts shown on the main page and most of them support posts tags.
+I've tested all 202 Hugo themes [from the catalog](https://github.com/gohugoio/hugoThemes) plus 3 missing from it for basic functionality and picked the best blog-oriented ones. By that I mean all them have blog posts shown on the main page and most of them support posts tags.
 
 All themes below have active developers, I've didn't include 3-years-old themes without newer commits. I'll present them in alphabetical order, they're all fine quality and couldn't be compared or ranked in any unified way I can think of.
 
@@ -35,7 +36,7 @@ For posts, it's the same as with the main page, a lot of space eaten by the bann
 
 [![ananke single post page](/images/hugo_themes/ananke_single_post.png#center)](/images/hugo_themes/ananke_single_post.png)
 
-Nothing extra on the single post page, however a lot of space unused, all posts list on the right in addition to related articles list on the end of the article, no Disqus support.
+Nothing extra on the single post page. but a lot of space unused, all posts list on the right in addition to related articles list on the end of the article, no Disqus support.
 
 ---
 
@@ -107,7 +108,7 @@ Text with fixed width, a sign of a good taste. However, minimalism means there i
 
 [![coder main page](/images/hugo_themes/coder_main.png#center)](/images/hugo_themes/coder_main.png)
 
-Simplicity at maximum. Everything on its place, right font – and here comes your first impression.
+Simplicity at largest. Everything on its place, right font – and here comes your first impression.
 
 ### Navigation
 

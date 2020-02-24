@@ -1,5 +1,6 @@
 ---
 tags:
+- russian
 - hardware
 - software
 date: 2011-03-06T13:52:05Z

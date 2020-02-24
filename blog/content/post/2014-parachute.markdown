@@ -1,5 +1,6 @@
 ---
 tags:
+- russian
 - hobby
 - people
 - skydiving

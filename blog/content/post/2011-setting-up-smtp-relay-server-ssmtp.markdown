@@ -1,5 +1,6 @@
 ---
 tags:
+- russian
 - software
 date: 2011-08-04T14:45:45Z
 title: Настройка smtp relay server – ssmtp

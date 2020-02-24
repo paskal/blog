@@ -1,5 +1,6 @@
 ---
 tags:
+- russian
 - people
 date: 2012-04-12T12:54:10Z
 title: О попрошайках в метро
