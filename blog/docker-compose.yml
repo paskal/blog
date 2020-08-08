@@ -5,10 +5,10 @@ services:
         image: klakegg/hugo
 
         logging:
-          driver: json-file
-          options:
-            max-size: "10m"
-            max-file: "5"
+            driver: json-file
+            options:
+                max-size: "10m"
+                max-file: "5"
 
         volumes:
             - ./public:/target
@@ -19,10 +19,10 @@ services:
         command: server -DF
 
         logging:
-          driver: json-file
-          options:
-            max-size: "10m"
-            max-file: "5"
+            driver: json-file
+            options:
+                max-size: "10m"
+                max-file: "5"
 
         ports:
             - "1313:1313"
