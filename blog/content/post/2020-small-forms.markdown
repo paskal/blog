@@ -1,5 +1,4 @@
 ---
-draft: true
 tags:
 - english
 - thoughts
@@ -10,14 +9,14 @@ title: Big problems on a small scale
 slug: small-forms
 ---
 
-My future is bright, but my present is dreadful. Aside from usual life problems that I can't do anything about I've got a bunch I'm capable of resolving and that turned out to be a challenge I could not cast away.
+My future is bright, but my present is dreadful. Aside from usual life problems which I can't do anything about I've got a bunch I'm capable of resolving and that turned out to be a challenge I could not cast away.
 
-### A bit of history
+### A bit of background
 
-I've started helping my father's small company of 13 people plus three contractors working on the site, and it's content when I've heard enough of silly stories about problems with the company site. Three particular which enraged me the most were:
+I've started helping my father's small company of 13 people plus three contractors working on the site and its content when I've heard enough of silly stories about problems with the company site. Three particular which enraged me the most were:
 
 - `sitemap.xml` not renewed for 2 months after migration to the new platform causing _huge_ search engines traffic decrease
-- `robots.txt` for regional subdomains having Hostname directive pointing to the main site, causing three sites to merge into a single one in the eyes of the search engines
+- `robots.txt` for regional subdomains having `Hostname` directive pointing to the main site, effectively causing three sites to merge into a single one in the eyes of the search engines
 - the cherry on the cake, [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) website performance benchmark reliably shows 25-30 points from 100
 
 <!--more-->
@@ -28,7 +27,7 @@ My father's business is very seasonal as it mostly sells building materials, and
 
 Early August I've asked him to add me to the internal ticket system and introduce me to other people who work with the site. In a few days I created a basic monitoring for known problems and started getting into how things work.
 
-In one month I've switched monitoring from a very basic one (Monit) to a normal one with graphs and history (Zabbix), found and eliminated a few small problems and inconsistencies in the site configuration and by pure luck found and eliminated a huge performance drain by unchecking a single checkbox in site admin interface which sped up the site from 25-30 to 55-65 points in Lighthouse test.
+In one month I've switched monitoring from a very basic one (Monit) to an extensive one with graphs and history (Zabbix), found and eliminated a few small problems and inconsistencies in the site configuration and by pure luck found and eliminated a huge performance drain by unchecking a single checkbox in site admin interface which sped up the site from 25-30 to 55-65 points in Lighthouse test.
 
 Before the glorious speed up of the site, I spent approximately 20 hours tinkering with its Nginx and apache2 configuration and installing and fine-tuning [ngx_pagespeed](https://developers.google.com/speed/pagespeed/module) module. Another 10 or 15 hours were spent in observing search engines webmaster and analytics tools in an attempt to find low-hanging Search Optimisation fruits, which yielding close to none measurable results so far as well.
 
