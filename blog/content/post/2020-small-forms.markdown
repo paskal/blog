@@ -33,19 +33,19 @@ Before the glorious speed up of the site, I spent approximately 20 hours tinkeri
 
 ### Grievous present
 
-Fast forward to the present moment, I'm trying to do a simple task of adding a few more regional subdomains and couldn't do that because each step spawns long chains of thoughts:
+Fast forward to the present moment, I'm trying to do a simple task of adding a few more regional subdomains and couldn't do that because each step spawns long chains of thoughts. Around every corner I see a possibility of improvement which requires another one which requires another one and so on:
  
 - The current setup requires me to add new domains one by one in the "hosting control panel" which had its glory days back in 2011 but since then turned from the thing you brag about to fellow students into something which you blame for your misbehaviour on last year's mother's birthday when you lie on the psychotherapist couch;
 - To avoid making 9 clicks per page multiplied by 10 sites I could alter Nginx and apache configuration for all sites at once, but I'll need a switch from "control panel" SSL certification renewal to my own;
 - In order to renew certificates automatically I need to utilize certbot directly, and in order to do it reproducible I need to do it in docker-compose, which doesn't exist now;
-- When I'll have certbot in docker-compose, it wouldn't make sense to have Nginx outside of docker, and I would want to move it inside docker-compose as well;
-- When I'll have Nginx in docker-compose, the only thing to migrate would be apache, but it's a monster on its own, and it would be much better to switch to simpler php-fpm;
+- When I'll have certbot in docker-compose, it wouldn't make sense to have Nginx and apache2 outside of docker, and I would want to move it inside docker-compose as well;
+- apache2 is a monster on its own, and it would be much better to switch to simpler php-fpm;
 - When I'll have all web setup inside the docker-compose, I would want to move cron scripts there as well to get rid of any configuration which is not in the code yet;
 - Somewhere above I forgot about an obscure MySQL 5.7 fork is running on the server, and I need to move it to docker-compose as well with migration to MySQL 8;
-- Have I mentioned php-fpm is interchangeable with HHVM and I would want to test them both?
+- Have I mentioned php-fpm is theoretically interchangeable with HHVM and I would want to test them both?
 
 I can write down at least another five points but in the end it goes to the beginning of the list, and I still haven't started _actually doing something_.
 
 ### Radiant future
 
-My conclusion for the night is that skills of SRE which are useful for thousands of servers and terabytes of data transferred hourly are useful on a super-small scale, and I know how to make a state-of-art system which would be very easy to debug, maintain and scale, but only God knows how long is the way lying ahead of me.
+My conclusion for the night is that skills of SRE which are useful for thousands of servers and terabytes of data transferred hourly are useful on a super-small scale as well. I know how to make a state-of-art system which would be very easy to debug, maintain and scale, but only God knows how long is the way lying ahead of me.
