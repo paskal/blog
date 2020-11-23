@@ -7,7 +7,7 @@ title: Скрипт прокачки рефералов Dropbox для 16Gb бе
 slug: getting-16gb-in-dropbox-by-refferals
 ---
 
-C помощью скрипта возможно автоматическое привлечение рефералов к вашему аккаунту dropbox, каждый реферал даёт [500Мб места](https://blog.dropbox.com/2012/04/dropbox-referrals-are-now-twice-as-nice/), 32 дадут вам 16Гб дополнительного места.
+C помощью скрипта возможно автоматическое привлечение рефералов к вашему аккаунту dropbox, каждый реферал даёт [500Мб места](https://blog.dropbox.com/topics/company/dropbox-referrals-are-now-twice-as-nice), 32 дадут вам 16Гб дополнительного места.
 
 Ныне не работает, Dropbox прикрыло контору.
 
@@ -15,7 +15,7 @@ C помощью скрипта возможно автоматическое п
 
 <!--more-->
 
-Скачайте [Ubuntu](https://www.ubuntu.com/download/desktop) версии 14.04 ([.torrent](http://releases.ubuntu.com/trusty/ubuntu-14.04.5-desktop-i386.iso.torrent) or [.iso](http://releases.ubuntu.com/trusty/ubuntu-14.04.5-desktop-i386.iso)). Запишите образ на CD или [USB](https://unetbootin.github.io/) и загрузитесь с него (или запустите его в [виртуальной машине](https://www.virtualbox.org/wiki/Downloads)).
+Скачайте [Ubuntu](https://www.ubuntu.com/download/desktop) версии 14.04 ([.torrent](http://releases.ubuntu.com/trusty/ubuntu-14.04.6-desktop-i386.iso.torrent) or [.iso](http://releases.ubuntu.com/trusty/ubuntu-14.04.6-desktop-i386.iso)). Запишите образ на CD или [USB](https://unetbootin.github.io/) и загрузитесь с него (или запустите его в [виртуальной машине](https://www.virtualbox.org/wiki/Downloads)).
 Запустите терминал (**Ctrl**+**Alt**+**T**).
 
     sudo nano /etc/apt/sources.list

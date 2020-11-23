@@ -57,7 +57,7 @@ Because configuration is stored in files, you could use generic things, like ver
 
 I found no visible drawbacks, based on the documentation. The only thing that concerns me is its rapid development in the past and [very slow pace of commits](https://github.com/naparuba/shinken/commits/master) in the present: around 40 commits this year; most are pull requests merged, so no new development is going on, and only community-written bugfixes are being included. It’s either too good to move on (which is never the case; even old-timers like vim and emacs get their code updated) or it’s another opensource project that not enough people care about — you should know such things before using such a complex thing as a monitoring system.
 
-[Frédéric Mohier](https://github.com/mohierf) was very kind to give me an insight on reasons of current situation: more than one year ago, some of the main developers of Shinken left the project and made a fork named [Alignak](https://alignak-monitoring.github.io/), which is being actively developed and plan to deliver 1.0 release in December 2016.
+[Frédéric Mohier](https://github.com/mohierf) was very kind to give me an insight on reasons of current situation: more than one year ago, some of the main developers of Shinken left the project and made a fork named [Alignak](https://github.com/Alignak-monitoring/alignak), which is being actively developed and plan to deliver 1.0 release in December 2016.
 
 ### Links
 
@@ -118,7 +118,7 @@ General architecture:
 
 ![Icinga 2 architecture](/images/monitoring_systems/icinga2_cluster.png#center)
 
-Icinga 2 has a well-designed [distributed monitoring scheme](https://www.icinga.org/products/icinga-2/distributed-monitoring/). The only pitfall I found while setting up the test cluster is the number of settings related to distribution: It could be overwhelming initially.
+Icinga 2 has a well-designed [distributed monitoring scheme](https://icinga.com/docs/icinga2/latest/doc/06-distributed-monitoring/). The only pitfall I found while setting up the test cluster is the number of settings related to distribution: It could be overwhelming initially.
 
 ### Configuration systems integration
 

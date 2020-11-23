@@ -8,6 +8,8 @@ title: Vocal Image
 slug: vocal-image
 ---
 
+TODO: less personal focus
+
 Most of my mature life I suffered from the very monotonic voice sounding like I have a constantly clogged nose. I even had two surgeries fixing nasal septum which I broke first time at around four, and then two or three times more until the age of fourteen. Before I did the surgery the problem was obvious to me: of course, my voice is monotonic because of the nose problems!
 
 After the surgery, I could breathe easily even during the cold, but the voice didn't change. For a long time, I had a dream of making my own podcast, but I gave up because I knew for sure nobody would listen to me because my voice representation would be too unappealing for the listener to be engaged.
