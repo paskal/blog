@@ -20,7 +20,7 @@ slug: aff
 
 ### <a id="summary">tl;dr</a>
 
-- [обучение](https://ru.wikipedia.org/wiki/Accelerated_Freefall "Accelerated Freefall — Википедия"), позволяющее вам прыгать со спортивными парашютами, стоит [64700₽](http://www.aerograd.ru/aff "AFF – программа индивидуального обучения")
+- [обучение](https://en.wikipedia.org/wiki/Accelerated_freefall "Accelerated Freefall — Википедия"), позволяющее вам прыгать со спортивными парашютами, стоит [64700₽](http://www.aerograd.ru/aff "AFF – программа индивидуального обучения")
 
 - аэротруба [14800₽/](http://aerodynamika.ru/stoimost/)[21000₽/25000₽ час](https://www.freezone.net/rates/ "Тарифы | Freezone") — диаметр 2.5м, 3.6м и 5.1м соответственно, для прохождения AFF понадобится полчаса занятий
 

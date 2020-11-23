@@ -11,7 +11,7 @@ slug: double-click-instead-of-single
 
 * [Как разобрать мышь](http://www.potroshiteli.ru/Reviews/Peripheral/MXRevolution.html "Беспроводная мышь Logitech MX Revolution") — просмотрите, что вам потребуется сделать, и  разберитесь, до какой стадии вам требуется раскрутить мышь.
 
-* [Починка двойного клика взамен одинарного](http://www.overclockers.com/mouse-clicking-troubles-diy-repair/ "Mouse Clicking Troubles? DIY Repair | Overclockers") (англ) — отличная статья, по которой я чинил свою мышь. Английский знать не нужно, главное — картинки.
+* [Починка двойного клика взамен одинарного](https://www.overclockers.com/mouse-clicking-troubles-diy-repair/ "Mouse Clicking Troubles? DIY Repair | Overclockers") (англ) — отличная статья, по которой я чинил свою мышь. Английский знать не нужно, главное — картинки.
 
 * [Ещё один способ починки двойного клика вместо одиночного](https://alladvice.ru/497 "Ремонт мыши") со смазыванием машинным маслом — скорее всего, вам не понадобится.
 
