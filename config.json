@@ -52,13 +52,15 @@
   },
   "params": {
     "customCSS": ["center-img.css"],
-    "description": "Skydiver's personal blog",
+    "description": "Dmitry's Verkhoturov personal blog on skydiving, programming, reliability",
     "social": {
       "a-email": "mailto:paskal.07@gmail.com",
       "b-goodreads": "https://www.goodreads.com/user/show/23839983",
       "c-github": "https://github.com/paskal",
       "d-linkedin": "https://www.linkedin.com/in/verhoturov/"
     },
+    "logo": "/android-chrome-256x256.png",
+    "image": "/thumbnail.jpg",
     "since": "2011",
     "dateFormatToUse": "Jan 2, 2006"
   }

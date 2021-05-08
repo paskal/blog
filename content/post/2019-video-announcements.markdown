@@ -7,6 +7,7 @@ tags:
 date: 2019-05-21T01:19:00Z
 title: Как пережить автокатастрофу в небе над пустыней и другие видео
 description: Radio Skydive UK, парашютные видео Валеры Болучевского и непарашютные видео Nerdwriter'а
+coverart: /images/posts/youtube/herWXCE7bHI.png
 slug: video-announcements
 ---
 

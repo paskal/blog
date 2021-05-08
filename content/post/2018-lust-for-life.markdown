@@ -6,6 +6,7 @@ tags:
 date: 2018-04-02T17:26:45Z
 description: Nude & Rude Wisdom Hunger
 title: Lust for life
+coverart: /images/posts/lust_for_life.jpg
 slug: lust-for-life
 ---
 
