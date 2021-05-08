@@ -8,7 +8,7 @@ title: 'Minecraft: связывание команд и клавиш'
 slug: binding-keys-to-commands-in-minecraft
 ---
 
-В данном посте я расскажу, как подвесить команды чата или последовательность действий [Minecraft](https://minecraft.net/) на клавиши. Для этих целей я буду использовать [AutoHotkey](https://www.autohotkey.com/).
+В данном посте я расскажу, как подвесить команды чата или последовательность действий [Minecraft](https://www.minecraft.net/en-us/) на клавиши. Для этих целей я буду использовать [AutoHotkey](https://www.autohotkey.com/).
 
 <!--more-->
 
