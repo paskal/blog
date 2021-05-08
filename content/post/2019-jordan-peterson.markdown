@@ -16,11 +16,11 @@ slug: jordan-peterson
 
 Следствие из предыдущего предложения: когда ты не двигаешься к цели и ожидаешь правильного момента и возможности, *opportunity*, которая позволила бы сразу достигнуть цели, ты не сможешь ею воспользоваться. Даже когда она будет перед твоим носом из-за отсутствия опыта побед и поражений ты никогда и не узнаешь, что эта возможность является правильной, поскольку глупость, отсутствие опыта помешают тебе.
 
-{{< figure src="/images/posts/youtube/JdAKO3b8oLc.png#center" link="https://www.youtube.com/watch?v=JdAKO3b8oLc" target="_blank"  alt="Jordan Peterson – How To Stop Rotting Away At Home" >}}
+[![Jordan Peterson – How To Stop Rotting Away At Home](/images/posts/youtube/JdAKO3b8oLc.png#center)](https://www.youtube.com/watch?v=JdAKO3b8oLc)
 
 <!--more-->
 
-{{< figure src="/images/posts/youtube/cSFSlZwneO4.png#center" link="https://www.youtube.com/watch?v=cSFSlZwneO4" target="_blank"  alt="Jordan Peterson – Do You Want To Have A Life? Or Be Exceptional At One Thing?" >}}
+[![Jordan Peterson – Do You Want To Have A Life? Or Be Exceptional At One Thing?](/images/posts/youtube/cSFSlZwneO4.png#center)](https://www.youtube.com/watch?v=cSFSlZwneO4)
 
 А второе видео посвящено *work life balance*, балансу между работой и всей остальной жизнью: семьёй, друзьями, хобби, или чем угодно ещё.
 
