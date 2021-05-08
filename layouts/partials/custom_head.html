@@ -4,3 +4,103 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
+
+{{ if .IsHome -}}
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "{{ .Site.BaseURL }}",
+    {{- if .Site.Author.name }}
+        "author": {
+            "@type": "Person",
+            "name": "{{ .Site.Author.name }}"
+        },
+    {{- end }}
+    {{- if .Site.Params.description }}
+        "description": "{{ .Site.Params.description }}",
+    {{- end }}
+    {{- with .Site.Params.image }}
+        "image": "{{ . | absURL }}",
+    {{- end }}
+    {{- with .Site.Params.logo }}
+        "thumbnailUrl": "{{ . | absURL }}",
+    {{- end }}
+    {{- with .Site.Copyright }}
+        "license": "{{ . }}",
+    {{- end }}
+        "name": "{{ .Site.Title }}"
+    }
+</script>
+{{- else if .IsPage -}}
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "{{ .Title }}",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ .Permalink }}"
+        },
+    {{- if .Param "coverart" }}
+        {{ $img := imageConfig (add "/static" (.Param "coverart" | safeURL )) }}
+        "image": {
+            "@type": "ImageObject",
+            "url": "{{ .Param "coverart" | absURL }}",
+            "width": {{ $img.Width }},
+            "height": {{ $img.Height }}
+        },
+    {{- else }}
+        {{ $img := imageConfig (add "/static" (.Site.Params.image | safeURL )) }}
+        "image": {
+            "@type": "ImageObject",
+            "url": "{{ .Site.Params.image | absURL }}",
+            "width": {{ $img.Width }},
+            "height": {{ $img.Height }}
+        },
+    {{- end }}
+        "genre": "{{ .Type }}",
+    {{- with .Params.tags }}
+        "keywords": "{{ delimit . ", " }}",
+    {{- end }}
+        "wordcount": {{ .WordCount }},
+        "url": "{{ .Permalink }}",
+    {{- if not .PublishDate.IsZero }}
+        "datePublished": "{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" | safeHTML }}",
+    {{- else if not .Date.IsZero }}
+        "datePublished": "{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}",
+    {{- end }}
+    {{- with .Lastmod }}
+        "dateModified": "{{ .Format "2006-01-02T15:04:05-07:00" | safeHTML }}",
+    {{- end }}
+    {{- with .Site.Copyright }}
+        "license": "{{ . }}",
+    {{- end }}
+        "publisher": {
+            "@type": "Organization",
+            "name": "{{ .Site.Author.name }}",
+    {{- with .Site.Params.logo }}
+        {{ $img := imageConfig (add "/static" (. | safeURL )) }}
+        "logo": {
+            "@type": "ImageObject",
+            "url": "{{ . | absURL }}",
+            "width": {{ $img.Width }},
+            "height": {{ $img.Height }}
+        }
+    {{- end }}
+        },
+    {{- if .Params.author }}
+        "author": {
+            "@type": "Person",
+            "name": "{{ .Params.author }}"
+        },
+    {{- else if .Site.Author.name }}
+        "author": {
+            "@type": "Person",
+            "name": "{{ .Site.Author.name }}"
+        },
+    {{- end }}
+        "description": "{{ .Description }}"
+    }
+</script>
+{{- end }}

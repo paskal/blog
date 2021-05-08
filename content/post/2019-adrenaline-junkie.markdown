@@ -6,6 +6,7 @@ tags:
 date: 2019-06-02T17:00:00Z
 title: Adrenaline in my blood
 description: "Экзистенциальный кризис парашютиста"
+coverart: /images/posts/youtube/G4Vpmmcjih0.png
 slug: adrenaline-junkie
 ---
 
