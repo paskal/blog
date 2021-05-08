@@ -3,6 +3,7 @@ services:
 
     build:
         image: klakegg/hugo
+        command: --minify
 
         logging:
             driver: json-file
