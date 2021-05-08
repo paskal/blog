@@ -1,12 +1,12 @@
 <picture>
-    {{ $avifPath:= replace .Destination ".jpg" ".avif" | replace ".png" ".avif" | strings.TrimSuffix "#center" }}
+    {{ $avifPath:= replace (replace .Destination ".jpg" ".avif") ".png" ".avif" | strings.TrimSuffix "#center" }}
     {{ $avifPathStatic:= printf "static/%s" $avifPath }}
 
     {{ if (fileExists $avifPathStatic) -}}
     <source srcset="{{ $avifPath | safeURL }}" type="image/avif">
     {{- end }}
 
-    {{ $webpPath:= replace .Destination ".jpg" ".webp" | replace ".png" ".webp" | strings.TrimSuffix "#center" }}
+    {{ $webpPath:= replace (replace .Destination ".jpg" ".webp") ".png" ".webp" | strings.TrimSuffix "#center" }}
     {{ $webpPathStatic:= printf "static/%s" $webpPath }}
 
     {{ if (fileExists $webpPathStatic) -}}
