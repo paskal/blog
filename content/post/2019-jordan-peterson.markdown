@@ -5,7 +5,7 @@ tags:
 - hobby
 date: 2019-08-11T23:44:00Z
 title: Jordan Peterson о достижении целей и о цене успеха
-keywords: ["Jordan Peterson"]
+
 description: "Размышления канадского профессора психологии о цели жизни и о том, какой ценой можно её достичь"
 slug: jordan-peterson
 ---
