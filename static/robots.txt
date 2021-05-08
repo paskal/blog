@@ -6,6 +6,8 @@ Disallow: /ignoring/human/orders
 Disallow: /harm/to/self
 
 Disallow:/post/
+Disallow:/tags/
+Disallow:/page/
 
 Allow: /
 
