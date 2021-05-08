@@ -18,7 +18,7 @@ All themes below have active developers, I've didn't include 3-years-old themes 
 
 ---
 
-## [ananke](https://github.com/budparr/gohugo-theme-ananke)
+## [ananke](https://github.com/theNewDynamic/gohugo-theme-ananke)
 
 ### Main page
 
@@ -172,7 +172,7 @@ I've chosen another post to take the screenshot from because that's something wo
 
 ---
 
-## [Journal](https://github.com/damiencaselli/hugo-journal)
+## [Journal](https://github.com/dashdashzako/hugo-journal)
 
 ### Main page
 
@@ -304,7 +304,7 @@ Very unique design I've seen only once more in all 200+ themes, this theme almos
 
 ---
 
-## [Retroful Hugo](https://github.com/5ARMALE/retrofulhugo)
+## [Retroful Hugo]( https://github.com/b0nkafe/retrofulhugo)
 
 ### Main page
 
