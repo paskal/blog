@@ -63,7 +63,7 @@ I found no visible drawbacks, based on the documentation. The only thing that co
 
 * [Detection and Handling of State Flapping — Shinken Manual](https://shinken.readthedocs.io/en/latest/07_advanced/flapping.html)
 
-## [Sensu](https://sensuapp.org/)
+## [Sensu](https://sensu.io/)
 
 Sensu is a monitoring framework (platform, as they call themselves) rather than complete monitoring system. Its key features include:
 
@@ -82,7 +82,7 @@ With HAProxy and Redis-sentinel, you can build a setup in which, if one node of 
 
 ### Configuration systems integration
 
-Built-in (Puppet, Chef, EC2!) but only in [paid](https://sensuapp.org/docs/latest/enterprise/integrations/) version, which sucks for sure, if you have thousands of servers and don’t want to pay for something with free analogs.
+Built-in (Puppet, Chef, EC2!) but only in [paid](https://docs.sensu.io/sensu-go/latest/plugins/supported-integrations/) version, which sucks for sure, if you have thousands of servers and don’t want to pay for something with free analogs.
 
 ### Audit log
 
@@ -99,7 +99,7 @@ Sensu default UI called [Uchiwa](https://uchiwa.io/), seems to have many limitat
 * Lack of historical data and very limited ability to check on it;
 * Create your own monitoring system; there are no working presets waiting for you;
 * Aggregation of events is tricky;
-* ~~Message sending is very tricky, which is scary (because this part must be the simplest and most reliable part of monitoring)~~ — not true, I had the wrong impression by [documentation](https://sensuapp.org/docs/latest/reference/handlers.html), thanks [x70b1](https://github.com/x70b1) for an explanation;
+* ~~Message sending is very tricky, which is scary (because this part must be the simplest and most reliable part of monitoring)~~ — not true, I had the wrong impression by [documentation](https://docs.sensu.io/sensu-go/latest/observability-pipeline/observe-process/handler-templates/), thanks [x70b1](https://github.com/x70b1) for an explanation;
 * The “We don’t want to reinvent the wheel” way has its own limitations of which you could be aware of if you have used any such software before (in my case, it was *Prometheus* monitoring system, which left whole sets of features up to the user to implement, like authentication).
 
 ### Links
@@ -108,7 +108,7 @@ Sensu default UI called [Uchiwa](https://uchiwa.io/), seems to have many limitat
 
 * [MOTD integration](https://github.com/solarkennedy/sensu-report)
 
-## [Icinga 2](https://www.icinga.org/)
+## [Icinga 2](https://icinga.com)
 
 Icinga is the fork of Nagios, rewritten from scratch in version 2. Opposite to Shinken, it is a good fork with [constant updates](https://github.com/Icinga/icinga2) being made.
 
@@ -118,19 +118,19 @@ General architecture:
 
 ![Icinga 2 architecture](/images/monitoring_systems/icinga2_cluster.png#center)
 
-Icinga 2 has a well-designed [distributed monitoring scheme](https://icinga.com/docs/icinga2/latest/doc/06-distributed-monitoring/). The only pitfall I found while setting up the test cluster is the number of settings related to distribution: It could be overwhelming initially.
+Icinga 2 has a well-designed [distributed monitoring scheme](https://icinga.com/docs/icinga-2/latest/doc/06-distributed-monitoring/). The only pitfall I found while setting up the test cluster is the number of settings related to distribution: It could be overwhelming initially.
 
 ### Configuration systems integration
 
-Pretty good, here are two presentations: [The Road to Lazy Monitoring with Icinga 2 and Puppet](https://www.youtube.com/watch?v=j2kG8F7rixw) by Tom de Vylder and [Icinga 2 and Puppet: Automated Monitoring](https://www.youtube.com/watch?v=lLsPwI-6UII) by Walter Heck. The key Icinga feature is storing configuration in files, which makes them easy-to-generate on the Puppet side, which I achieved using [PuppetDB](https://docs.puppet.com/puppetdb/) as a data source about all hosts and services.
+Pretty good, here are two presentations: [The Road to Lazy Monitoring with Icinga 2 and Puppet](https://www.youtube.com/watch?v=j2kG8F7rixw) by Tom de Vylder and [Icinga 2 and Puppet: Automated Monitoring](https://www.youtube.com/watch?v=lLsPwI-6UII) by Walter Heck. The key Icinga feature is storing configuration in files, which makes them easy-to-generate on the Puppet side, which I achieved using [PuppetDB](https://puppet.com/docs/puppetdb/latest/index.html) as a data source about all hosts and services.
 
 ### Audit log
 
-As I found, the audit log is present with [director module](https://www.icinga.org/2016/03/24/icinga-director-released/). There is no built-in audit in IcingaWeb2 at the moment.
+As I found, the audit log is present with [director module](https://icinga.com/blog/2016/03/24/icinga-director-released/). There is no built-in audit in IcingaWeb2 at the moment.
 
 ### UI
 
-[![Icinga 2 web interface](/images/monitoring_systems/Screen-Shot-2015-10-02-at-00.11.09.png#center)](https://www.icinga.org/products/screenshots/icinga-web-2/)
+[![Icinga 2 web interface](/images/monitoring_systems/Screen-Shot-2015-10-02-at-00.11.09.png#center)](https://icinga.com/blog/2013/11/20/icinga-web-2/)
 
 IcingaWeb2 seems like a decent UI with a lot of extension modules for a lot of purposes. From what I’ve seen, it looks most extendable and flexible, yet has all the features you could expect from a monitoring system UI out of the box.
 

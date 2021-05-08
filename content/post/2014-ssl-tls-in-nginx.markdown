@@ -38,7 +38,7 @@ slug: ssl-tls-in-nginx
 
     add_header X-Frame-Options DENY;
 
-Запрещаем показ сайта в frame, iframe, object, защищает от man in the middle атаки ([explanation](https://developer.mozilla.org/en-US/docs/Web/HTTP/X-Frame-Options "The X-Frame-Options response header — HTTP | MDN")).
+Запрещаем показ сайта в frame, iframe, object, защищает от man in the middle атаки ([explanation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options "The X-Frame-Options response header — HTTP | MDN")).
 
     ssl_prefer_server_ciphers on;
 
@@ -55,7 +55,7 @@ slug: ssl-tls-in-nginx
     listen 443 deferred spdy ssl;
     listen [::]:443 deferred ssl spdy ipv6only=on;
 
-Слушаем порт 443 IPv4 и IPv6 на всех интерфейсах, deferred ускоряет работу соединений linux-сервера ([info](https://www.techrepublic.com/article/take-advantage-of-tcp-ip-options-to-optimize-data-transmission/ "Take advantage of TCP/IP options to optimize data transmission — TechRepublic")), spdy включает использование [быстрого](https://blog.chromium.org/2013/11/making-web-faster-with-spdy-and-http2.html "Chromium Blog: Making the web faster with SPDY and HTTP/2") протокола [SPDY](https://en.wikipedia.org/wiki/SPDY "SPDY — Wikipedia"), если клиент поддерживает это ([docs](https://nginx.org/en/docs/http/ngx_http_core_module.html#listen "Module ngx_http_core_module"), [ru_docs](https://nginx.org/ru/docs/http/ngx_http_core_module.html#listen "Модуль ngx_http_core_module"), [результат внедрения SPDY Яндексом](https://habrahabr.ru/company/yandex/blog/222951/ "Совместный эксперимент команд Яндекс.Почты и Nginx: действительно ли SPDY ускорит интернет? / Блог компании Яндекс / Хабрахабр"))
+Слушаем порт 443 IPv4 и IPv6 на всех интерфейсах, deferred ускоряет работу соединений linux-сервера ([info](https://www.techrepublic.com/article/take-advantage-of-tcp-ip-options-to-optimize-data-transmission/ "Take advantage of TCP/IP options to optimize data transmission — TechRepublic")), spdy включает использование [быстрого](https://blog.chromium.org/2013/11/making-web-faster-with-spdy-and-http2.html "Chromium Blog: Making the web faster with SPDY and HTTP/2") протокола [SPDY](https://en.wikipedia.org/wiki/SPDY "SPDY — Wikipedia"), если клиент поддерживает это ([docs](https://nginx.org/en/docs/http/ngx_http_core_module.html#listen "Module ngx_http_core_module"), [ru_docs](https://nginx.org/ru/docs/http/ngx_http_core_module.html#listen "Модуль ngx_http_core_module"), [результат внедрения SPDY Яндексом](https://habr.com/en/company/yandex/blog/222951/ "Совместный эксперимент команд Яндекс.Почты и Nginx: действительно ли SPDY ускорит интернет? / Блог компании Яндекс / Хабрахабр"))
 
 server {
 	listen 80 default_server;
