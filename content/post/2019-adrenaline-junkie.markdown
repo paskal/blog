@@ -49,9 +49,9 @@ The “Adrenaline Instead of Amphetamine” program was launched by Gdańsk's MO
 
 Пара видео, что я записал в этом сезоне:
 
-{{< figure src="/images/posts/youtube/G4Vpmmcjih0.png#center" link="https://www.youtube.com/watch?v=G4Vpmmcjih0" target="_blank" alt="Magellan vs Odyssey landings shoot first-person" >}}
+[![Magellan vs Odyssey landings shoot first-person](/images/posts/youtube/G4Vpmmcjih0.png#center)](https://www.youtube.com/watch?v=G4Vpmmcjih0)
 
-{{< figure src="/images/posts/youtube/-NJxz8MpcYg.png#center" link="https://www.youtube.com/watch?v=-NJxz8MpcYg" target="_blank" alt="Odissey 161° turn" >}}
+[![Odissey 161° turn](/images/posts/youtube/-NJxz8MpcYg.png#center)](https://www.youtube.com/watch?v=-NJxz8MpcYg)
 
 ---
 
