@@ -5,7 +5,6 @@ tags:
 date: 2020-11-10T02:00:00Z
 draft: true
 title: Vocal Image
-
 ---
 
 TODO: less personal focus
@@ -18,7 +17,7 @@ I talk a lot with my wife, and one of the topics we discuss is things we could i
 
 It sounded horrible: it would mean that no matter how much I would want to engage the listener or companion, I wouldn't be effective not because of my weak arguments but because of the voice's lecturer tone.
 
-<! - more ->
+<!--more-->
 
 At the same time, it sounded too perfect to be true: clear definition of the problem I could do something with, with obvious benefit both for me and people around me. That way, an item "find a vocal training" ended up on my to-do list.
 

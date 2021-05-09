@@ -7,9 +7,8 @@ tags:
 date: 2019-05-21T01:19:00Z
 title: Как пережить автокатастрофу в небе над пустыней и другие видео
 description: Radio Skydive UK, парашютные видео Валеры Болучевского и непарашютные видео Nerdwriter'а
-coverart: /images/posts/youtube/herWXCE7bHI.png
+coverart: herWXCE7bHI.png
 coveralt: Banana Switch
-slug: video-announcements
 ---
 
 ### Skydiving in a car
@@ -20,7 +19,7 @@ slug: video-announcements
 
 Самой сложной частью приключения оказалось объяснить врачам в госпитале, куда он приехал самостоятельно, каким образом он попал в такой серьёзный "car accident", но его машина при этом в целости и сохранности стоит на парковке, и убедить их не вызывать шерифа. Описание прыжка показалось мне очень знакомым, и я по памяти нашёл видео, на котором он запечатлён:
 
-[![Skydiving in car](/images/posts/youtube/GMxXHY1f8Xk.png#center)](https://www.youtube.com/watch?v=GMxXHY1f8Xk)
+[![Skydiving in car](GMxXHY1f8Xk.png#center)](https://www.youtube.com/watch?v=GMxXHY1f8Xk)
 
 Кто бы знал, что у этого видео из середины девяностых есть такая богатая история?
 
@@ -28,12 +27,12 @@ slug: video-announcements
 
 ### Валера "#хочулетать" Болучевский
 
-[![Banana Switch](/images/posts/youtube/herWXCE7bHI.png#center)](https://www.youtube.com/watch?v=herWXCE7bHI)
+[![Banana Switch](herWXCE7bHI.png#center)](https://www.youtube.com/watch?v=herWXCE7bHI)
 
 Валера делает отличные видео про парашюты и свою жизнь, выше самое знаменитое, но вообще их много и они крутые, [вот ссылка на его канал](https://www.youtube.com/user/ProgressLabTV/videos) (видео выше опубликовано в другом канале).
 
 ### Nerdwriter
 
-[![The Master: How Scientology Works](/images/posts/youtube/keYYiuOJdrE.png#center)](https://www.youtube.com/watch?v=keYYiuOJdrE)
+[![The Master: How Scientology Works](keYYiuOJdrE.png#center)](https://www.youtube.com/watch?v=keYYiuOJdrE)
 
 Эван на своём [канале](https://www.youtube.com/user/Nerdwriter1/videos?sort=p) выкладывает видео с неплохими разборами кино, музыки, картин, и разного другого искусства, если вам нравится тон этого видео, рекомендую посмотреть что-нибудь из его видео на известные вам темы.
