@@ -5,7 +5,6 @@ tags:
 date: 2011-08-09T04:43:45Z
 title: Скрипт прокачки рефералов Dropbox для 16Gb бесплатного места
 description: Как получить 16Gb места в Dropbox бесплатно
-
 ---
 
 С помощью скрипта возможно автоматическое привлечение рефералов к вашему аккаунту dropbox, каждый реферал даёт [500Мб места](https://blog.dropbox.com/topics/company/dropbox-referrals-are-now-twice-as-nice), 32 дадут вам 16Гб дополнительного места.

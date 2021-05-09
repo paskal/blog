@@ -6,7 +6,6 @@ tags:
 date: 2014-01-15T00:00:00Z
 title: Установка SoftEther VPN в Ubuntu 
 description: Как установить последнюю сборку SoftEther VPN в Ubuntu используя PPA
-
 ---
 
 В этой статье рассказывается, как установить SoftEther VPN в Ubuntu\Debian.

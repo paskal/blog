@@ -7,9 +7,8 @@ toc: true
 date: 2016-11-17T09:09:55Z
 description: 4 monitoring systems comparison from 4k servers point of view.
 title: 'Monitoring system comparison: Shinken vs Sensu vs Icinga 2 vs Zabbix'
-coverart: /images/monitoring_systems/Screen-Shot-2015-10-02-at-00.11.09.png
+coverart: monitoring_systems/Screen-Shot-2015-10-02-at-00.11.09.png
 coveralt: Icinga 2 web interface
-slug: shinken-vs-sensu-vs-icinga2-vs-zabbix
 ---
 
 ## Disclaimer
@@ -28,13 +27,13 @@ In their own words, Shinken is a monitoring framework, a Python Nagios Core tota
 
 According to the [documentation](https://shinken.readthedocs.io/en/latest/07_advanced/distributed.html), every type of process can be run even on different hosts. That's interesting because you might want DB in the cheapest place, data receivers in every data center, and alerter processes closer to your physical location. The Shinken user on the scheme is happy; that's a positive sign:
 
-![Shinken simple distributed architecture](/images/monitoring_systems/shinken-architecture.png#center)
+![Shinken simple distributed architecture](shinken-architecture.png#center)
 
 For multi-regional monitoring, there is also an answer, **[Realms](https://shinken.readthedocs.io/en/latest/_images/shinken-architecture-isolated-realms.png)**.
 
 Here, you notice something extraordinary: Data is collected into a regional DB, not into a global one. There is also sub-realms setup for smaller big setups, which requires fewer machines to set up and just one DB:
 
-![Shinken simple multi-regional distributed architecture](/images/monitoring_systems/shinken-architecture-global-realm.png#center)
+![Shinken simple multi-regional distributed architecture](shinken-architecture-global-realm.png#center)
 
 Another point to consider when you're talking about scalability is fault tolerance. I'll quote documentation here:
 
@@ -50,7 +49,7 @@ Because the configuration is stored in files, you could use generic things, like
 
 ### UI
 
-[![Shinken UI](/images/monitoring_systems/animation.gif#center)](https://www.shinken-enterprise.com/en/product/)
+[![Shinken UI](animation.gif#center)](https://www.shinken-enterprise.com/en/product/)
 
 [Shinken WebUI](https://github.com/shinken-monitoring/mod-webui/wiki) is proven to work well with thousands of hosts and tens of groups.
 
@@ -79,7 +78,7 @@ Sensu pulls events from the queue and executes handlers on them; that's it. Hand
 
 Sensu's architecture is flexible because every component can be replicated and replaced in a few ways. [The following presentation](https://vimeo.com/92770954) describes a sample fault-tolerant setup is described; here is a generalized view:
 
-![Sensu architectural diagram](/images/monitoring_systems/sensu-diagram.gif#center)
+![Sensu architectural diagram](sensu-diagram.gif#center)
 
 With HAProxy and Redis-sentinel, you can build a setup in which, if one node of a type is alive (Sensu API, Sensu Dashboard, RabbitMQ, Redis), your monitoring will continue to work without manual intervention.
 
@@ -93,7 +92,7 @@ Built-in (Puppet, Chef, EC2!) but only in [paid](https://docs.sensu.io/sensu-go/
 
 ### UI
 
-![Uchiwa screenshot](/images/monitoring_systems/uchiwa-ui.png#center)
+![Uchiwa screenshot](uchiwa-ui.png#center)
 
 Sensu default UI called [Uchiwa](https://uchiwa.io/) seems to have many limitations. It seems too simple for a diversified environment with thousands of servers. The enterprise edition comes with its dashboard; however, it doesn't seem to be doing much, except adding a few disabled out-of-the-box features over the opensource part (like audit).
 
@@ -119,7 +118,7 @@ Icinga is the fork of Nagios, rewritten from scratch in version 2. Opposite to S
 
 General architecture:
 
-![Icinga 2 architecture](/images/monitoring_systems/icinga2_cluster.png#center)
+![Icinga 2 architecture](icinga2_cluster.png#center)
 
 Icinga 2 has a well-designed [distributed monitoring scheme](https://icinga.com/docs/icinga-2/latest/doc/06-distributed-monitoring/). The only pitfall I found while setting up the test cluster is the number of settings related to distribution: It could be overwhelming initially.
 
@@ -133,7 +132,7 @@ As I found, the audit log is present with the [director module](https://icinga.c
 
 ### UI
 
-[![Icinga 2 web interface](/images/monitoring_systems/Screen-Shot-2015-10-02-at-00.11.09.png#center)](https://icinga.com/blog/2013/11/20/icinga-web-2/)
+[![Icinga 2 web interface](Screen-Shot-2015-10-02-at-00.11.09.png#center)](https://icinga.com/blog/2013/11/20/icinga-web-2/)
 
 IcingaWeb2 seems like a decent UI with a lot of extension modules for a lot of purposes. It looks most extendable and flexible from what I've seen, yet has all the features you could expect from a monitoring system UI out of the box.
 
@@ -159,7 +158,7 @@ Zabbix logs everything well, except one huge blind spot: Changes [via API are no
 
 ### UI
 
-[![Dashboard is a main screen of Zabbix](/images/monitoring_systems/mon_dashboard2.png#center)](https://www.zabbix.com/screenshots)
+[![Dashboard is a main screen of Zabbix](mon_dashboard2.png#center)](https://www.zabbix.com/screenshots)
 
 Zabbix has UI with all possible features built-in. The only bad thing you could say about it is that it's not extendable at all — you have either to stick with what UI gives you or to do something on your own. You have no option to improve UI because of its general complexity.
 

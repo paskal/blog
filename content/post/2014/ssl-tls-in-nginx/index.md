@@ -6,17 +6,14 @@ tags:
 date: 2014-06-04T07:51:19Z
 title: Лучшие настройки HTTPS (TLS) Nginx
 description: Как выжать 100% безопасности из настроек Nginx
-
 ---
 
 Для начала приведу [правильную](https://www.ssllabs.com/projects/best-practices/index.html "Qualys SSL Labs – Projects / SSL/TLS Deployment Best Practices") конфигурацию, которую вы можете утащить к себе. И, да, под HTTPS я [имею в виду](https://www.howsmyssl.com/s/about.html#tls-vs-ssl "About · How's My SSL?") [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security "Transport Layer Security — Wikipedia").
 
 <!--more-->
-
 ---
 
 {{< gist paskal 628882bee1948ef126dd >}}
-
 ---
 
 Ниже разъяснение значимых моментов.
@@ -48,7 +45,6 @@ description: Как выжать 100% безопасности из настро
     ssl_ciphers ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS;
 
 Только безопасные методы шифрования, [Forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy "Forward secrecy — Wikipedia, the free encyclopedia") где это возможно.
-
 ---
 
 Бонусом полезные в nginx вещи, не относящиеся к ssl.
