@@ -113,12 +113,16 @@
     }
 </script>
     {{- if .Param "coverart" }}
-        {{ $img := imageConfig (add "/static" (.Param "coverart" | safeURL )) }}
+    {{ $img := imageConfig (add "/static" (.Param "coverart" | safeURL )) }}
 <meta property="og:image" content="{{ .Param "coverart" | absURL }}" />
 <meta property="og:image:width" content="{{ $img.Width }}" />
 <meta property="og:image:height" content="{{ $img.Height }}" />
-    {{- end }}
-    {{- if .Param "coveralt" }}
 <meta property="og:image:alt" content="{{ .Param "coveralt" }}" />
+    {{- else }}
+    {{ $img := imageConfig (add "/static" (.Site.Params.image | safeURL )) }}
+<meta property="og:image" content="{{ .Site.Params.image | absURL }}" />
+<meta property="og:image:width" content="{{ $img.Width }}" />
+<meta property="og:image:height" content="{{ $img.Height }}" />
+<meta property="og:image:alt" content="{{ .Site.Params.description }}" />
     {{- end }}
 {{- end }}
