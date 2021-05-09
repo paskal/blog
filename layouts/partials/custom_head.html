@@ -32,6 +32,9 @@
         "name": "{{ .Site.Title }}"
     }
 </script>
+    {{- with .Site.Params.image }}
+    <meta property="og:image" content="{{ . | absURL }}" />
+    {{- end }}
 {{- else if .IsPage -}}
 <script type="application/ld+json">
     {
@@ -103,4 +106,7 @@
         "description": "{{ .Description }}"
     }
 </script>
+    {{- if .Param "coverart" }}
+    <meta property="og:image" content="{{ .Param "coverart" | absURL }}" />
+    {{- end }}
 {{- end }}
