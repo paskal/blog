@@ -51,6 +51,13 @@
       ":default"
     ]
   },
+  "minify":{
+      "tdewolff": {
+        "xml": {
+          "keepWhitespace": true
+        }
+      }
+  },
   "params": {
     "rssFullContent": true,
     "customCSS": ["center-img.css"],
