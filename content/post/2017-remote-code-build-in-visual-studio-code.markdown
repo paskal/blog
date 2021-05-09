@@ -8,7 +8,7 @@ title: How to build code remotely in Visual Studio Code
 slug: remote-code-build-in-visual-studio-code
 ---
 
-In Sublime Text you could achieve remote code execution using the following code:
+In Sublime Text, you could achieve remote code execution using the following code:
 
 ``` json
 {
@@ -17,9 +17,9 @@ In Sublime Text you could achieve remote code execution using the following code
 }
 ```
 
-In VSC same could be achieved using [Tasks](https://code.visualstudio.com/docs/editor/tasks) functionality. The difference is you couldn't create global settings, whatever you do will be saved in the project you're working in. Another difference is you could write something in the console, and it will be sent over to script's STDIN, which is unachievable in Sublime Text.
+In VSC same could be achieved using [Tasks](https://code.visualstudio.com/docs/editor/tasks) functionality. The difference is you couldn't create global settings. Whatever you do will be saved in the project you're working in. Another difference is you could write something in the console, and it will be sent over to the script's STDIN, which is unachievable in Sublime Text.
 
-To start, open your project task configuration file via **Ctrl**+**P**, **>Configure Task Runner**, **Others**. Then paste following json text and customize it for yourself:
+To start, open your project task configuration file via **Ctrl**+**P**, **>Configure Task Runner**, **Others**. Then paste the following JSON text and customize it for yourself:
 
 ``` json
 {
