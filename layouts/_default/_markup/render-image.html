@@ -1,4 +1,4 @@
-<picture>
+<picture itemscope itemtype="http://schema.org/ImageObject">
     {{ $avifPath:= replace (replace .Destination ".jpg" ".avif") ".png" ".avif" | strings.TrimSuffix "#center" }}
     {{ $avifPathStatic:= printf "static/%s" $avifPath }}
 
@@ -13,6 +13,9 @@
     <source srcset="{{ $webpPath | safeURL }}" type="image/webp">
     {{- end }}
 
+    <link itemprop="contentUrl" href="{{ .Destination | strings.TrimSuffix "#center" }}">
+    <meta itemprop="description" content="{{ .Text }}">
+
     <img
         src="{{ .Destination | safeURL }}"
         alt="{{ .Text }}"
@@ -22,6 +25,10 @@
     {{ $img := imageConfig (add "/static" (.Destination | safeURL | strings.TrimSuffix "#center")) }}
         width="{{ $img.Width }}"
         height="{{ $img.Height }}"
-    {{ end }}
     />
+    <meta itemprop="width" content="{{ $img.Width }}">
+    <meta itemprop="height" content="{{ $img.Height }}">
+    {{- else }}
+    />
+    {{- end }}
 </picture>
