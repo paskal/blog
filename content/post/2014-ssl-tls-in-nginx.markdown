@@ -50,7 +50,7 @@ slug: ssl-tls-in-nginx
 
 ---
 
-Бонусом полезные в nginx вещи, не относящиееся к ssl.
+Бонусом полезные в nginx вещи, не относящиеся к ssl.
 
     listen 443 deferred spdy ssl;
     listen [::]:443 deferred ssl spdy ipv6only=on;

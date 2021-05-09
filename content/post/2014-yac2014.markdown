@@ -48,7 +48,7 @@ slug: yac2014
 <p>Руководитель группы разработки API Яндекс.Карт. Окончил Южно-Уральский государственный университет. Разработкой API Яндекс.Карт занимается с 2008 года. С 2013 — участник Технической архитектурной группы Консорциума [W3C](https://www.w3.org/2001/tag/).</p>
 </footer></blockquote>
 
-#### [Проектировка IPv6-оnly датацентра в Яндексе](https://events.yandex.ru/lib/talks/2391/) <mark style="background: #cb299a; color: #fff">Administration</mark>####
+#### [Проектировка IPv6-only датацентра в Яндексе](https://events.yandex.ru/lib/talks/2391/) <mark style="background: #cb299a; color: #fff">Administration</mark>####
 
 **12:10...12:50**, Зал 3
 
