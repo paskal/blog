@@ -24,6 +24,9 @@
     <item turbo="true">
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
+      <media:rating scheme="urn:simple">nonadult</media:rating>
+      <category>Technology</category>
+      <category>Технологии</category>
       <turbo:source>{{ .Permalink }}</turbo:source>
       <turbo:topic>{{ .Title }}</turbo:topic>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
