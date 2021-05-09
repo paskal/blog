@@ -5,6 +5,7 @@ tags:
 comment: false
 date: 2012-07-19T17:07:07Z
 title: Hobby
+description: Хобби летом после окончания института
 slug: hobby
 ---
 

@@ -4,6 +4,7 @@ tags:
 - software
 date: 2011-08-04T14:45:45Z
 title: Настройка smtp relay server – ssmtp
+description: Как настроить ssmtp в Ubuntu для лёгкой отправки почты с хоста используя Яндекс.Почту или Gmail.
 slug: setting-up-smtp-relay-server-ssmtp
 ---
 
