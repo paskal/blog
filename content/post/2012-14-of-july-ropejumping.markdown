@@ -7,6 +7,7 @@ date: 2012-07-15T00:16:39Z
 title: Прыжки 14 июля
 description: Ropejumping прыжки в Московской области, MadSquirrels и Exit
 coverart: /images/posts/fiolenta.jpg
+coveralt: Фиолента на Яндекс.Фотках
 slug: 14-of-july-ropejumping
 ---
 

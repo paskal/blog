@@ -9,6 +9,7 @@ date: 2018-05-03T20:39:00Z
 description: Skydive existential crisis
 title: Sky May
 coverart: /images/posts/2018-04-30_11-58-32.JPG
+coveralt: Skydive selfie
 slug: sky-may
 ---
 
