@@ -51,6 +51,7 @@
     ]
   },
   "params": {
+    "rssFullContent": true,
     "customCSS": ["center-img.css"],
     "description": "Dmitry's Verkhoturov personal blog on skydiving, programming, reliability",
     "social": {
