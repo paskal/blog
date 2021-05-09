@@ -8,7 +8,10 @@ Disallow: /harm/to/self
 Disallow:/post/
 Disallow:/tags/
 Disallow:/page/
+Disallow:/cv/
 
+Allow: /cv/verhoturov.html
+Allow: /cv/verhoturov.pdf
 Allow: /
 
 Sitemap: https://terrty.net/sitemap.xml
