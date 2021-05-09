@@ -7,11 +7,11 @@ title: Site Reliability Engineering vs DevOps
 slug: sre-vs-devops
 ---
 
-Recently on many occasions, I've had to explain the difference between SRE and DevOps practitioners and thought it might be useful to write it down.
+Recently on many occasions, I've had to explain the difference between SRE and DevOps practitioners and thought it might be helpful to write it down.
 
 DevOps are making developers happy by increasing development velocity.
 
-Site Reliability Engineers are making business happy by providing meaningful and comprehensible visibility into technical systems' health. Key is the ability to communicate risk in the same terms to both business and technical stakeholders.
+Site Reliability Engineers are making business happy by providing meaningful and comprehensible visibility into technical systems' health. The key is the ability to communicate risk in the same terms to both business and technical stakeholders.
 
 <!--more-->
 

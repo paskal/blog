@@ -70,4 +70,4 @@ server {
 
 Результат таких настроек: в Firefox главная страница этого сайта была получена за 180мс.
 
-**Huge thanks to [Hynek Schlawack](https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/ "Hardening Your Web Server’s SSL Ciphers")**.
+**Huge thanks to [Hynek Schlawack](https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/ "Hardening Your Web Server's SSL Ciphers")**.
