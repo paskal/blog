@@ -6,6 +6,7 @@ tags:
 - sre
 date: 2020-10-22T00:30:00Z
 title: Big problems on a small scale
+description: A tale on high-performing SRE looking into tiny business services performance and reliability
 slug: small-forms
 ---
 

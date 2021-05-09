@@ -4,7 +4,8 @@ tags:
 - hobby
 comment: false
 date: 2012-09-15T00:00:00Z
-title: Культурная программа
+title: Культурная программа 
+description: Моё странное расписание осенью перед уходом в армию
 slug: cultprogramma
 ---
 

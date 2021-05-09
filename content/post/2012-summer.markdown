@@ -5,6 +5,7 @@ tags:
 comment: false
 date: 2012-07-13T00:56:13Z
 title: Лето '12
+description: Разная всячина, происходившая летом перед уходом в армию
 slug: summer
 ---
 

@@ -5,6 +5,7 @@ tags:
 - security
 date: 2014-06-04T07:51:19Z
 title: Лучшие настройки HTTPS (TLS) Nginx
+description: Как выжать 100% безопасности из настроек Nginx
 slug: ssl-tls-in-nginx
 ---
 

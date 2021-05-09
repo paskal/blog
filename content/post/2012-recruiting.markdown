@@ -3,6 +3,7 @@ tags:
 - russian
 date: 2012-11-08T00:00:00Z
 title: Рекрутинг
+description: Первые приглашения на собеседования от именитых компаний
 slug: recruiting
 ---
 

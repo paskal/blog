@@ -5,6 +5,7 @@ tags:
 comment: false
 date: 2012-11-15T00:00:00Z
 title: Коротко о мотивации
+description: Короткий пост о мотивации за месяц до ухода в армию
 slug: motivation
 ---
 

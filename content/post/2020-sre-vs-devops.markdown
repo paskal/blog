@@ -4,6 +4,7 @@ tags:
 - thoughts
 date: 2020-02-06T06:15:00Z
 title: Site Reliability Engineering vs DevOps
+description: What is the difference between DevOps and SREs?
 slug: sre-vs-devops
 ---
 
