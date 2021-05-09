@@ -33,7 +33,7 @@ Before the glorious speed up of the site, I spent approximately 20 hours tinkeri
 
 ### Grievous present
 
-Fast forward to the present moment, I'm trying to do a simple task of adding a few more regional subdomains and couldn't do that because each step spawns long chains of thoughts. Around every corner I see a possibility of improvement which requires another one which requires another one and so on:
+Fast-forward to the present moment, I'm trying to do a simple task of adding a few more regional subdomains and couldn't do that because each step spawns long chains of thoughts. Around every corner I see a possibility of improvement which requires another one which requires another one and so on:
  
 - The current setup requires me to add new domains one by one in the "hosting control panel" which had its glory days back in 2011 but since then turned from the thing you brag about to fellow students into something which you blame for your misbehaviour on last year's mother's birthday when you lie on the psychotherapist couch;
 - To avoid making 9 clicks per page multiplied by 10 sites I could alter Nginx and apache configuration for all sites at once, but I'll need a switch from "control panel" SSL certification renewal to my own;

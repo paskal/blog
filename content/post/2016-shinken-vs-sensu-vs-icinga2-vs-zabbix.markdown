@@ -37,7 +37,7 @@ Here, you notice something awesome: Data is collected into regional DB, not into
 
 Another point to consider when you’re talking about scalability is fault tolerance. I’ll quote documentation here:
 
-> Nobody is perfect. A server can crash, an application too. That is why administrators have spares: they can take configurations of failing elements and reassign them. For the moment, the only daemon that does not have a spare is the Arbiter, but this will be added in the future. The Arbiter regularly checks if everyone is available. If a scheduler or another satellite is dead, it sends its conf to a spare node, defined by the administrator. All satellites are informed by this change, so they can get their jobs from the new element and not try to reach the dead one. If a node was lost due to a network interruption and it comes back up, the Arbiter will notice and ask the old system to drop its configuration.
+> Nobody is perfect. A server can crash, an application too. That is why administrators have spares: they can take configurations of failing elements and reassign them. For the moment, the only daemon that does not have a spare is the Arbiter, but this will be added in the future. The Arbiter regularly checks if everyone is available. If a scheduler or another satellite is dead, it sends its conf to a spare node, defined by the administrator. All satellites are informed by this change, so they can get their jobs from the new element and not try to reach the dead one. If a node was lost due to a network interruption, and it comes back up, the Arbiter will notice and ask the old system to drop its configuration.
 
 ### Configuration systems integration
 
@@ -55,9 +55,9 @@ Because configuration is stored in files, you could use generic things, like ver
 
 ### Drawbacks
 
-I found no visible drawbacks, based on the documentation. The only thing that concerns me is its rapid development in the past and [very slow pace of commits](https://github.com/naparuba/shinken/commits/master) in the present: around 40 commits this year; most are pull requests merged, so no new development is going on, and only community-written bugfixes are being included. It’s either too good to move on (which is never the case; even old-timers like vim and emacs get their code updated) or it’s another opensource project that not enough people care about — you should know such things before using such a complex thing as a monitoring system.
+I found no visible drawbacks, based on the documentation. The only thing that concerns me is its rapid development in the past and [very slow pace of commits](https://github.com/naparuba/shinken/commits/master) in the present: around 40 commits this year; most are pull requests merged, so no new development is going on, and only community-written bugfixes are being included. It’s either too good to move on (which is never the case; even old-timers like vim and emacs get their code updated), or it’s another opensource project that not enough people care about — you should know such things before using such a complex thing as a monitoring system.
 
-[Frédéric Mohier](https://github.com/mohierf) was very kind to give me an insight on reasons of current situation: more than one year ago, some of the main developers of Shinken left the project and made a fork named [Alignak](https://github.com/Alignak-monitoring/alignak), which is being actively developed and plan to deliver 1.0 release in December 2016.
+[Frédéric Mohier](https://github.com/mohierf) was very kind to give me an insight on reasons of current situation: more than one year ago, some main developers of Shinken left the project and made a fork named [Alignak](https://github.com/Alignak-monitoring/alignak), which is being actively developed and plan to deliver 1.0 release in December 2016.
 
 ### Links
 
@@ -74,7 +74,7 @@ Sensu pulls events from the queue and executes handlers on them; that’s it. Ha
 
 ### Scalability
 
-Sensu architecture is flexible because every component can be replicated and replaced in a few ways. A sample fault-tolerant setup is described in the [following presentation](https://vimeo.com/92770954); here is a generalized view:
+Sensu's architecture is flexible because every component can be replicated and replaced in a few ways. A sample fault-tolerant setup is described in the [following presentation](https://vimeo.com/92770954); here is a generalized view:
 
 ![Sensu architectural diagram](/images/monitoring_systems/sensu-diagram.gif#center)
 
@@ -99,7 +99,7 @@ Sensu default UI called [Uchiwa](https://uchiwa.io/), seems to have many limitat
 * Lack of historical data and very limited ability to check on it;
 * Create your own monitoring system; there are no working presets waiting for you;
 * Aggregation of events is tricky;
-* ~~Message sending is very tricky, which is scary (because this part must be the simplest and most reliable part of monitoring)~~ — not true, I had the wrong impression by [documentation](https://docs.sensu.io/sensu-go/latest/observability-pipeline/observe-process/handler-templates/), thanks [x70b1](https://github.com/x70b1) for an explanation;
+* ~~Message sending is very tricky, which is scary (because this part must be the simplest, and most reliable part of monitoring)~~ — not true, I had the wrong impression by [documentation](https://docs.sensu.io/sensu-go/latest/observability-pipeline/observe-process/handler-templates/), thanks [x70b1](https://github.com/x70b1) for an explanation;
 * The “We don’t want to reinvent the wheel” way has its own limitations of which you could be aware of if you have used any such software before (in my case, it was *Prometheus* monitoring system, which left whole sets of features up to the user to implement, like authentication).
 
 ### Links
@@ -140,7 +140,7 @@ The only drawback I’ve found so far is a complexity of the initial setup. It�
 
 ## [Zabbix](https://www.zabbix.com/)
 
-Zabbix is a stable and reliable monitoring system with a steady development pace. It has a huge community and most questions you might think of already have an answer somewhere, so you don’t have to worry if something is possible with Zabbix.
+Zabbix is a stable and reliable monitoring system with a steady development pace. It has a huge community, and most questions you might think of already have an answer somewhere, so you don’t have to worry if something is possible with Zabbix.
 
 ### Scalability
 
