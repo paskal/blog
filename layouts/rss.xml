@@ -46,11 +46,11 @@
       {{- with .Resources.ByType "image" }}
         {{- range . }}
           {{- if not (in .MediaType "image/webp") }}
-      <enclosure url="{{ .RelPermalink }}" length="{{ len .Content }}" type="{{ .MediaType }}"/>
+      <enclosure url="{{ .Permalink }}" length="{{ len .Content }}" type="{{ .MediaType }}"/>
           {{- end }}
         {{- end }}
       {{- else }}
-      <enclosure url="{{ .Site.Params.image }}" type="image/jpg"/>
+      <enclosure url="{{ .Site.Params.image | absURL }}" length="438598" type="image/jpg"/>
       {{- end }}
     </item>
     {{ end }}
