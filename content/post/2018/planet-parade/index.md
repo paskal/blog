@@ -21,6 +21,6 @@ The last step of writing a program is publishing it for the public, and I am gla
 
 It's a [Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game)) game with planets (*and Pluto*), it's source code in C# [available on GitHub](https://github.com/Ksinia/PlanetParade), and I encourage you to try it out:)
 
-[![Get it on AppStore](appstore-lrg.svg)](https://itunes.apple.com/app/planet-parade/id1438973148?mt=8)
+[![Get it on AppStore](appstore-lrg.png)](https://itunes.apple.com/app/planet-parade/id1438973148?mt=8)
 [![Get it on Google Play](en_generic_rgb_wo_45.png)](https://play.google.com/store/apps/details?id=net.ksinia.planetparade)
 <!--more-->
