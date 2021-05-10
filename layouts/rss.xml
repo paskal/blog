@@ -43,14 +43,14 @@
 			{{ .Content }}
         {{- printf "]]>" | safeHTML }}
       </turbo:content>
-      {{- if .Param "coverart" }}
-      {{- if eq (.Param "coverart") ".jpg" }}
-      <enclosure url="{{ .Param "coverart" }}" type="image/jpg"></enclosure>
+      {{- with .Resources.ByType "image" }}
+        {{- range . }}
+          {{- if not (in .MediaType "image/webp") }}
+      <enclosure url="{{ .RelPermalink }}" length="{{ len .Content }}" type="{{ .MediaType }}"> />
+          {{- end }}
+        {{- end }}
       {{- else }}
-      <enclosure url="{{ .Param "coverart" }}" type="image/png"></enclosure>
-      {{- end }}
-      {{- else }}
-      <enclosure url="{{ .Site.Params.image }}" type="image/jpg"></enclosure>
+      <enclosure url="{{ .Site.Params.image }}" type="image/jpg"/>
       {{- end }}
     </item>
     {{ end }}
