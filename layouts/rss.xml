@@ -46,7 +46,7 @@
       {{- with .Resources.ByType "image" }}
         {{- range . }}
           {{- if not (in .MediaType "image/webp") }}
-      <enclosure url="{{ .RelPermalink }}" length="{{ len .Content }}" type="{{ .MediaType }}"> />
+      <enclosure url="{{ .RelPermalink }}" length="{{ len .Content }}" type="{{ .MediaType }}"/>
           {{- end }}
         {{- end }}
       {{- else }}
