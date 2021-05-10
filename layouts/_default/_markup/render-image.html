@@ -1,34 +1,39 @@
 <picture itemscope itemtype="http://schema.org/ImageObject">
-    {{ $avifPath:= replace (replace .Destination ".jpg" ".avif") ".png" ".avif" | strings.TrimSuffix "#center" }}
-    {{ $avifPathStatic:= printf "static/%s" $avifPath }}
+    {{- $destination := .Destination | strings.TrimSuffix "#center" -}}
 
-    {{ if (fileExists $avifPathStatic) -}}
-    <source srcset="{{ $avifPath | safeURL }}" type="image/avif">
-    {{- end }}
+    {{- $avifPath:= replace (replace $destination ".jpg" ".avif") ".png" ".avif" -}}
+    {{- with $img := .Page.Resources.GetMatch $avifPath }}
+    <source srcset="{{ $img.RelPermalink }}" type="image/avif">
+    {{- end -}}
 
-    {{ $webpPath:= replace (replace .Destination ".jpg" ".webp") ".png" ".webp" | strings.TrimSuffix "#center" }}
-    {{ $webpPathStatic:= printf "static/%s" $webpPath }}
+    {{- $webpPath:= replace (replace $destination ".jpg" ".webp") ".png" ".webp" -}}
+    {{- with $img := .Page.Resources.GetMatch $webpPath }}
+    <source srcset="{{ $img.RelPermalink }}" type="image/webp">
+    {{- end -}}
 
-    {{ if (fileExists $webpPathStatic) -}}
-    <source srcset="{{ $webpPath | safeURL }}" type="image/webp">
-    {{- end }}
+    {{- with $img := .Page.Resources.GetMatch $destination -}}
 
-    <link itemprop="contentUrl" href="{{ .Destination | strings.TrimSuffix "#center" }}">
-    <meta itemprop="description" content="{{ .Text }}">
-
+        {{- $srcset := slice -}}
+        {{- if ge $img.Width "1200" -}}
+            {{- $srcset = $srcset | append (printf "%s 1200w" ($img.Resize "1200x").RelPermalink) -}}
+        {{- end -}}
+        {{- if ge $img.Width "726" -}}
+            {{- $srcset = $srcset | append (printf "%s 726w" ($img.Resize "726x").RelPermalink) -}}
+        {{- end -}}
+        {{- if ge $img.Width "458" -}}
+            {{- $srcset = $srcset | append (printf "%s 458w" ($img.Resize "458x").RelPermalink) -}}
+        {{- end }}
     <img
-        src="{{ .Destination | safeURL }}"
-        alt="{{ .Text }}"
+        srcset="{{ delimit $srcset ",\n" }}"
+        sizes="50vw"
+        src="{{ $img.RelPermalink }}"
+        alt="{{ $.Text }}"
         loading="lazy"
         decoding="async"
-    {{ if not (strings.HasSuffix .Destination ".svg")}}
-    {{ $img := imageConfig (add "/static" (.Destination | safeURL | strings.TrimSuffix "#center")) }}
-        width="{{ $img.Width }}"
-        height="{{ $img.Height }}"
     />
     <meta itemprop="width" content="{{ $img.Width }}">
     <meta itemprop="height" content="{{ $img.Height }}">
-    {{- else }}
-    />
-    {{- end }}
+    <link itemprop="contentUrl" href="{{ $img.RelPermalink }}">
+    <meta itemprop="description" content="{{ $.Text }}">
+    {{- end -}}
 </picture>
