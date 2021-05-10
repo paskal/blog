@@ -10,6 +10,7 @@ description: Planet Parade iOS game
 title: Girlfriend experience
 coverart: planet_parade.jpg
 coveralt: Planet Parade
+slug: planet-parade
 ---
 My girlfriend is working outside of IT but had an interest in programming and started learning C# and Xamarin framework two years ago, and around that time, she decided to create her own mobile game.
 

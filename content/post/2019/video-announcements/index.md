@@ -9,6 +9,7 @@ title: Как пережить автокатастрофу в небе над �
 description: Radio Skydive UK, парашютные видео Валеры Болучевского и непарашютные видео Nerdwriter'а
 coverart: herWXCE7bHI.png
 coveralt: Banana Switch
+slug: video-announcements
 ---
 
 ### Skydiving in a car

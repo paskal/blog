@@ -5,6 +5,7 @@ tags:
 date: 2020-11-10T02:00:00Z
 draft: true
 title: Vocal Image
+slug: vocal-image
 ---
 
 TODO: less personal focus

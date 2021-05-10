@@ -9,6 +9,7 @@ description: Best blog themes for Hugo framework in one place with screenshots
 title: 15 Hugo Framework blog themes
 coverart: hugo_themes/coder_posts.png
 coveralt: coder hugo theme posts page
+slug: 15-hugo-framework-blog-themes
 ---
 
 I've tested all 202 Hugo themes [from the catalogue](https://github.com/gohugoio/hugoThemes) plus three missing from it for basic functionality and picked the best blog-oriented ones. By that, I mean all of them have blog posts shown on the main page, and most of them support posts tags.

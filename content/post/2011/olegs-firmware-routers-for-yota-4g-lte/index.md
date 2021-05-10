@@ -8,6 +8,7 @@ title: Роутеры, поддерживающие Yota WiMax
 description: Обзор роутеров, напрямую работающих с Yota WiMax, и советы по их настройке
 coverart: yota_4g_lte_static_settings.jpg
 coveralt: Static settings for Yota 4g LTE
+slug: olegs-firmware-routers-for-yota-4g-lte
 ---
 
 В этом посте я рассмотрю существующие решения для раздачи Yota-интернета, их стоимость, и их настройку.
