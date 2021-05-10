@@ -6,6 +6,7 @@ comment: false
 date: 2011-02-16T05:47:09Z
 title: Как сделать скриншот в виртуальной машине VirtualBox?
 description: Создание скриншота в виртуальной машине Windows или Linux.
+slug: how-to-make-a-screenshot-in-virtualbox
 ---
 
 Ответ: средствами VirtualBox — никак. Ниже вы найдете две бесплатные, открытые программы, предназначенные для удобного создания скриншотов.

@@ -9,6 +9,7 @@ description: 4 monitoring systems comparison from 4k servers point of view.
 title: 'Monitoring system comparison: Shinken vs Sensu vs Icinga 2 vs Zabbix'
 coverart: monitoring_systems/Screen-Shot-2015-10-02-at-00.11.09.png
 coveralt: Icinga 2 web interface
+slug: shinken-vs-sensu-vs-icinga2-vs-zabbix
 ---
 
 ## Disclaimer

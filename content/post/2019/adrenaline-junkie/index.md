@@ -8,6 +8,7 @@ title: Adrenaline in my blood
 description: "Экзистенциальный кризис парашютиста"
 coverart: G4Vpmmcjih0.png
 coveralt: Magellan vs Odyssey landings shoot first-person
+slug: adrenaline-junkie
 ---
 
 {{< blockquote author="Егор Летов" title="Горький — Маяковский видел сон" link="https://gorky.media/context/mayakovskij-videl-son/" >}}

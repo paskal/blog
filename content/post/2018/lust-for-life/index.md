@@ -8,6 +8,7 @@ description: Nude & Rude Wisdom Hunger
 title: Lust for life
 coverart: lust_for_life.jpg
 coveralt: Iggy Pop - In the death car, we're alive
+slug: lust-for-life
 ---
 
 Я долгое время думал, что же написать, и недавно меня ударила молния: то же самое, о чём я *говорю*. В [прошлой записи](/2015/language/) я упоминал эссе [Write Like You Talk](http://www.paulgraham.com/talk.html), а сегодня я расскажу ровно то, что жгло мне душу в последнее время и что я изливал на беззащитных собеседников.
