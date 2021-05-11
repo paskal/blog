@@ -112,14 +112,14 @@
         "description": "{{ .Description }}"
     }
 </script>
-{{- if eq (.Param "coverart") "" -}}
-{{ $img := .Page.Resources.GetMatch (.Param "coverart") -}}
+    {{- if eq (.Param "coverart") "" -}}
+        {{ $img := .Page.Resources.GetMatch (.Param "coverart") -}}
 <meta property="og:image" content="{{ $img.Permalink }}" />
 <meta property="og:image:width" content="{{ $img.Width }}" />
 <meta property="og:image:height" content="{{ $img.Height }}" />
-{{- if $.Param "coveralt" -}}<meta property="og:image:alt" content="{{ $.Param "coveralt" }}" />{{- end -}}
+        {{- if $.Param "coveralt" -}}<meta property="og:image:alt" content="{{ $.Param "coveralt" }}" />{{- end -}}
     {{- else -}}
-    {{ $img := imageConfig (add "/static" (.Site.Params.image | safeURL )) }}
+        {{ $img := imageConfig (add "/static" (.Site.Params.image | safeURL )) }}
 <meta property="og:image" content="{{ .Site.Params.image | absURL }}" />
 <meta property="og:image:width" content="{{ $img.Width }}" />
 <meta property="og:image:height" content="{{ $img.Height }}" />
