@@ -1,9 +1,8 @@
 {{ if and .IsPage (ne .Params.comment false) }}
 
-  <!-- Fuck Disqus -->
   <div id="comments" style="text-align:center;">
     Feel free to reach me directly at
-    <a href="mailto:%22Dmitry%20Verkhoturov%22%3cpaskal.07@gmail.com%3e?subject=terrty.net comment on: {{ .Title }}" style="text-decoration: underline;">paskal.07@gmail.com</a>
+    <a href="mailto:%22Dmitry%20Verkhoturov%22%3cpaskal.07@gmail.com%3e?subject=terrty.net%20comment%20on:%20{{ urlize .Title }}" style="text-decoration: underline;">paskal.07@gmail.com</a>
     or on <a href="tg://resolve?domain=paskal_07" style="text-decoration: underline;">Telegram</a>
     with comments and thoughts.
   </div>

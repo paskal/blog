@@ -35,8 +35,8 @@
     {{- with .Site.Params.image }}
     {{ $img := imageConfig (add "/static" ( . | safeURL )) }}
 <meta property="og:image" content="{{ . | absURL }}" />
-<meta property="og:image:width" content="{{ $img.Width }}" />
-<meta property="og:image:height" content="{{ $img.Height }}" />
+<meta property="og:image:width" content={{ $img.Width }} />
+<meta property="og:image:height" content={{ $img.Height }} />
     {{- end }}
     {{- with .Site.Params.description }}
 <meta property="og:image:alt" content="{{ . }}" />
@@ -51,21 +51,21 @@
             "@type": "WebPage",
             "@id": "{{ .Permalink }}"
         },
-    {{- if eq (.Param "coverart") "" -}}
+    {{- if .Param "coverart" -}}
         {{- $img := .Page.Resources.GetMatch (.Param "coverart") -}}
         "image": {
             "@type": "ImageObject",
             "url": "{{ $img.Permalink }}",
-            "width": {{ $img.Width }},
-            "height": {{ $img.Height }}
+            "width": "{{ $img.Width }} px",
+            "height": "{{ $img.Height }} px"
         },
     {{- else }}
         {{ $img := imageConfig (add "/static" (.Site.Params.image | safeURL )) }}
         "image": {
             "@type": "ImageObject",
             "url": "{{ .Site.Params.image | absURL }}",
-            "width": {{ $img.Width }},
-            "height": {{ $img.Height }}
+            "width": "{{ $img.Width }} px",
+            "height": "{{ $img.Height }} px"
         },
     {{- end }}
         "genre": "{{ .Type }}",
@@ -93,8 +93,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "{{ . | absURL }}",
-            "width": {{ $img.Width }},
-            "height": {{ $img.Height }}
+            "width": "{{ $img.Width }} px",
+            "height": "{{ $img.Height }} px"
         }
     {{- end }}
         },
@@ -112,17 +112,17 @@
         "description": "{{ .Description }}"
     }
 </script>
-    {{- if eq (.Param "coverart") "" -}}
+    {{- if .Param "coverart" -}}
         {{ $img := .Page.Resources.GetMatch (.Param "coverart") -}}
 <meta property="og:image" content="{{ $img.Permalink }}" />
-<meta property="og:image:width" content="{{ $img.Width }}" />
-<meta property="og:image:height" content="{{ $img.Height }}" />
+<meta property="og:image:width" content={{ $img.Width }} />
+<meta property="og:image:height" content={{ $img.Height }} />
         {{- if $.Param "coveralt" -}}<meta property="og:image:alt" content="{{ $.Param "coveralt" }}" />{{- end -}}
     {{- else -}}
         {{ $img := imageConfig (add "/static" (.Site.Params.image | safeURL )) }}
 <meta property="og:image" content="{{ .Site.Params.image | absURL }}" />
-<meta property="og:image:width" content="{{ $img.Width }}" />
-<meta property="og:image:height" content="{{ $img.Height }}" />
+<meta property="og:image:width" content={{ $img.Width }} />
+<meta property="og:image:height" content={{ $img.Height }} />
 <meta property="og:image:alt" content="{{ .Site.Params.description }}" />
     {{- end -}}
 {{- end -}}
