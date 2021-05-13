@@ -6,26 +6,29 @@
     <source srcset="{{ $img.RelPermalink }}" type="image/avif">
     {{- end -}}
 
-    {{- $webpPath:= replace (replace $destination ".jpg" ".webp") ".png" ".webp" -}}
-    {{- with $img := .Page.Resources.GetMatch $webpPath }}
-    <source srcset="{{ $img.RelPermalink }}" type="image/webp">
-    {{- end -}}
-
     {{- with $img := .Page.Resources.GetMatch $destination -}}
-
         {{- $srcset := slice -}}
-        {{- if ge $img.Width "1200" -}}
-            {{- $srcset = $srcset | append (printf "%s 1200w" ($img.Resize "1200x").RelPermalink) -}}
-        {{- end -}}
-        {{- if ge $img.Width "726" -}}
-            {{- $srcset = $srcset | append (printf "%s 726w" ($img.Resize "726x").RelPermalink) -}}
-        {{- end -}}
-        {{- if ge $img.Width "458" -}}
-            {{- $srcset = $srcset | append (printf "%s 458w" ($img.Resize "458x").RelPermalink) -}}
+
+	{{- if or (in $img.MediaType "image/jpeg") (in $img.MediaType "image/png") -}}
+            {{- if hugo.IsExtended }}
+    <source srcset="{{ ($img.Resize (printf "%dx%d webp" $img.Width $img.Height)).RelPermalink }}" type="image/webp">
+            {{- end -}}
+
+            {{- if ge $img.Width "1200" -}}
+                {{- $srcset = $srcset | append (printf "%s 1200w" ($img.Resize "1200x").RelPermalink) -}}
+            {{- end -}}
+            {{- if ge $img.Width "726" -}}
+                {{- $srcset = $srcset | append (printf "%s 726w" ($img.Resize "726x").RelPermalink) -}}
+            {{- end -}}
+            {{- if ge $img.Width "458" -}}
+                {{- $srcset = $srcset | append (printf "%s 458w" ($img.Resize "458x").RelPermalink) -}}
+            {{- end }}
         {{- end }}
     <img
+        {{ if $srcset -}}
         srcset="{{ delimit $srcset ",\n" }}"
         sizes="50vw"
+        {{- end -}}
         src="{{ $img.RelPermalink }}"
         alt="{{ $.Text }}"
         loading="lazy"
@@ -37,3 +40,4 @@
     <meta itemprop="description" content="{{ $.Text }}">
     {{- end -}}
 </picture>
+
