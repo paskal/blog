@@ -6,7 +6,7 @@ tags:
 - games
 - programming
 date: 2018-10-17T15:44:00Z
-description: Planet Parade iOS game
+description: Planet Parade iOS and Android game
 title: Girlfriend experience
 coverart: planet_parade.jpg
 coveralt: Planet Parade
