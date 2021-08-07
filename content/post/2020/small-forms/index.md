@@ -1,12 +1,12 @@
 ---
 tags:
 - english
-- thoughts
 - software
+- architecture
 - site-reliability
 date: 2020-10-22T00:30:00Z
 title: Big problems on a small scale
-coverart: Philadelphia_City_Hall.jpg
+coverart: Philadelphia\_City\_Hall.jpg
 coveralt: "Philadelphia City Hall, March 2020: photo by Ksenia Gulyaeva"
 description: A tale on high-performing SRE looking into tiny business services performance and reliability
 slug: small-forms
@@ -39,7 +39,7 @@ Before the glorious speed up of the site, I spent approximately 20 hours tinkeri
 ### Grievous present
 
 Fast-forward to the present moment. I'm trying to do a simple task of adding a few more regional subdomains and couldn't do that because each step spawns long chains of thoughts. Around every corner, I see a possibility of improvement depending on another one which requires another one and so on:
- 
+
 - The current setup requires me to add new domains one by one in the “hosting control panel”, which had its glory days back in 2011 but since then turned from the thing you brag about to fellow students into something which you blame for your misbehaviour on last year's mother's birthday when you lie on the psychotherapist couch;
 - To avoid making nine clicks per page multiplied by ten sites, I could alter Nginx and apache configuration for all sites at once, but I'll need a switch from “control panel” SSL certification renewal to my own;
 - To renew certificates automatically, I need to utilise certbot directly and to do it reproducible, so I need to do it in docker-compose, which doesn't exist now;
