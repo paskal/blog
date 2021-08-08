@@ -3,7 +3,8 @@
 
     {{- $avifPath:= replace (replace $destination ".jpg" ".avif") ".png" ".avif" -}}
     {{- with $img := .Page.Resources.GetMatch $avifPath }}
-    <source srcset="{{ $img.RelPermalink }}" type="image/avif">
+<!-- avif pictures don't seem to work yet -->
+<!--    <source srcset="{{ $img.RelPermalink }}" type="image/avif">-->
     {{- end -}}
 
     {{- with $img := .Page.Resources.GetMatch $destination -}}
