@@ -16,11 +16,11 @@ slug: year-of-work-on-bitrix
 1. [Big problems on a small scale](/2020/small-forms/)
 2. A year of work on a small Bitrix site (this post)
 
-Last summer, I started helping my father's business. A Site Reliability Engineer will improve monitoring, automate the toil and fine-tune the website's performance, and it will bring plenty of new customers, right? Almost entirely wrong, as I learned over the last year.
+I picked up responsibility for my father's website commercial and technical success the last summer. With Site Reliability Engineer the website should get a decent monitoring, become maintenance-free and blazingly fast, and ultimately receive plenty of new customers, right? Kind of, but it takes time and a lot of effort as I learned over the last year.
 
 ## Site speed
 
-I assumed, fine-tuned Nginx + php-fpm instead of Apache, [Nginx PageSpeed mod](https://github.com/apache/incubator-pagespeed-ng) and upgrading PHP version alongside checking the code for possible JS libraries optimisations would speed the site up.
+I assumed that Nginx + php-fpm instead of Apache, [Nginx PageSpeed mod](https://github.com/apache/incubator-pagespeed-ng) and upgrading PHP version alongside checking the code for possible JS optimisations should speed the site up. On the pageNginx enablement end of **September** 2020 showed no significant speed change over Apache in the [Chrome Lighthouse](https://developers.google.com/web/tools/lighthouse) and page generation speed as low as 0.5s with spikes up to 4s on the Zabbix page response time graph. readiness time graph below you can see that part of the assumptions had the effect opposite to the desired one.
 
 ![DOM load time from July 2020 to July 2021, 50th percentile](DOM_load_time_July_2020_to_2021_50th_percentile.png)
 
@@ -28,29 +28,29 @@ Percentiles: [50th](DOM_load_time_July_2020_to_2021_50th_percentile.png) | [75th
 
 <!--more-->
 
-Nginx enablement end of **September** 2020 showed no significant speed change over Apache in the benchmark (Chrome Lighthouse) and faster page generation speed (as low as 0.5s) with spikes up to 4s from time to time. I was unhappy but thought I'll figure it out eventually.
+Nginx enablement end of **September** 2020 showed no significant speed change over Apache in the [Chrome Lighthouse](https://developers.google.com/web/tools/lighthouse) and page generation speed as low as 0.5s with spikes up to 4s on the Zabbix page response time graph. I was unhappy but thought I'll figure the spikes root cause eventually.
 
-As you can see on the graph, the effect on the actual users was disastrous: load time 50th percentile of users increased from 6s to 17-20s; however, I was not looking at that graph at the time and was relying on synthetic benchmarks.
+The effect on the actual customers was disastrous: 50th percentile of load time increased 3 times from the initial 6 seconds; however, I was not looking at that (client data) graph at the time and was relying only on syntethic checks by Zabbix.
 
-In **October**, I applied many optimisations recommended by amazing [EverSQL](https://www.eversql.com), which allowed me to cut half the time PHP spent waiting for MySQL. It didn't play very well in the moment, however I assume it's the primary reason I've got sub-0.5s page generation time after fixing the rest of the problems later.
+In **October**, I applied optimisations recommended by [EverSQL](https://www.eversql.com). It allowed me to cut half the time PHP spent waiting for MySQL responces without learning the magic craft of MySQL performance troubleshooting and index building. I assume that these optimizations are the primary contributor to sub-0.5s page generation time after the rest of the problems were fixed.
 
-Early **January** 2021, after discovering the DOM loading time graph you see above I wrestled with the performance problems for a month. While ruling out the contributing factors, I found that pagespeed Nginx module caused the most significant speed problems I observed: removing it reduced the 50th percentile loading time from 20-25 seconds to just 5-7. Here is the page generation time graph with pagespeed disabled at the 4 AM time mark:
+After discovering the DOM loading time graph above in early **January** 2021, I started looking for the reason of the degradation.After multiple attempts in the wrong places I finally found that pagespeed Nginx module was the root cause of the problems: removing it reduced the 50th percentile rendering time from 20-25 seconds to just 5-7. Here is the page generation time graph with pagespeed disabled at the 4 AM time mark:
 
 ![pagespeed hurts performance, page generation time metric](after_pagespeed.png)
 
-Migration to a new cloud provider in **February** gave a nice benchmark boost and page generation time decrease but didn't affect end users much because they spent most of the time rendering the page, not waiting for it to load.
+New virtual machine provider gave a nice benchmark boost and slight page generation time decrease in **February** but didn't affect the customers much because they spent most of the time rendering the page, not waiting for it to load from server.
 
-Finally, in **March**, I found the dirt-cheap improvement to the render time I was looking for. I've started [delaying](https://constantsolutions.dk/2020/06/delay-loading-of-google-analytics-google-tag-manager-script-for-better-pagespeed-score-and-initial-load/) a load of Google Analytics, Yandex Metrika and customer chat JS scripts by three seconds which gave me the final decrease of end-user DOM load time from 5.2s to 2.8-3.0s.
+In **March**, I found the dirt-cheap improvement to the render time I was looking for. It turned out to be [delaying](https://constantsolutions.dk/2020/06/delay-loading-of-google-analytics-google-tag-manager-script-for-better-pagespeed-score-and-initial-load/) the load of Google Analytics and other non-essential JS scripts by three seconds which gave the final decrease of end-user DOM load time from 5.2s to 2.8-3.0s. That way non-essential work is postponed to the moment the user already rendered the page, preventing that work from affecting the render time.
 
-June, we got a lot of bot traffic appearing as slow clients in the analytics, and in August, I gave up the protection against them to Cloudflare only to discover that:
+**June**, we got bot traffic appearing as slow real clients in the monitoring, and I onboarded Cloudflare only to discover that:
 
-1. their solution cuts bots flawlessly as well as provide better loading speed for pages due to various built-in optimisations for images and code
+1. Cloudflare cuts bots as well as provide better loading speed to customers due to various optimisations for images and static resources they provide
 
-2. all Cloudflare public IPs are banned by Russian authorities since \~2016 and search engines prosecute you severely the minute you start using these
+2. all Cloudflare public IPs are banned by Russian authorities since \~2016 and search engines prosecute you severely the moment you start using these
 
-You [*could*](https://community.cloudflare.com/t/reverse-proxy-infront-of-cloudflare/33972/8?u=favor.group2015) hide Cloudflare behind your own IP if you really want to like in case I've got here, but that's terra incognita for me and I have see if it will help against bots.
+You [*could*](https://community.cloudflare.com/t/reverse-proxy-infront-of-cloudflare/33972/8?u=favor.group2015) hide Cloudflare behind your own IP to get around the ban, but that's terra incognita for me and I have see if it will help against bots.
 
-Supposedly you want to be smarter than me. In that case, **don't try optimising without looking at the relevant data and graphs** you identified as a target in advance, and (first rule of refactoring) **avoid introducing multiple changes at once** as they make results interpolation close to impossible.
+Supposedly you want to avoid repeating my errors. In that case, **don't change the system without looking at the relevant data and graphs** you identified as a target of a change in advance, and, first rule of any refactoring, **avoid introducing multiple changes at once** as they make results interpolation close to impossible.
 
 ## Infrastructure
 
@@ -58,16 +58,16 @@ When I started caring for the project, it was provider-configured Apache with Ma
 
 ![small Bitrix project architecture](favor-group-architecture.png)
 
-When writing the [first post](/2020/small-forms/), I've started refactoring the infrastructure, which ultimately ended in the architecture drawn above. All code is available for free at [paskal/bitrix.infra](https://github.com/paskal/bitrix.infra) under MIT license.
+I've started refactoring the infrastructure at the time of writing the [first post](/2020/small-forms/), which ultimately ended in the architecture drawn above. All code for it is available for free at [paskal/bitrix.infra](https://github.com/paskal/bitrix.infra) under MIT license.
 
-I won't go into a detailed description here as it won't be interesting to most readers. In short, it is a docker-compose file with an extensive Readme describing how to set it up and run it, which a few people found helpful already.
+I won't go into a detailed description here as it won't be interesting to most readers; it is a docker-compose file with an extensive Readme describing how to set it up, which a few people found helpful already.
 
 ## Results
 
-The site got roughly twice as many visits as the previous year, which is reasonably good but way under my predictions. As always, it turned out that technical excellence is rarely relevant for success.
+The site got roughly twice as many visits as the year before, which is reasonably good but way under my predictions. Repeating the history, it turned out that technical excellence have weak correlation with success.
 
-Technical changes made the maintenance costs non-existing, as, after initial investment into refactoring, the site just works. The rendering speed became a little bit better overall, but in general (90th percentile and higher) still restricted by clients with cheap mobile devices who have the 5x page rendering time of the desktop.
+The site works without maintenance after initial investment into infrastructure refactoring, which is not a change with the state before. The rendering speed became better overall, but 90th percentile and higher is still slow because of clients with cheap mobile devices who have the 5x page rendering time of the desktop, Google AMP could help with that.
 
-Eliminating the technical difficulties made the site more transparent (available, resilient) for the users and search engines, which unlocked full-on work on the content. Since day one, I had to think not only about infrastructure and speed but also about improving the site for the customers and the search engines, and after the proper technical rework is done, everything which is left is that endless chase for finding ways of satisfying the customer better than your competitors which competent contractors and not me will better do.
+Eliminating the technical obstacles made the site more transparent (available, resilient) for the users and search engines, which unlocked full-on work on the content. Since day one, I had to think not only about maintainability and speed but also about improving the site for the customers and the search engines. Now, after the proper technical rework is done, everything which is left is that endless search for ways of satisfying the customer better than competitors which competent contractors will do better than me.
 
-Leading that effort was the most satisfying work I've done in the last few years. I saw that helping a dozen people save their jobs and my father keep his business feels more meaningful than doing my part in the corporation, but having that corporate work experience and exposure to the world's best experts in their areas working alongside me was the precondition for me to be able to bear that load.
+Leading that effort was the most satisfying thing I've done in the last few years. Helping a dozen people save their jobs and my father keep his business feelt more meaningful than doing my part in the corporation, but having that corporate work experience and the world's best experts working alongside me was the precondition for me to be able to bear that load.
