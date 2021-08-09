@@ -12,6 +12,10 @@ description: A tale on high-performing SRE looking into tiny business services p
 slug: small-forms
 ---
 
+1. Big problems on a small scale (this post)
+
+2. [A year of SRE work on a small Bitrix site](/2021/year-of-sre-work-on-bitrix/)
+
 My future is bright, but my present is dreadful. Aside from usual life problems, which I can't do anything about, I've got a bunch I'm capable of resolving, and that turned out to be a challenge I could not cast away.
 
 ### A bit of background
