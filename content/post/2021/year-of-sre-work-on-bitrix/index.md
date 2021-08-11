@@ -4,7 +4,7 @@ tags:
 - software
 - site-reliability
 - architecture
-date: 2021-08-09T20:00:00Z
+date: 2021-08-11T20:00:00Z
 title: A year of SRE work on a small Bitrix site
 description: A tale on Site Reliability Engineer looking into tiny business web service performance and reliability
 coverart: DOM\_load\_time\_July\_2020\_to\_2021\_50th\_percentile.png
@@ -14,13 +14,13 @@ slug: year-of-sre-work-on-bitrix
 
 1. [Big problems on a small scale](/2020/small-forms/)
 
-2. A year of SRE work on a small Bitrix site (this post)
+1. A year of SRE work on a small Bitrix site (this post)
 
 I picked up responsibility for my father's website commercial and technical success the last summer. With Site Reliability Engineer the website should get decent monitoring, become maintenance-free and blazingly fast, and ultimately receive plenty of new customers, right? Kind of, but it takes time and a lot of effort, as I learned over the last year.
 
 ## Site speed
 
-I assumed that Nginx + php-fpm instead of Apache, [Nginx PageSpeed mod](https://github.com/apache/incubator-pagespeed-ng) and upgrading PHP version alongside checking the code for possible JS optimisations should speed the site up. The page readiness time graph below shows that part of the assumptions had the effect opposite to the desired one.
+I assumed that replacing Apache with Nginx + php-fpm, enabling [Nginx PageSpeed mod](https://github.com/apache/incubator-pagespeed-ng) and upgrading PHP version alongside checking the code for possible JS optimisations should speed the site up. The page readiness time graph below shows that part of the assumptions had the effect opposite to the desired one.
 
 ![DOM load time from July 2020 to July 2021, 50th percentile](DOM_load_time_July_2020_to_2021_50th_percentile.png)
 
@@ -70,4 +70,4 @@ The site works without maintenance after initial investment into infrastructure 
 
 Eliminating the technical obstacles made the site more transparent (available, resilient) for the users and search engines, which unlocked full-on work on the content. Since day one, I had to think not only about maintainability and speed but also about improving the site for the customers and the search engines. Now, after the proper technical rework is done, everything left is that endless search for ways of satisfying the customer better than competitors, which competent contractors will do better than me.
 
-Leading that effort was the most satisfying thing I've done in the last few years. Helping a dozen people save their jobs and my father keep his business felt more meaningful than doing my part in the corporation, but having that corporate work experience and the world's best experts working alongside me was the precondition for me to bear that load.
+Leading that effort was the most satisfying thing I've done in the last few years. Helping my father succeed in his business and, as a result, assisting a dozen people to save their jobs felt more meaningful than doing my part in the corporation, but having that corporate work experience and the world's best experts working alongside me was the precondition for me to bear that load.
