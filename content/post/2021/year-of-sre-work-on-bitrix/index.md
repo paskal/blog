@@ -66,9 +66,15 @@ I've started refactoring the infrastructure at the time of writing the [first po
 
 I won't go into a detailed description here as it wouldn't be interesting to most readers; it is a docker-compose file with an extensive Readme describing how to set it up, which a few people found helpful already.
 
+## Other work
+
+Aside from the changes described above, we hired contractors who audited the site and provided us with recommendations, rewrote most of the landing pages texts and improved the effectiveness of our internet advertisements. Another contractor manages the external links to the site, buys new ones every month and makes sure they are actual and indexed by search engines.
+
+Our developer made dozens of changes to the site layout to mark it up for search engines. Together with our content manager, they changed all 30 thousand products presented on the site multiple times based on audit results to make their appearance clearer for the customer and their descriptions more search-friendly.
+
 ## Results
 
-Due to technical and metainformation improvements, the site got \~2.2 times as many visits as the year before. The speed improvement benefits kicked in only in February.
+The site got \~2.2 times as many visits as the year before. The speed improvement benefits kicked in only in February.
 
 ![sessions.png](/Users/dmitry/Documents/blog/content/post/2021/year-of-sre-work-on-bitrix/sessions.png)
 
