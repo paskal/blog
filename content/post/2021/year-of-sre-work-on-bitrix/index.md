@@ -46,7 +46,7 @@ The new virtual machine provider gave a nice benchmark boost and a slight page g
 
 In **March**, I found the dirt-cheap improvement to the render time I was looking for. It turned out to be [delaying](https://constantsolutions.dk/2020/06/delay-loading-of-google-analytics-google-tag-manager-script-for-better-pagespeed-score-and-initial-load/) the load of Google Analytics and other JS scripts, which gave the final decrease of end-user DOM load time from 5.2s to 3.0s. That way, non-essential JS work is not affecting the initial page render time.
 
-**June**, malicious robots started visiting the site and behaving as slow real clients so that they could then raise someone's rating in the search engines by acting as engaged humans on their sites. I onboarded Cloudflare anti-DDoS and anti-bot protection only to discover that:
+**June**, malicious robots started visiting the site and behaving as slow real clients. That is done so they appear as humans to monitoring JS scripts and could then raise someone's rating in the search engines by acting as engaged humans on their sites. I onboarded Cloudflare anti-DDoS and anti-bot protection only to discover that:
 
 1. Cloudflare cuts bots as well as provide better loading speed to the customers due to various optimisations for images and static resources they provide;
 
@@ -68,7 +68,7 @@ I won't go into a detailed description here as it wouldn't be interesting to mos
 
 ## Results
 
-The site got \~2.2 times as many visits as the year before.
+Due to technical and metainformation improvements, the site got \~2.2 times as many visits as the year before. The speed improvement benefits kicked in only in February.
 
 ![sessions.png](/Users/dmitry/Documents/blog/content/post/2021/year-of-sre-work-on-bitrix/sessions.png)
 
