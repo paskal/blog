@@ -32,6 +32,11 @@
         "weight": 50
       },
       {
+        "name": "Stats",
+        "url": "https://stats.terrty.net/terrty.net",
+        "weight": 60
+      },
+      {
         "name": "Source code",
         "url": "https://github.com/paskal/blog",
         "weight": 100
