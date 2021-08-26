@@ -45,13 +45,19 @@ After discovering the user DOM loading time graph, I started looking for the rea
 
 The new virtual machine provider gave a nice benchmark boost and a slight page generation time decrease in **February** but didn't affect the customers much as that time was already under one second of five seconds total render time.
 
-In **March**, I found the dirt-cheap improvement to the render time I was looking for. It turned out to be [delaying](https://constantsolutions.dk/2020/06/delay-loading-of-google-analytics-google-tag-manager-script-for-better-pagespeed-score-and-initial-load/) a load of Google Analytics and other JS scripts, which gave the final decrease of end-user DOM load time from 5.2s to 3.0s. That way, non-essential JS work is not affecting the initial page render time.
+In **March**, I found the dirt-cheap improvement to the render time I was looking for. It turned out to be [delaying](https://constantsolutions.dk/2020/06/delay-loading-of-google-analytics-google-tag-manager-script-for-better-pagespeed-score-and-initial-load/) a load of Google Analytics and other JS scripts, which resulted in the final decrease of end-user DOM load time from 5.2s to 3.0s. That way, non-essential JS work is not affecting the initial page render time: if you are curious about the results, you can find the waterfall graph before and after by clicking the images below. Before:
 
-**June**, malicious robots started visiting the site through the advertisement links, spending our money and driving the click prices up. That is done so they appear as humans to search engines monitoring and could then raise someone's else positions in the search engines by acting as engaged humans on their sites. I onboarded Cloudflare anti-DDoS and anti-bot protection only to discover that:
+[![site speed before JS delay](speed_before_delay.png "site speed before JS delay")](waterfall_before.png)
+
+After:
+
+[![site speed after JS delay](speed_after_delay.png "site speed after JS delay")](waterfall_after.png)
+
+**June**, malicious robots started visiting the site through the advertisement links, spending our money and driving the click prices up. That is done so they appear as humans to search engines monitoring and could then raise someone else's positions in the search engines by acting as engaged humans on their sites. I onboarded Cloudflare anti-DDoS and anti-bot protection only to discover that:
 
 1. Cloudflare cuts bots as well as provide better loading speed to the customers due to various optimisations for images and static resources they provide;
 
-2. All Cloudflare public IPs are banned by Russian authorities since \~2016, and search engines prosecute you severely the moment you start using them.
+2. All Cloudflare public IPs have been banned by Russian authorities since \~2016, and search engines prosecute you severely the moment you start using them.
 
 You [could](https://community.cloudflare.com/t/reverse-proxy-infront-of-cloudflare/33972/8?u=favor.group2015) hide Cloudflare behind your own IP instead of using their external IPs to get around the ban, but I don't know of anyone who did that and it's unknown if it will cut bots in such a bizarre reverse setup.
 
@@ -83,4 +89,4 @@ Eliminating the technical obstacles made the site more transparent (available, r
 
 Leading that effort was the most satisfying thing I've done in the last few years. Helping my father succeed in his business and, as a result, assisting a dozen people to save their jobs felt more meaningful than doing my part in the corporation, but having that corporate work experience and the world's best experts working alongside me was the precondition for me to bear that load.
 
-[^pagespeed]: I haven't looked into reasons of bad PageSpeed performance, as I didn't want to spend time on a tool that can misbehave that badly.
+[^pagespeed]: I haven't looked into reasons for bad PageSpeed performance, as I didn't want to spend time on a tool that can misbehave that badly.
