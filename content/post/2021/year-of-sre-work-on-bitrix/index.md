@@ -26,7 +26,7 @@ I assumed that replacing Apache with Nginx + php-fpm, enabling [Nginx PageSpeed 
 
 ![DOM load time from July 2020 to July 2021, 50th percentile](DOM_load_time_July_2020_to_2021_50th_percentile.png)
 
-Percentiles: [50th](DOM_load_time_July_2020_to_2021_50th_percentile.png) | [75th](DOM_load_time_July_2020_to_2021_75th_percentile.png) | [90th](DOM_load_time_July_2020_to_2021_90th_percentile.png) | [95th](DOM_load_time_July_2020_to_2021_95th_percentile.png)
+Percentiles: [50th](/2021/year-of-sre-work-on-bitrix/DOM_load_time_July_2020_to_2021_50th_percentile.png) | [75th](/2021/year-of-sre-work-on-bitrix/DOM_load_time_July_2020_to_2021_75th_percentile.png) | [90th](/2021/year-of-sre-work-on-bitrix/DOM_load_time_July_2020_to_2021_90th_percentile.png) | [95th](/2021/year-of-sre-work-on-bitrix/DOM_load_time_July_2020_to_2021_95th_percentile.png)
 
 <!--more-->
 
@@ -46,11 +46,11 @@ The new virtual machine provider gave a nice benchmark boost and a slight page g
 
 In **March**, I found the dirt-cheap improvement to the render time I was looking for. It turned out to be [delaying](https://constantsolutions.dk/2020/06/delay-loading-of-google-analytics-google-tag-manager-script-for-better-pagespeed-score-and-initial-load/) a load of Google Analytics and other JS scripts, which resulted in the final decrease of end-user DOM load time from 5.2s to 3.0s. That way, non-essential JS work is not affecting the initial page render time: if you are curious about the results, you can find the waterfall graph before and after by clicking the images below. Before:
 
-[![site speed before JS delay](speed_before_delay.png "site speed before JS delay")](waterfall_before.png)
+[![site speed before JS delay](speed_before_delay.png "site speed before JS delay")](/2021/year-of-sre-work-on-bitrix/waterfall_before.png)
 
 After:
 
-[![site speed after JS delay](speed_after_delay.png "site speed after JS delay")](waterfall_after.png)
+[![site speed after JS delay](speed_after_delay.png "site speed after JS delay")](/2021/year-of-sre-work-on-bitrix/waterfall_after.png)
 
 **June**, malicious robots started visiting the site through the advertisement links, spending our money and driving the click prices up. They appear as humans to search engines monitoring and could then raise someone else's positions in the search engines by acting as engaged humans on their sites. I onboarded Cloudflare anti-DDoS and anti-bot protection only to discover that:
 
