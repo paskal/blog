@@ -34,6 +34,8 @@ slug: video-announcements
 
 ### Nerdwriter
 
-[![The Master: How Scientology Works](keYYiuOJdrE.png#center)](https://www.youtube.com/watch?v=keYYiuOJdrE)
+![The Master: How Scientology Works](keYYiuOJdrE.png#center)
 
 Эван на своём [канале](https://www.youtube.com/user/Nerdwriter1/videos?sort=p) выкладывает видео с неплохими разборами кино, музыки, картин, и разного другого искусства, если вам нравится тон этого видео, рекомендую посмотреть что-нибудь из его видео на известные вам темы.
+
+Обновление из 2021: видео выше было убрано автором, предлагаю вам выбрать для просмотра какое-нибудь иное.

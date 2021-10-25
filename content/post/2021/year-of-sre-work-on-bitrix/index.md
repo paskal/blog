@@ -22,7 +22,7 @@ In this post, you'll learn what I learned over a year when I picked up responsib
 
 The website has a lot of decent content with SEO-friendly metadata, however, it did not have as good search engines positions as it deserved. One of the solid factors for search positions, especially for mobile users, is [site loading speed](https://developers.google.com/web/updates/2018/07/search-ads-speed). I thought it was the biggest problem I could fix to give the site an edge versus competitors.
 
-I assumed that replacing Apache with Nginx + php-fpm, enabling [Nginx PageSpeed mod](https://github.com/apache/incubator-pagespeed-ng) and upgrading PHP version alongside checking the code for possible JS optimisations should speed the site up. The page readiness time graph below shows that part of the assumptions had the effect precisely opposite to the desired one.
+I assumed that replacing Apache with Nginx + php-fpm, enabling [Nginx PageSpeed mod](https://github.com/apache/incubator-pagespeed-ngx) and upgrading PHP version alongside checking the code for possible JS optimisations should speed the site up. The page readiness time graph below shows that part of the assumptions had the effect precisely opposite to the desired one.
 
 ![DOM load time from July 2020 to July 2021, 50th percentile](DOM_load_time_July_2020_to_2021_50th_percentile.png)
 
