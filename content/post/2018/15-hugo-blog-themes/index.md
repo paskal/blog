@@ -304,7 +304,7 @@ Unique design I've seen only once more in all 200+ themes, this theme almost dir
 
 [![Retroful Hugo single post page](retroful_single_post.png#center)](retroful_single_post.png)
 
-It looks like I imagine 80's terminals, but in a way, there were redefined in [Alien](https://www.youtube.com/watch?v=qb43-hn_-_c) (1979), and also it refers to Tokyo neon lights from [Bladerunner](https://www.youtube.com/watch?v=aFJF2CRASRM) (1982). No related articles (but previous\next post link present), but Disqus comments are supported.
+It looks like I imagine 80's terminals, but in a way, there were redefined in [Alien](https://www.youtube.com/watch?v=2ywWFvjE-yU) (1979), and also it refers to Tokyo neon lights from [Bladerunner](https://www.youtube.com/watch?v=aFJF2CRASRM) (1982). No related articles (but previous\next post link present), but Disqus comments are supported.
 ---
 
 ## [Whiteplain](https://github.com/taikii/whiteplain)
