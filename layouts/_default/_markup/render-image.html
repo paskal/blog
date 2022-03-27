@@ -10,7 +10,8 @@
     {{- with $img := .Page.Resources.GetMatch $destination -}}
         {{- $srcset := slice -}}
 
-	{{- if or (in $img.MediaType "image/jpeg") (in $img.MediaType "image/png") -}}
+<!-- used to resize png as well, but the results look awful. better not to resize loseless format. -->
+	{{- if in $img.MediaType "image/jpeg" -}}
             {{- if hugo.IsExtended }}
     <source srcset="{{ ($img.Resize (printf "%dx%d webp" $img.Width $img.Height)).RelPermalink }}" type="image/webp">
             {{- end -}}
@@ -25,6 +26,21 @@
                 {{- $srcset = $srcset | append (printf "%s 458w" ($img.Resize "458x").RelPermalink) -}}
             {{- end }}
         {{- end }}
+    {{- if $.Title }}
+    <figure>
+        <img
+        {{ if $srcset -}}
+        srcset="{{ delimit $srcset ",\n" }}"
+        sizes="50vw"
+        {{- end -}}
+        src="{{ $img.RelPermalink }}"
+        alt="{{ $.Text }}"
+        loading="lazy"
+        decoding="async"
+        />
+        <figcaption>{{ $.Title }}</figcaption>
+    </figure>
+    {{- else }}
     <img
         {{ if $srcset -}}
         srcset="{{ delimit $srcset ",\n" }}"
@@ -35,10 +51,11 @@
         loading="lazy"
         decoding="async"
     />
+    {{- end }}
     <meta itemprop="width" content="{{ $img.Width }} px">
     <meta itemprop="height" content="{{ $img.Height }} px">
     <link itemprop="contentUrl" href="{{ $img.RelPermalink }}">
     <meta itemprop="description" content="{{ $.Text }}">
-    {{- end -}}
+    {{- end }}
 </picture>
 
