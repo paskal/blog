@@ -1,5 +1,6 @@
 <picture itemscope itemtype="http://schema.org/ImageObject">
-    {{- $destination := .Destination | strings.TrimSuffix "#center" -}}
+    {{- $destination := strings.TrimSuffix "#center" .Destination -}}
+    {{- $centred := strings.Contains .Destination "#center" -}}
 
     {{- $avifPath:= replace (replace $destination ".jpg" ".avif") ".png" ".avif" -}}
     {{- with $img := .Page.Resources.GetMatch $avifPath }}
@@ -34,7 +35,9 @@
         sizes="50vw"
         {{- end -}}
         src="{{ $img.RelPermalink }}"
+        itemprop="contentUrl"
         alt="{{ $.Text }}"
+        {{ if $centred }}class="center"{{end}}
         loading="lazy"
         decoding="async"
         />
@@ -47,14 +50,15 @@
         sizes="50vw"
         {{- end -}}
         src="{{ $img.RelPermalink }}"
+        itemprop="contentUrl"
         alt="{{ $.Text }}"
+        {{ if $centred }}class="center"{{end}}
         loading="lazy"
         decoding="async"
     />
     {{- end }}
     <meta itemprop="width" content="{{ $img.Width }} px">
     <meta itemprop="height" content="{{ $img.Height }} px">
-    <link itemprop="contentUrl" href="{{ $img.RelPermalink }}">
     <meta itemprop="description" content="{{ $.Text }}">
     {{- end }}
 </picture>
