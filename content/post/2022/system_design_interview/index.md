@@ -17,7 +17,7 @@ Recently I was asked to help prepare for the developer to SRE transition by two 
 
 1. [The System Design Primer](https://github.com/donnemartin/system-design-primer) - I propose going through the Readme starting with a section "[System Design topics start here](https://github.com/donnemartin/system-design-primer#system-design-topics-start-here)", and then going into examples. That way, you'll know which components can be used as building blocks and what their tradeoffs are.
 
-2. [Consistent hashing - Wikipedia](https://en.wikipedia.org/wiki/Consistent_hashing)
+2. [Monitoring Distributed Systems](https://sre.google/sre-book/monitoring-distributed-systems/) and [Service Level Objectives](https://sre.google/sre-book/service-level-objectives/) chapters of Site Reliability Engineering book
 
 3. [Crack the System Design Interview](https://tianpan.co/notes/2016-02-13-crack-the-system-design-interview)
 
