@@ -13,9 +13,9 @@ slug: system-design-interview
 
 ## System Design preparation resources
 
-Recently I was asked to help prepare for the developer to SRE transition by two people, and here is the list of resources I recommended them:
+Recently I was asked to help prepare for the developer to SRE transition by two people, and here is the list of resources I recommended to them:
 
-1. [The System Design Primer](https://github.com/donnemartin/system-design-primer) - I propose going through the Readme starting with a section "[System Design topics start here](https://github.com/donnemartin/system-design-primer#system-design-topics-start-here)", and then going into examples. That way, you'll know which components can be used as building blocks and what are their tradeoffs.
+1. [The System Design Primer](https://github.com/donnemartin/system-design-primer) - I propose going through the Readme starting with a section "[System Design topics start here](https://github.com/donnemartin/system-design-primer#system-design-topics-start-here)", and then going into examples. That way, you'll know which components can be used as building blocks and what their tradeoffs are.
 
 2. [Consistent hashing - Wikipedia](https://en.wikipedia.org/wiki/Consistent_hashing)
 
