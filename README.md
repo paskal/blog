@@ -1,6 +1,4 @@
 # terrty.net blog source
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fpaskal%2Fblog.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fpaskal%2Fblog?ref=badge_shield)
-
 
 This blog is proxied by the nginx configuration in [paskal/terrty](https://github.com/paskal/terrty).
 
@@ -27,7 +25,3 @@ It's easy to reduce the images size without altering their content:
     find . -type f -iname "*.png" -exec advpng -z4 {} \;
     find . -type f -iname "*.png" -exec pngcrush -rem allb -brute -reduce -ow {} \;
     find . -type f \( -iname "*.jpg" -o -iname "*.jpeg" \) -exec jpegoptim --strip-none {} \;
-
-
-## License
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fpaskal%2Fblog.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fpaskal%2Fblog?ref=badge_large)
