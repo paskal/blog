@@ -1,7 +1,8 @@
+<div itemscope itemtype="http://schema.org/ImageObject">
 {{- if $.Title -}}
 <figure>
 {{- end -}}
-<picture itemscope itemtype="http://schema.org/ImageObject">
+<picture>
     {{- $destination := strings.TrimSuffix "#center" .Destination -}}
     {{- $centred := strings.Contains .Destination "#center" -}}
 
@@ -29,7 +30,7 @@
             {{- if ge $img.Width "458" -}}
                 {{- $srcset = $srcset | append (printf "%s 458w" ($img.Resize "458x").RelPermalink) -}}
             {{- end }}
-        {{- end }}
+    {{- end }}
     <img
         {{ if $srcset -}}
         srcset="{{ delimit $srcset ",\n" }}"
@@ -42,12 +43,15 @@
         loading="lazy"
         decoding="async"
     />
-    <meta itemprop="width" content="{{ $img.Width }} px">
-    <meta itemprop="height" content="{{ $img.Height }} px">
-    <meta itemprop="description" content="{{ $.Text }}">
     {{- end }}
 </picture>
 {{ if $.Title }}
-    <figcaption>{{ $.Title }}</figcaption>
+    <figcaption itemprop="caption">{{ $.Title }}</figcaption>
 </figure>
+{{- with $img := .Page.Resources.GetMatch $destination -}}
+<meta itemprop="width" content="{{ $img.Width }} px">
+<meta itemprop="height" content="{{ $img.Height }} px">
+<meta itemprop="description" content="{{ $.Text }}">
+{{- end }}
 {{- end -}}
+</div>
