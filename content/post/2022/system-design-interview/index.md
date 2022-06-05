@@ -3,6 +3,7 @@ tags:
 - english
 - site-reliability
 - architecture
+- big-tech
 date: 2022-03-28T01:00:00Z
 title: System Design interview preparation resources
 description: Set of resources which will help candidate pass the System Design interview in Big Tech companies like Google, Meta, Booking
@@ -35,3 +36,5 @@ Going through these  five links with enough attention should be enough to get a 
 ## SRE checklist
 
 [mxssl/sre-interview-prep-guide](https://github.com/mxssl/sre-interview-prep-guide) is a complete checklist for everything you should know as an SRE, except for the coding part. If you learn something about each point in that (a pretty extensive) list, you're good to go for interviewing as an SRE to any Big Tech company, passing the hiring bar for technical interviews at FAANG.
+
+<!--more-->
