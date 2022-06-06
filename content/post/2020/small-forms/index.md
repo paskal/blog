@@ -26,7 +26,7 @@ I've started helping my father's small company of 13 people plus three contracto
 - `robots.txt` for regional subdomains having `Hostname` directive pointing to the main site, effectively causing three sites to merge into a single one in the eyes of the search engines
 - the cherry on the cake, the [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) website performance benchmark reliably shows 25-30 points out of 100
 
-![Philadelphia City Hall, March 2020: photo by Ksenia Gulyaeva](Philadelphia_City_Hall.jpg)
+![Philadelphia City Hall, March 2020: photo by Ksenia Gulyaeva](Philadelphia_City_Hall.jpg#center "Philadelphia City Hall, March 2020: photo by Ksenia Gulyaeva")
 
 <!--more-->
 
