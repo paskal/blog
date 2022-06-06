@@ -14,7 +14,7 @@ slug: system-design-interview
 
 Recently I was asked to help prepare for the developer to SRE transition by two people, and here is the list of resources I recommended to them:
 
-1. [The System Design Primer](https://github.com/donnemartin/system-design-primer) - I propose going through the Readme starting with a section "[System Design topics start here](https://github.com/donnemartin/system-design-primer#system-design-topics-start-here)", and then going into examples. That way, you'll know which components can be used as building blocks and what their tradeoffs are.
+1. [The System Design Primer](https://github.com/donnemartin/system-design-primer) - I propose going through the Readme starting with a section "[System Design topics start here](https://github.com/donnemartin/system-design-primer#system-design-topics-start-here)", and then going into examples. That way, you'll know which components can be used as building blocks and their tradeoffs.
 
 2. [Monitoring Distributed Systems](https://sre.google/sre-book/monitoring-distributed-systems/) and [Service Level Objectives](https://sre.google/sre-book/service-level-objectives/) chapters of Site Reliability Engineering book
 
