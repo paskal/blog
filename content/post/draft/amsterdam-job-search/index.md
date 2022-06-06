@@ -4,7 +4,7 @@ tags:
 - english
 - thoughts
 date: 2020-09-03T09:00:00Z
-title: Army leftovers
+title: Junior Full-Stack Developer job search in Amsterdam
 slug: job-search
 ---
 
