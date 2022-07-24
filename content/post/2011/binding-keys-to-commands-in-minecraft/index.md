@@ -2,7 +2,7 @@
 tags:
 - russian
 - games
-- programming
+- howto
 date: 2011-08-03T22:21:16Z
 title: 'Minecraft: связывание команд и клавиш'
 description: Как подвесить команды чата или последовательность действий на клавиши

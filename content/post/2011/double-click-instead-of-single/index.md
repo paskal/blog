@@ -1,7 +1,7 @@
 ---
 tags:
 - russian
-- hardware
+- howto
 date: 2011-02-12T04:21:39Z
 title: Как починить двойной клик вместо одиночного – Logitech MX Revolution
 description: Починка двойного клика мышки

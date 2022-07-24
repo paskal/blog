@@ -1,7 +1,7 @@
 ---
 tags:
 - russian
-- software
+- howto
 date: 2012-04-25T06:03:50Z
 title: Mount Yandex.Disk in Ubuntu or Other Linux
 description: How to set up access to Yandex.Disk using WebDav in Linux
