@@ -2,7 +2,6 @@
 tags:
 - english
 - people
-- software
 - games
 - programming
 date: 2018-10-17T15:44:00Z

@@ -1,7 +1,7 @@
 ---
 tags:
 - english
-- software
+- howto
 date: 2017-08-24T19:24:03Z
 description: How to set up remote code execution using VSC or Sublime Text
 title: How to build code remotely in Visual Studio Code

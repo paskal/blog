@@ -2,6 +2,7 @@
 tags:
 - russian
 - games
+- howto
 date: 2012-02-15T18:48:48Z
 title: Crusader Kings 2 cheats
 description: How to use cheats in Crusader Kings 2

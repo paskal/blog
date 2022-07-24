@@ -3,6 +3,7 @@ tags:
 - english
 - feedback
 - big-tech
+- howto
 date: 2022-06-06T14:00:00Z
 title: Preparing technical feedback for Individual Contributors
 description: List of things to take into consideration when writing technical feedback for Individual Contributors like Software Developers and Site Reliability Engineers

@@ -1,7 +1,7 @@
 ---
 tags:
 - russian
-- software
+- howto
 date: 2011-03-04T17:34:29Z
 title: Работающие DNS на замену нерабочих
 description: Как настроить DNS в случае проблем

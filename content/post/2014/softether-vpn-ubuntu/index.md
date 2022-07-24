@@ -1,8 +1,8 @@
 ---
 tags:
 - russian
-- software
 - security
+- howto
 date: 2014-01-15T00:00:00Z
 title: Установка SoftEther VPN в Ubuntu 
 description: Как установить последнюю сборку SoftEther VPN в Ubuntu используя PPA
@@ -35,4 +35,8 @@ slug: softether-vpn-ubuntu
 
 ### Установка
 
-        sudo apt-add-repository ppa:paskal-07/softethervpn && sudo apt-get update sudo apt-get install softether-vpnserver
+    sudo apt-add-repository ppa:paskal-07/softethervpn && sudo apt-get update && sudo apt-get upgrade && sudo apt-get install softether-vpnserver
+
+**Важно**! Начиная с Ubuntu 21.04 пакеты SoftEther VPN [доступны](https://launchpad.net/ubuntu/+source/softether-vpn) внутри системы и должны устанавливаться без использования PPA:
+
+    sudo apt-get update && sudo apt-get upgrade && sudo apt-get install softether-vpnserver

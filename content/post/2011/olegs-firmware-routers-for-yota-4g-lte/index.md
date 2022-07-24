@@ -1,8 +1,7 @@
 ---
 tags:
 - russian
-- hardware
-- software
+- howto
 date: 2011-03-06T13:52:05Z
 title: Роутеры, поддерживающие Yota WiMax
 description: Обзор роутеров, напрямую работающих с Yota WiMax, и советы по их настройке
