@@ -1,0 +1,17 @@
+name: publish
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-images:
+    name: Rebuild blog pages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: remote push to terrty.net/ from master
+        env:
+          UPDATER_KEY: ${{ secrets.UPDATER_KEY }}
+        run: curl -s https://hooks.terrty.net/update/publish-blog/${UPDATER_KEY}
