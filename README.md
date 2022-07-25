@@ -1,4 +1,4 @@
-# terrty.net blog source
+# terrty.net blog source [![Publish Status](https://github.com/paskal/blog/workflows/publish/badge.svg)](https://github.com/paskal/blog/actions/workflows/ci-publish.yml)
 
 This blog is proxied by the nginx configuration in [paskal/terrty](https://github.com/paskal/terrty).
 
