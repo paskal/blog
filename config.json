@@ -9,6 +9,7 @@
   "permalinks": {
     "post": "/:year/:slug/"
   },
+  "PygmentsUseClasses": true,
   "menu": {
     "main": [
       {
