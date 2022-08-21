@@ -29,7 +29,7 @@ Percentiles: [50th](/2021/year-of-sre-work-on-bitrix/DOM_load_time_July_2020_to_
 
 <!--more-->
 
-Nginx enablement at the end of **September** 2020 showed no significant speed change over Apache in the [Chrome Lighthouse](https://developers.google.com/web/tools/lighthouse) and page generation speed as low as 0.5s with spikes up to 4s on the Zabbix page response time graph (following picture). I was unhappy but thought I’d eventually figure out the spikes’ root cause.
+Nginx enablement at the end of **September** 2020 showed no significant speed change over Apache in the [Chrome Lighthouse](https://developers.google.com/web/tools/lighthouse) and page generation speed as low as 0.5s with spikes up to 4s on the Zabbix page response time graph (following picture). I was unhappy but thought I'd eventually figure out the spikes' root cause.
 
 The effect on the customers was disastrous: the 50th percentile of load time increased three times from the initial 6 seconds; however, I was not looking at that (client data) graph at the time.
 
