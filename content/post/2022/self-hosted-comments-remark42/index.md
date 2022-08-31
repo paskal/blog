@@ -56,7 +56,8 @@ Then, create the smallest\cheapest server possible in that cloud provider. For D
    
        ports:
          - "443:8443"
-         # uncomment the line below to make remark42 work not only on HTTP but also via HTTPS
+         # uncomment the line below to make remark42
+         # work not only on HTTPS but also via HTTP
          # - "80:8080"
    
        environment:
@@ -66,8 +67,10 @@ Then, create the smallest\cheapest server possible in that cloud provider. For D
          - DEBUG=true
          - SSL_TYPE=auto
          - AUTH_ANON=true
-         # Enable it only for the initial comment import or for manual backups.
-         # Do not leave the server running with the ADMIN_PASSWD set if you don't have an intention
+         # Enable it only for the initial comment
+         # import or for manual backups.
+         # Do not leave the server running with the
+         # ADMIN_PASSWD set if you don't have an intention
          # to keep creating backups manually!
          # - ADMIN_PASSWD=<your secret password>
        volumes:
