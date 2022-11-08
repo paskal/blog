@@ -83,6 +83,8 @@ The bike is insanely different from everything I rode before, despite trying a d
 
 Even the smallest possible size race bike is still a race bike. Feeling the road surface and knowing how much more speed it's capable of delivering in a matter of seconds, it was genuinely scary to ride even at 100km/h, while it was not the case at 140km/h on 750cc Honda NC750X DCT I own. The last time I had that feeling was when I started [jumping](/tags/skydiving/) with my current small and fast Skylark's canopy Odyssey Evo 105.
 
+The bike eats 6.6 litres of 98 gas per 100km and can go around 160km on a filled tank. Ethanol is bad for a carburettor, and because of that, I'm forced to use more expensive E5 (5% ethanol) 98 gas instead of cheaper E10 95, as a percentage of ethanol is regulated in the Netherlands. I would even need to dry the gas for winter storage and get more expensive Aspen 4 tact benzine into the system to keep the bike healthy. That's as far from the average commute motorcycle as you can get.
+
 [![](after-modification-2-preview.jpg)](after-modification-2.jpg)
 
 ## Results
