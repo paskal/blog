@@ -24,6 +24,8 @@ Here is a power graph of two-stroke and four-stroke motorcycles of the same engi
 
 ![Beta 250RR two-stroke dynamometer test, property of dirtrider.com](Beta-250RR-Dyno.jpg "Beta 250RR two-stroke dynamometer test, property of dirtrider.com")
 
+<!--more-->
+
 You can see that the four-stroke has access to most of the engine power on top of the range, between 11.5k and 13k RPM. More gas equals more power there. The two-stroke gives access to its power between 7.2k and 8.7k RPM, i.e., overuse the gas, and you'll lose the speed. Also, there is less torque outside of that range, so getting to it is more complicated, and in practice, the rider has to maintain the correct engine speed at all costs to keep the pace.
 
 Powerful two-strokes are a thing of the past because [EU regulations](https://www.transportpolicy.net/standard/eu-motorcycles-emissions/) made Euro 3 emissions standard mandatory for motorcycles approved for the market after July 2007, and two-strokes pollute the air significantly more.
