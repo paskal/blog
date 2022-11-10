@@ -34,7 +34,16 @@
     <img
         {{ if $srcset -}}
         srcset="{{ delimit $srcset ",\n" }}"
-        sizes="50vw"
+        sizes="{{- if ge $img.Width "1200" -}}
+        {{- printf "(min-width: 795px) 1200px," -}}
+        {{- end }}
+        {{- if ge $img.Width "726" -}}
+        {{- printf "(min-width: 500px) 726px," -}}
+        {{- end }}
+        {{- if ge $img.Width "458" -}}
+        {{- printf "(min-width: 300px) 458px," -}}
+        {{- end }}
+            100vw"
         {{- end -}}
         src="{{ $img.RelPermalink }}"
         itemprop="contentUrl"
