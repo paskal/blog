@@ -23,5 +23,4 @@ It's easy to reduce the images size without altering their content:
 
     find . -type f -iname "*.png" -exec optipng -o7 -preserve {} \;
     find . -type f -iname "*.png" -exec advpng -z4 {} \;
-    find . -type f -iname "*.png" -exec pngcrush -rem allb -brute -reduce -ow {} \;
     find . -type f \( -iname "*.jpg" -o -iname "*.jpeg" \) -exec jpegoptim --strip-none {} \;
