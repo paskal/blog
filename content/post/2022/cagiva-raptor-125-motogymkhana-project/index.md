@@ -71,7 +71,7 @@ It turned out he does a lot of other stuff, so I trusted him to tune the carbure
 
 [![](dynotest.png)](dynotest.png)
 
-It was impossible to install the RPM reader on the ignition coil, so the test shows power over speed (directly proportional to RPM) on the fourth gear out of six. The bike turned out to have 27HP peak power, which is 80% more than the initially restricted 15HP.
+It was impossible to install the RPM reader on the ignition coil, so the test shows power over speed (directly proportional to RPM) on the fifth gear out of six. The bike turned out to have 27HP peak power, which is 80% more than the initially restricted 15HP.
 
 And last, I've had to replace the Continental ContiSportAttack 2 tires installed back in 2016 with a set of modern Pirelli Diablo Rosso IV tires: Olaf from [MotoWoW](https://motowow.nl) did this in his trailer at my place within an hour, which was convenient.
 
