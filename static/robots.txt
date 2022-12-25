@@ -9,6 +9,7 @@ Disallow:/post/
 Disallow:/tags/
 Disallow:/page/
 Disallow:/cv/
+Disallow:*ref=
 
 Allow: /cv/verhoturov.html
 Allow: /cv/verhoturov.pdf
