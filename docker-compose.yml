@@ -1,32 +1,32 @@
 version: '2'
 services:
 
-    build:
-        image: klakegg/hugo
-        command: --minify
+  build:
+    image: klakegg/hugo
+    command: --minify
 
-        logging:
-            driver: json-file
-            options:
-                max-size: "10m"
-                max-file: "5"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
 
-        volumes:
-            - ./public:/target
-            - ./:/src
+    volumes:
+      - ./public:/target
+      - ./:/src
 
-    server:
-        image: klakegg/hugo
-        command: server -DF
+  server:
+    image: klakegg/hugo
+    command: server -DF
 
-        logging:
-            driver: json-file
-            options:
-                max-size: "10m"
-                max-file: "5"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
 
-        ports:
-            - "1313:1313"
+    ports:
+      - "1313:1313"
 
-        volumes:
-            - ./:/src
+    volumes:
+      - ./:/src
