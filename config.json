@@ -58,16 +58,18 @@
       ":default"
     ]
   },
-  "minify":{
-      "tdewolff": {
-        "xml": {
-          "keepWhitespace": true
-        }
+  "minify": {
+    "tdewolff": {
+      "xml": {
+        "keepWhitespace": true
       }
+    }
   },
   "params": {
     "rssFullContent": true,
-    "customCSS": ["center-img.css"],
+    "customCSS": [
+      "center-img.css"
+    ],
     "description": "Dmitry's Verkhoturov personal blog on skydiving, programming, reliability",
     "social": {
       "a-email": "mailto:paskal.07@gmail.com",
@@ -78,7 +80,9 @@
     "remark42Url": "https://remark42.terrty.net",
     "remark42SiteId": "terrty",
     "commentCount": {
-      "remark42": {"enable":  true}
+      "remark42": {
+        "enable": true
+      }
     },
     "moreMeta": true,
     "logo": "/android-chrome-256x256.png",
