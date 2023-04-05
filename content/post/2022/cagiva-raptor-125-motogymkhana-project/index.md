@@ -10,7 +10,7 @@ coveralt: "Cagiva Raptor 125 (2006) after restoration"
 slug: cagiva-raptor-125-moto-gymkhana-project
 ---
 
-[![](cagiva-raptor-125-preview.jpg)](cagiva-raptor-125.jpg)
+[![](cagiva-raptor-125-preview.jpg)](/2022/cagiva-raptor-125-moto-gymkhana-project/cagiva-raptor-125.jpg)
 
 ## Two-stroke bikes
 
