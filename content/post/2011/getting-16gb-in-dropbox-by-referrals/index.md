@@ -16,7 +16,7 @@ slug: getting-16gb-in-dropbox-by-referrals
 
 <!--more-->
 
-Скачайте [Ubuntu](https://ubuntu.com/download/desktop) версии 14.04 ([.torrent](http://releases.ubuntu.com/trusty/ubuntu-14.04.6-desktop-i386.iso.torrent) or [.iso](http://releases.ubuntu.com/trusty/ubuntu-14.04.6-desktop-i386.iso)). Запишите образ на CD или [USB](https://unetbootin.github.io/) и загрузитесь с него (или запустите его в [виртуальной машине](https://www.virtualbox.org/wiki/Downloads)).
+Скачайте [Ubuntu](https://ubuntu.com/download/desktop) версии 14.04 ([.torrent](https://releases.ubuntu.com/trusty/ubuntu-14.04.6-desktop-i386.iso.torrent) or [.iso](https://releases.ubuntu.com/trusty/ubuntu-14.04.6-desktop-i386.iso)). Запишите образ на CD или [USB](https://unetbootin.github.io/) и загрузитесь с него (или запустите его в [виртуальной машине](https://www.virtualbox.org/wiki/Downloads)).
 Запустите терминал (**Ctrl**+**Alt**+**T**).
 
     sudo nano /etc/apt/sources.list

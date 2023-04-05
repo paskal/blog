@@ -84,7 +84,7 @@ With HAProxy and Redis-sentinel, you can build a setup in which, if one node of 
 
 ### Configuration systems integration
 
-Built-in (Puppet, Chef, EC2!) but only in [paid](https://docs.sensu.io/sensu-go/latest/plugins/supported-integrations/) version, which sucks for sure if you have thousands of servers and don't want to pay for something with free analogues.
+Built-in (Puppet, Chef, EC2!) but only in [paid](https://docs.sensu.io/sensu-go/latest/plugins/featured-integrations/) version, which sucks for sure if you have thousands of servers and don't want to pay for something with free analogues.
 
 ### Audit log
 
@@ -150,7 +150,7 @@ Zabbix has a server that communicates with a single DB, and no matter what you d
 
 ### Configuration systems integration
 
-Zabbix is poorly prepared for a diversified environment, managed by a configuration management system. It has some [low-level discovery capabilities](https://www.zabbix.com/documentation/3.0/manual/discovery/low_level_discovery) for hosts and services, but they have their limits and are not tied to a configuration system. The only option for those who seek such integration is to make something themselves using API.
+Zabbix is poorly prepared for a diversified environment, managed by a configuration management system. It has some [low-level discovery capabilities](https://www.zabbix.com/documentation/3.0/en/manual/discovery/low_level_discovery) for hosts and services, but they have their limits and are not tied to a configuration system. The only option for those who seek such integration is to make something themselves using API.
 
 ### Audit log
 
