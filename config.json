@@ -79,6 +79,7 @@
     },
     "remark42Url": "https://remark42.terrty.net",
     "remark42SiteId": "terrty",
+    "customFooter": "<a rel=\"license noopener\" target=\"_blank\" href=\"https://creativecommons.org/licenses/by/4.0/\" >CC-By 4.0</a> | <a target=\"_blank\" href=\"https://remark42.terrty.net/web/privacy.html\" >Privacy policy</a>",
     "commentCount": {
       "remark42": {
         "enable": true

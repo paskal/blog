@@ -2,7 +2,7 @@ version: '2'
 services:
 
   build:
-    image: klakegg/hugo
+    image: klakegg/hugo:ext-alpine
     command: --minify
 
     logging:
@@ -16,7 +16,7 @@ services:
       - ./:/src
 
   server:
-    image: klakegg/hugo
+    image: klakegg/hugo:ext-alpine
     command: server -DF
 
     logging:
