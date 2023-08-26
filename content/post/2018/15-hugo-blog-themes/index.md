@@ -17,6 +17,7 @@ I've tested all 202 Hugo themes [from the catalogue](https://github.com/gohugoio
 All themes below have active developers, and I didn't include 3-years-old themes without newer commits. I'll present them in alphabetical order. They're all fine quality and couldn't be compared or ranked in any unified way I can think of.
 
 <!--more-->
+
 ---
 
 ## [ananke](https://github.com/theNewDynamic/gohugo-theme-ananke)
@@ -38,6 +39,7 @@ For posts, it's the same as with the main page, a lot of space eaten by the bann
 [![ananke single post page](ananke_single_post.png#center)](ananke_single_post.png)
 
 Nothing extra on the single post page. But a lot of space unused, all posts list on the right, and related articles list at the end of the article, with no Disqus support.
+
 ---
 
 ## [beg](https://github.com/dim0627/hugo_theme_beg)
@@ -53,6 +55,7 @@ Cut anything that distracts you from reading, add a little navigation to your po
 [![beg single post page](beg_single_post.png#center)](beg_single_post.png)
 
 The beginning of the page looks the same as the main page, so that screenshot taken from the middle. The only reason you don't read this blog in the mentioned theme is [this](https://github.com/dim0627/hugo_theme_beg/issues/22): it renders **bold** text bold and highlighted, and *italic* as highlighted text but not italic. That's the only issue I found after using it for several months, apart from no related articles list present at the moment. It supports Disqus and pleasant from all points of view.
+
 ---
 
 ## [Casper](https://github.com/vjeantet/hugo-theme-casper)
@@ -74,6 +77,7 @@ That's the best text handling I've seen so far. Post title, description, tags an
 [![Casper related articles](casper_related_articles.png#center)](casper_related_articles.png)
 
 Ladies and gentlemen, I want to show you the friendliest approach to the "next article" and "related articles" presentation on the market: one of both in separate boxes, same information but present in such a tasty way you couldn't stop the desire to click.
+
 ---
 
 ## [Classic](https://github.com/goodroot/hugo-classic)
@@ -97,6 +101,7 @@ Just text – nothing extra. Hell with the posts' summaries, that's *classy*.
 [![Classic single post page](classic_single_post.png#center)](classic_single_post.png)
 
 Text with a fixed width, a sign of good taste. However, minimalism means there is no Disqus support out of the box. Formatting is what you could name "plain", nothing special, but everything in its place – well-balanced and excellent.
+
 ---
 
 ## [coder](https://github.com/luizdepra/hugo-coder)
@@ -120,6 +125,7 @@ Posts page lacks both tags and summaries, but either one of them is better to be
 [![coder single post page](coder_single_post.png#center)](coder_single_post.png)
 
 The widest post content out there with deep spacing between the lines, there is room for improvement for better readability and higher density, but it's unique for sure, and someone might find this style appealing. No Disqus comments and no related articles list present yet.
+
 ---
 
 ## [Fabric](https://github.com/wd/hugo-fabric)
@@ -143,6 +149,7 @@ Fabric's posts page is the best navigation without summaries I've seen out there
 [![Fabric single post page](fabric_single_post.png#center)](fabric_single_post.png)
 
 Solid text renders without anything out of order. I've included a bit bigger screenshot than usual to show you neat shadow around the image and caption under it present in no other theme. Disqus support is there. However, no related articles list support.
+
 ---
 
 ## [Jane](https://github.com/xianmin/hugo-theme-jane)
@@ -164,6 +171,7 @@ Tags look like you expect them to look but slightly better.
 [![Jane single post page](jane_single_post.png#center)](jane_single_post.png)
 
 I've chosen another post to take the screenshot from because that's something worth seeing: that colours choice is the best you could find. Posts that use a lot of formatting, quotes, images and code blocks shine in this theme. The author has good taste, which we might benefit from. Disqus comments supported but hidden by the "Show Disqus Comments" button not to distract you from the content itself. No related articles block, but it would be redundant on this text celebration.
+
 ---
 
 ## [Journal](https://github.com/dashdashzako/hugo-journal)
@@ -179,6 +187,7 @@ Simplicity and nice fonts, what else do you need? No tags, no categories.
 [![Journal single post page](journal_single_post.png#center)](journal_single_post.png)
 
 One of the most admirable fonts out there, with neat render with great attention to details. However, nothing else but post content is present, not comments nor related articles list.
+
 ---
 
 ## [Liquorice](https://github.com/eliasson/liquorice)
@@ -202,6 +211,7 @@ The same minimalism, but a little overwhelming this time — what is enough for 
 [![Liquorice single post page](liquorice_single_post.png#center)](liquorice_single_post.png)
 
 Wide text block shows more text than any other theme in this list. Simple text renders without anything special about it, black and white palette: no related articles and no Disqus comments.
+
 ---
 
 ## [Manis](https://github.com/yursan9/manis-hugo-theme)
@@ -225,6 +235,7 @@ Fixed width text even on navigation pages, which is sweeter than candy. Tags won
 [![Manis single post page](manis_single_post.png#center)](manis_single_post.png)
 
 In line with main and navigational pages, post content and nothing extra. The text is rendered in an elegant way, quotation and source code blocks adjusted to be in style with the theme, and it's done nicely. Only next\previous posts shown below, no related posts. Disqus comments support is present.
+
 ---
 
 ## [NOW-UI](https://github.com/cboettig/hugo-now-ui)
@@ -246,6 +257,7 @@ Like all other pages, the tags page has a ridiculous red banner on top, but unde
 [![NOW-UI single post page](now-ui_single_post.jpg#center)](now-ui_single_post.jpg)
 
 It's better to see once for yourself. That big banner doesn't seem to be doing anything useful, but magically it adds importance to whatever written on it and draws attention to the post title and description. The text is light and pleasant and utilizes a black, white and red palette: no related articles list or links to the previous article. However, Disqus comments are present.
+
 ---
 
 ## [Nofancy](https://github.com/gizak/nofancy)
@@ -269,6 +281,7 @@ Navigation reminds me of Reddit. I like it a lot. It's the best representation o
 [![Nofancy single post page](nofancy_single_post.png#center)](nofancy_single_post.png)
 
 Nothing fancy there as well, black on grey with a bit of red. There are no related articles list, no Disqus comments, but with such design, it's a plus and not a minus.
+
 ---
 
 ## [Refined](https://gitlab.com/kaushalmodi/hugo-theme-refined)
@@ -290,6 +303,7 @@ The posts page looks exactly like the main page. Tags have all the needed inform
 [![Refined single post page](refined_single_post.png#center)](refined_single_post.png)
 
 Unique design I've seen only once more in all 200+ themes, this theme almost directly quotes Markdown code from which the content is created (e.g. `##` becomes `*`, `###` becomes `**`, but they also still represent `h2` and `h3` HTML tags). If you think there is something unusual on the right, you're right: that's a nicely crafted table of content, one of two enabled by default from all themes there and done with the finest quality.  No related articles, however next and previous pages links are present, and comments are in place, but they are [Isso](https://isso-comments.de) in addition to Disqus.
+
 ---
 
 ## [Retroful Hugo]( https://github.com/b0nkafe/retrofulhugo)
@@ -305,6 +319,7 @@ Unique design I've seen only once more in all 200+ themes, this theme almost dir
 [![Retroful Hugo single post page](retroful_single_post.png#center)](retroful_single_post.png)
 
 It looks like I imagine 80's terminals, but in a way, there were redefined in [Alien](https://www.youtube.com/watch?v=2ywWFvjE-yU) (1979), and also it refers to Tokyo neon lights from [Bladerunner](https://www.youtube.com/watch?v=aFJF2CRASRM) (1982). No related articles (but previous\next post link present), but Disqus comments are supported.
+
 ---
 
 ## [Whiteplain](https://github.com/taikii/whiteplain)
