@@ -1,5 +1,4 @@
-<div itemscope itemtype="http://schema.org/ImageObject">
-{{- if $.Title -}}  <figure>{{- end -}}
+<span itemscope itemtype="http://schema.org/ImageObject">
   <picture>
   {{- $destination := strings.TrimSuffix "#center" .Destination -}}
   {{- $centred := strings.Contains .Destination "#center" -}}
@@ -44,7 +43,7 @@
     {{- printf "(min-width: 300px) 458px," -}}
     {{- end }}
       100vw"
-    {{- end -}}
+    {{ end -}}
     src="{{ or (and $localImage $localImage.RelPermalink) $destination }}"
     itemprop=contentUrl
     {{ if $localImage }}width="{{ $localImage.Width }}" height="{{ $localImage.Height }}"{{end}}
@@ -55,12 +54,11 @@
   />
   </picture>
 {{- if $.Title }}
-    <figcaption itemprop=caption>{{ $.Title }}</figcaption>
-  </figure>
+    <br><small itemprop="caption">{{ $.Title }}</small>
 {{ end -}}
 {{ if $.Text }}  <meta itemprop=description content="{{ $.Text }}">{{end}}
 {{- if $localImage }}
   <meta itemprop=width content="{{ $localImage.Width }} px">
   <meta itemprop=height content="{{ $localImage.Height }} px">
 {{- end }}
-</div>
+</span>
