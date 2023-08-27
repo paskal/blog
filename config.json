@@ -1,7 +1,7 @@
 {
   "baseurl": "https://terrty.net/",
   "title": "Notes on Blue Skies",
-  "theme": "hugo-theme-jane",
+  "theme": "github.com/xianmin/hugo-theme-jane",
   "languageCode": "en",
   "copyright": "Dmitry Verkhoturov",
   "rssLimit": 100,
