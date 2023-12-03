@@ -102,10 +102,10 @@
         }
     {{- end }}
         },
-    {{- if .Params.author }}
+    {{- if .Params.author.name }}
         "author": {
             "@type": "Person",
-            "name": "{{ .Params.author }}"
+            "name": "{{ .Params.author.name }}"
         },
     {{- else if .Site.Author.name }}
         "author": {
