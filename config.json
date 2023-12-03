@@ -70,6 +70,10 @@
     "customCSS": [
       "center-img.css"
     ],
+    "author": {
+      "name": "Dmitry Verkhoturov",
+      "email": "paskal.07@gmail.com"
+    },
     "description": "Dmitry's Verkhoturov personal blog on skydiving, programming, reliability",
     "social": {
       "a-email": "mailto:paskal.07@gmail.com",
