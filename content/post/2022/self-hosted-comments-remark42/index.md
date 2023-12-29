@@ -1,6 +1,5 @@
 ---
 tags:
-- english
 - howto
 date: 2022-08-30T21:00:00Z
 title: How to run Remark42 for your site or blog using Public Cloud

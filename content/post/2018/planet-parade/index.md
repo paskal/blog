@@ -1,6 +1,5 @@
 ---
 tags:
-- english
 - people
 - games
 - programming

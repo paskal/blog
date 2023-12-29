@@ -1,6 +1,5 @@
 ---
 tags:
-- english
 - feedback
 - big-tech
 - howto

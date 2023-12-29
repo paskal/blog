@@ -1,6 +1,5 @@
 ---
 tags:
-- english
 - hobby
 date: 2022-11-08T05:00:00Z
 title: Rebuilding Cagiva Raptor 125 for Moto Gymkhana

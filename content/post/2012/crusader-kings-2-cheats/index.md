@@ -1,6 +1,5 @@
 ---
 tags:
-- russian
 - games
 - howto
 date: 2012-02-15T18:48:48Z

@@ -1,6 +1,5 @@
 ---
 tags:
-- english
 - architecture
 - site-reliability
 date: 2020-10-22T00:30:00Z

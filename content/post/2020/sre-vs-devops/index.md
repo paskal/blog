@@ -1,6 +1,5 @@
 ---
 tags:
-- english
 - thoughts
 - site-reliability
 date: 2020-02-06T06:15:00Z
