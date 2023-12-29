@@ -83,7 +83,7 @@
           },
           {
             "name": "Резюме",
-            "url": "https://terrty.net/cv/",
+            "url": "/cv/",
             "weight": 50
           },
           {
@@ -98,7 +98,7 @@
           },
           {
             "name": "in English",
-            "url": "https://terrty.net",
+            "url": "/",
             "weight": 150
           }
         ]
