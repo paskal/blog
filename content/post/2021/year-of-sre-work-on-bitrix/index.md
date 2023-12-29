@@ -1,6 +1,5 @@
 ---
 tags:
-- english
 - site-reliability
 - architecture
 date: 2021-08-27T18:00:00Z

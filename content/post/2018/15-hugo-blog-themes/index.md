@@ -1,6 +1,5 @@
 ---
 tags:
-- english
 - go
 - programming
 toc: true

@@ -1,6 +1,5 @@
 {
   "baseurl": "https://terrty.net/",
-  "title": "Notes on Blue Skies",
   "theme": "github.com/xianmin/hugo-theme-jane",
   "languageCode": "en",
   "copyright": "Dmitry Verkhoturov",
@@ -10,39 +9,101 @@
     "post": "/:year/:slug/"
   },
   "PygmentsUseClasses": true,
-  "menu": {
-    "main": [
-      {
-        "name": "Home",
-        "url": "/",
-        "weight": 20
+  "languages": {
+    "en": {
+      "title": "Notes on Blue Skies",
+      "languageName": "English",
+      "weight": 1,
+      "params": {
+        "description": "Dmitry's Verkhoturov personal blog on skydiving, programming, reliability"
       },
-      {
-        "name": "Tags",
-        "url": "/tags/",
-        "weight": 30
-      },
-      {
-        "name": "Archive",
-        "url": "/post/",
-        "weight": 40
-      },
-      {
-        "name": "Résumé",
-        "url": "/cv/",
-        "weight": 50
-      },
-      {
-        "name": "Stats",
-        "url": "https://stats.terrty.net/terrty.net",
-        "weight": 60
-      },
-      {
-        "name": "Source code",
-        "url": "https://github.com/paskal/blog",
-        "weight": 100
+      "menu": {
+        "main": [
+          {
+            "name": "Home",
+            "url": "/",
+            "weight": 20
+          },
+          {
+            "name": "Tags",
+            "url": "/tags/",
+            "weight": 30
+          },
+          {
+            "name": "Archive",
+            "url": "/post/",
+            "weight": 40
+          },
+          {
+            "name": "Résumé",
+            "url": "/cv/",
+            "weight": 50
+          },
+          {
+            "name": "Stats",
+            "url": "https://stats.terrty.net/terrty.net",
+            "weight": 60
+          },
+          {
+            "name": "Source code",
+            "url": "https://github.com/paskal/blog",
+            "weight": 100
+          },
+          {
+            "name": "на русском",
+            "url": "/ru/",
+            "weight": 150
+          }
+        ]
       }
-    ]
+    },
+    "ru": {
+      "title": "Записи на голубом небе",
+      "languageName": "Русский",
+      "weight": 2,
+      "params": {
+        "description": "Заметки Дмитрия Верхотурова о скайдайвинге, программировании и отказоустойчивости"
+      },
+      "menu": {
+        "main": [
+          {
+            "name": "Главная",
+            "url": "/ru/",
+            "weight": 20
+          },
+          {
+            "name": "Теги",
+            "url": "/ru/tags/",
+            "weight": 30
+          },
+          {
+            "name": "Архив",
+            "url": "/ru/post/",
+            "weight": 40
+          },
+          {
+            "name": "Резюме",
+            "url": "https://terrty.net/cv/",
+            "weight": 50
+          },
+          {
+            "name": "Статистика",
+            "url": "https://stats.terrty.net/terrty.net",
+            "weight": 60
+          },
+          {
+            "name": "Исходный код",
+            "url": "https://github.com/paskal/blog",
+            "weight": 100
+          },
+          {
+            "name": "in English",
+            "url": "https://terrty.net",
+            "weight": 150
+          }
+        ]
+      }
+    }
   },
   "taxonomies": {
     "tag": "tags"
@@ -74,7 +135,6 @@
       "name": "Dmitry Verkhoturov",
       "email": "paskal.07@gmail.com"
     },
-    "description": "Dmitry's Verkhoturov personal blog on skydiving, programming, reliability",
     "social": {
       "a-email": "mailto:paskal.07@gmail.com",
       "b-goodreads": "https://www.goodreads.com/user/show/23839983",

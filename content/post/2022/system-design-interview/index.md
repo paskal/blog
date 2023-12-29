@@ -1,6 +1,5 @@
 ---
 tags:
-- english
 - site-reliability
 - architecture
 - big-tech
