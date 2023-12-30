@@ -15,7 +15,8 @@
       "languageName": "English",
       "weight": 1,
       "params": {
-        "description": "Dmitry's Verkhoturov personal blog on skydiving, programming, reliability"
+        "description": "Dmitry's Verkhoturov personal blog on skydiving, programming, reliability",
+        "dateFormatToUse": "Jan 2, 2006"
       },
       "menu": {
         "main": [
@@ -62,7 +63,8 @@
       "languageName": "Русский",
       "weight": 2,
       "params": {
-        "description": "Заметки Дмитрия Верхотурова о скайдайвинге, программировании и отказоустойчивости"
+        "description": "Заметки Дмитрия Верхотурова о скайдайвинге, программировании и отказоустойчивости",
+        "dateFormatToUse": "2 January 2006"
       },
       "menu": {
         "main": [
@@ -152,7 +154,6 @@
     "moreMeta": true,
     "logo": "/android-chrome-256x256.png",
     "image": "/thumbnail.jpg",
-    "since": "2011",
-    "dateFormatToUse": "Jan 2, 2006"
+    "since": "2011"
   }
 }
