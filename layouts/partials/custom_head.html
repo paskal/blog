@@ -11,10 +11,10 @@
         "@context": "http://schema.org",
         "@type": "WebSite",
         "url": "{{ .Site.BaseURL }}",
-    {{- if .Site.Author.name }}
+    {{- if or .Site.Params.author.name .Site.Author.name }}
         "author": {
             "@type": "Person",
-            "name": "{{ .Site.Author.name }}"
+            "name": "{{ or .Site.Params.author.name .Site.Author.name }}"
         },
     {{- end }}
     {{- if .Site.Params.description }}
@@ -91,7 +91,7 @@
     {{- end }}
         "publisher": {
             "@type": "Organization",
-            "name": "{{ .Site.Author.name }}",
+            "name": "{{ or .Site.Params.author.name .Site.Author.name }}",
     {{- with .Site.Params.logo }}
         {{ $img := imageConfig (add "/static" (. | safeURL )) }}
         "logo": {
@@ -102,15 +102,10 @@
         }
     {{- end }}
         },
-    {{- if .Params.author.name }}
+    {{- if or .Site.Params.author.name .Site.Author.name }}
         "author": {
             "@type": "Person",
-            "name": "{{ .Params.author.name }}"
-        },
-    {{- else if .Site.Author.name }}
-        "author": {
-            "@type": "Person",
-            "name": "{{ .Site.Author.name }}"
+            "name": "{{ or .Site.Params.author.name .Site.Author.name }}"
         },
     {{- end }}
         "description": "{{ .Description }}"
