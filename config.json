@@ -110,10 +110,6 @@
   "taxonomies": {
     "tag": "tags"
   },
-  "author": {
-    "name": "Dmitry Verkhoturov",
-    "email": "paskal.07@gmail.com"
-  },
   "frontmatter": {
     "lastmod": [
       "lastmod",
