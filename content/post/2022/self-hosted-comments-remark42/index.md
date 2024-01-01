@@ -2,8 +2,8 @@
 tags:
 - howto
 date: 2022-08-30T21:00:00Z
-title: How to run Remark42 for your site or blog using Public Cloud
-description: Instructions for deploying a self-hosted instance of Remark42 comment system for site or blog using Digital Ocean or Oracle Cloud
+title: How to set up Remark42 using Public Cloud
+description: Instructions for deploying and setting up a self-hosted instance of Remark42 comment system for site or blog using Digital Ocean or Oracle Cloud
 coverart: Prague-Riegrovy-sady.jpg
 coveralt: "Prague, Riegrovy sady, June 2022: photo by Ksenia Gulyaeva"
 slug: self-hosted-comments-remark42
@@ -15,7 +15,7 @@ This post is a short guide on hosting a privacy-focused comment system [Remark42
 
 ## Obtaining a virtual machine instance in the public cloud
 
-Follow one of the instructions below to obtain an instance. At the end of the setup process, generate an SSH key and download it to your machine. The default location to store the private part of the key on Mac and Linux is `~/.ssh/id_rsa`. You'll need to connect to that instance using SSH during the next step.
+Follow one of the instructions below to obtain an instance. At the end of the setup process, generate an SSH key and download it to your machine. The default location to store the private part of the key on Mac and Linux is `~/.ssh/id_rsa`. You'll need to use that key to connect to that instance using SSH during the next step.
 
 ### Oracle Cloud, free
 
