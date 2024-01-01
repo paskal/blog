@@ -18,7 +18,7 @@ In my own opinion, only Zabbix and Icinga 2 are mature enough to be used in the 
 
 <!--more-->
 
-## [Shinken](http://www.shinken-monitoring.org/)
+## [Shinken](http://shinken-monitoring.com)
 
 In their own words, Shinken is a monitoring framework, a Python Nagios Core total rewrite, enhancing flexibility and large environment management.
 
@@ -48,13 +48,13 @@ Because the configuration is stored in files, you could use generic things, like
 
 ### UI
 
-[![Shinken UI](animation.gif#center)](https://www.shinken-enterprise.com/en/product/)
+[![Shinken UI](animation.gif#center)](https://www.shinken-enterprise.com)
 
 [Shinken WebUI](https://github.com/shinken-monitoring/mod-webui/wiki) is proven to work well with thousands of hosts and tens of groups.
 
 ### Drawbacks
 
-I found no visible drawbacks based on the documentation. The only thing that concerns me is its rapid development in the past and [very slow pace of commits](https://github.com/naparuba/shinken/commits/master) in the present: around 40 commits this year; most are pull requests merged, so no new development is going on, and only community-written bugfixes are being included. It's either too good to move on (which is never the case; even old-timers like vim and emacs get their code updated), or it's another opensource project that not enough people care about — you should know such things before using such a complex thing as a monitoring system.
+I found no visible drawbacks based on the documentation. The only thing that concerns me is its rapid development in the past and [very slow pace of commits](https://github.com/shinken-solutions/shinken/commits/master) in the present: around 40 commits this year; most are pull requests merged, so no new development is going on, and only community-written bugfixes are being included. It's either too good to move on (which is never the case; even old-timers like vim and emacs get their code updated), or it's another opensource project that not enough people care about — you should know such things before using such a complex thing as a monitoring system.
 
 [Frédéric Mohier](https://github.com/mohierf) was very kind to give me insight into the current situation: more than one year ago, some leading developers of Shinken left the project and made a fork named [Alignak](https://github.com/Alignak-monitoring/alignak), which is being actively developed and plan to deliver 1.0 release in December 2016.
 
@@ -131,7 +131,7 @@ As I found, the audit log is present with the [director module](https://icinga.c
 
 ### UI
 
-[![Icinga 2 web interface](Screen-Shot-2015-10-02-at-00.11.09.png#center)](https://icinga.com/blog/2013/11/20/icinga-web-2/)
+![Icinga 2 web interface](Screen-Shot-2015-10-02-at-00.11.09.png#center)
 
 IcingaWeb2 seems like a decent UI with a lot of extension modules for a lot of purposes. It looks most extendable and flexible from what I've seen, yet has all the features you could expect from a monitoring system UI out of the box.
 
@@ -145,7 +145,7 @@ Zabbix is a stable and reliable monitoring system with a steady development pace
 
 ### Scalability
 
-Zabbix has a server that communicates with a single DB, and no matter what you do, with every other resource on hand (memory, network, CPU), you will hit DB disk IO limits. With 6000 IOPS on [Amazon](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html), we could maintain around 2k new values per second, which is a lot, but still leaves much to be desired. Proxies and [partitioning](https://www.zabbix.org/wiki/Docs/howto/mysql_partition) could improve the situation with performance, but in terms of reliability, you always have the main DB, which is a single point of failure for everything.
+Zabbix has a server that communicates with a single DB, and no matter what you do, with every other resource on hand (memory, network, CPU), you will hit DB disk IO limits. With 6000 IOPS on [Amazon](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html), we could maintain around 2k new values per second, which is a lot, but still leaves much to be desired. Proxies and [partitioning](https://blog.zabbix.com/partitioning-a-zabbix-mysql-database-with-perl-or-stored-procedures/13531/) could improve the situation with performance, but in terms of reliability, you always have the main DB, which is a single point of failure for everything.
 
 ### Configuration systems integration
 
