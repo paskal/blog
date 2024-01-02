@@ -33,7 +33,7 @@ Then, create the smallest\cheapest server possible in that cloud provider. For D
 
 ## How to start Remark42 on the virtual machine
 
-1. Before starting the work, point remark42.example.org (with your domain name instead of example.org) to the IP address of the instance using your DNS provider.
+1. Before starting the work, point **remark42**.example.org (with your domain name instead of example.org) to the IP address of the instance by creating **A entry** your DNS provider.
 1. SSH to the instance and install Docker and docker-compose to it using [this guide for Ubuntu](https://docs.docker.com/engine/install/ubuntu/) or [that for CentOS / Oracle Linux](https://docs.docker.com/engine/install/centos/).
 1. Create `docker-compose.yml` on the instance and paste the content below into it:
 
