@@ -70,9 +70,9 @@
       {{- with $authorEmail }}<author>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</author>{{ end }}
       <guid>{{ .Permalink }}</guid>
       {{ if .Site.Params.rssFullContent }}
-		<description>{{ .Content | transform.XMLEscape | safeHTML }}</description>
+		  <description>{{ .Content | transform.XMLEscape | safeHTML }}</description>
       {{ else }}
-		<description>{{ .Summary | transform.XMLEscape | safeHTML }}</description>
+      <description>{{ .Summary | transform.XMLEscape | safeHTML }}</description>
       {{ end }}
       <turbo:content>
         {{- printf "<![CDATA[" | safeHTML }}
