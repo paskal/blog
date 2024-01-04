@@ -10,6 +10,7 @@ Disallow:/tags/
 Disallow:/page/
 Disallow:/cv/
 Disallow:*ref=
+Disallow:*/index.md
 
 Allow: /cv/verhoturov.html
 Allow: /cv/verhoturov.pdf
