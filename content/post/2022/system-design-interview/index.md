@@ -21,9 +21,9 @@ Recently I was asked to help prepare for the developer to SRE transition by two 
 
 4. [Back of the Envelope Calculation for System Design Interviews](https://www.codementor.io/@robinpalotai/back-of-the-envelope-calculation-for-system-design-interviews-z4ljbsp5l)
 
-5. [Non-Abstract Large System Design](https://sre.google/workbook/non-abstract-design/) from SRE Workbook is a very detailed example that thoughtfully explains the approach experienced SRE is supposed to follow during the system design process
+5. [Non-Abstract Large System Design](https://sre.google/workbook/non-abstract-design/) from SRE Workbook is a very detailed example that thoughtfully explains the approach experienced SRE follows during the system design process
 
-Going through these  five links with enough attention should be enough to get a decent System Design knowledge fundamentals in general and prepare for the interview.
+Going through these five links with enough attention should be enough to get a decent System Design knowledge fundamentals in general and prepare for the interview.
 
 
 ![Consistent Hashing Sample Illustration](Consistent-Hashing-Sample-Illustration.png#center "WikiLinuz, CC BY-SA 4.0, via Wikimedia Commons")
