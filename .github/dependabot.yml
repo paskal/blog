@@ -13,10 +13,3 @@ updates:
       "GitHub Actions updates":
         patterns:
           - "*"
-  - package-ecosystem: "gomod"
-    directory: "/"
-    schedule:
-      interval: "monthly"
-    allow:
-      # required for indirect dependencies updates, and hugo theme is installed as indirect dependency
-      - dependency-type: "all"
