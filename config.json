@@ -13,6 +13,7 @@
     "en": {
       "title": "The Catcher in the Cloud",
       "languageName": "English",
+      "contentDir": "content/en",
       "weight": 1,
       "params": {
         "description": "Where bits meet bravery: From debugging code to deploying parachutes — adventures in high-availability systems, high-altitude jumps, and high-impact living on the edge.",
@@ -61,6 +62,7 @@
     "ru": {
       "title": "Над пропастью в Сети",
       "languageName": "Русский",
+      "contentDir": "content/ru",
       "weight": 2,
       "params": {
         "description": "Между строчками кода и стропами парашюта: путешествие в мир высоких технологий, адреналина и культурных открытий.",
