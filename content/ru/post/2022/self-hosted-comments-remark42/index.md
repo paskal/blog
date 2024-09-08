@@ -11,7 +11,7 @@ slug: self-hosted-comments-remark42
 
 Этот пост - краткое руководство по размещению ориентированной на конфиденциальность системы комментариев [Remark42](https://remark42.com), на виртуальной машине в облаке за небольшую ежемесячную плату.
 
-![Prague, Riegrovy sady, Июнь 2022: фото Ksenia Gulyaeva](../../../../en/post/2022/self-hosted-comments-remark42/Prague-Riegrovy-sady.jpg#center "Prague, Riegrovy sady, Июнь 2022: фото Ksenia Gulyaeva")
+![Prague, Riegrovy sady, Июнь 2022: фото Ksenia Gulyaeva](Prague-Riegrovy-sady.jpg#center "Prague, Riegrovy sady, Июнь 2022: фото Ksenia Gulyaeva")
 
 ## Запуск виртуальной машины в [публичном облаке](https://aws.amazon.com/ru/what-is/public-cloud/)
 
