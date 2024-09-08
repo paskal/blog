@@ -25,7 +25,7 @@ slug: system-design-interview
 
 Пройтись по этим пяти ссылкам с достаточным вниманием должно быть достаточно, чтобы получить фундаментальные знания по системному дизайну в целом и подготовиться к интервью.
 
-![Пример иллюстрации согласованного хеширования](../../../../en/post/2022/system-design-interview/Consistent-Hashing-Sample-Illustration.png#center "WikiLinuz, CC BY-SA 4.0, via Wikimedia Commons")
+![Пример иллюстрации согласованного хеширования](Consistent-Hashing-Sample-Illustration.png#center "WikiLinuz, CC BY-SA 4.0, via Wikimedia Commons")
 
 ## Траблшутинг
 
