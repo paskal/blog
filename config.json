@@ -11,11 +11,11 @@
   "PygmentsUseClasses": true,
   "languages": {
     "en": {
-      "title": "Notes on Blue Skies",
+      "title": "The Catcher in the Cloud",
       "languageName": "English",
       "weight": 1,
       "params": {
-        "description": "Dmitry's Verkhoturov personal blog on skydiving, programming, reliability",
+        "description": "Where bits meet bravery: From debugging code to deploying parachutes — adventures in high-availability systems, high-altitude jumps, and high-impact living on the edge.",
         "dateFormatToUse": "Jan 2, 2006"
       },
       "menu": {
@@ -59,11 +59,11 @@
       }
     },
     "ru": {
-      "title": "Записи на голубом небе",
+      "title": "Над пропастью в Сети",
       "languageName": "Русский",
       "weight": 2,
       "params": {
-        "description": "Заметки Дмитрия Верхотурова о скайдайвинге, программировании и отказоустойчивости",
+        "description": "Между строчками кода и стропами парашюта: путешествие в мир высоких технологий, адреналина и культурных открытий.",
         "dateFormatToUse": "2 January 2006"
       },
       "menu": {
