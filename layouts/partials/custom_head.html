@@ -47,10 +47,13 @@
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         "headline": "{{ .Title }}",
+        "genre": "{{ .Type }}",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "{{ .Permalink }}"
         },
+        "wordCount": {{ .WordCount }},
+        "url": "{{ .Permalink }}",
     {{- if .Param "coverart" -}}
         {{- $img := .Page.Resources.GetMatch (.Param "coverart") -}}
             {{- if $img -}}
@@ -61,7 +64,7 @@
             "height": "{{ $img.Height }} px"
         },
             {{- else }}
-                {{ errorf "coverart image not found for %+v: %s" (.Page.File) (.Param "coverart") }}
+                {{ errorf "coverart image not found for %+v: %s" (.Page.Title) (.Param "coverart") }}
             {{- end }}
     {{- else }}
         {{ $img := imageConfig (add "/static" (.Site.Params.image | safeURL )) }}
@@ -72,12 +75,9 @@
             "height": "{{ $img.Height }} px"
         },
     {{- end }}
-        "genre": "{{ .Type }}",
     {{- with .Params.tags }}
         "keywords": "{{ delimit . ", " }}",
     {{- end }}
-        "wordCount": {{ .WordCount }},
-        "url": "{{ .Permalink }}",
     {{- if not .PublishDate.IsZero }}
         "datePublished": "{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" | safeHTML }}",
     {{- else if not .Date.IsZero }}
@@ -118,7 +118,7 @@
 <meta property="og:image:width" content={{ $img.Width }} />
 <meta property="og:image:height" content={{ $img.Height }} />
             {{- else }}
-                {{ errorf "coverart image not found for %+v: %s" (.Page.File) (.Param "coverart") }}
+                {{ errorf "coverart image not found for %+v: %s" (.Page.Title) (.Param "coverart") }}
             {{- end }}
         {{- if $.Param "coveralt" -}}<meta property="og:image:alt" content="{{ $.Param "coveralt" }}" />{{- end -}}
     {{- else -}}
