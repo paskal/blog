@@ -9,6 +9,13 @@
     "post": "/:year/:slug/"
   },
   "PygmentsUseClasses": true,
+  "markup": {
+    "goldmark": {
+      "renderer": {
+        "unsafe": true
+      }
+    }
+  },
   "languages": {
     "en": {
       "title": "The Catcher in the Cloud",
