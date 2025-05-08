@@ -1,64 +1,81 @@
-<span itemscope itemtype="http://schema.org/ImageObject">
+<span itemscope itemtype="https://schema.org/ImageObject">
+  {{ $destination := .Destination }}
+  {{ $title := .Title }}
+  {{ $text := .Text }}
+  {{ $url := urls.Parse $destination }}
+  {{ $path := $url.Path }}
+  {{ $centred := strings.Contains $destination "#center" }}
+  {{ if $centred }}
+    {{ $path = strings.TrimSuffix "#center" $path }}
+  {{ end }}
+  
+  {{ $src := $destination }}
+  {{ $localImage := false }}
+  {{ $srcset := slice }}
+
+  {{ if not $url.IsAbs }}
+    {{ $resourcePath := strings.TrimPrefix "./" $path }}
+    {{ with .Page.Resources.Get $resourcePath | default (resources.Get $resourcePath) }}
+      {{ $localImage = . }}
+      {{ $src = .RelPermalink }}
+      {{ with $url.RawQuery }}
+        {{ $src = printf "%s?%s" $src . }}
+      {{ end }}
+      {{ with $url.Fragment }}
+        {{ if not $centred }}
+          {{ $src = printf "%s#%s" $src . }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
   <picture>
-  {{- $destination := strings.TrimSuffix "#center" .Destination -}}
-  {{- $centred := strings.Contains .Destination "#center" -}}
+  {{ if and $localImage hugo.IsExtended }}
+    {{ if in $localImage.MediaType.String "image/jpeg" }}
+      <!-- WebP for broad compatibility -->
+      {{ $webpImage := $localImage.Resize (printf "%dx%d webp" $localImage.Width $localImage.Height) }}
+      <source srcset="{{ $webpImage.RelPermalink }}" type="image/webp">
+    {{ end }}
+  {{ end }}
 
-  <!-- $avifPath is a wrong detection method as it won't work for external images without proper extension -->
-  {{- $avifPath:= replace (replace $destination ".jpg" ".avif") ".png" ".avif" -}}
-  {{- with $afivImage := .Page.Resources.GetMatch $avifPath }}
-  <!-- avif pictures don't seem to work yet -->
-  <!--  <source srcset="{{ $afivImage.RelPermalink }}" type="image/avif">-->
-  {{- end -}}
+  {{ if $localImage }}
+    <!-- Only create srcset for JPG images to preserve PNG quality -->
+    {{ if in $localImage.MediaType.String "image/jpeg" }}
+      {{ if ge $localImage.Width 1200 }}
+        {{ $srcset = $srcset | append (printf "%s 1200w" ($localImage.Resize "1200x").RelPermalink) }}
+      {{ end }}
+      {{ if ge $localImage.Width 726 }}
+        {{ $srcset = $srcset | append (printf "%s 726w" ($localImage.Resize "726x").RelPermalink) }}
+      {{ end }}
+      {{ if ge $localImage.Width 458 }}
+        {{ $srcset = $srcset | append (printf "%s 458w" ($localImage.Resize "458x").RelPermalink) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
 
-<!-- $localImage would be empty for external image -->
-  {{- $localImage := .Page.Resources.GetMatch $destination -}}
-  {{- $srcset := slice -}}
-
-<!-- used to resize png as well, but the results look awful. better not to resize loseless format. -->
-  {{- if and ($localImage) (in $localImage.MediaType "image/jpeg") -}}
-    {{- if hugo.IsExtended }}
-      <source srcset="{{ ($localImage.Resize (printf "%dx%d webp" $localImage.Width $localImage.Height)).RelPermalink }}" type="image/webp">
-    {{- end -}}
-
-    {{- if ge $localImage.Width "1200" -}}
-      {{- $srcset = $srcset | append (printf "%s 1200w" ($localImage.Resize "1200x").RelPermalink) -}}
-    {{- end -}}
-    {{- if ge $localImage.Width "726" -}}
-      {{- $srcset = $srcset | append (printf "%s 726w" ($localImage.Resize "726x").RelPermalink) -}}
-    {{- end -}}
-    {{- if ge $localImage.Width "458" -}}
-      {{- $srcset = $srcset | append (printf "%s 458w" ($localImage.Resize "458x").RelPermalink) -}}
-    {{- end }}
-  {{- end }}
   <img
-    {{ if and $localImage $srcset -}}
-    srcset="{{ delimit $srcset ",\n" }}"
-    sizes="{{- if ge $localImage.Width "1200" -}}
-    {{- printf "(min-width: 795px) 1200px," -}}
-    {{- end }}
-    {{- if ge $localImage.Width "726" -}}
-    {{- printf "(min-width: 500px) 726px," -}}
-    {{- end }}
-    {{- if ge $localImage.Width "458" -}}
-    {{- printf "(min-width: 300px) 458px," -}}
-    {{- end }}
-      100vw"
-    {{ end -}}
-    src="{{ or (and $localImage $localImage.RelPermalink) $destination }}"
-    itemprop=contentUrl
-    {{ if $localImage }}width="{{ $localImage.Width }}" height="{{ $localImage.Height }}"{{end}}
-    {{ if $.Text }}alt="{{ $.Text }}"{{end}}
-    {{ if $centred }}class="center"{{end}}
+    {{ if and $localImage $srcset }}
+    srcset="{{ delimit $srcset ", " }}"
+    sizes="{{ if ge $localImage.Width 1200 }}(min-width: 795px) 1200px, {{ end }}{{ if ge $localImage.Width 726 }}(min-width: 500px) 726px, {{ end }}{{ if ge $localImage.Width 458 }}(min-width: 300px) 458px, {{ end }}100vw"
+    {{ end }}
+    src="{{ $src }}"
+    itemprop="contentUrl"
+    {{ if $localImage }}width="{{ $localImage.Width }}" height="{{ $localImage.Height }}"{{ end }}
+    {{ with $text }}alt="{{ . }}"{{ end }}
+    {{ if $centred }}class="center"{{ end }}
     loading="lazy"
     decoding="async"
+    {{- range $k, $v := .Attributes -}}
+      {{- if $v -}}
+        {{- printf " %s=%q" $k ($v | transform.HTMLEscape) | safeHTMLAttr -}}
+      {{- end -}}
+    {{- end -}}
   />
   </picture>
-{{- if $.Title }}
-    <br><small itemprop="caption">{{ $.Title }}</small>
-{{ end -}}
-{{ if $.Text }}  <meta itemprop=description content="{{ $.Text }}">{{end}}
-{{- if $localImage }}
-  <meta itemprop=width content="{{ $localImage.Width }} px">
-  <meta itemprop=height content="{{ $localImage.Height }} px">
-{{- end }}
+  {{ with $title }}<br><small itemprop="caption">{{ . }}</small>{{ end }}
+  {{ with $text }}<meta itemprop="description" content="{{ . }}">{{ end }}
+  {{ if $localImage }}
+  <meta itemprop="width" content="{{ $localImage.Width }}px">
+  <meta itemprop="height" content="{{ $localImage.Height }}px">
+  {{ end }}
 </span>
