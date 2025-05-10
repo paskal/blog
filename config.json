@@ -140,6 +140,7 @@
     ]
   },
   "params": {
+    "showRSSIconInHeader": false,
     "rssFullContent": true,
     "customCSS": [
       "center-img.css"
