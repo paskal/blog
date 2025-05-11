@@ -145,6 +145,7 @@
     "customCSS": [
       "center-img.css"
     ],
+    "stickyDesktopHeader": true,
     "author": {
       "name": "Dmitry Verkhoturov",
       "email": "paskal.07@gmail.com"
