@@ -1,33 +1,38 @@
 // ==============================
-// slideout (https://github.com/mango/slideout)
+// slideout - pure CSS implementation (no library needed)
 // ==============================
 
 .slideout-menu {
   position: fixed;
   top: 0;
-  left: 0px;
+  left: 0;
   bottom: 0;
   width: 180px;
   min-height: 100vh;
-  overflow-y: hidden;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   z-index: 0;
   display: none;
 }
 
 .slideout-panel {
-  // position: relative;
+  position: relative;
   z-index: 1;
   background-color: $white;
   min-height: 100%;
+  transition: transform 0.3s ease;
+  will-change: transform;
 }
 
 .slideout-open,
-.slideout-open body,
-.slideout-open .slideout-panel {
+.slideout-open body {
   overflow: hidden;
 }
 
-.slideout-open .slideout-menu {
+.slideout-open.slideout-menu {
   display: block;
+}
+
+#mobile-panel.slideout-open {
+  transform: translateX(180px);
 }

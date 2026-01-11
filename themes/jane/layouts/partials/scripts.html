@@ -1,6 +1,3 @@
-<!-- js -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" crossorigin="anonymous"></script>
-
 <!-- Jane theme main js -->
 {{ $jsMain := resources.Get "js/main.js" | js.Build }}
 {{ $secureJS := $jsMain | resources.ExecuteAsTemplate "js/main.js" . | fingerprint }}
