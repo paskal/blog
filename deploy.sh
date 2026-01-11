@@ -34,4 +34,4 @@ if [ -n "$SUBDIR" ]; then
 fi
 
 # Deploy
-rsync -azi --exclude cv/ --delete public/ "$TARGET" | grep -v "f..t...." | grep -v ".d..t...."
+rsync -azi --exclude cv/ --delete public/ "$TARGET" | grep -Ev '[fd]\.\.t\.\.\.\.' | cat
