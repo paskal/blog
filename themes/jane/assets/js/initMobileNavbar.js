@@ -2,48 +2,70 @@
  * mobile Navbar
  */
 const initMobileNavbar = () => {
-  const $mobileNav = $('#mobile-navbar');
-  const $mobileNavIcon = $('.mobile-navbar-icon');
+  const mobileNav = document.getElementById('mobile-navbar');
+  const mobileNavIcon = document.querySelector('.mobile-navbar-icon');
+  const mobilePanel = document.getElementById('mobile-panel');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (!mobileNav || !mobileNavIcon || !mobilePanel || !mobileMenu) {
+    return;
+  }
+
   const slideout = new Slideout({
-    'panel': document.getElementById('mobile-panel'),
-    'menu': document.getElementById('mobile-menu'),
+    'panel': mobilePanel,
+    'menu': mobileMenu,
     'padding': 180,
     'tolerance': 70
-  })
-  slideout.disableTouch()
+  });
+  slideout.disableTouch();
 
-  $mobileNavIcon.click(function () {
-    slideout.toggle()
-  })
+  mobileNavIcon.addEventListener('click', () => {
+    slideout.toggle();
+  });
 
-  slideout.on('beforeopen', function () {
-    $mobileNav.addClass('fixed-open')
-    $mobileNavIcon.addClass('icon-click').removeClass('icon-out')
-  })
+  slideout.on('beforeopen', () => {
+    mobileNav.classList.add('fixed-open');
+    mobileNavIcon.classList.add('icon-click');
+    mobileNavIcon.classList.remove('icon-out');
+  });
 
-  slideout.on('beforeclose', function () {
-    $mobileNav.removeClass('fixed-open')
-    $mobileNavIcon.addClass('icon-out').removeClass('icon-click')
-  })
+  slideout.on('beforeclose', () => {
+    mobileNav.classList.remove('fixed-open');
+    mobileNavIcon.classList.add('icon-out');
+    mobileNavIcon.classList.remove('icon-click');
+  });
 
-  $('#mobile-panel').on('touchend', function () {
-    slideout.isOpen() && $mobileNavIcon.click()
-  })
-
-  $('.mobile-submenu-open').on('click', function () {
-    const $mobileSubmenuList = $('.mobile-submenu-list')
-    const $mobileMenuParent = $('.mobile-menu-parent')
-
-    if ($(this).parent().next().css('display') == "none") {
-      $mobileSubmenuList.slideUp(300)
-      $(this).parent().next('ul').slideDown(300)
-      $(this).parent().addClass('mobile-submenu-show')
-      $(this).parent().parent().siblings().children().removeClass('mobile-submenu-show')
-    } else {
-      $(this).parent().next('ul').slideUp(300)
-      $mobileMenuParent.removeClass('mobile-submenu-show')
+  mobilePanel.addEventListener('touchend', () => {
+    if (slideout.isOpen()) {
+      mobileNavIcon.click();
     }
   });
-}
+
+  // mobile submenu toggle
+  document.querySelectorAll('.mobile-submenu-open').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const parent = this.parentElement;
+      const submenu = parent.nextElementSibling;
+      const allSubmenus = document.querySelectorAll('.mobile-submenu-list');
+      const allParents = document.querySelectorAll('.mobile-menu-parent');
+
+      if (submenu && submenu.style.display !== 'block') {
+        // close all submenus
+        allSubmenus.forEach(menu => {
+          menu.style.display = 'none';
+        });
+        allParents.forEach(p => {
+          p.classList.remove('mobile-submenu-show');
+        });
+        // open this one
+        submenu.style.display = 'block';
+        parent.classList.add('mobile-submenu-show');
+      } else if (submenu) {
+        submenu.style.display = 'none';
+        parent.classList.remove('mobile-submenu-show');
+      }
+    });
+  });
+};
 
 export default initMobileNavbar

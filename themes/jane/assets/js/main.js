@@ -3,7 +3,7 @@ import initToc from './initToc';
 import initHeaderAnchor from './initHeaderAnchor';
 
 /* main */
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', () => {
   initMobileNavbar();
   initToc();
   initHeaderAnchor();
