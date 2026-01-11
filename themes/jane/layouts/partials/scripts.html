@@ -1,0 +1,36 @@
+<!-- js -->
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/slideout/1.0.1/slideout.min.js" crossorigin="anonymous"></script>
+
+<!-- Jane theme main js -->
+{{ $jsMain := resources.Get "js/main.js" | js.Build }}
+{{ $secureJS := $jsMain | resources.ExecuteAsTemplate "js/main.js" . | fingerprint }}
+<script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}" crossorigin="anonymous"></script>
+<!-- End -->
+
+{{ if and .Site.Params.remark42Url (or .Page.IsPage .IsHome) }}
+<script>
+  var remark_config = {
+    host: '{{ .Site.Params.remark42Url }}',
+    site_id: '{{ .Site.Params.remark42SiteId | default "remark" }}',
+    theme: document.documentElement.getAttribute('data-theme') || 'light',
+    {{- if not .IsHome }}
+    url: "{{ urls.JoinPath .Site.BaseURL .Page.Date.Year .Page.Slug "/" }}",
+    {{- end }}
+    components: [
+    {{- if not .IsHome }}
+    'embed',
+    {{- end }}
+    {{- if .Site.Params.commentCount.remark42.enable }}
+    'counter',
+    {{- end }}
+    ],
+  }
+  !function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);
+</script>
+{{ end }}
+
+<!-- custom js -->
+{{ range .Site.Params.customJS }}
+  <script src="{{ "js/" | relURL }}{{ . }}"></script>
+{{ end }}

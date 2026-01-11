@@ -1,6 +1,6 @@
 {
   "baseurl": "https://terrty.net/",
-  "theme": "github.com/xianmin/hugo-theme-jane",
+  "theme": "jane",
   "languageCode": "en",
   "copyright": "Dmitry Verkhoturov",
   "rssLimit": 100,

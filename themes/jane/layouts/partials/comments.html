@@ -1,0 +1,8 @@
+{{ if and .IsPage (ne .Params.comment false) }}
+
+  <!-- Remark42 -->
+  {{- if .Site.Params.remark42Url -}}
+  <div id="remark42"></div>
+  {{- end }}
+
+{{- end }}
