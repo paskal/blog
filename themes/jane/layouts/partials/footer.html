@@ -33,13 +33,6 @@
     {{- end -}}
   </span>
 
-  <!-- Counter busuanzi -->
-  {{ if .Site.Params.counter.busuanzi.enable }}
-    <span id="busuanzi_container">
-      访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
-    </span>
-  {{ end }}
-
   {{ if .Site.Params.customFooter }}
     <span>
       {{ .Site.Params.customFooter | safeHTML }}

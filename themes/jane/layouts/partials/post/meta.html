@@ -40,9 +40,6 @@
     <span class="post-meta-more">
         {{ i18n "wordCount" .WordCount }} -
         {{ i18n "readingTime" .ReadingTime }}
-      {{ if and .Site.Params.commentCount.disqus.enable .Site.GetPage.IsHome }}
-        - <a href="{{ .Permalink }}#disqus_thread">{{ i18n "comments" }}</a>
-      {{ end }}
       {{- if .Site.Params.commentCount.remark42.enable }}
         - <span
       class="remark42__counter"
@@ -62,26 +59,5 @@
       {{ end }}
     </div>
     {{- end }}
-
-
-    <!-- Counter busuanzi -->
-    {{ if .Site.Params.counter.busuanzi.enable }}
-    <span id="busuanzi_container_page_pv">
-      | 阅读 <span id="busuanzi_value_page_pv"></span>
-    </span>
-    {{ end }}
-
-
-    <!-- Counter leancloud -->
-    {{ if .Site.Params.counter.leancloud.enable }}
-    <span
-      id="{{ .RelPermalink }}"
-      class="leancloud_visitors"
-      data-flag-title="{{ .Title }}"
-    >
-      <span class="post-meta-item-text"> | 阅读 </span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-    {{ end }}
   </div>
 </div>

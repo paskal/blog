@@ -47,10 +47,6 @@
   <meta name="keywords" content="{{ range $index, $element := .Site.Params.keywords }}{{ $element | safeHTML }}{{if ne $index $length }}, {{ end }}{{ end }}" />
 {{- end }}
 
-<!-- baidu & google verification  -->
-{{ with .Site.Params.baidu_verification }}<meta name="baidu-site-verification" content="{{.}}" />{{ end }}
-{{ with .Site.Params.google_verification }}<meta name="google-site-verification" content="{{.}}" />{{ end }}
-
 <!-- Site Generator -->
 <meta name="generator" content="Hugo {{ hugo.Version }}" />
 
@@ -67,28 +63,10 @@
 <!-- Custom Favicon -->
 {{ partial "custom_favicon.html" . }}
 
-<!-- debug -->
-{{- if .Site.Params.debug }}
-<script src="https://cdn.jsdelivr.net/npm/eruda@1.2.6/eruda.min.js" integrity="sha256-Jmz4bc3kp+rRrXX2tGadNBKFLwtzMapr8kHABxSAAP8=" crossorigin="anonymous"></script>
-<script>eruda.init();</script>
-{{- end }}
-
 <!-- Jane theme main style -->
 {{ $style := resources.Get "sass/jane.scss" | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" media="screen" crossorigin="anonymous">
 <!-- End -->
-
-<!-- Custom wallpaper (optional) -->
-{{- if .Site.Params.wallpaper }}
-<style>
-  .wallpaper {
-    background-image: url('{{ .Site.Params.wallpaper }}');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-  }
-</style>
-{{- end }}
 
 <!-- custom css -->
 {{ range .Site.Params.customCSS }}
@@ -99,11 +77,6 @@
 {{- template "_internal/opengraph.html" . -}}
 {{- template "_internal/schema.html" . -}}
 {{- template "_internal/twitter_cards.html" . -}}
-
-<!-- Analytics -->
-{{- if and (not hugo.IsServer) .Site.Config.Services.GoogleAnalytics.ID -}}
-  {{ template "_internal/google_analytics.html" . }}
-{{- end -}}
 
 <!-- Custom head -->
 {{ partial "custom_head.html" . }}

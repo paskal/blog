@@ -38,20 +38,8 @@
 - id: readmore
   translation: Read more
 
-- id: reward
-  translation: Reward
-
-- id: rewardAlipay
-  translation: Alipay
-
-- id: rewardWechat
-  translation: Wechat
-
 - id: seeMarkDown
   translation: The Markdown version »
-
-- id: loadDisqus
-  translation: Show Disqus Comments
 
 # posts.header
 - id: wordCount
@@ -89,27 +77,6 @@
 
 - id: read_ru
   translation: Читать на русском
-
-- id: read_es
-  translation: Leer en español
-
-- id: read_zh-cn
-  translation: 中文阅读
-
-- id: read_zh-tw
-  translation: 中文閱讀
-
-- id: read_pt
-  translation: Leia em português
-
-- id: read_fr
-  translation: Lire en français
-
-- id: read_de
-  translation: In Deutsch lesen
-
-- id: language
-  translation: Language
 
 - id: comments
   translation: Comments

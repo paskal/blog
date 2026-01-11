@@ -1,12 +1,6 @@
 <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="{{ "/" | relLangURL }}" class="logo">
-      {{- if .Site.Params.logoTitle -}}
-        {{ .Site.Params.logoTitle | safeHTML }}
-      {{- else -}}
-        {{ .Site.Title }}
-      {{- end -}}
-    </a>
+    <a href="{{ "/" | relLangURL }}" class="logo">{{ .Site.Title }}</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -51,42 +45,5 @@
       </li>
 
     {{- end }}
-    {{ if and (gt (len .Site.Home.AllTranslations) 1) (.Site.Params.showMenuLanguageChooser | default false ) }}
-      {{- $.Scratch.Set "language" .Language -}}
-      <li class="mobile-menu-item">
-        <!-- drop down navigation MENU -->
-        <div class="mobile-menu-parent mobile-menu-item-lang">
-          <span class="mobile-submenu-open"></span>
-          <a href="#">
-            {{/* icon globe */}}
-            <i class="iconfont">
-              {{ partial "svg/globe.svg" }}
-            </i>
-            {{ i18n "language" }}
-          </a>
-        </div>
-        <ul class="mobile-submenu-list">
-          {{ range .Site.Home.AllTranslations }}
-            <li>
-              {{ if eq ($.Scratch.Get "language") .Language }}
-                <a href="{{ .Permalink }}"><strong>{{ .Language.LanguageName }}</strong></a>
-              {{ else }}
-                <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
-              {{ end }}
-            </li>
-          {{ end }}
-        </ul>
-      </li>
-    {{- end }}
-
-    {{ if .Site.Params.search.google.enable }}
-      <li class="mobile-menu-item">
-        <a id="openSearchMobile" class="mobile-menu-item-link menu-item-search" href="#">
-          <i class="iconfont">
-            {{ partial "svg/search.svg" }}
-          </i>
-        </a>
-      </li>
-    {{ end }}
   </ul>
 </nav>
