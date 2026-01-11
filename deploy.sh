@@ -18,6 +18,13 @@ done
 # Build site
 hugo --minify --cleanDestinationDir
 
+# Remove empty taxonomy pages (tags/categories with no published posts)
+find public/tags public/ru/tags -type d -mindepth 1 -maxdepth 1 2>/dev/null | while read -r dir; do
+  if grep -q 'class="main bg-llight wallpaper"></main>' "$dir/index.html" 2>/dev/null; then
+    rm -rf "$dir"
+  fi
+done
+
 # Set target path
 TARGET="terrty:~/blog/public/"
 if [ -n "$SUBDIR" ]; then

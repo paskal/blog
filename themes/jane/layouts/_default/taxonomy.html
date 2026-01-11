@@ -10,7 +10,11 @@
 {{- end }}
 
 {{ define "content"}}
-{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" | default 10) }}
+{{ $pages := where .Data.Pages.ByDate.Reverse "Type" "post" }}
+{{ if not $pages }}
+  {{/* Skip rendering empty taxonomy pages */}}
+{{ else }}
+{{ $paginator := .Paginate $pages (index .Site.Params "archive-paginate" | default 10) }}
 <section id="archive" class="archive">
   {{ if not $paginator.HasPrev }}
     {{ if eq .Data.Plural "tags" }}
@@ -48,4 +52,5 @@
 <!-- pagination -->
 {{ partial "pagination.html" . }}
 
+{{ end }}
 {{ end }}
