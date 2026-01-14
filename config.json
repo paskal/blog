@@ -18,7 +18,7 @@
   },
   "languages": {
     "en": {
-      "title": "The Catcher in the Cloud",
+      "title": "in the net",
       "languageName": "English",
       "contentDir": "content/en",
       "weight": 1,
@@ -67,7 +67,7 @@
       }
     },
     "ru": {
-      "title": "Над пропастью в Сети",
+      "title": "в сети",
       "languageName": "Русский",
       "contentDir": "content/ru",
       "weight": 2,
