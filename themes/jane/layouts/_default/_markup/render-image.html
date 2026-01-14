@@ -78,4 +78,9 @@
   <meta itemprop="width" content="{{ $localImage.Width }}px">
   <meta itemprop="height" content="{{ $localImage.Height }}px">
   {{ end }}
+  <link itemprop="license" href="https://creativecommons.org/licenses/by/4.0/" />
+  <meta itemprop="copyrightNotice" content="© {{ .Page.Site.Params.author.name }}" />
+  <span itemprop="creator" itemscope itemtype="https://schema.org/Person">
+    <meta itemprop="name" content="{{ .Page.Site.Params.author.name }}" />
+  </span>
 </span>
