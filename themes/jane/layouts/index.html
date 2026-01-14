@@ -1,4 +1,20 @@
 {{ define "content" }}
+<!-- Person schema for site author -->
+{{ if .IsHome }}
+<div itemscope itemtype="https://schema.org/Person" style="display:none">
+  <meta itemprop="name" content="{{ .Site.Params.author.name }}" />
+  <link itemprop="url" href="{{ .Site.Params.author.url }}" />
+  <link itemprop="image" href="{{ .Site.Params.logo | absURL }}" />
+  {{ with .Site.Params.social }}
+    {{ range $key, $value := . }}
+      {{ if not (hasPrefix $value "mailto:") }}
+      <link itemprop="sameAs" href="{{ $value }}" />
+      {{ end }}
+    {{ end }}
+  {{ end }}
+</div>
+{{ end }}
+
 <section id="posts" class="posts">
   {{ $pages := .Pages }}
   {{ if .IsHome }}
