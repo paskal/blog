@@ -15,14 +15,33 @@
 </div>
 {{ end }}
 
-<section id="posts" class="posts">
+<section id="posts" class="posts" {{ if .IsHome }}itemscope itemtype="https://schema.org/ItemList"{{ end }}>
   {{ $pages := .Pages }}
   {{ if .IsHome }}
     {{ $pages = where .Site.RegularPages "Type" "in" site.Params.mainSections }}
   {{ end }}
   {{ $paginator := .Paginate $pages }}
-  {{ range $paginator.Pages }}
-    {{ .Render "summary" }}
+  {{ range $index, $page := $paginator.Pages }}
+    {{ if $.IsHome }}
+    <div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <meta itemprop="position" content="{{ add $index 1 }}" />
+      <div itemprop="item" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="headline" content="{{ $page.Title }}" />
+        <link itemprop="url" href="{{ $page.Permalink }}" />
+        <meta itemprop="datePublished" content="{{ $page.Date.Format "2006-01-02T15:04:05Z07:00" }}" />
+        <meta itemprop="dateModified" content="{{ $page.Lastmod.Format "2006-01-02T15:04:05Z07:00" }}" />
+        {{- $image := $page.Resources.GetMatch "{*.jpg,*.png,*.webp}" -}}
+        {{- if $image -}}
+        <link itemprop="image" href="{{ $image.Permalink }}" />
+        {{- else -}}
+        <link itemprop="image" href="{{ $.Site.Params.image | absURL }}" />
+        {{- end -}}
+        {{ $page.Render "summary" }}
+      </div>
+    </div>
+    {{ else }}
+    {{ $page.Render "summary" }}
+    {{ end }}
   {{ end }}
 </section>
 
