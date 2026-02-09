@@ -2,7 +2,7 @@
 
 {{ define "content"}}
 {{- $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" | default 10) }}
-<section id="archive" class="archive">
+<section id="archive" class="archive" itemscope itemtype="https://schema.org/ItemList">
   {{- if not $paginator.HasPrev }}
     <div class="archive-title">
       <span class="archive-post-counter">
@@ -21,15 +21,21 @@
       </div>
     {{- end }}
 
-    <div class="archive-post">
-      <time datetime="{{ .Date.Format "2006-01-02" }}" class="archive-post-time">
-        {{ .Date | time.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}
-      </time>
-      <span class="archive-post-title">
-        <a href="{{ $element.RelPermalink }}" class="archive-post-link">
-          {{ .Title }}
-        </a>
-      </span>
+    <div class="archive-post" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <meta itemprop="position" content="{{ add $index 1 }}" />
+      <div itemprop="item" itemscope itemtype="https://schema.org/BlogPosting">
+        <link itemprop="url" href="{{ $element.Permalink }}" />
+        <meta itemprop="headline" content="{{ $element.Title }}" />
+        <meta itemprop="datePublished" content="{{ $element.Date.Format "2006-01-02T15:04:05Z07:00" }}" />
+        <time datetime="{{ .Date.Format "2006-01-02" }}" class="archive-post-time">
+          {{ .Date | time.Format ($.Site.Params.dateFormatToUse | default "2006-01-02") }}
+        </time>
+        <span class="archive-post-title">
+          <a href="{{ $element.RelPermalink }}" class="archive-post-link">
+            {{ .Title }}
+          </a>
+        </span>
+      </div>
     </div>
   {{- end -}}
 </section>

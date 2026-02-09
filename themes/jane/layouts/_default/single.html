@@ -1,6 +1,21 @@
 {{ define "content" -}}
   <div class="content-wrapper">
     <div id="content" class="content">
+      <!-- Breadcrumb navigation -->
+      <nav aria-label="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a itemprop="item" href="{{ .Site.BaseURL | relLangURL }}">
+            <span itemprop="name">{{ .Site.Title }}</span>
+          </a>
+          <meta itemprop="position" content="1" />
+        </span>
+        &rsaquo;
+        <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span itemprop="name">{{ .Title }}</span>
+          <meta itemprop="position" content="2" />
+        </span>
+      </nav>
+
       <article class="post">
         <!-- post-header -->
         <header class="post-header">
@@ -17,11 +32,21 @@
         <!-- Schema.org metadata -->
         <meta itemprop="description" content="{{ .Description }}" />
         <link itemprop="mainEntityOfPage" href="{{ .Permalink }}" />
+        <meta itemprop="timeRequired" content="PT{{ .ReadingTime }}M" />
+        {{- $postImage := "" -}}
         {{- if .Param "coverart" -}}
           {{- $img := .Page.Resources.GetMatch (.Param "coverart") -}}
-          {{- if $img }}
-        <meta itemprop="image" content="{{ $img.Permalink }}" />
-          {{- end }}
+          {{- if $img -}}
+            {{- $postImage = $img.Permalink -}}
+          {{- end -}}
+        {{- else -}}
+          {{- $img := .Page.Resources.GetMatch "{*.jpg,*.png,*.webp}" -}}
+          {{- if $img -}}
+            {{- $postImage = $img.Permalink -}}
+          {{- end -}}
+        {{- end -}}
+        {{- if $postImage }}
+        <meta itemprop="image" content="{{ $postImage }}" />
         {{- else }}
         <meta itemprop="image" content="{{ .Site.Params.image | absURL }}" />
         {{- end }}

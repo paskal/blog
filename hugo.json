@@ -44,6 +44,11 @@
             "weight": 40
           },
           {
+            "name": "About",
+            "url": "/about/",
+            "weight": 45
+          },
+          {
             "name": "Résumé",
             "url": "/cv/",
             "weight": 50
@@ -91,6 +96,11 @@
             "name": "Архив",
             "url": "/ru/post/",
             "weight": 40
+          },
+          {
+            "name": "Обо мне",
+            "url": "/ru/about/",
+            "weight": 45
           },
           {
             "name": "Резюме",

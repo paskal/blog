@@ -2,9 +2,9 @@
 <html
   lang="{{ $.Site.LanguageCode | default `en` }}"
   itemscope
-  itemtype="{{ if .IsPage }}https://schema.org/BlogPosting{{ else }}https://schema.org/WebPage{{ end }}"
+  itemtype="{{ if and .IsPage (eq .Type "post") }}https://schema.org/BlogPosting{{ else }}https://schema.org/WebPage{{ end }}"
   data-theme="light"
-{{ if .IsPage }}
+{{ if and .IsPage (eq .Type "post") }}
   prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#"
 {{ else }}
   prefix="og: https://ogp.me/ns# website: https://ogp.me/ns/website#"

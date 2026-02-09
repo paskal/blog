@@ -19,6 +19,13 @@
     {{ else }}
     <span itemprop="name">{{ $author_name | safeHTML }}</span>
     {{ end }}
+    {{- with $.Site.Params.social -}}
+      {{- range $key, $value := . -}}
+        {{- if not (hasPrefix $value "mailto:") }}
+    <link itemprop="sameAs" href="{{ $value }}" />
+        {{- end -}}
+      {{- end -}}
+    {{- end }}
   </div>
 
   <div class="post-meta-time">

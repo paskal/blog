@@ -5,33 +5,75 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 
+{{- $imageURL := "" -}}
+{{- $imageWidth := 0 -}}
+{{- $imageHeight := 0 -}}
+{{- $imageAlt := "" -}}
+
 {{ if .IsHome -}}
-    {{- with .Site.Params.image }}
-    {{ $img := imageConfig (add "/static" ( . | safeURL )) }}
-<meta property="og:image" content="{{ . | absURL }}" />
-<meta property="og:image:width" content={{ $img.Width }} />
-<meta property="og:image:height" content={{ $img.Height }} />
-    {{- end }}
-    {{- with .Site.Params.description }}
-<meta property="og:image:alt" content="{{ . }}" />
-    {{- end }}
+    {{- with .Site.Params.image -}}
+        {{- $img := imageConfig (add "/static" ( . | safeURL )) -}}
+        {{- $imageURL = . | absURL -}}
+        {{- $imageWidth = $img.Width -}}
+        {{- $imageHeight = $img.Height -}}
+    {{- end -}}
+    {{- with .Site.Params.description -}}
+        {{- $imageAlt = . -}}
+    {{- end -}}
 {{- else if .IsPage -}}
     {{- if .Param "coverart" -}}
-        {{ $img := .Page.Resources.GetMatch (.Param "coverart") -}}
-            {{- if $img -}}
-<meta property="og:image" content="{{ $img.Permalink }}" />
-<meta property="og:image:width" content={{ $img.Width }} />
-<meta property="og:image:height" content={{ $img.Height }} />
-            {{- else }}
-                {{ errorf "coverart image not found for %+v: %s" (.Page.Title) (.Param "coverart") }}
-            {{- end }}
-        {{- if $.Param "coveralt" -}}<meta property="og:image:alt" content="{{ $.Param "coveralt" }}" />{{- end -}}
+        {{- $img := .Page.Resources.GetMatch (.Param "coverart") -}}
+        {{- if $img -}}
+            {{- $imageURL = $img.Permalink -}}
+            {{- $imageWidth = $img.Width -}}
+            {{- $imageHeight = $img.Height -}}
+        {{- else -}}
+            {{ errorf "coverart image not found for %+v: %s" (.Page.Title) (.Param "coverart") }}
+        {{- end -}}
+        {{- if $.Param "coveralt" -}}
+            {{- $imageAlt = $.Param "coveralt" -}}
+        {{- end -}}
     {{- else -}}
-        {{ $img := imageConfig (add "/static" (.Site.Params.image | safeURL )) }}
-<meta property="og:image" content="{{ .Site.Params.image | absURL }}" />
-<meta property="og:image:width" content={{ $img.Width }} />
-<meta property="og:image:height" content={{ $img.Height }} />
-<meta property="og:image:alt" content="{{ .Site.Params.description }}" />
+        {{/* fall back to first image resource in page bundle */}}
+        {{- $img := .Page.Resources.GetMatch "{*.jpg,*.png,*.webp}" -}}
+        {{- if $img -}}
+            {{- $imageURL = $img.Permalink -}}
+            {{- $imageWidth = $img.Width -}}
+            {{- $imageHeight = $img.Height -}}
+        {{- else -}}
+            {{- $staticImg := imageConfig (add "/static" (.Site.Params.image | safeURL )) -}}
+            {{- $imageURL = .Site.Params.image | absURL -}}
+            {{- $imageWidth = $staticImg.Width -}}
+            {{- $imageHeight = $staticImg.Height -}}
+            {{- $imageAlt = .Site.Params.description -}}
+        {{- end -}}
     {{- end -}}
 {{- end -}}
+
+{{- if $imageURL }}
+<meta property="og:image" content="{{ $imageURL }}" />
+<meta property="og:image:width" content={{ $imageWidth }} />
+<meta property="og:image:height" content={{ $imageHeight }} />
+{{- if $imageAlt }}
+<meta property="og:image:alt" content="{{ $imageAlt }}" />
+{{- end }}
+{{- end }}
+
+<!-- Twitter Card -->
+{{- if $imageURL }}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="{{ $imageURL }}" />
+{{- else }}
+<meta name="twitter:card" content="summary" />
+{{- end }}
+{{- if .IsPage }}
+<meta name="twitter:title" content="{{ .Title }}" />
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 200 }}{{ end }}" />
+{{- else }}
+<meta name="twitter:title" content="{{ .Site.Title }}" />
+{{- with .Site.Params.description }}
+<meta name="twitter:description" content="{{ . }}" />
+{{- end }}
+{{- end }}
+
 <script defer data-api="/api/event" data-domain="terrty.net" src="/p.js"></script>
