@@ -77,15 +77,29 @@ The comment system is configured to use canonical URLs without the `/ru/` prefix
 
 Images use schema.org `ImageObject` metadata via the custom render hook in `themes/jane/layouts/_default/_markup/render-image.html`. By default, all images are credited to the site author with a CC BY 4.0 license.
 
-To override attribution per image, add query parameters to the image URL:
+### EXIF/IPTC metadata (preferred for custom credit)
 
-- **Custom credit**: `![alt](image.jpg?credit=Ksenia+Gulyaeva#center "title")` — sets `creditText` and `creator` to the specified name (use `+` for spaces)
+The render hook reads the EXIF `Artist` field from local JPEG/PNG images to determine the credit. To attribute an image to someone other than the site author, embed metadata using exiftool:
+
+    exiftool -IPTC:Credit="Name Here" -IPTC:CopyrightNotice="© Name Here" -XMP:Credit="Name Here" -EXIF:Artist="Name Here" image.jpg
+
+The render hook checks `Exif.Tags.Artist` on local images and uses it as the credit if present.
+
+### URL query parameters (fallback)
+
+For images where embedding metadata isn't practical (e.g. PNGs, external images, or YouTube thumbnails), use query parameters in the image URL:
+
+- **Custom credit**: `![alt](image.jpg?credit=Name+Here#center "title")` — sets `creditText` and `creator` to the specified name (use `+` for spaces)
 - **No license**: `![alt](image.png?nolicense#center)` — suppresses `license`, `acquireLicensePage`, and `copyrightNotice` tags
 - **Both**: `![alt](image.png?nolicense&credit=Someone#center)`
 
 This works for both standalone images and images wrapped in links (e.g. YouTube thumbnails):
 
     [![alt](thumbnail.png?nolicense#center)](https://www.youtube.com/watch?v=ID)
+
+### Priority order
+
+Credit is resolved in this order: URL `?credit=` parameter > EXIF `Artist` field > site author (default).
 
 ## YouTube thumbnails
 

@@ -77,6 +77,11 @@
   <meta itemprop="height" content="{{ $localImage.Height }}px">
   {{ end }}
   {{- $credit := .Page.Site.Params.author.name -}}
+  {{- if $localImage -}}
+    {{- with $localImage.Exif -}}
+      {{- with .Tags.Artist -}}{{- $credit = . -}}{{- end -}}
+    {{- end -}}
+  {{- end -}}
   {{- if strings.Contains $rawQuery "credit=" -}}
     {{- $credit = replaceRE `(?:^|.*&)credit=([^&]+).*$` "$1" $rawQuery -}}
     {{- $credit = replace $credit "+" " " -}}
