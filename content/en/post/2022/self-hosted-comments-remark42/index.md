@@ -11,7 +11,7 @@ slug: self-hosted-comments-remark42
 
 This post is a short guide on hosting a privacy-focused comment system [Remark42](https://remark42.com) on a virtual machine in the cloud for free or a small monthly fee.
 
-![Prague, Riegrovy sady, June 2022: photo by Ksenia Gulyaeva](Prague-Riegrovy-sady.jpg#center "Prague, Riegrovy sady, June 2022: photo by Ksenia Gulyaeva")
+![Prague, Riegrovy sady, June 2022: photo by Ksenia Gulyaeva](Prague-Riegrovy-sady.jpg?credit=Ksenia+Gulyaeva#center "Prague, Riegrovy sady, June 2022: photo by Ksenia Gulyaeva")
 
 ## Obtaining a virtual machine instance in the public cloud
 

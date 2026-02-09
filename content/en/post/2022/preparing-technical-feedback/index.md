@@ -26,5 +26,5 @@ I review the traces of their work I can find for the period a colleague requeste
 
 Written artefacts play a significant role in performance evaluations and promotions in the Big Tech (Meta, Google, Microsoft). Providing feedback is a great way to help a colleague receive deserved recognition from the company.
 
-![Amsterdam, Walenpleintje street, June 2022: photo by Ksenia Gulyaeva](Amsterdam-Walenpleintje.jpg#center "Amsterdam, Walenpleintje street, June 2022: photo by Ksenia Gulyaeva")
+![Amsterdam, Walenpleintje street, June 2022: photo by Ksenia Gulyaeva](Amsterdam-Walenpleintje.jpg?credit=Ksenia+Gulyaeva#center "Amsterdam, Walenpleintje street, June 2022: photo by Ksenia Gulyaeva")
 <!--more-->

@@ -47,9 +47,9 @@ The “Adrenaline Instead of Amphetamine” program was launched by Gdańsk's MO
 
 Пара видео, что я записал в этом сезоне:
 
-[![Magellan vs Odyssey landings shoot first-person](G4Vpmmcjih0.png#center)](https://www.youtube.com/watch?v=G4Vpmmcjih0)
+[![Magellan vs Odyssey landings shoot first-person](G4Vpmmcjih0.png?nolicense#center)](https://www.youtube.com/watch?v=G4Vpmmcjih0)
 
-[![Odissey 161° turn](-NJxz8MpcYg.png#center)](https://www.youtube.com/watch?v=-NJxz8MpcYg)
+[![Odissey 161° turn](-NJxz8MpcYg.png?nolicense#center)](https://www.youtube.com/watch?v=-NJxz8MpcYg)
 ---
 
 К чему всё написанное выше? Подобный опыт помогает абстрагироваться от каждодневной суеты, и взять контроль над своей собственной жизнью. Когда ты каждые выходные оказываешься в ситуации "делай всё для выживания или получи травму", делать что угодно в карьере или любой другой области, которая для тебя важна, становится значительно проще. Ты всегда помнишь, что есть игра с более высокими ставками.

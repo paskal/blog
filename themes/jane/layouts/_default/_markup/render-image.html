@@ -8,19 +8,17 @@
   {{ if $centred }}
     {{ $path = strings.TrimSuffix "#center" $path }}
   {{ end }}
-  
+
   {{ $src := $destination }}
   {{ $localImage := false }}
   {{ $srcset := slice }}
+  {{ $rawQuery := $url.RawQuery | default "" }}
 
   {{ if not $url.IsAbs }}
     {{ $resourcePath := strings.TrimPrefix "./" $path }}
     {{ with .Page.Resources.Get $resourcePath | default (resources.Get $resourcePath) }}
       {{ $localImage = . }}
       {{ $src = .RelPermalink }}
-      {{ with $url.RawQuery }}
-        {{ $src = printf "%s?%s" $src . }}
-      {{ end }}
       {{ with $url.Fragment }}
         {{ if not $centred }}
           {{ $src = printf "%s#%s" $src . }}
@@ -78,9 +76,19 @@
   <meta itemprop="width" content="{{ $localImage.Width }}px">
   <meta itemprop="height" content="{{ $localImage.Height }}px">
   {{ end }}
+  {{- $credit := .Page.Site.Params.author.name -}}
+  {{- if strings.Contains $rawQuery "credit=" -}}
+    {{- $credit = replaceRE `(?:^|.*&)credit=([^&]+).*$` "$1" $rawQuery -}}
+    {{- $credit = replace $credit "+" " " -}}
+  {{- end -}}
+  {{- $nolicense := strings.Contains $rawQuery "nolicense" -}}
+  {{- if not $nolicense }}
   <link itemprop="license" href="https://creativecommons.org/licenses/by/4.0/" />
-  <meta itemprop="copyrightNotice" content="© {{ .Page.Site.Params.author.name }}" />
+  <link itemprop="acquireLicensePage" href="https://creativecommons.org/licenses/by/4.0/" />
+  <meta itemprop="copyrightNotice" content="© {{ $credit }}" />
+  {{- end }}
+  <meta itemprop="creditText" content="{{ $credit }}" />
   <span itemprop="creator" itemscope itemtype="https://schema.org/Person">
-    <meta itemprop="name" content="{{ .Page.Site.Params.author.name }}" />
+    <meta itemprop="name" content="{{ $credit }}" />
   </span>
 </span>

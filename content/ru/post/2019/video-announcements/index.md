@@ -19,7 +19,7 @@ slug: video-announcements
 
 Самой сложной частью приключения оказалось объяснить врачам в госпитале, куда он приехал самостоятельно, каким образом он попал в такой серьёзный "car accident", но его машина при этом в целости и сохранности стоит на парковке, и убедить их не вызывать шерифа. Описание прыжка показалось мне очень знакомым, и я по памяти нашёл видео, на котором он запечатлён:
 
-[![Skydiving in car](GMxXHY1f8Xk.png#center)](https://www.youtube.com/watch?v=GMxXHY1f8Xk)
+[![Skydiving in car](GMxXHY1f8Xk.png?nolicense#center)](https://www.youtube.com/watch?v=GMxXHY1f8Xk)
 
 Кто бы знал, что у этого видео из середины девяностых есть такая богатая история?
 
@@ -27,13 +27,13 @@ slug: video-announcements
 
 ### Валера "#хочулетать" Болучевский
 
-[![Banana Switch](herWXCE7bHI.png#center)](https://www.youtube.com/watch?v=herWXCE7bHI)
+[![Banana Switch](herWXCE7bHI.png?nolicense#center)](https://www.youtube.com/watch?v=herWXCE7bHI)
 
 Валера делает отличные видео про парашюты и свою жизнь, выше самое знаменитое, но вообще их много и они крутые, [вот ссылка на его канал](https://www.youtube.com/user/ProgressLabTV/videos) (видео выше опубликовано в другом канале).
 
 ### Nerdwriter
 
-![The Master: How Scientology Works](keYYiuOJdrE.png#center)
+![The Master: How Scientology Works](keYYiuOJdrE.png?nolicense#center)
 
 Эван на своём [канале](https://www.youtube.com/user/Nerdwriter1/videos?sort=p) выкладывает видео с неплохими разборами кино, музыки, картин, и разного другого искусства, если вам нравится тон этого видео, рекомендую посмотреть что-нибудь из его видео на известные вам темы.
 
