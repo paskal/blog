@@ -36,13 +36,13 @@ hugo --minify --cleanDestinationDir
 - `content/`: Blog posts and pages (separate directories for en/ru languages)
 - `layouts/`: Custom layout templates that override theme defaults
 - `static/`: Static files (CSS, images, etc.)
-- `config.json`: Site configuration
+- `hugo.json`: Site configuration
 
 ## Theme Management
 
 The blog uses the [Jane theme](https://github.com/xianmin/hugo-theme-jane) managed via Go modules instead of the traditional themes directory:
 
-- Theme is specified in config.json: `"theme": "github.com/xianmin/hugo-theme-jane"`
+- Theme is specified in hugo.json: `"theme": "github.com/xianmin/hugo-theme-jane"`
 - Get the theme: `hugo mod get`
 - Update the theme: `hugo mod get -u`
 - Theme files are stored in `$GOPATH/pkg/mod/github.com/xianmin/hugo-theme-jane@version`
@@ -67,7 +67,7 @@ When a post is available in both languages, they share the same slug but differe
 
 ## Comments System
 
-The blog uses [Remark42](https://github.com/umputun/remark42) for comments, configured in config.json with:
+The blog uses [Remark42](https://github.com/umputun/remark42) for comments, configured in hugo.json with:
 - `remark42Url`: "https://remark42.terrty.net"
 - `remark42SiteId`: "terrty"
 
