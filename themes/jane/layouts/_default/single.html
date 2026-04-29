@@ -94,8 +94,8 @@
       </article>
 
       <!-- Author Info -->
-      {{ if and (.Site.Params.author.name | default .Site.Author.name) (.Params.showAuthorInfo | default .Site.Params.showAuthorInfo) }}
-        {{ partial "author_info.html" (dict "author" (.Site.Params.author.name | default .Site.Author.name) "context" $) }}
+      {{ if and .Site.Params.author.name (.Params.showAuthorInfo | default .Site.Params.showAuthorInfo) }}
+        {{ partial "author_info.html" (dict "author" .Site.Params.author.name "context" $) }}
       {{ end }}
 
 

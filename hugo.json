@@ -1,7 +1,6 @@
 {
   "baseurl": "https://terrty.net/",
   "theme": "jane",
-  "languageCode": "en",
   "copyright": "Dmitry Verkhoturov",
   "rssLimit": 100,
   "timeout": 100000,
@@ -21,7 +20,8 @@
   "languages": {
     "en": {
       "title": "in the net",
-      "languageName": "English",
+      "label": "English",
+      "locale": "en",
       "contentDir": "content/en",
       "weight": 1,
       "params": {
@@ -75,7 +75,8 @@
     },
     "ru": {
       "title": "в сети",
-      "languageName": "Русский",
+      "label": "Русский",
+      "locale": "ru",
       "contentDir": "content/ru",
       "weight": 2,
       "params": {

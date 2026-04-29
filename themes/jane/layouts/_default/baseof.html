@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html
-  lang="{{ $.Site.LanguageCode | default `en` }}"
+  lang="{{ $.Site.Language.Lang | default `en` }}"
   itemscope
   itemtype="{{ if and .IsPage (eq .Type "post") }}https://schema.org/BlogPosting{{ else }}https://schema.org/WebPage{{ end }}"
   data-theme="light"

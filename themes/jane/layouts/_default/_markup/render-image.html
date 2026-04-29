@@ -78,8 +78,10 @@
   {{ end }}
   {{- $credit := .Page.Site.Params.author.name -}}
   {{- if $localImage -}}
-    {{- with $localImage.Exif -}}
-      {{- with .Tags.Artist -}}{{- $credit = . -}}{{- end -}}
+    {{- with $localImage.Meta -}}
+      {{- with .Exif -}}
+        {{- with .Tags.Artist -}}{{- $credit = . -}}{{- end -}}
+      {{- end -}}
     {{- end -}}
   {{- end -}}
   {{- if strings.Contains $rawQuery "credit=" -}}
