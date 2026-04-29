@@ -426,15 +426,15 @@ Each task is a single commit. Task 3 covers both per-page noindex AND robots.txt
 
 ### Task 4: pagination title suffixes
 
-- [ ] Add `define "title"` block to `themes/jane/layouts/index.html` per Technical details
-- [ ] Add equivalent `define "title"` block to `themes/jane/layouts/_default/section.html`
-- [ ] Add equivalent `define "title"` block to `themes/jane/layouts/_default/taxonomy.html`
-- [ ] `hugo --minify --cleanDestinationDir` builds clean
-- [ ] `curl -sL http://localhost:1313/page/2/ | grep -oE '<title>[^<]+</title>'` shows ` — Page 2` suffix
-- [ ] `curl -sL http://localhost:1313/ru/page/2/ | grep -oE '<title>[^<]+</title>'` shows ` — Страница 2` suffix
-- [ ] `curl -sL http://localhost:1313/ | grep -oE '<title>[^<]+</title>'` shows the unsuffixed home title (regression check)
-- [ ] `curl -sL http://localhost:1313/2022/cagiva-raptor-125-moto-gymkhana-project/ | grep -oE '<title>[^<]+</title>'` shows the unchanged single-post title (regression check)
-- [ ] Commit
+- [x] Add `define "title"` block to `themes/jane/layouts/index.html` per Technical details
+- [x] Add equivalent `define "title"` block to `themes/jane/layouts/_default/section.html`
+- [x] Add equivalent `define "title"` block to `themes/jane/layouts/_default/taxonomy.html`
+- [x] `hugo --minify --cleanDestinationDir` builds clean
+- [x] `curl -sL http://localhost:1313/page/2/ | grep -oE '<title>[^<]+</title>'` shows ` — Page 2` suffix
+- [x] `curl -sL http://localhost:1313/ru/page/2/ | grep -oE '<title>[^<]+</title>'` shows ` — Страница 2` suffix
+- [x] `curl -sL http://localhost:1313/ | grep -oE '<title>[^<]+</title>'` shows the unsuffixed home title (regression check)
+- [x] `curl -sL http://localhost:1313/2022/cagiva-raptor-125-moto-gymkhana-project/ | grep -oE '<title>[^<]+</title>'` shows the unchanged single-post title (regression check)
+- [x] Commit
 
 ### Task 5: JSON-LD partial
 

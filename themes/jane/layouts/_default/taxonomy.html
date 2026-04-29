@@ -1,11 +1,21 @@
 {{ define "title" -}}
+{{- $suffix := "" -}}
+{{- with .Paginator -}}
+  {{- if gt .PageNumber 1 -}}
+    {{- if eq $.Site.Language.Lang "ru" -}}
+      {{- $suffix = printf " — Страница %d" .PageNumber -}}
+    {{- else -}}
+      {{- $suffix = printf " — Page %d" .PageNumber -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 {{ if eq .Data.Singular "author" -}}
   {{- $author := (index (hugo.Data.authors | default dict) .Title) -}}
   {{- $author_lang := (index ($author | default dict) .Site.Language.Lang) -}}
   {{- $author_name := $author_lang.name.display | default $author.name.display | default .Title -}}
-  {{ $author_name }} · {{ .Site.Title }}
+  {{ $author_name }} · {{ .Site.Title }}{{ $suffix }}
 {{- else -}}
-  {{ .Title }} · {{ .Site.Title }}
+  {{ .Title }} · {{ .Site.Title }}{{ $suffix }}
 {{- end }}
 {{- end }}
 

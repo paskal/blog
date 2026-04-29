@@ -1,3 +1,17 @@
+{{ define "title" }}
+  {{- $suffix := "" -}}
+  {{- with .Paginator -}}
+    {{- if gt .PageNumber 1 -}}
+      {{- if eq $.Site.Language.Lang "ru" -}}
+        {{- $suffix = printf " — Страница %d" .PageNumber -}}
+      {{- else -}}
+        {{- $suffix = printf " — Page %d" .PageNumber -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{ .Site.Title }}{{ $suffix }}
+{{ end }}
+
 {{ define "content" }}
 <!-- Person schema for site author -->
 {{ if .IsHome }}
