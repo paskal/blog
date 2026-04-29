@@ -402,13 +402,13 @@ Each task is a single commit. Task 3 covers both per-page noindex AND robots.txt
 
 ### Task 2: pagination-aware canonical & og:url
 
-- [ ] Edit `themes/jane/layouts/partials/head.html:55` per Technical details
-- [ ] Edit `themes/jane/layouts/partials/custom_head.html` to append paginator-aware `og:url` after the existing OG image block
-- [ ] `hugo --minify --cleanDestinationDir` builds clean
-- [ ] `inspect_head http://localhost:1313/page/2/` shows `<link rel=canonical href="https://terrty.net/page/2/">` (or `http://localhost:1313/page/2/` in dev) AND a second `og:url` matching the paginated URL
-- [ ] `inspect_head http://localhost:1313/` shows canonical = home (unchanged)
-- [ ] `inspect_head http://localhost:1313/2022/cagiva-raptor-125-moto-gymkhana-project/` shows canonical unchanged (single posts unaffected)
-- [ ] Commit
+- [x] Edit `themes/jane/layouts/partials/head.html:55` per Technical details
+- [x] Edit `themes/jane/layouts/partials/custom_head.html` to append paginator-aware `og:url` after the existing OG image block
+- [x] `hugo --minify --cleanDestinationDir` builds clean
+- [x] `inspect_head http://localhost:1313/page/2/` shows `<link rel=canonical href="https://terrty.net/page/2/">` (or `http://localhost:1313/page/2/` in dev) AND a second `og:url` matching the paginated URL
+- [x] `inspect_head http://localhost:1313/` shows canonical = home (unchanged)
+- [x] `inspect_head http://localhost:1313/2022/cagiva-raptor-125-moto-gymkhana-project/` shows canonical unchanged (single posts unaffected)
+- [x] Commit
 
 ### Task 3: per-page noindex and robots.txt rewrite (single commit)
 

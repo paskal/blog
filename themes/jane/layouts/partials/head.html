@@ -52,7 +52,13 @@
 <meta name="generator" content="Hugo {{ hugo.Version }}" />
 
 <!-- Permalink & RSSlink -->
-<link rel="canonical" href="{{ .Permalink }}" />
+{{- $canonical := .Permalink -}}
+{{- if or .IsHome (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") -}}
+  {{- with .Paginator -}}
+    {{- if gt .PageNumber 1 -}}{{- $canonical = .URL | absURL -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+<link rel="canonical" href="{{ $canonical }}" />
 {{ with .OutputFormats.Get "RSS" }}<link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />{{ end }}
 
 {{ if .OutputFormats.Get "jsonfeed" }}
