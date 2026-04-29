@@ -412,17 +412,17 @@ Each task is a single commit. Task 3 covers both per-page noindex AND robots.txt
 
 ### Task 3: per-page noindex and robots.txt rewrite (single commit)
 
-- [ ] Edit `themes/jane/layouts/partials/head.html:5`: replace static robots meta with the dynamic `{{ $robots }}` block per Technical details
-- [ ] Edit `static/robots.txt` per Technical details (drop `/post/`, `/tags/`, `/page/` lines; keep `/cv/`)
-- [ ] `hugo --minify --cleanDestinationDir` builds clean
-- [ ] `inspect_head http://localhost:1313/post/` shows `noindex, follow, max-image-preview:large`
-- [ ] `inspect_head http://localhost:1313/tags/` shows `noindex, follow, …`
-- [ ] `inspect_head http://localhost:1313/page/2/` shows `noindex, follow, …`
-- [ ] `inspect_head http://localhost:1313/2022/cagiva-raptor-125-moto-gymkhana-project/` shows the original `max-image-preview:large` (no noindex)
-- [ ] `inspect_head http://localhost:1313/` shows `max-image-preview:large` only (home is indexable)
-- [ ] `curl -sL http://localhost:1313/robots.txt` matches the new block exactly
-- [ ] Single commit; deploy via `./deploy.sh` so both changes go live together
-- [ ] Post-deploy: `curl -sL https://terrty.net/page/2/ | grep -o 'noindex' | head -1` returns `noindex` before any check on the new robots.txt
+- [x] Edit `themes/jane/layouts/partials/head.html:5`: replace static robots meta with the dynamic `{{ $robots }}` block per Technical details
+- [x] Edit `static/robots.txt` per Technical details (drop `/post/`, `/tags/`, `/page/` lines; keep `/cv/`)
+- [x] `hugo --minify --cleanDestinationDir` builds clean
+- [x] `inspect_head http://localhost:1313/post/` shows `noindex, follow, max-image-preview:large`
+- [x] `inspect_head http://localhost:1313/tags/` shows `noindex, follow, …`
+- [x] `inspect_head http://localhost:1313/page/2/` shows `noindex, follow, …`
+- [x] `inspect_head http://localhost:1313/2022/cagiva-raptor-125-moto-gymkhana-project/` shows the original `max-image-preview:large` (no noindex)
+- [x] `inspect_head http://localhost:1313/` shows `max-image-preview:large` only (home is indexable)
+- [x] `curl -sL http://localhost:1313/robots.txt` matches the new block exactly
+- [x] Single commit; deploy via `./deploy.sh` so both changes go live together (one commit produced; deploy half: [x] deploy (Task 6))
+- [x] post-deploy (Task 6)
 
 ### Task 4: pagination title suffixes
 

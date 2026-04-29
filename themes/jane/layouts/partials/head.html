@@ -2,7 +2,16 @@
 <link rel="alternate" hreflang="{{ .Site.Language.Lang }}" href="{{ .Permalink  }}" />
 {{ end }}
 
-<meta name="robots" content="max-image-preview:large" />
+{{- $robots := "max-image-preview:large" -}}
+{{- if or .IsHome (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") -}}
+  {{- with .Paginator -}}
+    {{- if gt .PageNumber 1 -}}{{- $robots = "noindex, follow, max-image-preview:large" -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if or (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") -}}
+  {{- $robots = "noindex, follow, max-image-preview:large" -}}
+{{- end -}}
+<meta name="robots" content="{{ $robots }}" />
 <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 {{/* support older feature phones
