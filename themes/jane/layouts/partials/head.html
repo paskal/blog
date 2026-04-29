@@ -91,7 +91,13 @@
 
 {{/* NOTE: These Hugo Internal Templates can be found starting at https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_embedded.go#L158 */}}
 {{- template "_internal/opengraph.html" . -}}
-{{- template "_internal/schema.html" . -}}
+
+{{/* NOTE: These Hugo Internal Templates can be found starting at https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_embedded.go#L158.
+     _internal/schema.html emits <meta itemprop="..."> tags (name/description/datePublished/dateModified/wordCount/keywords)
+     attached to the <html itemtype> scope set in baseof.html (BlogPosting on posts, Blog on home, WebPage elsewhere).
+     Author/publisher/image/mainEntityOfPage microdata for posts is emitted in single.html; Blog properties for the home
+     page are emitted in index.html. */}}
+{{- if not .IsHome -}}{{- template "_internal/schema.html" . -}}{{- end -}}
 
 <!-- Custom head -->
 {{ partial "custom_head.html" . }}

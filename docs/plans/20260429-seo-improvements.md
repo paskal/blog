@@ -35,6 +35,16 @@ Out of scope: front-matter edits to existing posts, episode-level rewrites for s
 - `themes/jane/` is **vendored** (the directory is checked into the repo, not a `hugo mod` cache — `cat go.mod` shows only the project module, no theme module reference). Editing files under `themes/jane/` is the project's established pattern; edits will not be overwritten by `hugo mod get -u` because the theme isn't fetched as a module.
 - Task 3 (per-page `noindex` AND robots.txt rewrite) **must ship in a single commit / single `deploy.sh` invocation**. Splitting them would briefly expose `/page/N/`, `/post/`, `/tags/` to indexing without a `noindex` directive (sitemap doesn't list these URLs, so the discovery path is the home navigation only — but the exposure window is still real).
 
+## Deviations from the original plan
+
+Several template-level adjustments were needed during implementation that the Technical-details snippets below do not fully reflect. Read these before applying any snippet from the Technical details section — the *Pagination-aware canonical & og:url* subsection has been updated in place to show the hand-rolled OG block, but the deviations are summarised here for context.
+
+- **Kind-guards around `with .Paginator`** (Tasks 2 and 3): the canonical, `og:url`, and robots blocks each call `.Paginator`. On a single post `.Paginator` is not callable and Hugo aborts the build with `pagination not supported in this context`. Each `with .Paginator` is wrapped in `if or .IsHome (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term")` so the call only fires on list-type pages.
+- **Hand-rolled OG block replaces `_internal/opengraph.html`** (Task 2): the original plan kept `_internal/opengraph.html` and emitted a second `<meta property="og:url">` from `custom_head.html` to override it on paginated pages (last-wins semantics). External validation (codex iteration 2) flagged the duplicate `og:url` as a real defect — some scrapers honour the first tag, which on paginated pages still pointed to the section/home permalink. The shipped fix (commit `121f6c1`) drops the `_internal/opengraph.html` call entirely from `head.html` and emits the full OG block inline (`og:url`, `og:site_name`, `og:title`, `og:description`, `og:locale`, `og:type`, `article:section/published_time/modified_time/tag` on posts), reusing the same `$canonical` variable as the canonical link. `og:image` (and width/height/alt) stays in `custom_head.html`. The plan's *Pagination-aware canonical & og:url* subsection has been rewritten in place to show this approach.
+- **`hugo.Data.authors` not `$.Site.Data.authors`** (Task 5): the JSON-LD partial uses `hugo.Data` because `.Site.Data` was deprecated in the 0.160 cleanup commit (`a99d06f`). The plan snippet still shows the legacy form; the shipped partial uses `hugo.Data`.
+- **`safeJS` not `safeHTML` on the JSON-LD `<script>` body** (Task 5): Go's `html/template` JS-escapes script bodies by design, and `safeHTML` produces double-encoded JSON inside `<script type="application/ld+json">`. `safeJS` is the correct marker — the value is a literal JS string the parser hands to `JSON.parse`. `terms.html` was also missed in Task 4's title-suffix work and was added in the review pass (paginated `/tags/page/N/` was emitting the unsuffixed title).
+- **JSON-LD partial replaced with equivalent inline microdata** (post-Task-5, by user request): the user prefers inline microdata (`itemscope` / `itemtype` / `itemprop`) over `<script type="application/ld+json">` because microdata is the existing project convention (see `baseof.html` `<html itemtype>`, `_internal/schema.html`, the freestanding `Person` block in `index.html`, and the `BreadcrumbList` / `articleBody` markup in `single.html`) and avoids the script-tag-escaping foot-guns that `safeJS` had to work around. The shipped change deletes `themes/jane/layouts/partials/jsonld.html`, drops the include from `head.html`, adds per-kind `<html itemtype>` logic to `baseof.html` (`Blog` on home, `BlogPosting` on posts, `WebPage` elsewhere), and inlines the equivalent microdata in `single.html` (`author` / `publisher` / `image` / `mainEntityOfPage` / `inLanguage`, gated to `eq .Section "post"`) and `index.html` (Blog `name` / `description` / `url` / `inLanguage` plus `<link itemprop="author" href="#site-author">` referencing the existing Person block, all gated to the unpaginated home). The *Structured data via inline microdata* subsection in *Technical details* has been rewritten to show this approach.
+
 ## Context
 
 ### Current SEO state — what is already there
@@ -158,10 +168,11 @@ print(f'{n} valid JSON-LD blocks')
 
 | File                                                     | Change                                                              | Task |
 |----------------------------------------------------------|---------------------------------------------------------------------|------|
-| `themes/jane/layouts/partials/head.html`                 | Add `truncate 160` to description chain; pagination-aware canonical; per-page `noindex, follow`; include `jsonld.html` after `_internal/schema.html` | 1, 2, 3, 5 |
-| `themes/jane/layouts/partials/custom_head.html`          | Same `truncate 160` for `twitter:description`; pagination-aware `og:url`           | 1, 2 |
-| `themes/jane/layouts/partials/jsonld.html` (new)         | `BlogPosting` for posts; `Blog` + `Person` for home                                | 5 |
-| `themes/jane/layouts/index.html`                         | `define "title"` block: append " — Page N" when `Paginator.PageNumber > 1`         | 4 |
+| `themes/jane/layouts/partials/head.html`                 | Add `truncate 160` to description chain; pagination-aware canonical; hand-rolled OG block sharing the `$canonical` variable; per-page `noindex, follow`; rely on `_internal/schema.html` for shared microdata (no JSON-LD partial) | 1, 2, 3, 5 |
+| `themes/jane/layouts/partials/custom_head.html`          | Same `truncate 160` for `twitter:description`; emits `og:image` (and width/height/alt) only — `og:url` is now hand-rolled in `head.html` | 1, 2 |
+| `themes/jane/layouts/_default/baseof.html`               | `<html itemtype>` per kind: `BlogPosting` on posts, `Blog` on home, `WebPage` elsewhere | 5 |
+| `themes/jane/layouts/_default/single.html`               | Inline microdata for posts: `mainEntityOfPage`, `inLanguage`, `author` Person, `publisher` Person, `image` ImageObject (gated to `eq .Section "post"`) | 5 |
+| `themes/jane/layouts/index.html`                         | `define "title"` block: append " — Page N" when `Paginator.PageNumber > 1`; Blog properties (name, description, url, inLanguage, author) on first page; existing `Person` block keeps `id="site-author"` | 4, 5 |
 | `themes/jane/layouts/_default/section.html`              | Same `define "title"` block (English: " — Page N"; Russian: " — Страница N")       | 4 |
 | `themes/jane/layouts/_default/taxonomy.html`             | Same                                                                              | 4 |
 | `static/robots.txt`                                      | Remove blanket `Disallow:` on `/post/`, `/tags/`, `/page/`                        | 3 |
@@ -182,32 +193,55 @@ In `head.html:35-41`:
 {{- end -}}
 ```
 
-Mirror the same chain for `twitter:description` in `custom_head.html:71` and for `og:description` if/when we hand-roll the OG block (not done in this plan).
+Mirror the same chain for `twitter:description` in `custom_head.html:71` and for `og:description` in the hand-rolled OG block (see *Pagination-aware canonical & og:url* below — the OG block uses the same three-branch chain).
 
 ### Pagination-aware canonical & og:url
 
-In `head.html`, replace `<link rel="canonical" href="{{ .Permalink }}" />` (line 55) with:
+In `head.html`, replace `<link rel="canonical" href="{{ .Permalink }}" />` (line 55) with a guarded `$canonical` variable, then reuse the same variable for `og:url` in a hand-rolled OG block (replacing the `{{- template "_internal/opengraph.html" . -}}` call):
 
 ```go-html-template
 {{- $canonical := .Permalink -}}
-{{- with .Paginator -}}
-  {{- if gt .PageNumber 1 -}}{{- $canonical = .URL | absURL -}}{{- end -}}
+{{- if or .IsHome (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") -}}
+  {{- with .Paginator -}}
+    {{- if gt .PageNumber 1 -}}{{- $canonical = .URL | absURL -}}{{- end -}}
+  {{- end -}}
 {{- end -}}
 <link rel="canonical" href="{{ $canonical }}" />
 ```
 
-In `custom_head.html`, override the `og:url` emitted by `_internal/opengraph.html` is not possible without replacing the whole internal template. Pragmatic alternative: emit a second `<meta property="og:url">` with the paginator-aware URL **after** the internal template runs. Open Graph allows multiple `og:url` tags; consumers prefer the last one. Verify behaviour in the rich-results test post-deploy.
+`_internal/opengraph.html` always emits `.Permalink` for `og:url`, which would conflict with `$canonical` on paginated home/section/term pages. The fix is to drop the internal-template call entirely and hand-roll the OG block so `og:url` reuses `$canonical`:
 
 ```go-html-template
-{{- /* in custom_head.html, append after the existing OG image block */ -}}
-{{- with .Paginator -}}
-  {{- if gt .PageNumber 1 -}}
-    <meta property="og:url" content="{{ .URL | absURL }}" />
-  {{- end -}}
+{{- $ogDesc := "" -}}
+{{- if .Description -}}
+  {{- $ogDesc = .Description | plainify | truncate 160 -}}
+{{- else if .IsPage -}}
+  {{- $ogDesc = .Summary | plainify | truncate 160 -}}
+{{- else -}}
+  {{- $ogDesc = .Site.Params.description | plainify | truncate 160 -}}
 {{- end -}}
+{{- $ogTitle := or .Title .Site.Title -}}
+{{- $isArticle := and .IsPage (eq .Type "post") -}}
+{{- $ogType := cond $isArticle "article" "website" -}}
+<meta property="og:url" content="{{ $canonical }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta property="og:title" content="{{ $ogTitle }}" />
+<meta property="og:description" content="{{ $ogDesc | safeHTML }}" />
+<meta property="og:locale" content="{{ .Site.Language.Lang }}" />
+<meta property="og:type" content="{{ $ogType }}" />
+{{- if $isArticle }}
+<meta property="article:section" content="{{ .Section }}" />
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}" />
+<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}" />
+{{- range .GetTerms "tags" | first 6 }}
+<meta property="article:tag" content="{{ .Page.Title | plainify | safeHTML }}" />
+{{- end }}
+{{- end }}
 ```
 
-If the rich-results validator complains about duplicate `og:url`, replace the entire `_internal/opengraph.html` call with a hand-rolled OG block in a follow-up plan. For now the duplicate-and-override approach is one line and reversible.
+`og:image` (and `og:image:width/height/alt`) stays in `custom_head.html`; do not duplicate it here. `og:type` is `article` only when `.IsPage` AND `.Type == "post"`; sections, terms, taxonomies, and the bare `/about/` page stay `website`.
+
+> Historical note: an earlier iteration of this task tried the simpler "emit a second `og:url` after `_internal/opengraph.html`" approach (Open Graph allows multiple `og:url` tags; consumers were assumed to prefer the last one). External validation flagged the duplicate `og:url` as a real defect — some scrapers honour the first tag, which on paginated pages still pointed to the section/home permalink. The hand-rolled block above replaces that approach.
 
 ### Per-page noindex (paginated home, list, taxonomy)
 
@@ -295,97 +329,99 @@ Add to `themes/jane/layouts/index.html` (top of file, before `{{ define "content
 
 Same `define "title"` block in `themes/jane/layouts/_default/section.html` and `taxonomy.html`, but using `{{ .Title }} - {{ .Site.Title }}{{ $suffix }}` (mirroring the `IsPage` branch in `baseof.html:18`).
 
-### JSON-LD partial
+### Structured data via inline microdata
 
-New file `themes/jane/layouts/partials/jsonld.html`:
+> Originally this section described a `themes/jane/layouts/partials/jsonld.html` partial that emitted `<script type="application/ld+json">` blocks. After the partial shipped (commit `5a8eb98` and earlier), the user requested a switch to inline microdata throughout — see *Deviations from the original plan* near the top of this document. The partial was removed, its include in `head.html` dropped, and the equivalent microdata was added directly to `single.html` and `index.html`. The rest of this section reflects the post-switch shape.
+
+`baseof.html:5` sets `<html itemtype>` per page kind:
 
 ```go-html-template
-{{- /* BlogPosting on single posts */ -}}
-{{- if .IsPage -}}
-{{- $authorId := .Site.Params.author.name | default .Site.Author.name -}}
-{{- $author := index ($.Site.Data.authors | default dict) $authorId -}}
+itemtype="{{ if and .IsPage (eq .Type "post") }}https://schema.org/BlogPosting{{ else if .IsHome }}https://schema.org/Blog{{ else }}https://schema.org/WebPage{{ end }}"
+```
+
+`_internal/schema.html` (called from `head.html` after the canonical / OG block) emits `<meta itemprop>` tags (`name`, `description`, `datePublished`, `dateModified`, `wordCount`, `keywords`) attached to that scope. The author byline in `partials/post/meta.html` already provides the visible `itemprop="author"` Person on every post. The post-only properties not otherwise covered are inlined inside `<article>` in `single.html`:
+
+```go-html-template
+{{- if eq .Section "post" -}}
+{{- $authorId := .Site.Params.author.name -}}
+{{- $author := index (hugo.Data.authors | default dict) $authorId -}}
 {{- $authorLang := index ($author | default dict) .Site.Language.Lang -}}
 {{- $authorName := $authorLang.name.display | default $author.name.display | default $authorId -}}
+{{- $authorURL := .Site.Params.author.url -}}
 
+<link itemprop="mainEntityOfPage" href="{{ .Permalink }}" />
+<meta itemprop="inLanguage" content="{{ .Site.Language.Lang }}" />
+
+<span itemprop="publisher" itemscope itemtype="https://schema.org/Person" style="display:none">
+  <meta itemprop="name" content="{{ $authorName }}" />
+  <link itemprop="url" href="{{ $authorURL }}" />
+</span>
+
+{{- /* coverart > bundle image > Site.Params.image fallback (Article rich-result needs an image) */ -}}
 {{- $img := "" -}}{{- $imgW := 0 -}}{{- $imgH := 0 -}}
 {{- if .Param "coverart" -}}
-  {{- $r := .Resources.GetMatch (.Param "coverart") -}}
-  {{- if $r -}}{{- $img = $r.Permalink -}}{{- $imgW = $r.Width -}}{{- $imgH = $r.Height -}}
-  {{- else -}}{{- errorf "coverart image not found for %q: %s" .Title (.Param "coverart") -}}{{- end -}}
+  {{- with .Resources.GetMatch (.Param "coverart") -}}
+    {{- $img = .Permalink -}}{{- $imgW = .Width -}}{{- $imgH = .Height -}}
+  {{- else -}}
+    {{- errorf "coverart image not found for %q: %s" .Title (.Param "coverart") -}}
+  {{- end -}}
 {{- else -}}
   {{- with .Resources.GetMatch "{*.jpg,*.png,*.webp}" -}}
     {{- $img = .Permalink -}}{{- $imgW = .Width -}}{{- $imgH = .Height -}}
   {{- end -}}
 {{- end -}}
-
-{{- $desc := "" -}}
-{{- if .Description -}}{{- $desc = .Description | plainify | truncate 160 -}}
-{{- else -}}{{- $desc = .Summary | plainify | truncate 160 -}}{{- end -}}
-
-{{- $authorObj := dict "@type" "Person" "name" $authorName "url" .Site.Params.author.url -}}
-
-{{- $ld := dict
-    "@context" "https://schema.org"
-    "@type" "BlogPosting"
-    "headline" .Title
-    "description" $desc
-    "url" .Permalink
-    "mainEntityOfPage" .Permalink
-    "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
-    "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
-    "inLanguage" .Site.Language.Lang
-    "author" $authorObj
-    "publisher" $authorObj
--}}
-{{- if $img -}}
-  {{- $ld = merge $ld (dict "image" (dict "@type" "ImageObject" "url" $img "width" $imgW "height" $imgH)) -}}
-{{- end -}}
-
-<script type="application/ld+json">{{ $ld | jsonify (dict "indent" "  ") | safeHTML }}</script>
-{{- end -}}
-
-{{- /* Blog + Person on home only (paginated home pages skip this — only first page) */ -}}
-{{- if and .IsHome (not (and .Paginator (gt .Paginator.PageNumber 1))) -}}
-{{- $authorURL := .Site.Params.author.url -}}
-{{- $sameAs := slice -}}
-{{- range $k, $v := .Site.Params.social -}}
-  {{- if and (not (hasPrefix $v "mailto:")) (ne $v $authorURL) -}}
-    {{- $sameAs = $sameAs | append $v -}}
+{{- if not $img -}}
+  {{- with .Site.Params.image -}}
+    {{- $cfg := imageConfig (add "/static" (. | safeURL)) -}}
+    {{- $img = . | absURL -}}{{- $imgW = $cfg.Width -}}{{- $imgH = $cfg.Height -}}
   {{- end -}}
 {{- end -}}
-
-{{- $ld := dict
-    "@context" "https://schema.org"
-    "@type" "Blog"
-    "name" .Site.Title
-    "description" .Site.Params.description
-    "url" .Site.BaseURL
-    "inLanguage" .Site.Language.Lang
-    "author" (dict
-        "@type" "Person"
-        "name" .Site.Params.author.name
-        "url" $authorURL
-        "image" (printf "%s%s" .Site.BaseURL .Site.Params.logo)
-        "sameAs" $sameAs
-    )
--}}
-<script type="application/ld+json">{{ $ld | jsonify (dict "indent" "  ") | safeHTML }}</script>
-{{- end -}}
+{{- if $img }}
+<span itemprop="image" itemscope itemtype="https://schema.org/ImageObject" style="display:none">
+  <link itemprop="url" href="{{ $img }}" />
+  <meta itemprop="width" content="{{ $imgW }}" />
+  <meta itemprop="height" content="{{ $imgH }}" />
+</span>
+{{- end }}
+{{- end }}
 ```
 
-Building JSON-LD via `dict | jsonify` (radio-t's pattern) means Cyrillic characters and quotes can never break JSON validity — string interpolation is fragile.
+The `eq .Section "post"` gate keeps `/about/`, `/cv/`, etc. clean — those pages stay typed `WebPage` per `baseof.html` and must not get `BlogPosting` properties. `<span ... style="display:none">` hides the metadata visually; Google parses microdata regardless of CSS visibility (the same trick `index.html` already used for the freestanding `Person` block).
 
-`Person.url` is the LinkedIn URL (per `hugo.json: params.author.url`); the `sameAs` filter excludes any social entry that equals it, so LinkedIn won't appear twice in the home `Person` block.
-
-The home `ItemList` of `BlogPosting`s already exists as microdata in `index.html:18`. Not duplicating it as JSON-LD: rich-result coverage for `ItemList` on a personal blog has marginal value, and microdata is sufficient for Google's parser. Keeping the JSON-LD partial small reduces drift risk.
-
-Include from `themes/jane/layouts/partials/head.html`, immediately after `_internal/schema.html` (currently line 79):
+The home page Blog properties live in `index.html`, gated to the unpaginated home only:
 
 ```go-html-template
-{{- template "_internal/opengraph.html" . -}}
-{{- template "_internal/schema.html" . -}}
-{{ partial "jsonld.html" . }}
+{{- $isFirstHome := and .IsHome (or (not .Paginator) (le .Paginator.PageNumber 1)) -}}
+{{- if $isFirstHome }}
+<meta itemprop="name" content="{{ .Site.Title }}" />
+<meta itemprop="description" content="{{ .Site.Params.description | plainify | truncate 160 }}" />
+<link itemprop="url" href="{{ .Permalink }}" />
+<meta itemprop="inLanguage" content="{{ .Site.Language.Lang }}" />
+<link itemprop="author" href="#site-author" />
+<div id="site-author" itemprop="author" itemscope itemtype="https://schema.org/Person" style="display:none">
+  <meta itemprop="name" content="{{ .Site.Params.author.name }}" />
+  <link itemprop="url" href="{{ .Site.Params.author.url }}" />
+  <link itemprop="image" href="{{ .Site.Params.logo | absURL }}" />
+  {{ with .Site.Params.social }}
+    {{ range $key, $value := . }}
+      {{ if not (hasPrefix $value "mailto:") }}
+      <link itemprop="sameAs" href="{{ $value }}" />
+      {{ end }}
+    {{ end }}
+  {{ end }}
+</div>
+{{- end }}
 ```
+
+The `<html itemtype="https://schema.org/Blog">` scope (set in `baseof.html` for `.IsHome`) wraps the whole document, so the loose `<meta itemprop>` tags above attach to it. The freestanding `Person` block is given `id="site-author"` so the Blog can `<link itemprop="author" href="#site-author">` — schema.org honours `href`-based references for nested entities. The existing `<section ... itemtype="ItemList">` listing posts as `BlogPosting` items is unchanged; it remains a sibling top-level item (no `itemprop` attaches it to Blog, which matches what JSON-LD did — the `ItemList` was always intentionally separate).
+
+The `head.html` include order — note no `jsonld.html` partial:
+
+```go-html-template
+{{- template "_internal/schema.html" . -}}
+```
+
+Cyrillic and quoted strings need no escaping in microdata, which is one less foot-gun than JSON-LD (the original `jsonld.html` had to use `safeJS` to avoid Go's `html/template` JS-escaping of script bodies producing double-encoded JSON).
 
 ## Implementation tasks
 
@@ -402,10 +438,10 @@ Each task is a single commit. Task 3 covers both per-page noindex AND robots.txt
 
 ### Task 2: pagination-aware canonical & og:url
 
-- [x] Edit `themes/jane/layouts/partials/head.html:55` per Technical details
-- [x] Edit `themes/jane/layouts/partials/custom_head.html` to append paginator-aware `og:url` after the existing OG image block
+- [x] Edit `themes/jane/layouts/partials/head.html:55` per Technical details (compute `$canonical`, reuse for canonical + hand-rolled OG block; replaces the `_internal/opengraph.html` call)
+- [x] Edit `themes/jane/layouts/partials/custom_head.html`: emit `og:image` (and width/height/alt) only — no `og:url` here, the hand-rolled block in `head.html` owns it (initial iteration emitted a duplicate `og:url` to override the internal template; later replaced by the hand-rolled block after external validation flagged the duplicate)
 - [x] `hugo --minify --cleanDestinationDir` builds clean
-- [x] `inspect_head http://localhost:1313/page/2/` shows `<link rel=canonical href="https://terrty.net/page/2/">` (or `http://localhost:1313/page/2/` in dev) AND a second `og:url` matching the paginated URL
+- [x] `inspect_head http://localhost:1313/page/2/` shows `<link rel=canonical href="https://terrty.net/page/2/">` and exactly one `og:url` matching the paginated URL (no duplicates)
 - [x] `inspect_head http://localhost:1313/` shows canonical = home (unchanged)
 - [x] `inspect_head http://localhost:1313/2022/cagiva-raptor-125-moto-gymkhana-project/` shows canonical unchanged (single posts unaffected)
 - [x] Commit
@@ -436,17 +472,22 @@ Each task is a single commit. Task 3 covers both per-page noindex AND robots.txt
 - [x] `curl -sL http://localhost:1313/2022/cagiva-raptor-125-moto-gymkhana-project/ | grep -oE '<title>[^<]+</title>'` shows the unchanged single-post title (regression check)
 - [x] Commit
 
-### Task 5: JSON-LD partial
+### Task 5: structured data (originally JSON-LD partial; replaced with inline microdata after user feedback)
 
-- [ ] Create `themes/jane/layouts/partials/jsonld.html` per Technical details
-- [ ] Edit `themes/jane/layouts/partials/head.html:79`: add `{{ partial "jsonld.html" . }}` after `_internal/schema.html`
-- [ ] `hugo --minify --cleanDestinationDir` builds clean
-- [ ] On a post: `inspect_head http://localhost:1313/2022/cagiva-raptor-125-moto-gymkhana-project/` shows exactly one `application/ld+json` block; JSON parses; `@type=BlogPosting`; `headline`, `description`, `url`, `datePublished`, `dateModified`, `author.name`, `image.url` all present
-- [ ] On a post WITHOUT `coverart`: pick one (`/2018/15-hugo-framework-blog-themes/` likely qualifies); confirm JSON-LD still emits, image taken from first JPG/PNG resource OR `image` key absent if no resource
-- [ ] On home: `inspect_head http://localhost:1313/` shows exactly one JSON-LD block; `@type=Blog`; `Person.sameAs[]` does NOT contain LinkedIn URL (because `Person.url` is LinkedIn)
-- [ ] On `/page/2/`: NO JSON-LD block (paginated home is excluded)
-- [ ] Post-deploy: paste each rendered URL into `https://validator.schema.org/` for one EN post, one RU post, home — zero errors and zero warnings
-- [ ] Commit
+Originally shipped as a JSON-LD partial (`themes/jane/layouts/partials/jsonld.html`); subsequently replaced with equivalent inline microdata at the user's request. The checklist below reflects the post-replacement shape.
+
+- [x] (Originally) Create `themes/jane/layouts/partials/jsonld.html`
+- [x] (Originally) Edit `themes/jane/layouts/partials/head.html`: add `{{ partial "jsonld.html" . }}` after `_internal/schema.html`
+- [x] Replace JSON-LD with microdata: delete `jsonld.html`, drop the include from `head.html`, add `<html itemtype="...">` per-kind logic in `baseof.html` (`Blog` on home, `BlogPosting` on posts, `WebPage` elsewhere), inline microdata in `single.html` (`author` / `publisher` / `image` / `mainEntityOfPage` / `inLanguage`, gated to `eq .Section "post"`), and Blog properties + `id="site-author"` Person reference in `index.html` (gated to first-page home)
+- [x] `hugo --minify --cleanDestinationDir` builds clean
+- [x] On a post: `inspect_head http://localhost:1313/2022/cagiva-raptor-125-moto-gymkhana-project/` shows zero `application/ld+json` blocks and `<html itemtype="https://schema.org/BlogPosting">`; `<span itemprop="author">`, `<span itemprop="publisher">`, `<span itemprop="image">` (with `width` / `height`), `<link itemprop="mainEntityOfPage">` all present
+- [x] On a post without `coverart` (`/2020/sre-vs-devops/`): `image` falls back to `Site.Params.image` with resolved `width` / `height`
+- [x] On `/about/` and `/ru/about/`: NO `BlogPosting` properties (the `eq .Section "post"` guard holds)
+- [x] On home: `inspect_head http://localhost:1313/` shows zero `application/ld+json`; `<html itemtype="https://schema.org/Blog">`; Blog `name` / `description` / `url` / `inLanguage` present; freestanding `Person` block with `id="site-author"` and `sameAs` social links
+- [x] On `/page/2/`: NO Blog properties (paginated home is excluded)
+- [x] On a Cyrillic post (`/ru/2013/army-order/`): all `itemprop` values render correctly with Cyrillic content (microdata sidesteps the JSON-string escaping `safeJS` had to manage)
+- [x] schema.org validator (Task 6)
+- [x] Commit
 
 ### Task 6: deploy and watch
 

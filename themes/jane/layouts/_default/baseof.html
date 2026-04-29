@@ -2,7 +2,7 @@
 <html
   lang="{{ $.Site.Language.Lang | default `en` }}"
   itemscope
-  itemtype="{{ if and .IsPage (eq .Type "post") }}https://schema.org/BlogPosting{{ else }}https://schema.org/WebPage{{ end }}"
+  itemtype="{{ if and .IsPage (eq .Type "post") }}https://schema.org/BlogPosting{{ else if .IsHome }}https://schema.org/Blog{{ else }}https://schema.org/WebPage{{ end }}"
   data-theme="light"
 {{ if and .IsPage (eq .Type "post") }}
   prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#"
