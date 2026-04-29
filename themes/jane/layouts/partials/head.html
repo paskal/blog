@@ -33,11 +33,11 @@
 {{- end -}}
 
 {{- if .Description -}}
-  <meta name="description" content="{{ .Description | safeHTML }}" />
+  <meta name="description" content="{{ .Description | plainify | truncate 160 | safeHTML }}" />
 {{ else if .IsPage }}
-  <meta name="description" content="{{ .Summary | plainify }}" />
+  <meta name="description" content="{{ .Summary | plainify | truncate 160 }}" />
 {{ else if .Site.Params.description }}
-  <meta name="description" content="{{ .Site.Params.description | safeHTML }}" />
+  <meta name="description" content="{{ .Site.Params.description | plainify | truncate 160 | safeHTML }}" />
 {{- end -}}
 
 {{- if .Keywords -}}

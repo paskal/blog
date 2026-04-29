@@ -68,7 +68,7 @@
 {{- end }}
 {{- if .IsPage }}
 <meta name="twitter:title" content="{{ .Title }}" />
-<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 200 }}{{ end }}" />
+<meta name="twitter:description" content="{{ with .Description }}{{ . | plainify | truncate 160 }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}" />
 {{- else }}
 <meta name="twitter:title" content="{{ .Site.Title }}" />
 {{- with .Site.Params.description }}
