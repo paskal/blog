@@ -59,14 +59,6 @@
 {{- end }}
 {{- end }}
 
-{{- if or .IsHome (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") -}}
-  {{- with .Paginator -}}
-    {{- if gt .PageNumber 1 }}
-<meta property="og:url" content="{{ .URL | absURL }}" />
-    {{- end -}}
-  {{- end -}}
-{{- end }}
-
 <!-- Twitter Card -->
 {{- if $imageURL }}
 <meta name="twitter:card" content="summary_large_image" />
@@ -80,7 +72,7 @@
 {{- else }}
 <meta name="twitter:title" content="{{ .Site.Title }}" />
 {{- with .Site.Params.description }}
-<meta name="twitter:description" content="{{ . }}" />
+<meta name="twitter:description" content="{{ . | plainify | truncate 160 | safeHTML }}" />
 {{- end }}
 {{- end }}
 

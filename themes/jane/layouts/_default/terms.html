@@ -1,4 +1,6 @@
-{{ define "title" }}{{ i18n .Data.Plural | default (title .Data.Plural ) }} - {{ .Site.Title }}{{ end }}
+{{ define "title" -}}
+{{ i18n .Data.Plural | default (title .Data.Plural ) }} - {{ .Site.Title }}{{ partial "page_suffix.html" . }}
+{{- end }}
 
 {{ define "content" }}
   {{ $termName := .Data.Singular }}

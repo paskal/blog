@@ -1,16 +1,4 @@
-{{ define "title" }}
-  {{- $suffix := "" -}}
-  {{- with .Paginator -}}
-    {{- if gt .PageNumber 1 -}}
-      {{- if eq $.Site.Language.Lang "ru" -}}
-        {{- $suffix = printf " — Страница %d" .PageNumber -}}
-      {{- else -}}
-        {{- $suffix = printf " — Page %d" .PageNumber -}}
-      {{- end -}}
-    {{- end -}}
-  {{- end -}}
-  {{ i18n "archive" }} - {{ .Site.Title }}{{ $suffix }}
-{{ end }}
+{{ define "title" }}{{ i18n "archive" }} - {{ .Site.Title }}{{ partial "page_suffix.html" . }}{{ end }}
 
 {{ define "content"}}
 {{- $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" | default 10) }}

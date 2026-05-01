@@ -1,14 +1,5 @@
 {{ define "title" -}}
-{{- $suffix := "" -}}
-{{- with .Paginator -}}
-  {{- if gt .PageNumber 1 -}}
-    {{- if eq $.Site.Language.Lang "ru" -}}
-      {{- $suffix = printf " — Страница %d" .PageNumber -}}
-    {{- else -}}
-      {{- $suffix = printf " — Page %d" .PageNumber -}}
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
+{{- $suffix := partial "page_suffix.html" . -}}
 {{ if eq .Data.Singular "author" -}}
   {{- $author := (index (hugo.Data.authors | default dict) .Title) -}}
   {{- $author_lang := (index ($author | default dict) .Site.Language.Lang) -}}

@@ -77,10 +77,14 @@
   <meta itemprop="height" content="{{ $localImage.Height }}px">
   {{ end }}
   {{- $credit := .Page.Site.Params.author.name -}}
-  {{- if $localImage -}}
-    {{- with $localImage.Meta -}}
+  {{- with $localImage -}}
+    {{- with .Meta -}}
+      {{- /* Prefer IPTC:Credit (schema.org semantics); fall back to EXIF:Artist. */ -}}
       {{- with .Exif -}}
-        {{- with .Tags.Artist -}}{{- $credit = . -}}{{- end -}}
+        {{- with index .Tags "Artist" -}}{{- $credit = . -}}{{- end -}}
+      {{- end -}}
+      {{- with .IPTC -}}
+        {{- with index . "Credit" -}}{{- $credit = . -}}{{- end -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}
