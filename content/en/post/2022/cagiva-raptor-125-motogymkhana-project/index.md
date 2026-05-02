@@ -9,7 +9,7 @@ coveralt: "Cagiva Raptor 125 (2006) after restoration"
 slug: cagiva-raptor-125-moto-gymkhana-project
 ---
 
-[![](cagiva-raptor-125-preview.jpg)](/2022/cagiva-raptor-125-moto-gymkhana-project/cagiva-raptor-125.jpg)
+[![Cagiva Raptor 125 after restoration](cagiva-raptor-125-preview.jpg)](/2022/cagiva-raptor-125-moto-gymkhana-project/cagiva-raptor-125.jpg)
 
 ## Two-stroke bikes
 
@@ -43,38 +43,38 @@ The canonical choice in the category of 250cc is Suzuki RGV250, Honda NSR250, Ya
 
 ## What have I got, and what did I do with it
 
-[![](in-the-van-preview.jpg)](in-the-van.jpg)
+[![The bike loaded in the van right after purchase](in-the-van-preview.jpg)](in-the-van.jpg)
 
-[![](before-modification-1-preview.jpg)](before-modification-1.jpg)
+[![Bike in stock condition before any modifications](before-modification-1-preview.jpg)](before-modification-1.jpg)
 
 Right after hearing about Raptor 125, I found the one and only model selling in the Netherlands: it was produced in 2006 and imported there in 2016 as a first of its kind. I bought it already released from the original 15HP restriction, only to discover that the engine was busted.
 
-[![](repairing-preview.jpg)](repairing.jpg)
+[![Engine being repaired in the mechanic's workshop](repairing-preview.jpg)](repairing.jpg)
 
-[![](damaged-cylinder-preview.jpg)](damaged-cylinder.jpg)
+[![Damaged cylinder removed from the seized engine](damaged-cylinder-preview.jpg)](damaged-cylinder.jpg)
 
-[![](damaged-piston-preview.jpg)](damaged-piston.jpg)
+[![Damaged piston removed from the seized engine](damaged-piston-preview.jpg)](damaged-piston.jpg)
 
 I knew something was wrong with the engine, not the carburettor, and the compression was low. Still, I didn't have the skills to tell what, so I brought the bike to the mechanic routinely maintaining modern two-stroke dirt motorcycles of Husqvarna and KTM, Peter from [Motorhuis de Doelen](https://www.motorhuisdedoelen.nl), whom I highly recommend now. The engine had a seizure, and he replaced the [piston, cylinder](https://www.pjme.co.uk/acatalog/Cagiva-Supercity-Cylinder-Kit-Dome-Top-Piston-2-Piston-Rings--1_2971.html) and [connection rod](https://www.pjme.co.uk/acatalog/Cagiva-Supercity-125-Race-Con-Rod-Kit--2_3367.html) (all available in stock on the UK site by the link) and [resealed](https://www.pjme.co.uk/acatalog/Cagiva-Raptor-125-Bearing-And-Seal-Kit-Koyo-2_3002.html) the crankshaft. Two months later, I got the bike back from his workshop with the engine running correctly.
 
 As the plan is to use it for Moto Gymkhana, I couldn't afford to have a bike without crash bars or sliders. When I see experienced drivers like [Richard van Schouwenburg](https://www.youtube.com/c/RichardsMotoGymkhanaAdventures/videos?view=0&sort=p&flow=grid) or [Bert Schuld](https://www.youtube.com/channel/UCFGmj0IV8heS3FeY-6vd6QA/videos?view=0&sort=p&flow=grid) training, they often stop the attempts and go for a rest after dropping the bike more than once on tight turns.
 
-[![](before-modification-2-preview.jpg)](before-modification-2.jpg)
-[![](before-modification-3-preview.jpg)](before-modification-3.jpg)
+[![Bike before sliders and crash protection were fitted](before-modification-2-preview.jpg)](before-modification-2.jpg)
+[![Another view of the bike before crash bars were welded](before-modification-3-preview.jpg)](before-modification-3.jpg)
 
 Another mechanic, Mike from [MVS Race Engineering](https://mvsracing.nl), specialising in customised motorcycle improvements, agreed to weld sliders for my bike to ensure the exhaust pipe wouldn't be the first thing touching the ground in tight turns. Below is a photo of the bike on the ground with installed sliders and aluminium handguards.
 
-[![](sliders-preview.jpg)](sliders.jpg)
+[![Bike on the ground with welded sliders and aluminium handguards](sliders-preview.jpg)](sliders.jpg)
 
 It turned out he does a lot of other stuff, so I trusted him to tune the carburettor for optimal performance using his dynamometer test stand, which you can see below.
 
-[![](dynotest.png)](dynotest.png)
+[![Dynamometer test stand showing power over speed](dynotest.png)](dynotest.png)
 
 It was impossible to install the RPM reader on the ignition coil, so the test shows power over speed (directly proportional to RPM) on the fifth gear out of six. The bike turned out to have 27HP peak power, which is 80% more than the initially restricted 15HP.
 
 And last, I've had to replace the Continental ContiSportAttack 2 tires installed back in 2016 with a set of modern Pirelli Diablo Rosso IV tires: Olaf from [MotoWoW](https://motowow.nl) did this in his trailer at my place within an hour, which was convenient.
 
-[![](after-modification-1-preview.jpg)](after-modification-1.jpg)
+[![Bike after modifications with new tires fitted](after-modification-1-preview.jpg)](after-modification-1.jpg)
 
 ## The fun of riding the bike
 
@@ -84,7 +84,7 @@ Even the smallest possible size race bike is still a race bike. Feeling the road
 
 The bike eats 6.6 litres of 98 gas per 100km and can go around 160km on a filled tank. Ethanol is bad for a carburettor, and because of that, I'm forced to use more expensive E5 (5% ethanol) 98 gas instead of cheaper E10 95, as a percentage of ethanol is regulated in the Netherlands. I would even need to dry the gas for winter storage and get more expensive Aspen 4 tact benzine into the system to keep the bike healthy. That's as far from the average commute motorcycle as you can get.
 
-[![](after-modification-2-preview.jpg)](after-modification-2.jpg)
+[![Side profile of the finished bike ready for Gymkhana](after-modification-2-preview.jpg)](after-modification-2.jpg)
 
 ## Results
 
@@ -92,7 +92,7 @@ I got the bike on July 8 and gave it to the first mechanic the week after, got t
 
 After three and a half months of work, the total price is **6600** euros, which is 2.7 times more than the original price of the bike. Overall I expected lower costs, but the result is still within reasonable bounds. I am impressed that spending money on that provides some joy, even without considering the fun of riding the motorcycle.
 
-[![](after-modification-3-preview.jpg)](after-modification-3.jpg)
+[![Final result after restoration and modification work](after-modification-3-preview.jpg)](after-modification-3.jpg)
 
 ## Future work
 
@@ -100,4 +100,4 @@ After the first Motorcycle Gymkhana training, I found that the bike sprockets ar
 
 And last, I bought Motul RBF700 Racing Brake Fluid as similar brake fluids are used by the Gymkhana community worldwide. Still, after single training on the bike, I understood that I would rather keep the stock brake fluid as with the racing one, I'll burn the brakes themselves, and now I have the safety of brake fluid overheating before any permanent damage. The weakest link in the motorcycle for the next year or two is me, not the bike.
 
-[![](dashboard-preview.jpg)](dashboard.jpg)
+[![Cagiva Raptor 125 dashboard close-up](dashboard-preview.jpg)](dashboard.jpg)
