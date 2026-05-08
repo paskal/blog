@@ -17,6 +17,50 @@
       </nav>
 
       <article class="post">
+        {{/* Microdata equivalent of dropped JSON-LD BlogPosting properties: publisher, image with dimensions, mainEntityOfPage, inLanguage. Author is already provided by partials/post/meta.html (visible byline with itemprop="author" Person). Gated to post pages only — about/cv/etc. are typed WebPage by baseof.html and must not get BlogPosting properties. */}}
+        {{- if eq .Section "post" -}}
+        {{- $authorId := .Site.Params.author.name -}}
+        {{- $author := index (hugo.Data.authors | default dict) $authorId -}}
+        {{- $authorLang := index ($author | default dict) .Site.Language.Lang -}}
+        {{- $authorName := $authorLang.name.display | default $author.name.display | default $authorId -}}
+        {{- $authorURL := .Site.Params.author.url -}}
+
+        <link itemprop="mainEntityOfPage" href="{{ .Permalink }}" />
+        <meta itemprop="inLanguage" content="{{ .Site.Language.Lang }}" />
+
+        <span itemprop="publisher" itemscope itemtype="https://schema.org/Person" style="display:none">
+          <meta itemprop="name" content="{{ $authorName }}" />
+          <link itemprop="url" href="{{ $authorURL }}" />
+        </span>
+
+        {{- $img := "" -}}{{- $imgW := 0 -}}{{- $imgH := 0 -}}
+        {{- if .Param "coverart" -}}
+          {{- with .Resources.GetMatch (.Param "coverart") -}}
+            {{- $img = .Permalink -}}{{- $imgW = .Width -}}{{- $imgH = .Height -}}
+          {{- else -}}
+            {{- errorf "coverart image not found for %q: %s" .Title (.Param "coverart") -}}
+          {{- end -}}
+        {{- else -}}
+          {{- with .Resources.GetMatch "{*.jpg,*.png,*.webp}" -}}
+            {{- $img = .Permalink -}}{{- $imgW = .Width -}}{{- $imgH = .Height -}}
+          {{- end -}}
+        {{- end -}}
+        {{- /* fall back to site default image so every BlogPosting always has an image (Article rich-result requirement) */ -}}
+        {{- if not $img -}}
+          {{- with .Site.Params.image -}}
+            {{- $cfg := imageConfig (add "/static" (. | safeURL)) -}}
+            {{- $img = . | absURL -}}{{- $imgW = $cfg.Width -}}{{- $imgH = $cfg.Height -}}
+          {{- end -}}
+        {{- end -}}
+        {{- if $img }}
+        <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject" style="display:none">
+          <link itemprop="url" href="{{ $img }}" />
+          <meta itemprop="width" content="{{ $imgW }}" />
+          <meta itemprop="height" content="{{ $imgH }}" />
+        </span>
+        {{- end }}
+        {{- end }}
+
         <!-- post-header -->
         <header class="post-header">
           <h1 class="post-title" itemprop="headline">{{ .Title }}</h1>
@@ -29,27 +73,9 @@
           {{ .Content }}
         </div>
 
-        <!-- Schema.org metadata -->
+        <!-- Schema.org metadata (mainEntityOfPage + image emitted earlier in the BlogPosting microdata block) -->
         <meta itemprop="description" content="{{ .Description }}" />
-        <link itemprop="mainEntityOfPage" href="{{ .Permalink }}" />
         <meta itemprop="timeRequired" content="PT{{ .ReadingTime }}M" />
-        {{- $postImage := "" -}}
-        {{- if .Param "coverart" -}}
-          {{- $img := .Page.Resources.GetMatch (.Param "coverart") -}}
-          {{- if $img -}}
-            {{- $postImage = $img.Permalink -}}
-          {{- end -}}
-        {{- else -}}
-          {{- $img := .Page.Resources.GetMatch "{*.jpg,*.png,*.webp}" -}}
-          {{- if $img -}}
-            {{- $postImage = $img.Permalink -}}
-          {{- end -}}
-        {{- end -}}
-        {{- if $postImage }}
-        <meta itemprop="image" content="{{ $postImage }}" />
-        {{- else }}
-        <meta itemprop="image" content="{{ .Site.Params.image | absURL }}" />
-        {{- end }}
 
         <!-- Copyright -->
         {{ partial "post/copyright.html" . }}
@@ -94,8 +120,8 @@
       </article>
 
       <!-- Author Info -->
-      {{ if and (.Site.Params.author.name | default .Site.Author.name) (.Params.showAuthorInfo | default .Site.Params.showAuthorInfo) }}
-        {{ partial "author_info.html" (dict "author" (.Site.Params.author.name | default .Site.Author.name) "context" $) }}
+      {{ if and .Site.Params.author.name (.Params.showAuthorInfo | default .Site.Params.showAuthorInfo) }}
+        {{ partial "author_info.html" (dict "author" .Site.Params.author.name "context" $) }}
       {{ end }}
 
 

@@ -1,11 +1,12 @@
 {{ define "title" -}}
+{{- $suffix := partial "page_suffix.html" . -}}
 {{ if eq .Data.Singular "author" -}}
-  {{- $author := (index (.Site.Data.authors | default dict) .Title) -}}
+  {{- $author := (index (hugo.Data.authors | default dict) .Title) -}}
   {{- $author_lang := (index ($author | default dict) .Site.Language.Lang) -}}
   {{- $author_name := $author_lang.name.display | default $author.name.display | default .Title -}}
-  {{ $author_name }} · {{ .Site.Title }}
+  {{ $author_name }} · {{ .Site.Title }}{{ $suffix }}
 {{- else -}}
-  {{ .Title }} · {{ .Site.Title }}
+  {{ .Title }} · {{ .Site.Title }}{{ $suffix }}
 {{- end }}
 {{- end }}
 
@@ -26,7 +27,7 @@
         <h2 class="archive-name">{{ i18n "category" }}{{ .Title }}</h2>
       </div>
     {{ else if eq .Data.Singular "author" }}
-      {{- $author := (index (.Site.Data.authors | default dict) .Title) -}}
+      {{- $author := (index (hugo.Data.authors | default dict) .Title) -}}
       {{- $author_lang := (index ($author | default dict) .Site.Language.Lang) -}}
       {{- $author_name := $author_lang.name.display | default $author.name.display | default .Title -}}
       <div class="archive-title author">

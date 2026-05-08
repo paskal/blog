@@ -1,7 +1,6 @@
 {
   "baseurl": "https://terrty.net/",
   "theme": "jane",
-  "languageCode": "en",
   "copyright": "Dmitry Verkhoturov",
   "rssLimit": 100,
   "timeout": 100000,
@@ -21,12 +20,14 @@
   "languages": {
     "en": {
       "title": "in the net",
-      "languageName": "English",
+      "label": "English",
+      "locale": "en",
       "contentDir": "content/en",
       "weight": 1,
       "params": {
         "description": "Where bits meet bravery: From debugging code to deploying parachutes — adventures in high-availability systems, high-altitude jumps, and high-impact living on the edge.",
-        "dateFormatToUse": "Jan 2, 2006"
+        "dateFormatToUse": "Jan 2, 2006",
+        "og_locale": "en_US"
       },
       "menu": {
         "main": [
@@ -75,12 +76,14 @@
     },
     "ru": {
       "title": "в сети",
-      "languageName": "Русский",
+      "label": "Русский",
+      "locale": "ru",
       "contentDir": "content/ru",
       "weight": 2,
       "params": {
         "description": "Между строчками кода и стропами парашюта: путешествие в мир высоких технологий, адреналина и культурных открытий.",
-        "dateFormatToUse": "2 January 2006"
+        "dateFormatToUse": "2 January 2006",
+        "og_locale": "ru_RU"
       },
       "menu": {
         "main": [

@@ -1,7 +1,20 @@
+{{ define "title" }}{{ .Site.Title }}{{ partial "page_suffix.html" . }}{{ end }}
+
 {{ define "content" }}
-<!-- Person schema for site author -->
-{{ if .IsHome }}
-<div itemscope itemtype="https://schema.org/Person" style="display:none">
+{{- /* Blog entity microdata + Person author block.
+       <html itemtype="https://schema.org/Blog"> is set by baseof.html on home; the
+       name/description/url/inLanguage props below attach to that Blog scope. The Person
+       block is referenced via <link itemprop="author" href="#site-author"> so the Blog
+       has an author. Both are gated to the first page of the home (paginated home pages
+       skip these — same logic as the JSON-LD partial used to enforce). */ -}}
+{{- $isFirstHome := and .IsHome (or (not .Paginator) (le .Paginator.PageNumber 1)) -}}
+{{- if $isFirstHome }}
+<meta itemprop="name" content="{{ .Site.Title }}" />
+<meta itemprop="description" content="{{ .Site.Params.description | plainify | truncate 160 }}" />
+<link itemprop="url" href="{{ .Permalink }}" />
+<meta itemprop="inLanguage" content="{{ .Site.Language.Lang }}" />
+<link itemprop="author" href="#site-author" />
+<div id="site-author" itemprop="author" itemscope itemtype="https://schema.org/Person" style="display:none">
   <meta itemprop="name" content="{{ .Site.Params.author.name }}" />
   <link itemprop="url" href="{{ .Site.Params.author.url }}" />
   <link itemprop="image" href="{{ .Site.Params.logo | absURL }}" />
@@ -13,7 +26,7 @@
     {{ end }}
   {{ end }}
 </div>
-{{ end }}
+{{- end }}
 
 <section id="posts" class="posts" {{ if .IsHome }}itemscope itemtype="https://schema.org/ItemList"{{ end }}>
   {{ $pages := .Pages }}

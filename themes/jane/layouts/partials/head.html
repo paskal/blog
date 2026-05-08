@@ -1,8 +1,31 @@
+{{/* Skip hreflang on paginated pages — .Translations returns the unpaginated translation
+     permalink, so emitting it on /page/N/ would point ru to /ru/ instead of /ru/page/N/.
+     Paginated pages are noindex,follow (see $robots below), so Google ignores hreflang
+     from them anyway; skipping is simpler than computing the paginated translation URL.
+     Kind-guard mirrors the canonical block: .Paginator is only callable on home/section/
+     taxonomy/term, otherwise Hugo aborts with "pagination not supported in this context". */}}
+{{- $isPaginated := false -}}
+{{- if or .IsHome (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") -}}
+  {{- with .Paginator -}}
+    {{- if gt .PageNumber 1 -}}{{- $isPaginated = true -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $isPaginated -}}
 {{ range .Translations }}
-<link rel="alternate" hreflang="{{ .Site.LanguageCode }}" href="{{ .Permalink  }}" />
+<link rel="alternate" hreflang="{{ .Site.Language.Lang }}" href="{{ .Permalink  }}" />
 {{ end }}
+{{- end -}}
 
-<meta name="robots" content="max-image-preview:large" />
+{{- $noindex := "noindex, follow, max-image-preview:large" -}}
+{{- $robots := "max-image-preview:large" -}}
+{{- if or (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") -}}
+  {{- $robots = $noindex -}}
+{{- else if .IsHome -}}
+  {{- with .Paginator -}}
+    {{- if gt .PageNumber 1 -}}{{- $robots = $noindex -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+<meta name="robots" content="{{ $robots }}" />
 <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 {{/* support older feature phones
@@ -24,20 +47,20 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <!-- author & description & keywords  -->
-{{- if or .Site.Params.author.name .Site.Author.name -}}
-{{- $author_id := .Site.Params.author.name | default .Site.Author.name -}}
-{{- $author := (index ($.Site.Data.authors | default dict) $author_id) -}}
+{{- if .Site.Params.author.name -}}
+{{- $author_id := .Site.Params.author.name -}}
+{{- $author := (index (hugo.Data.authors | default dict) $author_id) -}}
 {{- $author_lang := (index ($author | default dict) .Site.Language.Lang) -}}
 {{- $author_name := $author_lang.name.display | default $author.name.display | default $author_id -}}
 <meta name="author" content="{{ $author_name | safeHTML }}" />
 {{- end -}}
 
 {{- if .Description -}}
-  <meta name="description" content="{{ .Description | safeHTML }}" />
+  <meta name="description" content="{{ .Description | plainify | truncate 160 | safeHTML }}" />
 {{ else if .IsPage }}
-  <meta name="description" content="{{ .Summary | plainify }}" />
+  <meta name="description" content="{{ .Summary | plainify | truncate 160 | safeHTML }}" />
 {{ else if .Site.Params.description }}
-  <meta name="description" content="{{ .Site.Params.description | safeHTML }}" />
+  <meta name="description" content="{{ .Site.Params.description | plainify | truncate 160 | safeHTML }}" />
 {{- end -}}
 
 {{- if .Keywords -}}
@@ -52,7 +75,13 @@
 <meta name="generator" content="Hugo {{ hugo.Version }}" />
 
 <!-- Permalink & RSSlink -->
-<link rel="canonical" href="{{ .Permalink }}" />
+{{- $canonical := .Permalink -}}
+{{- if or .IsHome (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") -}}
+  {{- with .Paginator -}}
+    {{- if gt .PageNumber 1 -}}{{- $canonical = .URL | absURL -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+<link rel="canonical" href="{{ $canonical }}" />
 {{ with .OutputFormats.Get "RSS" }}<link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />{{ end }}
 
 {{ if .OutputFormats.Get "jsonfeed" }}
@@ -74,9 +103,46 @@
 <link rel="stylesheet" href="{{ "css/" | relURL }}{{ . }}">
 {{ end }}
 
-{{/* NOTE: These Hugo Internal Templates can be found starting at https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_embedded.go#L158 */}}
-{{- template "_internal/opengraph.html" . -}}
-{{- template "_internal/schema.html" . -}}
+{{/* Hand-rolled Open Graph block — replaces _internal/opengraph.html so og:url honours the
+     pagination-aware $canonical computed above (Hugo's internal template emits .Permalink which
+     resolves to the section/home URL on paginated pages, producing duplicate/conflicting og:url).
+     og:image is emitted by custom_head.html below; do not duplicate here. */}}
+{{- $ogDesc := "" -}}
+{{- if .Description -}}
+  {{- $ogDesc = .Description | plainify | truncate 160 -}}
+{{- else if .IsPage -}}
+  {{- $ogDesc = .Summary | plainify | truncate 160 -}}
+{{- else -}}
+  {{- $ogDesc = .Site.Params.description | plainify | truncate 160 -}}
+{{- end -}}
+{{- $ogTitle := or .Title .Site.Title -}}
+{{- $isArticle := and .IsPage (eq .Type "post") -}}
+{{- $ogType := cond $isArticle "article" "website" -}}
+<meta property="og:url" content="{{ $canonical }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta property="og:title" content="{{ $ogTitle }}" />
+<meta property="og:description" content="{{ $ogDesc | safeHTML }}" />
+{{/* og:locale uses Open Graph language_TERRITORY form. Per-language override via
+     Site.Params.og_locale (set in hugo.json: languages.{en,ru}.params.og_locale). Falls
+     back to bare .Site.Language.Lang if the param is missing. Note: twitter:card and
+     JSON-LD inLanguage continue to use the bare two-letter code — different specs. */}}
+<meta property="og:locale" content="{{ .Site.Params.og_locale | default .Site.Language.Lang }}" />
+<meta property="og:type" content="{{ $ogType }}" />
+{{- if $isArticle }}
+<meta property="article:section" content="{{ .Section }}" />
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}" />
+<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}" />
+{{- range .GetTerms "tags" | first 6 }}
+<meta property="article:tag" content="{{ .Page.Title | plainify | safeHTML }}" />
+{{- end }}
+{{- end }}
+
+{{/* NOTE: These Hugo Internal Templates can be found starting at https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_embedded.go#L158.
+     _internal/schema.html emits <meta itemprop="..."> tags (name/description/datePublished/dateModified/wordCount/keywords)
+     attached to the <html itemtype> scope set in baseof.html (BlogPosting on posts, Blog on home, WebPage elsewhere).
+     Author/publisher/image/mainEntityOfPage microdata for posts is emitted in single.html; Blog properties for the home
+     page are emitted in index.html. */}}
+{{- if not .IsHome -}}{{- template "_internal/schema.html" . -}}{{- end -}}
 
 <!-- Custom head -->
 {{ partial "custom_head.html" . }}

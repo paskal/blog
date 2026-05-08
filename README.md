@@ -7,7 +7,6 @@ This repository contains the source for a personal blog (terrty.net) built with 
 ### Requirements
 
 - [Hugo](https://gohugo.io/installation/) (Extended version recommended)
-- Go 1.23+ (for theme modules)
 
 ### Local Development
 
@@ -40,12 +39,7 @@ hugo --minify --cleanDestinationDir
 
 ## Theme Management
 
-The blog uses the [Jane theme](https://github.com/xianmin/hugo-theme-jane) managed via Go modules instead of the traditional themes directory:
-
-- Theme is specified in hugo.json: `"theme": "github.com/xianmin/hugo-theme-jane"`
-- Get the theme: `hugo mod get`
-- Update the theme: `hugo mod get -u`
-- Theme files are stored in `$GOPATH/pkg/mod/github.com/xianmin/hugo-theme-jane@version`
+The blog uses a vendored copy of the [Jane theme](https://github.com/xianmin/hugo-theme-jane), checked into `themes/jane/` and selected via `"theme": "jane"` in `hugo.json`. It is NOT pulled in as a Hugo module. Editing files under `themes/jane/` is the project's established pattern; customisations live alongside the theme and are never overwritten by upstream updates.
 
 ## Deployment
 
@@ -73,17 +67,36 @@ The blog uses [Remark42](https://github.com/umputun/remark42) for comments, conf
 
 The comment system is configured to use canonical URLs without the `/ru/` prefix for bilingual pages. This ensures that comments are shared between the English and Russian versions of the same article, rather than having separate comment threads.
 
+## SEO conventions
+
+- **Per-page noindex** (`themes/jane/layouts/partials/head.html`): sections, taxonomies, and terms always emit `noindex, follow, max-image-preview:large`; the home and singles emit `max-image-preview:large` only; paginated home (`/page/N>1/`) also gets `noindex, follow`.
+- **Pagination-aware canonical / og:url**: `head.html` computes a `$canonical` variable that resolves to `.Permalink` on single posts and unpaginated home, but to `.Paginator.URL | absURL` on paginated home/section/taxonomy/term (pages 2+). Both `<link rel="canonical">` and `<meta property="og:url">` use this same variable. The `with .Paginator` block must be guarded by a kind check (`IsHome` / `section` / `taxonomy` / `term`) — calling `.Paginator` on a single post raises a build error.
+- **Hand-rolled Open Graph block**: `head.html` emits the full OG block inline (`og:url`, `og:site_name`, `og:title`, `og:description`, `og:locale`, `og:type`, plus `article:section` / `article:published_time` / `article:modified_time` / `article:tag` on single posts) instead of calling `_internal/opengraph.html`. This is required so `og:url` reflects the paginated `$canonical` — `_internal/opengraph.html` always emits `.Permalink` and would conflict on paginated pages. `og:type` is `article` only when `.IsPage` AND `.Type == "post"`; sections/terms/about stay `website`. `og:image` (and `og:image:width/height/alt`) is emitted separately by `custom_head.html`; do not duplicate it in `head.html`.
+- **Pagination title suffix**: every list template that renders paginated URLs (`index.html`, `_default/section.html`, `_default/taxonomy.html`, `_default/terms.html`) has a `define "title"` block that appends ` — Page N` (en) / ` — Страница N` (ru) when `Paginator.PageNumber > 1`.
+- **Structured data via inline microdata** (no `<script type="application/ld+json">` anywhere): the project uses inline microdata throughout. `baseof.html` sets `<html itemtype>` per kind — `BlogPosting` for `.IsPage && .Type == "post"`, `Blog` for `.IsHome`, `WebPage` everywhere else. `_internal/schema.html` (called from `head.html`) emits the shared `<meta itemprop>` tags (`name`, `description`, `datePublished`, `dateModified`, `wordCount`, `keywords`) attached to that scope. `single.html` adds `mainEntityOfPage`, `inLanguage`, `publisher` (Person), and `image` (ImageObject with `url` / `width` / `height`) inside `<article>` — gated to `eq .Section "post"` so non-post `.IsPage` templates (about/cv) stay clean. The visible `itemprop="author"` Person is already provided by `partials/post/meta.html` (the byline), so it isn't duplicated in `single.html`. `index.html` adds the Blog properties (`name`, `description`, `url`, `inLanguage`, `author` reference) plus the Person block (kept with `id="site-author"` so the Blog `<link itemprop="author" href="#site-author">` resolves) on the unpaginated home only — paginated `/page/N/` skips these. `index.html` also keeps the `ItemList` of `BlogPosting` summaries it has always had.
+- **Microdata construction notes**: hidden microdata (author, publisher, image with dimensions) is wrapped in `<span ... style="display:none">` — Google parses microdata regardless of CSS visibility. Cyrillic and special characters are safe in microdata without any escaping (a notable advantage over JSON-LD, which would need `safeJS` to avoid Go's `html/template` JS-escaping of script bodies).
+- **robots.txt**: `static/robots.txt` keeps `/post/`, `/tags/`, `/page/` (and their `/ru/` mirrors) disallowed; `sitemap.xml` lists every post directly, so listing pages add no SEO value. The per-page `noindex, follow` from `head.html` is defence-in-depth — Google can't fetch these via the disallow anyway, but the meta tag means non-Google bots still see the directive. `/cv/` stays disallowed (only the rendered HTML/PDF files are allowed).
+- Run `hugo --minify --cleanDestinationDir` after any template change; the build must finish with zero warnings or errors.
+
+## Hugo template conventions (Hugo 0.160+)
+
+- Use `hugo.Data.<key>` instead of `.Site.Data.<key>` (deprecated).
+- Use `.Site.Language.Lang` instead of `.Site.LanguageCode` (deprecated).
+- Use `.Site.Params.author.name` only — `.Site.Author.name` is deprecated and not configured.
+- For image attribution use `$image.Meta.IPTC.Credit` and `$image.Meta.Exif.Tags.Artist` (Hugo 0.155+); `$image.Exif` is deprecated. The default Hugo whitelist excludes `Artist` from `.Meta.Exif.Tags` for many JPEGs — IPTC `Credit` is the more reliable path on Hugo 0.161 and matches schema.org `creditText` semantics. Both must be guarded with `with` because `Meta`, `Meta.IPTC`, and `Meta.Exif` can each be nil.
+- In `hugo.json`, languages use `label` and `locale` per-language; do NOT set top-level `languageCode` or per-language `languageName`.
+
 ## Image attribution and licensing
 
 Images use schema.org `ImageObject` metadata via the custom render hook in `themes/jane/layouts/_default/_markup/render-image.html`. By default, all images are credited to the site author with a CC BY 4.0 license.
 
 ### EXIF/IPTC metadata (preferred for custom credit)
 
-The render hook reads the EXIF `Artist` field from local JPEG/PNG images to determine the credit. To attribute an image to someone other than the site author, embed metadata using exiftool:
+The render hook reads image metadata from local JPEG/PNG files to determine the credit, preferring IPTC `Credit` (schema.org `creditText` semantics) over EXIF `Artist`. To attribute an image to someone other than the site author, embed both fields with exiftool — IPTC for the schema-aligned credit, EXIF as a fallback for tools that don't read IPTC:
 
     exiftool -IPTC:Credit="Name Here" -IPTC:CopyrightNotice="© Name Here" -XMP:Credit="Name Here" -EXIF:Artist="Name Here" image.jpg
 
-The render hook checks `Exif.Tags.Artist` on local images and uses it as the credit if present.
+The render hook reads `$image.Meta.IPTC.Credit` first and `$image.Meta.Exif.Tags.Artist` second; whichever is present and non-empty wins, with IPTC overriding EXIF when both are set.
 
 ### URL query parameters (fallback)
 
@@ -99,7 +112,7 @@ This works for both standalone images and images wrapped in links (e.g. YouTube 
 
 ### Priority order
 
-Credit is resolved in this order: URL `?credit=` parameter > EXIF `Artist` field > site author (default).
+Credit is resolved in this order: URL `?credit=` parameter > IPTC `Credit` field > EXIF `Artist` field > site author (default).
 
 ## YouTube thumbnails
 
