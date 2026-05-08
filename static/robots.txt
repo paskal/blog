@@ -9,6 +9,8 @@ Disallow: /post/
 Disallow: /ru/post/
 Disallow: /tags/
 Disallow: /ru/tags/
+Disallow: /page/
+Disallow: /ru/page/
 Disallow: /cv/
 Disallow: /ru/cv/
 Disallow: *ref=

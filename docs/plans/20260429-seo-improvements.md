@@ -175,7 +175,7 @@ print(f'{n} valid JSON-LD blocks')
 | `themes/jane/layouts/index.html`                         | `define "title"` block: append " — Page N" when `Paginator.PageNumber > 1`; Blog properties (name, description, url, inLanguage, author) on first page; existing `Person` block keeps `id="site-author"` | 4, 5 |
 | `themes/jane/layouts/_default/section.html`              | Same `define "title"` block (English: " — Page N"; Russian: " — Страница N")       | 4 |
 | `themes/jane/layouts/_default/taxonomy.html`             | Same                                                                              | 4 |
-| `static/robots.txt`                                      | Remove `Disallow:` on `/page/` only; `/post/` and `/tags/` stay disallowed        | 3 |
+| `static/robots.txt`                                      | Reformat existing `Disallow:` lines (style only); `/post/`, `/tags/`, `/page/`, `/cv/` all stay disallowed | 3 |
 
 ## Technical details
 
@@ -275,13 +275,15 @@ Disallow:/cv/
 Disallow:/ru/cv/
 ```
 
-With (only the `/page/` lines disappear; `/post/` and `/tags/` stay disallowed):
+With (style cleanup only — every disallow stays in place; `sitemap.xml` lists every post directly so the listing pages add no SEO value):
 
 ```
 Disallow: /post/
 Disallow: /ru/post/
 Disallow: /tags/
 Disallow: /ru/tags/
+Disallow: /page/
+Disallow: /ru/page/
 Disallow: /cv/
 Disallow: /ru/cv/
 
@@ -289,7 +291,7 @@ Allow: /cv/verhoturov.html
 Allow: /cv/verhoturov.pdf
 ```
 
-`/post/` and `/tags/` stay disallowed because `sitemap.xml` lists posts directly — the listing pages add no SEO value and can stay out of Google's index entirely. `/cv/` `Disallow` stays — only the rendered CV files should be indexable, not the raw page bundle. Only the `/page/` and `/ru/page/` lines disappear; the per-page `noindex` from Task 3 takes over for paginated home (`/page/N>1/`), letting Google crawl pagination links to discover deeper-archive posts that aren't in the sitemap. Final `robots.txt` shape:
+The per-page `noindex, follow` meta from Task 3 is defence-in-depth — Google can't fetch these via the disallow anyway, but the meta tag means non-Google bots still see the directive. `/cv/` disallow stays — only the rendered CV files should be indexable, not the raw page bundle. Final `robots.txt` shape:
 
 ```
 User-agent: *
@@ -303,6 +305,8 @@ Disallow: /post/
 Disallow: /ru/post/
 Disallow: /tags/
 Disallow: /ru/tags/
+Disallow: /page/
+Disallow: /ru/page/
 Disallow: /cv/
 Disallow: /ru/cv/
 Disallow: *ref=
@@ -457,7 +461,7 @@ Each task is a single commit. Task 3 covers both per-page noindex AND robots.txt
 ### Task 3: per-page noindex and robots.txt rewrite (single commit)
 
 - [x] Edit `themes/jane/layouts/partials/head.html:5`: replace static robots meta with the dynamic `{{ $robots }}` block per Technical details
-- [x] Edit `static/robots.txt` per Technical details (drop only `/page/` lines; `/post/`, `/tags/`, `/cv/` stay disallowed — sitemap lists posts directly)
+- [x] Edit `static/robots.txt` per Technical details (style cleanup only; `/post/`, `/tags/`, `/page/`, `/cv/` all stay disallowed — sitemap lists posts directly so listing pages add no SEO value)
 - [x] `hugo --minify --cleanDestinationDir` builds clean
 - [x] `inspect_head http://localhost:1313/post/` shows `noindex, follow, max-image-preview:large`
 - [x] `inspect_head http://localhost:1313/tags/` shows `noindex, follow, …`
