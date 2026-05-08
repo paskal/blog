@@ -17,7 +17,7 @@
       </nav>
 
       <article class="post">
-        {{- /* Microdata equivalent of dropped JSON-LD BlogPosting properties: publisher, image with dimensions, mainEntityOfPage, inLanguage. Author is already provided by partials/post/meta.html (visible byline with itemprop="author" Person). Gated to post pages only — about/cv/etc. are typed WebPage by baseof.html and must not get BlogPosting properties. */ -}}
+        {{/* Microdata equivalent of dropped JSON-LD BlogPosting properties: publisher, image with dimensions, mainEntityOfPage, inLanguage. Author is already provided by partials/post/meta.html (visible byline with itemprop="author" Person). Gated to post pages only — about/cv/etc. are typed WebPage by baseof.html and must not get BlogPosting properties. */}}
         {{- if eq .Section "post" -}}
         {{- $authorId := .Site.Params.author.name -}}
         {{- $author := index (hugo.Data.authors | default dict) $authorId -}}
