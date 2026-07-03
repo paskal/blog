@@ -1,0 +1,13 @@
+{{- /* Canonical URL for remark42 threads and comment counters, returned as a plain
+       string so call sites apply context-appropriate escaping. Posts use the
+       /:year/:slug/ scheme, which is language-independent so the en and ru versions
+       of a post share one comment thread. Non-post pages (e.g. /about/) have no date,
+       so the year-based URL would be garbage; they use their permalink with the /ru/
+       prefix stripped to get the same thread sharing between languages. */ -}}
+{{- $url := "" -}}
+{{- if eq .Section "post" -}}
+{{- $url = urls.JoinPath .Site.BaseURL .Date.Year .Slug "/" -}}
+{{- else -}}
+{{- $url = urls.JoinPath .Site.BaseURL (strings.TrimPrefix "/ru/" .RelPermalink) "/" -}}
+{{- end -}}
+{{- return $url -}}

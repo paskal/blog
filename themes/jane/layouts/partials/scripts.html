@@ -11,7 +11,7 @@
     site_id: '{{ .Site.Params.remark42SiteId | default "remark" }}',
     theme: document.documentElement.getAttribute('data-theme') || 'light',
     {{- if not .IsHome }}
-    url: "{{ urls.JoinPath .Site.BaseURL .Page.Date.Year .Page.Slug "/" }}",
+    url: "{{ partial "remark42_url.html" .Page }}",
     {{- end }}
     components: [
     {{- if not .IsHome }}
