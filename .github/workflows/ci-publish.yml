@@ -4,14 +4,39 @@ on:
   push:
     branches:
       - master
+  pull_request:
+
+permissions:
+  contents: read
 
 jobs:
-  build-images:
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: setup hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.165.0"
+          extended: true
+
+      - name: build site
+        run: hugo --minify --cleanDestinationDir --panicOnWarning
+
+  publish:
     name: Rebuild blog pages
     runs-on: ubuntu-latest
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
 
     steps:
       - name: remote push to https://terrty.net/ from master
         env:
           UPDATER_KEY: ${{ secrets.UPDATER_KEY }}
-        run: curl -s https://hooks.terrty.net/update/publish-blog/${UPDATER_KEY}
+        run: curl -sSf --retry 3 "https://hooks.terrty.net/update/publish-blog/${UPDATER_KEY}"
