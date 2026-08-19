@@ -2,3 +2,17 @@
 // Custom style
 // ==============================
 // You can override the variables in _variables.scss to customize the style
+
+// Center images
+img.center {
+  display: block;
+  margin: 1.0rem auto;
+  max-width: 100%;
+  height: auto;
+}
+
+// Center image captions
+small[itemprop="caption"] {
+  display: block;
+  text-align: center;
+}
