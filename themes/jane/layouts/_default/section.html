@@ -1,7 +1,7 @@
 {{ define "title" }}{{ i18n "archive" }} - {{ .Site.Title }}{{ partial "page_suffix.html" . }}{{ end }}
 
 {{ define "content"}}
-{{- $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" | default 10) }}
+{{- $paginator := partial "list_paginator.html" . }}
 <section id="archive" class="archive" itemscope itemtype="https://schema.org/ItemList">
   {{- if not $paginator.HasPrev }}
     <div class="archive-title">

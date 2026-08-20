@@ -1,0 +1,19 @@
+{{- /* Single source of truth for list pagination: which pages a kind lists, and how many
+       per pager. Every template that needs the paginator must go through here.
+
+       Hugo builds a page's pager on the first .Paginate or .Paginator call and returns that
+       same pager for every later call, ignoring the arguments. The title block and head.html
+       both render before the content block, so a caller passing different arguments there
+       silently overrides what the list template asks for. Routing every caller through this
+       partial keeps the arguments identical wherever the first call happens to come from.
+
+       Kinds that do not paginate return false, so no pager is built and no /page/N/ pages
+       are generated for them. Calling .Paginate on a single page aborts the build, which is
+       why the kind check comes first. */ -}}
+{{- $paginator := false -}}
+{{- if .IsHome -}}
+  {{- $paginator = .Paginate (where .Site.RegularPages "Type" "in" site.Params.mainSections) -}}
+{{- else if or (eq .Kind "section") (eq .Kind "term") -}}
+  {{- $paginator = .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" | default 10) -}}
+{{- end -}}
+{{- return $paginator -}}
