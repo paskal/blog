@@ -11,6 +11,15 @@ while [ "$#" -gt 0 ]; do
 			exit 1
 		fi
 		SUBDIR="$2"
+		# A single path component only. An empty value would silently deploy the
+		# whole site, and anything with a slash or a leading dot can move the
+		# rsync destination out of public/, where --delete would then apply.
+		case "$SUBDIR" in
+		"" | .* | *[!A-Za-z0-9._-]*)
+			echo "Error: --path must be one component of letters, digits, dot, underscore or hyphen" >&2
+			exit 1
+			;;
+		esac
 		shift 2
 		;;
 	*)
@@ -31,11 +40,18 @@ if [ -n "$SUBDIR" ]; then
 	ssh terrty "mkdir -p ~/blog/public/$SUBDIR"
 fi
 
-# Deploy; run rsync as a simple command so errexit aborts on a failed transfer,
-# writing the itemised output to a temp file before filtering (a pipeline would
-# swallow rsync's exit status)
+# Deploy. rsync writes into the live directory with --delete, so on failure keep
+# the itemised output: it is the only record of what was already replaced or
+# removed there. Run it as an if condition so errexit does not exit before that.
 CHANGES=$(mktemp "${TMPDIR:-/tmp}/deploy.XXXXXX")
-trap 'rm -f "$CHANGES"' EXIT
-rsync -azi --exclude cv/ --delete public/ "$TARGET" >"$CHANGES"
-# Tolerate grep's "no matches" (exit 1) but let real errors (exit 2) abort
-grep -Ev '[fd]\.\.t\.\.\.\.' "$CHANGES" || [ "$?" -eq 1 ]
+if rsync -azi --exclude cv/ --delete public/ "$TARGET" >"$CHANGES"; then
+	# Tolerate grep's "no matches" (exit 1) but let real errors (exit 2) abort
+	grep -Ev '[fd]\.\.t\.\.\.\.' "$CHANGES" || [ "$?" -eq 1 ]
+	rm -f "$CHANGES"
+else
+	STATUS="$?"
+	echo "rsync failed with status $STATUS, transfer may be partial" >&2
+	echo "itemised output kept at $CHANGES" >&2
+	cat "$CHANGES" >&2
+	exit "$STATUS"
+fi

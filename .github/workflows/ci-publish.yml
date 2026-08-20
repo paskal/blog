@@ -20,14 +20,30 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: setup hugo
-        uses: peaceiris/actions-hugo@v3
-        with:
-          hugo-version: "0.165.0"
-          extended: true
-
       - name: build site
-        run: hugo --minify --cleanDestinationDir --panicOnWarning
+        run: |
+          set -eu
+          # Exercise the same script and pinned image both publish paths use,
+          # so a change that only breaks the real build cannot pass here.
+          mkdir -p public/cv
+          echo build-sentinel > public/cv/dmitryv-cv.pdf
+          inode_before=$(stat -c %i public)
+          # The image runs as uid 1000, but the runner owns the workspace,
+          # so hand the container the caller's ids or it cannot write.
+          docker compose run --rm -T --user "$(id -u):$(id -g)" build
+          inode_after=$(stat -c %i public)
+          if [ "$inode_before" != "$inode_after" ]; then
+            echo "public/ was replaced instead of refilled; nginx bind mounts that directory" >&2
+            exit 1
+          fi
+          if [ "$(cat public/cv/dmitryv-cv.pdf)" != "build-sentinel" ]; then
+            echo "public/cv was not preserved across the build" >&2
+            exit 1
+          fi
+          if [ ! -s public/index.html ]; then
+            echo "no home page produced" >&2
+            exit 1
+          fi
 
   publish:
     name: Rebuild blog pages
