@@ -49,11 +49,11 @@
         {{- else -}}
         <link itemprop="image" href="{{ $.Site.Params.image | absURL }}" />
         {{- end -}}
-        {{ $page.Render "summary" }}
+        {{ if eq $page.Type "post" }}{{ partial "post/summary.html" $page }}{{ end }}
       </div>
     </div>
     {{ else }}
-    {{ $page.Render "summary" }}
+    {{ if eq $page.Type "post" }}{{ partial "post/summary.html" $page }}{{ end }}
     {{ end }}
   {{ end }}
 </section>
