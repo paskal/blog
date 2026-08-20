@@ -1,0 +1,13 @@
+services:
+  build:
+    image: ghcr.io/gohugoio/hugo:v0.165.0
+    entrypoint: /bin/sh
+    command: ./build.sh
+    working_dir: /project
+    volumes:
+      - ./:/project
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
