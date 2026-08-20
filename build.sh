@@ -7,7 +7,7 @@ set -e
 # staging directory first and only touch public/ once Hugo has succeeded; a
 # failed build then leaves the served tree as it was.
 rm -rf public.new
-hugo --minify --cleanDestinationDir -d public.new
+hugo --minify --cleanDestinationDir --panicOnWarning -d public.new
 
 # Remove empty taxonomy pages (tags/categories with no published posts)
 find public.new/tags public.new/ru/tags -type d -mindepth 1 -maxdepth 1 2>/dev/null | while read -r dir; do

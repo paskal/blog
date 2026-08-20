@@ -4,6 +4,11 @@ services:
     entrypoint: /bin/sh
     command: ./build.sh
     working_dir: /project
+    environment:
+      # The image keeps its cache in /cache, which only its own uid can write.
+      # Keep it in the workspace so the service also works when the caller has
+      # to pass a different uid, as CI does.
+      HUGO_CACHEDIR: /project/.hugo-cache
     volumes:
       - ./:/project
     logging:
