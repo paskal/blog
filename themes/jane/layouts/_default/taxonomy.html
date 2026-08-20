@@ -15,7 +15,7 @@
 {{ if not $pages }}
   {{/* Skip rendering empty taxonomy pages */}}
 {{ else }}
-{{ $paginator := .Paginate $pages (index .Site.Params "archive-paginate" | default 10) }}
+{{ $paginator := partial "list_paginator.html" . }}
 <section id="archive" class="archive" itemscope itemtype="https://schema.org/ItemList">
   {{ if not $paginator.HasPrev }}
     {{ if eq .Data.Plural "tags" }}

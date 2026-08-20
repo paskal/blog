@@ -7,7 +7,8 @@
        block is referenced via <link itemprop="author" href="#site-author"> so the Blog
        has an author. Both are gated to the first page of the home (paginated home pages
        skip these — same logic as the JSON-LD partial used to enforce). */ -}}
-{{- $isFirstHome := and .IsHome (or (not .Paginator) (le .Paginator.PageNumber 1)) -}}
+{{- $paginator := partial "list_paginator.html" . -}}
+{{- $isFirstHome := and .IsHome (or (not $paginator) (le $paginator.PageNumber 1)) -}}
 {{- if $isFirstHome }}
 <meta itemprop="name" content="{{ .Site.Title }}" />
 <meta itemprop="description" content="{{ .Site.Params.description | plainify | truncate 160 }}" />
@@ -29,11 +30,6 @@
 {{- end }}
 
 <section id="posts" class="posts" {{ if .IsHome }}itemscope itemtype="https://schema.org/ItemList"{{ end }}>
-  {{ $pages := .Pages }}
-  {{ if .IsHome }}
-    {{ $pages = where .Site.RegularPages "Type" "in" site.Params.mainSections }}
-  {{ end }}
-  {{ $paginator := .Paginate $pages }}
   {{ range $index, $page := $paginator.Pages }}
     {{ if $.IsHome }}
     <div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">

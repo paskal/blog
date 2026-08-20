@@ -2,13 +2,12 @@
      permalink, so emitting it on /page/N/ would point ru to /ru/ instead of /ru/page/N/.
      Paginated pages are noindex,follow (see $robots below), so Google ignores hreflang
      from them anyway; skipping is simpler than computing the paginated translation URL.
-     Kind-guard mirrors the canonical block: .Paginator is only callable on home/section/
-     taxonomy/term, otherwise Hugo aborts with "pagination not supported in this context". */}}
+     $paginator is reused by the robots and canonical blocks below; list_paginator.html
+     returns false on kinds that do not paginate, so no kind guard is needed here. */}}
+{{- $paginator := partial "list_paginator.html" . -}}
 {{- $isPaginated := false -}}
-{{- if or .IsHome (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") -}}
-  {{- with .Paginator -}}
-    {{- if gt .PageNumber 1 -}}{{- $isPaginated = true -}}{{- end -}}
-  {{- end -}}
+{{- with $paginator -}}
+  {{- if gt .PageNumber 1 -}}{{- $isPaginated = true -}}{{- end -}}
 {{- end -}}
 {{- if not $isPaginated -}}
 {{ range .Translations }}
@@ -20,10 +19,8 @@
 {{- $robots := "max-image-preview:large" -}}
 {{- if or (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") -}}
   {{- $robots = $noindex -}}
-{{- else if .IsHome -}}
-  {{- with .Paginator -}}
-    {{- if gt .PageNumber 1 -}}{{- $robots = $noindex -}}{{- end -}}
-  {{- end -}}
+{{- else if and .IsHome $isPaginated -}}
+  {{- $robots = $noindex -}}
 {{- end -}}
 <meta name="robots" content="{{ $robots }}" />
 <meta name="renderer" content="webkit" />
@@ -76,10 +73,8 @@
 
 <!-- Permalink & RSSlink -->
 {{- $canonical := .Permalink -}}
-{{- if or .IsHome (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") -}}
-  {{- with .Paginator -}}
-    {{- if gt .PageNumber 1 -}}{{- $canonical = .URL | absURL -}}{{- end -}}
-  {{- end -}}
+{{- with $paginator -}}
+  {{- if gt .PageNumber 1 -}}{{- $canonical = .URL | absURL -}}{{- end -}}
 {{- end -}}
 <link rel="canonical" href="{{ $canonical }}" />
 {{ with .OutputFormats.Get "RSS" }}<link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />{{ end }}

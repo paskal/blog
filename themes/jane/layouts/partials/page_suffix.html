@@ -1,6 +1,6 @@
 {{- /* Returns the paginator title suffix (e.g. " — Page 2" / " — Страница 2") or empty string. */ -}}
 {{- $suffix := "" -}}
-{{- with .Paginator -}}
+{{- with partial "list_paginator.html" . -}}
   {{- if gt .PageNumber 1 -}}
     {{- if eq $.Site.Language.Lang "ru" -}}
       {{- $suffix = printf " — Страница %d" .PageNumber -}}
