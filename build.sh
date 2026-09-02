@@ -20,14 +20,11 @@ done
 # mounts /home/opc/blog/public, so swapping the directory would leave the server
 # pointing at the old inode and serving 403s until it is restarted.
 #
-# public/cv is kept. terrty.net/cv/ is served from there but is built by the
-# resume repository; Hugo only creates the directory, from static/cv. deploy.sh
-# keeps the same directory out of its rsync for the same reason.
-mkdir -p public
+# public/cv is kept as it stands. terrty.net/cv/ is served from there but the files
+# in it are built by the resume repository, so whatever Hugo stages under cv is
+# discarded instead of copied over them. deploy.sh keeps the same directory out of
+# its rsync for the same reason.
+mkdir -p public/cv
 find public -mindepth 1 -maxdepth 1 ! -name cv -exec rm -rf {} \;
 find public.new -mindepth 1 -maxdepth 1 ! -name cv -exec mv {} public/ \;
-if [ -d public.new/cv ]; then
-	mkdir -p public/cv
-	cp -R public.new/cv/. public/cv/
-fi
 rm -rf public.new

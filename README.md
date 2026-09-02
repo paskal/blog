@@ -20,15 +20,20 @@ hugo server -D
 ### Build Commands
 
 ```bash
-# Build site with minification
-hugo --minify --cleanDestinationDir
+# Build site into public/
+./build.sh
 
 # Build and deploy to production
 ./deploy.sh
 
-# Deploy to a subdirectory
+# Deploy to a subdirectory of the site, one path component, and not "cv"
 ./deploy.sh --path <subdirectory>
 ```
+
+`build.sh` is the only build path in use. It stages into `public.new`, applies
+`--panicOnWarning`, keeps `public/cv` (published by the resume repository) and replaces
+the contents of `public/` instead of the directory, which nginx bind mounts on the
+server. Calling Hugo directly skips all of that, so use the script.
 
 ## Site Structure
 
@@ -44,8 +49,8 @@ The blog uses a vendored copy of the [Jane theme](https://github.com/xianmin/hug
 ## Deployment
 
 The blog is deployed in two ways:
-1. Manually using `deploy.sh` script which uses rsync to upload to the server
-2. Automatically via GitHub Actions when pushing to master branch
+1. Manually using `deploy.sh` script, which runs `build.sh` and then uploads `public/` with rsync
+2. Automatically on a push to master: GitHub Actions builds the site, then calls a webhook that makes the server pull and run `build.sh` in the pinned Hugo container from `docker-compose.yml`
 
 ## Multilingual Setup
 
@@ -78,7 +83,7 @@ The comment system is configured to use canonical URLs without the `/ru/` prefix
 - **Structured data via inline microdata** (no `<script type="application/ld+json">` anywhere): the project uses inline microdata throughout. `baseof.html` sets `<html itemtype>` per kind — `BlogPosting` for `.IsPage && .Type == "post"`, `Blog` for `.IsHome`, `WebPage` everywhere else. `_internal/schema.html` (called from `head.html`) emits the shared `<meta itemprop>` tags (`name`, `description`, `datePublished`, `dateModified`, `wordCount`, `keywords`) attached to that scope. `single.html` adds `mainEntityOfPage`, `inLanguage`, `publisher` (Person), and `image` (ImageObject with `url` / `width` / `height`) inside `<article>` — gated to `eq .Section "post"` so non-post `.IsPage` templates (about/cv) stay clean. The visible `itemprop="author"` Person is already provided by `partials/post/meta.html` (the byline), so it isn't duplicated in `single.html`. `index.html` adds the Blog properties (`name`, `description`, `url`, `inLanguage`, `author` reference) plus the Person block (kept with `id="site-author"` so the Blog `<link itemprop="author" href="#site-author">` resolves) on the unpaginated home only — paginated `/page/N/` skips these. `index.html` also keeps the `ItemList` of `BlogPosting` summaries it has always had.
 - **Microdata construction notes**: hidden microdata (author, publisher, image with dimensions) is wrapped in `<span ... style="display:none">` — Google parses microdata regardless of CSS visibility. Cyrillic and special characters are safe in microdata without any escaping (a notable advantage over JSON-LD, which would need `safeJS` to avoid Go's `html/template` JS-escaping of script bodies).
 - **robots.txt**: `static/robots.txt` keeps `/post/`, `/tags/`, `/page/` (and their `/ru/` mirrors) disallowed; `sitemap.xml` lists every post directly, so listing pages add no SEO value. The per-page `noindex, follow` from `head.html` is defence-in-depth — Google can't fetch these via the disallow anyway, but the meta tag means non-Google bots still see the directive. `/cv/` stays disallowed (only the rendered HTML/PDF files are allowed).
-- Run `hugo --minify --cleanDestinationDir` after any template change; the build must finish with zero warnings or errors.
+- Run `./build.sh` after any template change; the build must finish with zero warnings or errors, which `--panicOnWarning` inside the script enforces.
 
 ## Hugo template conventions (Hugo 0.160+)
 
