@@ -19,6 +19,13 @@ while [ "$#" -gt 0 ]; do
 			echo "Error: --path must be one component of letters, digits, dot, underscore or hyphen" >&2
 			exit 1
 			;;
+		cv)
+			# rsync --exclude applies to the source tree, so it does not protect a
+			# destination whose own root is cv: --delete would remove the CV files
+			# the resume repository publishes there.
+			echo "Error: --path cv would delete the CV published by the resume repository" >&2
+			exit 1
+			;;
 		esac
 		shift 2
 		;;

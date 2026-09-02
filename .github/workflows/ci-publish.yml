@@ -45,6 +45,25 @@ jobs:
             exit 1
           fi
 
+      - name: a failed build must leave the served tree alone
+        run: |
+          set -eu
+          # build.sh promises this, but it holds only because Hugo runs before
+          # public/ is touched. Put a failing hugo first on PATH and check that
+          # the tree the server would be serving comes through unchanged.
+          echo failed-build-sentinel > public/index.html
+          mkdir -p "$RUNNER_TEMP/failing-hugo"
+          printf '#!/bin/sh\nexit 1\n' > "$RUNNER_TEMP/failing-hugo/hugo"
+          chmod +x "$RUNNER_TEMP/failing-hugo/hugo"
+          if PATH="$RUNNER_TEMP/failing-hugo:$PATH" ./build.sh; then
+            echo "build.sh reported success with a hugo that always fails" >&2
+            exit 1
+          fi
+          if [ "$(cat public/index.html)" != "failed-build-sentinel" ]; then
+            echo "a failed build modified the served tree" >&2
+            exit 1
+          fi
+
   publish:
     name: Rebuild blog pages
     runs-on: ubuntu-latest
