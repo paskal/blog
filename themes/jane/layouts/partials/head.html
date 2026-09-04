@@ -1,5 +1,5 @@
-{{/* Skip hreflang on paginated pages — .Translations returns the unpaginated translation
-     permalink, so emitting it on /page/N/ would point ru to /ru/ instead of /ru/page/N/.
+{{/* Skip hreflang on paginated pages. Hugo's translation collections return the unpaginated
+     permalink, so emitting them on /page/N/ would point ru to /ru/ instead of /ru/page/N/.
      Paginated pages are noindex,follow (see $robots below), so Google ignores hreflang
      from them anyway; skipping is simpler than computing the paginated translation URL.
      $paginator is reused by the robots and canonical blocks below; list_paginator.html
@@ -9,8 +9,8 @@
 {{- with $paginator -}}
   {{- if gt .PageNumber 1 -}}{{- $isPaginated = true -}}{{- end -}}
 {{- end -}}
-{{- if not $isPaginated -}}
-{{ range .Translations }}
+{{- if and (not $isPaginated) .IsTranslated -}}
+{{ range .AllTranslations }}
 <link rel="alternate" hreflang="{{ .Site.Language.Lang }}" href="{{ .Permalink  }}" />
 {{ end }}
 {{- end -}}
