@@ -7,3 +7,8 @@ resources
 .hugo-cache
 assets/jsconfig.json
 
+# Codex project skills are tracked; other agent workspace data is transient
+!.agents/
+.agents/*
+!.agents/skills/
+!.agents/skills/**
