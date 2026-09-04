@@ -13,9 +13,9 @@ I work on many things, but primarily on [remark42](https://github.com/umputun/re
 
 The cost of a break is never paid by the person who causes it.
 
-I planned originally to post the manifesto in full on [my GitHub page](https://github.com/paskal), but it turned out to be too long for that.
-
 <!--more-->
+
+I planned originally to post the manifesto in full on [my GitHub page](https://github.com/paskal), but it turned out to be too long for that.
 
 ## Everything that shipped keeps working
 
