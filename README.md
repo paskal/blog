@@ -52,6 +52,8 @@ The blog is deployed in two ways:
 1. Manually using `deploy.sh` script, which runs `build.sh` and then uploads `public/` with rsync
 2. Automatically on a push to master: GitHub Actions builds the site, then calls a webhook that makes the server pull and run `build.sh` in the pinned Hugo container from `docker-compose.yml`
 
+This repository does not use pull requests. A change lands on `master` as a single commit and is pushed directly; that push is what triggers the automatic deployment above.
+
 ## Multilingual Setup
 
 The blog is bilingual with content in both English and Russian:
