@@ -81,7 +81,7 @@ jobs:
             fi
           done
 
-      - name: Russian pages link to pages that exist
+      - name: internal post and tag links resolve
         run: |
           set -eu
           # Menu URLs in hugo.json already carry their own language prefix, so
@@ -93,11 +93,13 @@ jobs:
             || { echo "Russian menu no longer links to / for English" >&2; exit 1; }
           grep -q "href=https://terrty.net/ru/>" public/index.html \
             || { echo "English menu no longer links to /ru/" >&2; exit 1; }
-          # Russian posts used to link to root paths that only exist under /ru/.
+          # Russian posts linked to root paths that exist only under /ru/, and two
+          # English posts linked to tag pages the site never generates. Walk both
+          # languages so either shape is caught.
           python3 - <<'PY'
           import os, re, sys
           bad = []
-          for d, _, fs in os.walk("public/ru"):
+          for d, _, fs in os.walk("public"):
               for f in fs:
                   if f != "index.html":
                       continue
