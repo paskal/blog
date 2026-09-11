@@ -1,7 +1,7 @@
 <!-- Jane theme main js -->
 {{ $jsMain := resources.Get "js/main.js" | js.Build }}
 {{ $secureJS := $jsMain | resources.ExecuteAsTemplate "js/main.js" . | fingerprint }}
-<script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}" crossorigin="anonymous"></script>
+<script defer type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}" crossorigin="anonymous"></script>
 <!-- End -->
 
 {{ if and .Site.Params.remark42Url (or .Page.IsPage .IsHome) }}

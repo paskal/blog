@@ -33,15 +33,10 @@ function createTocObserver() {
 }
 
 const initToc = () => {
-  const tocContainer = document.getElementById('toc');
-  if (tocContainer !== null) {
-    const toc = document.getElementById('TableOfContents');
-    if (toc === null) {
-      // if global config 'toc = true', but there are no headings
-      tocContainer.parentNode.removeChild(tocContainer);
-    } else {
-      createTocObserver();
-    }
+  // post/toc.html only emits #toc when .TableOfContents is non-empty, so the
+  // container being present means there is a list to track.
+  if (document.getElementById('toc') !== null) {
+    createTocObserver();
   }
 }
 
