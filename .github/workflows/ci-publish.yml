@@ -45,6 +45,14 @@ jobs:
             exit 1
           fi
 
+      - name: robots.txt comes from static
+        run: |
+          set -eu
+          # enableRobotsTXT is off, so static/robots.txt is published verbatim and is
+          # the only copy. Turning generation on would silently replace it.
+          cmp static/robots.txt public/robots.txt \
+            || { echo "published robots.txt is not static/robots.txt" >&2; exit 1; }
+
       - name: a failed build must leave the served tree alone
         run: |
           set -eu
