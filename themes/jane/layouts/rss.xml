@@ -26,6 +26,9 @@
 {{- else }}
 {{- $pages = $pctx.Pages }}
 {{- end }}
+{{- /* Posts only: About and similar pages carry no date, and a zero PublishDate
+       renders as year 0001, which feed clients discard or misorder. */}}
+{{- $pages = where $pages "Type" "post" }}
 {{- $limit := .Site.Config.Services.RSS.Limit }}
 {{- if ge $limit 1 }}
 {{- $pages = $pages | first $limit }}
@@ -58,14 +61,14 @@
       {{ else }}
       <description>{{ .Summary | transform.XMLEscape | safeHTML }}</description>
       {{ end }}
-      {{- with .Resources.ByType "image" }}
-        {{- range . }}
-          {{- if not (in .MediaType "image/webp") }}
+      {{- /* One enclosure at most, the declared cover. Emitting every image resource
+             put 145 of them in this feed across 14 items, which is ambiguous for a
+             reader and inflates the document. */}}
+      {{- $item := . }}
+      {{- with .Param "coverart" }}
+        {{- with $item.Resources.GetMatch . }}
       <enclosure url="{{ .Permalink }}" length="{{ len .Content }}" type="{{ .MediaType }}"/>
-          {{- end }}
         {{- end }}
-      {{- else }}
-      <enclosure url="{{ .Site.Params.image | absURL }}" length="438598" type="image/jpg"/>
       {{- end }}
     </item>
     {{- end }}
