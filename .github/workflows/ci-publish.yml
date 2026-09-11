@@ -81,6 +81,41 @@ jobs:
             fi
           done
 
+      - name: Russian pages link to pages that exist
+        run: |
+          set -eu
+          # Menu URLs in hugo.json already carry their own language prefix, so
+          # running them through absLangURL prefixed the shared /cv/ and the
+          # English entry a second time on every Russian page.
+          grep -q "href=https://terrty.net/cv/>" public/ru/index.html \
+            || { echo "Russian menu no longer links to /cv/" >&2; exit 1; }
+          grep -q "href=https://terrty.net/>in English<" public/ru/index.html \
+            || { echo "Russian menu no longer links to / for English" >&2; exit 1; }
+          grep -q "href=https://terrty.net/ru/>" public/index.html \
+            || { echo "English menu no longer links to /ru/" >&2; exit 1; }
+          # Russian posts used to link to root paths that only exist under /ru/.
+          python3 - <<'PY'
+          import os, re, sys
+          bad = []
+          for d, _, fs in os.walk("public/ru"):
+              for f in fs:
+                  if f != "index.html":
+                      continue
+                  p = os.path.join(d, f)
+                  html = open(p, encoding="utf-8", errors="replace").read()
+                  for m in re.finditer(r'href=(?:")?(/[^"\s>]*)', html):
+                      u = m.group(1).split("#")[0].split("?")[0]
+                      if not re.match(r"^/(ru/)?(19|20)\d\d/|^/(ru/)?tags/", u):
+                          continue
+                      if not any(os.path.exists(c) for c in
+                                 (os.path.join("public", u.lstrip("/"), "index.html"),
+                                  os.path.join("public", u.lstrip("/")))):
+                          bad.append((os.path.relpath(p, "public"), u))
+          for page, u in bad:
+              print(f"{page} links to {u}, which is not generated", file=sys.stderr)
+          sys.exit(1 if bad else 0)
+          PY
+
       - name: a failed build must leave the served tree alone
         run: |
           set -eu
