@@ -78,5 +78,8 @@
 - id: read_ru
   translation: Читать на русском
 
+- id: menu
+  translation: Menu
+
 - id: comments
   translation: Comments

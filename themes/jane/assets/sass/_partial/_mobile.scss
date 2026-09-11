@@ -15,10 +15,6 @@
   transition: transform 300ms ease;
   z-index: 99;
 
-  &.fixed-open {
-    transform: translate3d(180px, 0px, 0px);
-  }
-
   .mobile-header-logo {
     display: inline-block;
     margin-right: 50px;
@@ -31,6 +27,7 @@
   }
 
   .mobile-navbar-icon {
+    display: block;
     color: $theme-color;
     height: $mobile-navbar-height;
     width: $mobile-navbar-height;
@@ -131,6 +128,25 @@
 @include max-screen() {
   .mobile-navbar {
     display: block;
+  }
+
+  // Open state: the navbar slides with the content and the icon becomes a cross.
+  .mobile-nav-toggle:checked ~ .mobile-navbar {
+    transform: translate3d(180px, 0px, 0px);
+
+    .mobile-navbar-icon span {
+      &:nth-child(1) {
+        transform: translateY(0) rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: translateY(0) rotate(-45deg);
+      }
+    }
   }
 }
 

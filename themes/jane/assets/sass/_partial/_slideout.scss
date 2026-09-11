@@ -24,15 +24,54 @@
   will-change: transform;
 }
 
-.slideout-open,
-.slideout-open body {
-  overflow: hidden;
+// The menu opens through a hidden checkbox that the navbar icon labels, so the
+// rules below are the whole of its behaviour. Everything is scoped to the mobile
+// breakpoint: above it the navbar and its label are not rendered, and a focusable
+// checkbox there would let the keyboard open a menu nobody can see.
+.mobile-nav-toggle,
+.mobile-menu-overlay {
+  display: none;
 }
 
-.slideout-open.slideout-menu {
-  display: block;
-}
+@include max-screen() {
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
 
-#mobile-panel.slideout-open {
-  transform: translateX(180px);
+  .mobile-nav-toggle:checked ~ .slideout-menu {
+    display: block;
+    overflow: hidden;
+  }
+
+  .mobile-nav-toggle:checked ~ #mobile-panel {
+    transform: translateX(180px);
+    overflow: hidden;
+  }
+
+  // Covers the content once it has slid aside, so a tap on it closes the menu.
+  // Starts at the menu's width, leaving the menu and the navbar icon clickable.
+  .mobile-nav-toggle:checked ~ .mobile-menu-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 180px;
+    z-index: 98;
+  }
+
+  // The input itself is clipped, so keyboard focus has to show on its label.
+  .mobile-nav-toggle:focus-visible ~ .mobile-navbar .mobile-navbar-icon {
+    outline: 2px solid $theme-color;
+    outline-offset: -4px;
+  }
 }

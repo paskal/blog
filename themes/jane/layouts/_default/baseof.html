@@ -25,9 +25,12 @@
   {{ partial "head.html" . }}
 </head>
 <body>
+  {{/* Drives the mobile menu; the icon in the navbar is a label for it. */}}
+  <input type="checkbox" id="mobile-nav-toggle" class="mobile-nav-toggle" aria-label="{{ i18n "menu" }}">
   <div id="back-to-top"></div>
 
   {{ partial "slideout.html" . }}
+  <label for="mobile-nav-toggle" class="mobile-menu-overlay" aria-hidden="true"></label>
 
 <header id="header" class="header">
   {{ partial "header.html" . }}
