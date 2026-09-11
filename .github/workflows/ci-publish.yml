@@ -45,6 +45,42 @@ jobs:
             exit 1
           fi
 
+      - name: sitemaps and feeds stay scoped
+        run: |
+          set -eu
+          # The sitemap must not advertise a page this same build marks noindex.
+          # Checking the rendered pages rather than a list of known paths means a
+          # future section or taxonomy cannot leak in unnoticed.
+          for f in public/en/sitemap.xml public/ru/sitemap.xml; do
+            grep -q "<loc>" "$f" || { echo "$f lists nothing at all" >&2; exit 1; }
+            grep -o "<loc>[^<]*</loc>" "$f" | sed "s|<loc>https://terrty.net/||; s|</loc>||" | while read -r path; do
+              page="public/${path}index.html"
+              [ -f "$page" ] || continue
+              if grep -q "name=robots content=\"noindex" "$page"; then
+                echo "$f lists $path, which renders noindex" >&2
+                exit 1
+              fi
+            done
+          done
+          grep -q "<loc>https://terrty.net/</loc>" public/en/sitemap.xml \
+            || { echo "English sitemap lost the home page" >&2; exit 1; }
+          grep -q "<loc>https://terrty.net/ru/</loc>" public/ru/sitemap.xml \
+            || { echo "Russian sitemap lost the home page" >&2; exit 1; }
+          # Feeds carry posts only, so no zero pubDate, and one enclosure at most.
+          # Records split on </item> so the count survives minification.
+          for f in public/index.xml public/ru/index.xml; do
+            grep -q "<item>" "$f" || { echo "$f has no items" >&2; exit 1; }
+            if grep -o "<pubDate>[^<]*</pubDate>" "$f" | grep -q " 0001 "; then
+              echo "$f carries an item with a zero publication date" >&2
+              exit 1
+            fi
+            max=$(awk 'BEGIN{RS="</item>"; m=0} {n=gsub(/<enclosure/,"&"); if(n>m)m=n} END{print m+0}' "$f")
+            if [ "$max" -gt 1 ]; then
+              echo "$f has an item carrying $max enclosures" >&2
+              exit 1
+            fi
+          done
+
       - name: a failed build must leave the served tree alone
         run: |
           set -eu
